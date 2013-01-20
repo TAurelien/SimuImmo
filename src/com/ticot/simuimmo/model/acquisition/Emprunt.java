@@ -1,0 +1,203 @@
+package com.ticot.simuimmo.model.acquisition;
+
+//TODO Modifier la javadoc de la classe Emprunt
+/**
+ * @author Aurelien Ticot
+ *
+ */
+public class Emprunt {
+
+	//Déclaration des variables
+	//==============================================================================
+	private double capitalEmprunte = 0, mensualitéCredit = 0, tauxCredit = 0,
+			tauxAssuranceCredit = 0, tauxEndettement = 0;
+	private int dureeCredit = 0, nbMensualiteCredit = 0;
+	
+	//Variables pour la prise en compte des valeurs réelles
+	private double capitalEmprunteReel, tauCreditReel, tauxAssuranceCreditReel;
+	
+	
+	//Constructeurs
+	//==============================================================================
+	//Constructeur vide
+	/**
+	 * 
+	 */
+	public Emprunt() {
+		super();
+	}
+
+	//Constructeur avec toutes les variables sauf les "Reel"
+	/**
+	 * @param capitalEmprunte
+	 * @param mensualitéCredit
+	 * @param tauxCredit
+	 * @param tauxAssuranceCredit
+	 * @param tauxEndettement
+	 * @param dureeCredit
+	 * @param nbMensualiteCredit
+	 */
+	public Emprunt(double capitalEmprunte, double mensualitéCredit,
+			double tauxCredit, double tauxAssuranceCredit,
+			double tauxEndettement, int dureeCredit, int nbMensualiteCredit) {
+		super();
+		this.capitalEmprunte = capitalEmprunte;
+		this.mensualitéCredit = mensualitéCredit;
+		this.tauxCredit = tauxCredit;
+		this.tauxAssuranceCredit = tauxAssuranceCredit;
+		this.tauxEndettement = tauxEndettement;
+		this.dureeCredit = dureeCredit;
+		this.nbMensualiteCredit = nbMensualiteCredit;
+	}
+
+	//TODO Modifier la javadoc des getters et setters de la classe Emprunt
+	
+	//Getters
+	//==============================================================================
+	/**
+	 * @return the capitalEmprunte
+	 */
+	public double getCapitalEmprunte() {
+		return capitalEmprunte;
+	}
+
+	/**
+	 * @return the capitalEmprunteReel
+	 */
+	public double getCapitalEmprunteReel() {
+		return capitalEmprunteReel;
+	}
+
+	/**
+	 * @return the dureeCredit
+	 */
+	public int getDureeCredit() {
+		return dureeCredit;
+	}
+
+	/**
+	 * @return the mensualitéCredit
+	 */
+	public double getMensualitéCredit() {
+		return mensualitéCredit;
+	}
+
+	/**
+	 * @return the nbMensualiteCredit
+	 */
+	public int getNbMensualiteCredit() {
+		return nbMensualiteCredit;
+	}
+
+	/**
+	 * @return the tauCreditReel
+	 */
+	public double getTauCreditReel() {
+		return tauCreditReel;
+	}
+
+	/**
+	 * @return the tauxAssuranceCredit
+	 */
+	public double getTauxAssuranceCredit() {
+		return tauxAssuranceCredit;
+	}
+
+	/**
+	 * @return the tauxAssuranceCreditReel
+	 */
+	public double getTauxAssuranceCreditReel() {
+		return tauxAssuranceCreditReel;
+	}
+
+	/**
+	 * @return the tauxCredit
+	 */
+	public double getTauxCredit() {
+		return tauxCredit;
+	}
+
+	/**
+	 * @return the tauxEndettement
+	 */
+	public double getTauxEndettement() {
+		return tauxEndettement;
+	}
+
+	//Setters
+	//==============================================================================
+		/**
+	 * @param capitalEmprunte the capitalEmprunte to set
+	 */
+	public void setCapitalEmprunte(double capitalEmprunte) {
+		this.capitalEmprunte = capitalEmprunte;
+	}
+
+	/**
+	 * @param capitalEmprunteReel the capitalEmprunteReel to set
+	 */
+	public void setCapitalEmprunteReel(double capitalEmprunteReel) {
+		this.capitalEmprunteReel = capitalEmprunteReel;
+	}
+
+	/**
+	 * @param dureeCredit the dureeCredit to set
+	 */
+	public void setDureeCredit(int dureeCredit) {
+		this.dureeCredit = dureeCredit;
+	}
+
+	/**
+	 * @param mensualitéCredit the mensualitéCredit to set
+	 */
+	public void setMensualitéCredit(double mensualitéCredit) {
+		this.mensualitéCredit = mensualitéCredit;
+	}
+
+	/**
+	 * @param nbMensualiteCredit the nbMensualiteCredit to set
+	 */
+	public void setNbMensualiteCredit(int nbMensualiteCredit) {
+		this.nbMensualiteCredit = nbMensualiteCredit;
+	}
+
+	/**
+	 * @param tauCreditReel the tauCreditReel to set
+	 */
+	public void setTauCreditReel(double tauCreditReel) {
+		this.tauCreditReel = tauCreditReel;
+	}
+
+	/**
+	 * @param tauxAssuranceCredit the tauxAssuranceCredit to set
+	 */
+	public void setTauxAssuranceCredit(double tauxAssuranceCredit) {
+		this.tauxAssuranceCredit = tauxAssuranceCredit;
+	}
+
+	/**
+	 * @param tauxAssuranceCreditReel the tauxAssuranceCreditReel to set
+	 */
+	public void setTauxAssuranceCreditReel(double tauxAssuranceCreditReel) {
+		this.tauxAssuranceCreditReel = tauxAssuranceCreditReel;
+	}
+
+	/**
+	 * @param tauxCredit the tauxCredit to set
+	 */
+	public void setTauxCredit(double tauxCredit) {
+		this.tauxCredit = tauxCredit;
+	}
+
+	/**
+	 * @param tauxEndettement the tauxEndettement to set
+	 */
+	public void setTauxEndettement(double tauxEndettement) {
+		this.tauxEndettement = tauxEndettement;
+	}
+	//==============================================================================
+	
+	//TODO Faire le toString() de la classe Emprunt 
+	//TODO Faire le equal() de la classe Emprunt
+	
+}
