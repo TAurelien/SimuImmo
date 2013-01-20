@@ -12,20 +12,23 @@ public class Temp {
 	//==============================================================================
 	public static void aTester(){
 		
+		//Déclaration des variables de tests
+		//==========================================================================
+		//Celles renseignées par l'utilisateur
 		int dureeCredit = 25;
+		
+		//Celles venant d'autres calculs
+		double capitalEmprunte = 172900;
+		
+		//Celles venant des hypothèses (settings)
+		double tauxCredit = 0.0365;
+		double tauxAssuranceCredit = 0.0036;
+				
+		//Zone de test		
+		//==========================================================================
 		System.out.println("Pour " + dureeCredit + " ans, le nombre de mois est de " + calculNbMensualiteCredit(dureeCredit));
 		System.out.println("Le montant de la mensualite est de " + 
-		calculMensualiteCredit(172900, calculNbMensualiteCredit(dureeCredit), 0.0365, 0.0036) + "€");
-		
-		/*
-		double capitalEmprunte = 172900;
-		double taux = 0.0365;
-		int nbMois = 300;
-		double tauxAssurance = 0.0036;
-		double mensualite = (capitalEmprunte * taux/12)/(1-Math.pow((1+taux/12), (-nbMois))) + (capitalEmprunte * tauxAssurance/12);
-		System.out.println("Le résultat du calcul est " + mensualite);
-		//Toast.makeText(getBaseContext(), "La mensualité est de " + mensualite, Toast.LENGTH_SHORT).show();
-		 */
+		calculMensualiteCredit(capitalEmprunte, calculNbMensualiteCredit(dureeCredit), tauxCredit, tauxAssuranceCredit) + "€");
 		
 	}
 	//==============================================================================
@@ -44,4 +47,10 @@ public class Temp {
 		return nbMensualiteCredit;
 	}
 	
+	//Calcul du capital emprunté
+	//Fonction
+	public static double calculCapitalEmprunte(double coutTotal, double apport){
+		double capitalEmprunte = coutTotal - apport;
+		return capitalEmprunte;
+	}
 }
