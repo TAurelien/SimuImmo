@@ -12,6 +12,7 @@ public class FraisAcquisition {
 	private double prixFAI = 0, netVendeur = 0, fraisAgence = 0, fraisNotaire = 0,
 			travaux = 0, amenagement = 0, honoraireConseil = 0, autresFrais = 0,
 			coutTotal = 0, apport = 0, sequestre = 0;
+	private boolean conseil = false;
 	
 	//variables pour la prise en compte des valeurs réelles
 	private double netVendeurReel, fraisAgenceReel, fraisNotaireReel,
@@ -36,6 +37,7 @@ public class FraisAcquisition {
 	 * @param fraisNotaire
 	 * @param travaux
 	 * @param amenagement
+	 * @param conseil
 	 * @param honoraireConseil
 	 * @param autresFrais
 	 * @param coutTotal
@@ -44,7 +46,7 @@ public class FraisAcquisition {
 	 */
 	public FraisAcquisition(double prixFAI, double netVendeur,
 			double fraisAgence, double fraisNotaire, double travaux,
-			double amenagement, double honoraireConseil, double autresFrais,
+			double amenagement, boolean conseil, double honoraireConseil, double autresFrais,
 			double coutTotal, double apport, double sequestre) {
 		super();
 		this.prixFAI = prixFAI;
@@ -53,6 +55,7 @@ public class FraisAcquisition {
 		this.fraisNotaire = fraisNotaire;
 		this.travaux = travaux;
 		this.amenagement = amenagement;
+		this.conseil = conseil;
 		this.honoraireConseil = honoraireConseil;
 		this.autresFrais = autresFrais;
 		this.coutTotal = coutTotal;
@@ -99,6 +102,13 @@ public class FraisAcquisition {
 		return coutTotal;
 	}
 
+	/**
+	 * @return the conseil
+	 */
+	public boolean getConseil() {
+		return conseil;
+	}	
+	
 	/**
 	 * @return the fraisAgence
 	 */
@@ -214,6 +224,13 @@ public class FraisAcquisition {
 		this.coutTotal = coutTotal;
 	}
 
+	/**
+	 * @param conseil the conseil to set
+	 */
+	public void setConseil(boolean conseil) {
+		this.conseil = conseil;
+	}
+	
 	/**
 	 * @param fraisAgence the fraisAgence to set
 	 */
