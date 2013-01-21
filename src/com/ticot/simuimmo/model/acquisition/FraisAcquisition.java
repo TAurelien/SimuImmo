@@ -336,7 +336,7 @@ public class FraisAcquisition {
 	 */
 	@Override
 	public String toString() {
-		return "Frais d'acquisitions -------------------------------------" +
+		return "Frais d'acquisitions -------------------------------" +
 				"\nLe prix FAI est de " + prixFAI +
 				"\nLe prix net vendeur est de " + netVendeur +
 				"\nLes frais d'agence sont de " + fraisAgence +

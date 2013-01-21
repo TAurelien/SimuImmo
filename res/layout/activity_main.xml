@@ -9,5 +9,10 @@
         android:layout_height="wrap_content"
         android:text="Bouton de test"
         android:onClick="onClick"/>
+    <TextView 
+        android:id="@+id/text_result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Appuyer sur le bouton"/>
 
 </LinearLayout>

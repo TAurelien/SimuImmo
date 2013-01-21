@@ -2,6 +2,9 @@ package com.ticot.simuimmo.calculs;
 
 //Classe temporaire pour les tests de calculs
 
+import android.webkit.WebView.FindListener;
+import android.widget.TextView;
+
 import com.ticot.simuimmo.model.acquisition.Acquisition;
 import com.ticot.simuimmo.model.acquisition.Emprunt;
 import com.ticot.simuimmo.model.acquisition.FraisAcquisition;
@@ -36,19 +39,11 @@ public class Temp {
 	
 	//Fonction pour lancer les tests
 	//==============================================================================
-	public static void aTester(){
+	public static String aTester(){
 		
 		//Zone de test		
 		//==========================================================================
-		//Variables temporaires de tests
-		
-		//FraisAcquisition fraisAcquisition = calculerFraisAcquisitions();
-		//Emprunt emprunt = calculerEmprunt(fraisAcquisition);
-		//System.out.println(fraisAcquisition.toString());
-		//System.out.println(emprunt.toString());
-		
-		Acquisition acqui = initialiserAcquisition();		
-		System.out.println(acqui.toString());
+		return initialiserAcquisition().toString();
 	}
 	//==============================================================================
 	

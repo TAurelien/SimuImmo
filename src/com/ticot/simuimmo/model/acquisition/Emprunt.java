@@ -213,7 +213,7 @@ public class Emprunt {
 	 */
 	@Override
 	public String toString() {
-		return "Emprunt -----------------------------------------------" +
+		return "Emprunt ------------------------------------------" +
 				"\nLa durée du credit est de " + dureeCredit +
 				"\nLe nombre de mensualité est de " + nbMensualiteCredit +
 				"\nLe capital emprunté est de " + capitalEmprunte	+ 

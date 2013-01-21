@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import com.ticot.simuimmo.calculs.Temp;
 
 public class MainActivity extends Activity {
@@ -26,7 +27,8 @@ public class MainActivity extends Activity {
 	//Bouton de test
 	//==============================================================================
 	public void onClick (View v){
-		Temp.aTester();
+		TextView tv = (TextView) findViewById(R.id.text_result);
+		tv.setText(Temp.aTester());
+		
 	}
-	
 }
