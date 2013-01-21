@@ -72,9 +72,19 @@ public class Acquisition {
 	public void setFraisAcquisition(FraisAcquisition fraisAcquisition) {
 		this.fraisAcquisition = fraisAcquisition;
 	}
+	
 	//==============================================================================
 
 	//TODO Faire le toString() de la classe Acquisition
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return fraisAcquisition + "\n" + emprunt;
+	}
+	
 	//TODO Faire le equal() de la classe Acquisiton
 	
 }

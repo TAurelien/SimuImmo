@@ -56,6 +56,7 @@ public class CalculsAcquisition {
 	//Calcul du taux de credit
 	//Fonction OK
 	public static double calculTauxCredit(int dureeCredit, double taux15ans, double taux20ans, double taux25ans, double taux30ans){
+		//TODO Envisager de retirer les paramètres venant des settings et des les appeller directement depuis cette fonction
 		switch (dureeCredit) {
 		case 15:
 			return  taux15ans;
@@ -87,6 +88,9 @@ public class CalculsAcquisition {
 	public static double calculCapitalEmprunte(double coutTotal, double apport){
 		return Math.round((coutTotal - apport)/10)*10;
 	}
+	
+	//TODO Calcul du taux d'endettement à faire
+	
 	//==============================================================================
 	
 }

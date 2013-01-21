@@ -14,7 +14,7 @@ public class Emprunt {
 	private int dureeCredit = 0, nbMensualiteCredit = 0;
 	
 	//Variables pour la prise en compte des valeurs réelles
-	private double capitalEmprunteReel, tauCreditReel, tauxAssuranceCreditReel;
+	private double capitalEmprunteReel, tauxCreditReel, tauxAssuranceCreditReel;
 	
 	
 	//Constructeurs
@@ -27,6 +27,15 @@ public class Emprunt {
 		super();
 	}
 
+	//Constructeur avec les valeurs utilisateurs
+	/**
+	 * @param dureeCredit
+	 */
+	public Emprunt(int dureeCredit) {
+		super();
+		this.dureeCredit = dureeCredit;
+	}
+	
 	//Constructeur avec toutes les variables sauf les "Reel"
 	/**
 	 * @param capitalEmprunte
@@ -51,7 +60,7 @@ public class Emprunt {
 	}
 
 	//TODO Modifier la javadoc des getters et setters de la classe Emprunt
-	
+
 	//Getters
 	//==============================================================================
 	/**
@@ -92,8 +101,8 @@ public class Emprunt {
 	/**
 	 * @return the tauCreditReel
 	 */
-	public double getTauCreditReel() {
-		return tauCreditReel;
+	public double getTauxCreditReel() {
+		return tauxCreditReel;
 	}
 
 	/**
@@ -164,8 +173,8 @@ public class Emprunt {
 	/**
 	 * @param tauCreditReel the tauCreditReel to set
 	 */
-	public void setTauCreditReel(double tauCreditReel) {
-		this.tauCreditReel = tauCreditReel;
+	public void setTauxCreditReel(double tauxCreditReel) {
+		this.tauxCreditReel = tauxCreditReel;
 	}
 
 	/**
@@ -198,6 +207,25 @@ public class Emprunt {
 	//==============================================================================
 	
 	//TODO Faire le toString() de la classe Emprunt 
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Emprunt -----------------------------------------------" +
+				"\nLa durée du credit est de " + dureeCredit +
+				"\nLe nombre de mensualité est de " + nbMensualiteCredit +
+				"\nLe capital emprunté est de " + capitalEmprunte	+ 
+				"\nLa mensualité de credit est de " + mensualitéCredit +
+				"\nLe taux de credit est de "	+ tauxCredit +
+				"\nLe taux d'assurance est de " + tauxAssuranceCredit /*+
+				"\nLe taux d'endettement est de NA" + tauxEndettement +
+				"\nLe capital emprunté réel est de =" + capitalEmprunteReel +
+				"\nLe taux de credit réel est de =" + tauxCreditReel	+
+				"\nLe taux d'assurance réel est de =" + tauxAssuranceCreditReel*/;
+	}	
+	
 	//TODO Faire le equal() de la classe Emprunt
 	
 }

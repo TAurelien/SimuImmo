@@ -28,7 +28,26 @@ public class FraisAcquisition {
 	public FraisAcquisition() {
 		super();
 	}
-
+	
+	//Constructeur avec les valeurs utilisateurs
+	/**
+	 * @param prixFAI
+	 * @param travaux
+	 * @param amenagement
+	 * @param autresFrais
+	 * @param apport
+	 * @param conseil
+	 */
+	public FraisAcquisition(double prixFAI, double travaux, double amenagement,
+			double autresFrais, double apport, boolean conseil) {
+		super();
+		this.prixFAI = prixFAI;
+		this.travaux = travaux;
+		this.amenagement = amenagement;
+		this.autresFrais = autresFrais;
+		this.apport = apport;
+		this.conseil = conseil;
+	}
 	//Constructeur avec toutes les variables sauf les "Reel"
 	/**
 	 * @param prixFAI
@@ -307,10 +326,35 @@ public class FraisAcquisition {
 	public void setTravaux(double travaux) {
 		this.travaux = travaux;
 	}
-	
+
 	//==============================================================================
 	
 	//TODO Faire le toString() de la classe FraisAcquisition
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Frais d'acquisitions -------------------------------------" +
+				"\nLe prix FAI est de " + prixFAI +
+				"\nLe prix net vendeur est de " + netVendeur +
+				"\nLes frais d'agence sont de " + fraisAgence +
+				"\nLes frais de notaire sont de " + fraisNotaire +
+				"\nLe montant des travaux est de " + travaux +
+				"\nLe cout d'amenagement est de " + amenagement +
+				"\nLes honoraires de conseil sont de " + honoraireConseil +
+				"\nLes autres frais sont de " + autresFrais +
+				"\nLe cout total est de " + coutTotal +
+				"\nAvec un apport de " + apport +
+				"\nLe sequestre sera de " + sequestre /*+
+				", netVendeurReel=" + netVendeurReel + ", fraisAgenceReel="
+				+ fraisAgenceReel + ", fraisNotaireReel=" + fraisNotaireReel
+				+ ", honoraireConseilReel=" + honoraireConseilReel
+				+ ", apportReel=" + apportReel + "]"*/;
+
+	}
+	
 	//TODO Faire le equal() de la classe FraisAcquisiton
 	
 }
