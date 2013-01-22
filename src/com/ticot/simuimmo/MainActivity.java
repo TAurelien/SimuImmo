@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import com.ticot.simuimmo.calculs.Temp;
 
@@ -28,7 +29,9 @@ public class MainActivity extends Activity {
 	//==============================================================================
 	public void onClick (View v){
 		TextView tv = (TextView) findViewById(R.id.text_result);
-		tv.setText(Temp.aTester());
+		double vPrixFAI = Double.valueOf(((EditText)findViewById(R.id.valuePrixFAI)).getText().toString());
+		double vTravaux = Double.valueOf(((EditText)findViewById(R.id.valueTravaux)).getText().toString());
+		tv.setText(Temp.aTester(vPrixFAI, vTravaux));
 		
 	}
 }

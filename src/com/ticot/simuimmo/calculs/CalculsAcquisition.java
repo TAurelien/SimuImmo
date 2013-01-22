@@ -1,6 +1,7 @@
 package com.ticot.simuimmo.calculs;
 
 import com.ticot.simuimmo.model.Settings;
+import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
 import com.ticot.simuimmo.model.acquisition.Emprunt;
 import com.ticot.simuimmo.model.acquisition.FraisAcquisition;
@@ -21,7 +22,7 @@ public class CalculsAcquisition {
 	//Fonction pour calculer les frais acquisition
 	//Fonction OK
 	public static FraisAcquisition calculerFraisAcquisitions(){
-		FraisAcquisition fa = new FraisAcquisition(Settings.prixFAI, Settings.travaux, Settings.amenagement, Settings.autresFrais, Settings.apport, Settings.conseil);
+		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
 		fa.setNetVendeur(CalculsAcquisition.calculNetVendeur(fa.getPrixFAI(), Settings.pourcentageFraisAgence));
 		fa.setFraisAgence(CalculsAcquisition.calculFraisAgence(fa.getPrixFAI(), fa.getNetVendeur()));
 		fa.setFraisNotaire(CalculsAcquisition.calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
@@ -34,7 +35,7 @@ public class CalculsAcquisition {
 	//Fonction pour calculer l'emprunt
 	//Fonction OK
 	public static Emprunt calculerEmprunt(FraisAcquisition fa){
-		Emprunt emprunt = new Emprunt(Settings.dureeCredit);
+		Emprunt emprunt = new Emprunt(Inputs.dureeCredit);
 		emprunt.setTauxAssuranceCredit(Settings.tauxAssuranceCredit);
 		emprunt.setNbMensualiteCredit(CalculsAcquisition.calculNbMensualiteCredit(emprunt.getDureeCredit()));
 		emprunt.setCapitalEmprunte(CalculsAcquisition.calculCapitalEmprunte(fa.getCoutTotal(), fa.getApport()));

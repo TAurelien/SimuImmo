@@ -1,7 +1,72 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:scrollbars="vertical" >
+
+    <TextView
+        android:id="@+id/tvPrixFAI"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Prix FAI" />
+
+    <EditText
+        android:id="@+id/valuePrixFAI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/tvTravaux"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Travaux" />
+
+    <EditText
+        android:id="@+id/valueTravaux"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/tvAmenagement"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Amenagement" />
+
+    <EditText
+        android:id="@+id/valueAmenagement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/tvApport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apport" />
+
+    <EditText
+        android:id="@+id/valueApport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/tvConseil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conseil" />
+
+    <ToggleButton
+        android:id="@+id/valueConseil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conseil" />
 
     <Button 
         android:id="@+id/btn_test"
