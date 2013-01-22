@@ -1,6 +1,51 @@
 package com.ticot.simuimmo.calculs;
 
+import com.ticot.simuimmo.model.Settings;
+import com.ticot.simuimmo.model.acquisition.Acquisition;
+import com.ticot.simuimmo.model.acquisition.Emprunt;
+import com.ticot.simuimmo.model.acquisition.FraisAcquisition;
+
 public class CalculsAcquisition {
+	
+	//Fonctions pour la partie Frais acquisition
+	//Statut OK
+	//==============================================================================
+	//Fonction pour lancer les calculs de frais d'acquisition et d'emprunt
+	//Fonction OK
+	public static Acquisition initialiser(){
+		FraisAcquisition fraisAcquisition = calculerFraisAcquisitions();
+		Emprunt emprunt = calculerEmprunt(fraisAcquisition);
+		return new Acquisition(fraisAcquisition, emprunt); 
+	}
+	
+	//Fonction pour calculer les frais acquisition
+	//Fonction OK
+	public static FraisAcquisition calculerFraisAcquisitions(){
+		FraisAcquisition fa = new FraisAcquisition(Settings.prixFAI, Settings.travaux, Settings.amenagement, Settings.autresFrais, Settings.apport, Settings.conseil);
+		fa.setNetVendeur(CalculsAcquisition.calculNetVendeur(fa.getPrixFAI(), Settings.pourcentageFraisAgence));
+		fa.setFraisAgence(CalculsAcquisition.calculFraisAgence(fa.getPrixFAI(), fa.getNetVendeur()));
+		fa.setFraisNotaire(CalculsAcquisition.calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
+		fa.setHonoraireConseil(CalculsAcquisition.calculHonorairesConseil(fa.getConseil(), fa.getNetVendeur(),fa.getTravaux(), fa.getAmenagement(),Settings.pourcentageHonorairesConseil));
+		fa.setCoutTotal(CalculsAcquisition.calculCoutTotal(fa.getNetVendeur(), fa.getFraisAgence(),fa.getFraisNotaire(), fa.getTravaux(),fa.getAmenagement(), fa.getHonoraireConseil(),fa.getAutresFrais()));
+		fa.setSequestre(CalculsAcquisition.calculSequestre(fa.getPrixFAI(), Settings.pourcentageSequestre));
+		return fa;
+	}
+
+	//Fonction pour calculer l'emprunt
+	//Fonction OK
+	public static Emprunt calculerEmprunt(FraisAcquisition fa){
+		Emprunt emprunt = new Emprunt(Settings.dureeCredit);
+		emprunt.setTauxAssuranceCredit(Settings.tauxAssuranceCredit);
+		emprunt.setNbMensualiteCredit(CalculsAcquisition.calculNbMensualiteCredit(emprunt.getDureeCredit()));
+		emprunt.setCapitalEmprunte(CalculsAcquisition.calculCapitalEmprunte(fa.getCoutTotal(), fa.getApport()));
+		emprunt.setTauxCredit(CalculsAcquisition.calculTauxCredit(emprunt.getDureeCredit()));
+		emprunt.setMensualitéCredit(CalculsAcquisition.calculMensualiteCredit(emprunt.getCapitalEmprunte(), emprunt.getNbMensualiteCredit(), 
+				emprunt.getTauxCredit(), emprunt.getTauxAssuranceCredit()));
+		emprunt.setTauxEndettement(0); //TODO Mettre à jour après calcul du taux d'endettement
+		return emprunt;
+	}
+	//==============================================================================
+	
 	
 	//Fonctions pour la partie Frais acquisition
 	//Statut OK
@@ -55,26 +100,25 @@ public class CalculsAcquisition {
 	//==============================================================================
 	//Calcul du taux de credit
 	//Fonction OK
-	public static double calculTauxCredit(int dureeCredit, double taux15ans, double taux20ans, double taux25ans, double taux30ans){
-		//TODO Envisager de retirer les paramètres venant des settings et des les appeller directement depuis cette fonction
+	public static double calculTauxCredit(int dureeCredit){
 		switch (dureeCredit) {
 		case 15:
-			return  taux15ans;
+			return  Settings.taux15ans;
 		case 20:
-			return taux20ans;
+			return Settings.taux20ans;
 		case 25:
-			return taux25ans;
+			return Settings.taux25ans;
 		case 30:
-			return taux30ans;
+			return Settings.taux30ans;
 		default:
-			return taux25ans;
+			return Settings.taux25ans;
 		}
 	}
 	
 	//Calcul de la mensualité de credit
 	//Fonction OK
 	public static double calculMensualiteCredit(double capitalEmprunte, int nbMensualiteCredit, double taux, double tauxAssurance){
-		return (capitalEmprunte * taux/12)/(1-Math.pow((1+taux/12), (-nbMensualiteCredit))) + (capitalEmprunte * tauxAssurance/12);
+		return Math.round(((capitalEmprunte * taux/12)/(1-Math.pow((1+taux/12), (-nbMensualiteCredit))) + (capitalEmprunte * tauxAssurance/12))*100)/100;
 	}
 	
 	//Calcul du nombre de mensualite

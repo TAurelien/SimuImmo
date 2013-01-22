@@ -75,7 +75,7 @@ public class Acquisition {
 	
 	//==============================================================================
 
-	//TODO Faire le toString() de la classe Acquisition
+	//TODO Eventuellement modifier le toString() de la classe Acquisition
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
