@@ -23,12 +23,12 @@ public class CalculsAcquisition {
 	//Fonction OK
 	public static FraisAcquisition calculerFraisAcquisitions(){
 		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
-		fa.setNetVendeur(CalculsAcquisition.calculNetVendeur(fa.getPrixFAI(), Settings.pourcentageFraisAgence));
-		fa.setFraisAgence(CalculsAcquisition.calculFraisAgence(fa.getPrixFAI(), fa.getNetVendeur()));
-		fa.setFraisNotaire(CalculsAcquisition.calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
-		fa.setHonoraireConseil(CalculsAcquisition.calculHonorairesConseil(fa.getConseil(), fa.getNetVendeur(),fa.getTravaux(), fa.getAmenagement(),Settings.pourcentageHonorairesConseil));
-		fa.setCoutTotal(CalculsAcquisition.calculCoutTotal(fa.getNetVendeur(), fa.getFraisAgence(),fa.getFraisNotaire(), fa.getTravaux(),fa.getAmenagement(), fa.getHonoraireConseil(),fa.getAutresFrais()));
-		fa.setSequestre(CalculsAcquisition.calculSequestre(fa.getPrixFAI(), Settings.pourcentageSequestre));
+		fa.setNetVendeur(calculNetVendeur(fa.getPrixFAI(), Settings.pourcentageFraisAgence));
+		fa.setFraisAgence(calculFraisAgence(fa.getPrixFAI(), fa.getNetVendeur()));
+		fa.setFraisNotaire(calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
+		fa.setHonoraireConseil(calculHonorairesConseil(fa.getConseil(), fa.getNetVendeur(),fa.getTravaux(), fa.getAmenagement(),Settings.pourcentageHonorairesConseil));
+		fa.setCoutTotal(calculCoutTotal(fa.getNetVendeur(), fa.getFraisAgence(),fa.getFraisNotaire(), fa.getTravaux(),fa.getAmenagement(), fa.getHonoraireConseil(),fa.getAutresFrais()));
+		fa.setSequestre(calculSequestre(fa.getPrixFAI(), Settings.pourcentageSequestre));
 		return fa;
 	}
 
@@ -37,10 +37,10 @@ public class CalculsAcquisition {
 	public static Emprunt calculerEmprunt(FraisAcquisition fa){
 		Emprunt emprunt = new Emprunt(Inputs.dureeCredit);
 		emprunt.setTauxAssuranceCredit(Settings.tauxAssuranceCredit);
-		emprunt.setNbMensualiteCredit(CalculsAcquisition.calculNbMensualiteCredit(emprunt.getDureeCredit()));
-		emprunt.setCapitalEmprunte(CalculsAcquisition.calculCapitalEmprunte(fa.getCoutTotal(), fa.getApport()));
-		emprunt.setTauxCredit(CalculsAcquisition.calculTauxCredit(emprunt.getDureeCredit()));
-		emprunt.setMensualitéCredit(CalculsAcquisition.calculMensualiteCredit(emprunt.getCapitalEmprunte(), emprunt.getNbMensualiteCredit(), 
+		emprunt.setNbMensualiteCredit(calculNbMensualiteCredit(emprunt.getDureeCredit()));
+		emprunt.setCapitalEmprunte(calculCapitalEmprunte(fa.getCoutTotal(), fa.getApport()));
+		emprunt.setTauxCredit(calculTauxCredit(emprunt.getDureeCredit()));
+		emprunt.setMensualitéCredit(calculMensualiteCredit(emprunt.getCapitalEmprunte(), emprunt.getNbMensualiteCredit(), 
 				emprunt.getTauxCredit(), emprunt.getTauxAssuranceCredit()));
 		emprunt.setTauxEndettement(0); //TODO Mettre à jour après calcul du taux d'endettement
 		return emprunt;

@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.ticot.simuimmo.calculs.Temp;
+import com.ticot.simuimmo.model.Inputs;
 
 public class MainActivity extends Activity {
 
@@ -28,10 +30,21 @@ public class MainActivity extends Activity {
 	//Bouton de test
 	//==============================================================================
 	public void onClick (View v){
-		TextView tv = (TextView) findViewById(R.id.text_result);
-		double vPrixFAI = Double.valueOf(((EditText)findViewById(R.id.valuePrixFAI)).getText().toString());
-		double vTravaux = Double.valueOf(((EditText)findViewById(R.id.valueTravaux)).getText().toString());
-		tv.setText(Temp.aTester(vPrixFAI, vTravaux));
+		Inputs.prixFAI = Double.valueOf(
+				((EditText)findViewById(R.id.valuePrixFAI)).getText().toString());
+		Inputs.travaux = Double.valueOf(
+				((EditText)findViewById(R.id.valueTravaux)).getText().toString());
+		Inputs.dureeCredit = Integer.valueOf(
+				((EditText)findViewById(R.id.valueDureeCredit)).getText().toString());
+		Inputs.amenagement = Double.valueOf(
+				((EditText)findViewById(R.id.valueAmenagement)).getText().toString());
+		Inputs.conseil = ((CheckBox)findViewById(R.id.valueConseil)).isChecked();
+		Inputs.apport = Double.valueOf(
+				((EditText)findViewById(R.id.valueApport)).getText().toString()); 
+		Inputs.autresFrais = Double.valueOf(
+				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
 		
+		TextView tv = (TextView) findViewById(R.id.text_result);
+		tv.setText(Temp.aTester());		
 	}
 }
