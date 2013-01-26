@@ -17,6 +17,7 @@ public class FraisAcquisition {
 	//variables pour la prise en compte des valeurs réelles
 	private double netVendeurReel, fraisAgenceReel, fraisNotaireReel,
 			honoraireConseilReel, apportReel;
+	//TODO Supprimer si les variables des valeurs réelles sont inutiles
 
 	
 	//Constructeurs

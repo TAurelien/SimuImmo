@@ -9,12 +9,13 @@ public class Emprunt {
 
 	//Déclaration des variables
 	//==============================================================================
-	private double capitalEmprunte = 0, mensualitéCredit = 0, tauxCredit = 0,
+	private double capitalEmprunte = 0, mensualiteCredit = 0, tauxCredit = 0,
 			tauxAssuranceCredit = 0, tauxEndettement = 0;
 	private int dureeCredit = 0, nbMensualiteCredit = 0;
 	
 	//Variables pour la prise en compte des valeurs réelles
 	private double capitalEmprunteReel, tauxCreditReel, tauxAssuranceCreditReel;
+	//TODO Supprimer si les variables des valeurs réelles sont inutiles
 	
 	
 	//Constructeurs
@@ -39,19 +40,19 @@ public class Emprunt {
 	//Constructeur avec toutes les variables sauf les "Reel"
 	/**
 	 * @param capitalEmprunte
-	 * @param mensualitéCredit
+	 * @param mensualiteCredit
 	 * @param tauxCredit
 	 * @param tauxAssuranceCredit
 	 * @param tauxEndettement
 	 * @param dureeCredit
 	 * @param nbMensualiteCredit
 	 */
-	public Emprunt(double capitalEmprunte, double mensualitéCredit,
+	public Emprunt(double capitalEmprunte, double mensualiteCredit,
 			double tauxCredit, double tauxAssuranceCredit,
 			double tauxEndettement, int dureeCredit, int nbMensualiteCredit) {
 		super();
 		this.capitalEmprunte = capitalEmprunte;
-		this.mensualitéCredit = mensualitéCredit;
+		this.mensualiteCredit = mensualiteCredit;
 		this.tauxCredit = tauxCredit;
 		this.tauxAssuranceCredit = tauxAssuranceCredit;
 		this.tauxEndettement = tauxEndettement;
@@ -85,10 +86,10 @@ public class Emprunt {
 	}
 
 	/**
-	 * @return the mensualitéCredit
+	 * @return the mensualiteCredit
 	 */
-	public double getMensualitéCredit() {
-		return mensualitéCredit;
+	public double getMensualiteCredit() {
+		return mensualiteCredit;
 	}
 
 	/**
@@ -159,8 +160,8 @@ public class Emprunt {
 	/**
 	 * @param mensualitéCredit the mensualitéCredit to set
 	 */
-	public void setMensualitéCredit(double mensualitéCredit) {
-		this.mensualitéCredit = mensualitéCredit;
+	public void setMensualiteCredit(double mensualiteCredit) {
+		this.mensualiteCredit = mensualiteCredit;
 	}
 
 	/**
@@ -217,7 +218,7 @@ public class Emprunt {
 				"\nLa durée du credit est de " + dureeCredit +
 				"\nLe nombre de mensualité est de " + nbMensualiteCredit +
 				"\nLe capital emprunté est de " + capitalEmprunte	+ 
-				"\nLa mensualité de credit est de " + mensualitéCredit +
+				"\nLa mensualité de credit est de " + mensualiteCredit +
 				"\nLe taux de credit est de "	+ tauxCredit +
 				"\nLe taux d'assurance est de " + tauxAssuranceCredit /*+
 				"\nLe taux d'endettement est de NA" + tauxEndettement +
