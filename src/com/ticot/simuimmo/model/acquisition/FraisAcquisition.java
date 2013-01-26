@@ -85,8 +85,10 @@ public class FraisAcquisition {
 
 	//TODO Modifier la javadoc des getters et setters de la clases FraisAcquisition
 	
+	
 	//Getters
 	//==============================================================================
+	
 	/**
 	 * @return the amenagement
 	 */
@@ -209,6 +211,7 @@ public class FraisAcquisition {
 	
 	//Setters
 	//==============================================================================
+	
 	/**
 	 * @param amenagement the amenagement to set
 	 */

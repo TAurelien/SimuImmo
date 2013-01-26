@@ -9,9 +9,6 @@ public class Temp {
 	//Celles venant d'autres calculs
 	//...
 
-	
-	
-	
 	//Fonction pour lancer les tests
 	//==============================================================================
 	public static String aTester(){
@@ -19,13 +16,8 @@ public class Temp {
 		return CalculsAcquisition.initialiser().toString();
 	}
 	
-	
-	
 	//Fonctions à tester
 	//==============================================================================
 	
-
 	
-
-
 }

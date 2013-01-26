@@ -62,8 +62,10 @@ public class Emprunt {
 
 	//TODO Modifier la javadoc des getters et setters de la classe Emprunt
 
+	
 	//Getters
 	//==============================================================================
+	
 	/**
 	 * @return the capitalEmprunte
 	 */
@@ -134,9 +136,11 @@ public class Emprunt {
 		return tauxEndettement;
 	}
 
+	
 	//Setters
 	//==============================================================================
-		/**
+	
+	/**
 	 * @param capitalEmprunte the capitalEmprunte to set
 	 */
 	public void setCapitalEmprunte(double capitalEmprunte) {
@@ -205,6 +209,7 @@ public class Emprunt {
 	public void setTauxEndettement(double tauxEndettement) {
 		this.tauxEndettement = tauxEndettement;
 	}
+	
 	//==============================================================================
 	
 	//TODO Faire le toString() de la classe Emprunt 

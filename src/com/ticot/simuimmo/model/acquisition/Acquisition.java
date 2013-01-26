@@ -1,8 +1,5 @@
 package com.ticot.simuimmo.model.acquisition;
 
-import com.ticot.simuimmo.model.acquisition.Emprunt;
-import com.ticot.simuimmo.model.acquisition.FraisAcquisition;
-
 //TODO Modifier la javadoc de la classe Acquisition
 /**
  * @author Aurelien Ticot
@@ -19,7 +16,6 @@ public class Acquisition {
 	
 	//Constructeurs
 	//==============================================================================
-	
 	//Constructeur vide
 	/**
 	 * 
@@ -57,8 +53,10 @@ public class Acquisition {
 		return fraisAcquisition;
 	}
 	
+	
 	//Setters
 	//==============================================================================
+	
 	/**
 	 * @param Definit l'emprunt
 	 */
