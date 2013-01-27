@@ -11,12 +11,12 @@ public class Gestion {
 	
 	//Déclaration des variables
 	//==============================================================================
-	//La classe Gesetion se compose des 4 classes FraisAnnuels, FraisLocationAnnuelle
+	//La classe Gestion se compose des 4 classes ChargesAnnuelles, FraisLocationAnnuelle
 	//FraisLocationSaisonnière et Recette Locative
 	
 	// TODO Define the ENUM for the "Type de gestion"
 	private String typeGestion = "";
-	private FraisAnnuels fraisAnnuels;
+	private ChargesAnnuelles chargesAnnuelles;
 	private FraisLocationAnnuelle fraisLocationAnnuelle;
 	private FraisLocationSaisonniere fraisLocationSaisonniere;
 	private RecetteLocative recetteLocative;
@@ -41,13 +41,13 @@ public class Gestion {
 	 * @param fraisLocationSaisonniere
 	 * @param recetteLocative
 	 */
-	public Gestion(String typeGestion, FraisAnnuels fraisAnnuels,
+	public Gestion(String typeGestion, ChargesAnnuelles chargesAnnuelles,
 			FraisLocationAnnuelle fraisLocationAnnuelle,
 			FraisLocationSaisonniere fraisLocationSaisonniere,
 			RecetteLocative recetteLocative) {
 		super();
 		this.typeGestion = typeGestion;
-		this.fraisAnnuels = fraisAnnuels;
+		this.chargesAnnuelles = chargesAnnuelles;
 		this.fraisLocationAnnuelle = fraisLocationAnnuelle;
 		this.fraisLocationSaisonniere = fraisLocationSaisonniere;
 		this.recetteLocative = recetteLocative;
@@ -67,8 +67,8 @@ public class Gestion {
 	/**
 	 * @return Retourne les frais annuels
 	 */
-	public FraisAnnuels getFraisAnnuels() {
-		return fraisAnnuels;
+	public ChargesAnnuelles getChargesAnnuelles() {
+		return chargesAnnuelles;
 	}
 
 	/**
@@ -106,8 +106,8 @@ public class Gestion {
 	/**
 	 * @param Definit les frais annuels
 	 */
-	public void setFraisAnnuels(FraisAnnuels fraisAnnuels) {
-		this.fraisAnnuels = fraisAnnuels;
+	public void setChargesAnnuelles(ChargesAnnuelles chargesAnnuelles) {
+		this.chargesAnnuelles = chargesAnnuelles;
 	}
 	
 	/**
@@ -132,7 +132,22 @@ public class Gestion {
 		this.recetteLocative = recetteLocative;
 	}
 
+	// ==============================================================================
 
-	//==============================================================================
+	// TODO Faire le toString() de la classe Gestion
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Gestion ---------------------------" +
+				"\nLe type de gestion est " + typeGestion + 
+				"\n" + chargesAnnuelles +
+				"\n" + fraisLocationAnnuelle +
+				"\n" + fraisLocationSaisonniere +
+				"\n" + recetteLocative;
+	}
+
+	// TODO Faire le equal() de la classe FraisLocationSaisonniere	
 }
 

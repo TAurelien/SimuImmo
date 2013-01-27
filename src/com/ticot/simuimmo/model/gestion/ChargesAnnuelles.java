@@ -1,11 +1,11 @@
 package com.ticot.simuimmo.model.gestion;
 
-//TODO Modifier la javadoc de la classe FraisAnnuels
+//TODO Modifier la javadoc de la classe ChargesAnnuelles
 /**
  * @author Aurelien Ticot
  *
  */
-public class FraisAnnuels {
+public class ChargesAnnuelles {
 
 	//Déclaration des variables
 	//==============================================================================
@@ -24,7 +24,7 @@ public class FraisAnnuels {
 	/**
 	 * 
 	 */
-	public FraisAnnuels() {
+	public ChargesAnnuelles() {
 		super();
 	}
 
@@ -37,7 +37,7 @@ public class FraisAnnuels {
 	 * @param taxeHabitation
 	 * @param charges
 	 */
-	public FraisAnnuels(double chargesFixes, double taxeFonciere,
+	public ChargesAnnuelles(double chargesFixes, double taxeFonciere,
 			double assuranceLocation, double travauxAnnuels,
 			double taxeHabitation, double charges) {
 		super();
@@ -50,7 +50,7 @@ public class FraisAnnuels {
 	}
 
 	
-	//TODO Modifier la javadoc des getters et setters de la classe FraisAnnuels
+	//TODO Modifier la javadoc des getters et setters de la classe ChargesAnnuelles
 	
 	//Getters
 	//==============================================================================
@@ -159,13 +159,13 @@ public class FraisAnnuels {
 	
 	//==============================================================================
 	
-	//TODO Faire le toString() de la classe FraisAnnuels
+	//TODO Faire le toString() de la classe ChargesAnnuelles
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Frais Annuels ------------------------------------------" +
+		return "Charges annuelles ------------------------------------------" +
 				"\nLes charges fixes sont de " + chargesFixes +
 				"\nLa taxe foncière est de " + taxeFonciere +
 				"\nL'assurance habitation est de " + assuranceLocation	+ 
@@ -175,5 +175,5 @@ public class FraisAnnuels {
 				"\nLes charges annuelles réelles sont de " + chargesReel*/;
 	}	
 	
-	//TODO Faire le equal() de la classe FraisAnnuels
+	//TODO Faire le equal() de la classe ChargesAnnuelles
 }

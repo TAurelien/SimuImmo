@@ -28,7 +28,7 @@ public class FraisLocationSaisonniere {
 		super();
 	}
 
-	// Constructeur avec les valeurs utilisateurs
+	//Constructeur avec les valeurs utilisateurs
 	/**
 	 * @param fraisAccueil
 	 * @param fraisMenage
@@ -45,7 +45,7 @@ public class FraisLocationSaisonniere {
 	}
 
 	// TODO Modifier la javadoc des getters et setters de la classe
-	// FraisLocationSaisonniere
+	// XXX FraisLocationSaisonniere
 
 	// Getters
 	// ==============================================================================
@@ -184,7 +184,7 @@ public class FraisLocationSaisonniere {
 	 */
 	@Override
 	public String toString() {
-		return "Frais Annuels ------------------------------------------"
+		return "Frais location saisonnière ------------------------------------------"
 				+ "\nLes frais d'accueil sont de " + fraisAccueil
 				+ "\nLes charges de ménage sont de " + fraisMenage
 				+ "\nLes frais de gestion sont de " + fraisGestionSaisonnier

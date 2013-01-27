@@ -129,7 +129,7 @@ public class FraisLocationAnnuelle {
 	 */
 	@Override
 	public String toString() {
-		return "Frais Annuels ------------------------------------------" +
+		return "Frais Location annuels ------------------------------------------" +
 				"\nLes frais de gestion sont de " + fraisGestionLocation +
 				"\nLes charges de location sont de " + chargesLocation /*+
 				"\nL'assurance habitation est de " + gestionParAgence	+ 
