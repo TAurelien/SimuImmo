@@ -9,11 +9,11 @@ public class FraisLocationAnnuelle {
 
 	//Déclaration des variables
 	//==============================================================================
-	private double fraisGestionLocation = 0, chargesLocation;
+	private double fraisGestionLocation = 0, fraisLocation;
 	private boolean gestionParAgence = true;
 	
 	//Variables pour la prise en compte des valeurs réelles
-	private double fraisGestionLocationReel, chargesLocationReel;
+	private double fraisGestionLocationReel, fraisLocationReel;
 	//TODO Supprimer si les variables des valeurs réelles sont inutiles
 
 	
@@ -27,6 +27,27 @@ public class FraisLocationAnnuelle {
 		super();
 	}
 
+	//TODO Modifier les commentaires
+	//Constructeur avec les valeurs utilisateurs
+	/**
+	 * @param gestionParAgence
+	 */
+	public FraisLocationAnnuelle(boolean gestionParAgence) {
+		super();
+		this.gestionParAgence = gestionParAgence;
+	}
+	
+	//Constructeur avec les valeurs utilisateurs
+	/**
+	 * @param fraisGestionLocation
+	 * @param gestionParAgence
+	 */
+	public FraisLocationAnnuelle(double fraisGestionLocation, boolean gestionParAgence) {
+		super();
+		this.fraisGestionLocation = fraisGestionLocation;
+		this.gestionParAgence = gestionParAgence;
+	}
+	
 	//Constructeur avec les valeurs utilisateurs
 	/**
 	 * @param fraisGestionLocation
@@ -34,10 +55,10 @@ public class FraisLocationAnnuelle {
 	 * @param gestionParAgence
 	 */
 	public FraisLocationAnnuelle(double fraisGestionLocation,
-			double chargesLocation, boolean gestionParAgence) {
+			double fraisLocation, boolean gestionParAgence) {
 		super();
 		this.fraisGestionLocation = fraisGestionLocation;
-		this.chargesLocation = chargesLocation;
+		this.fraisLocation = fraisLocation;
 		this.gestionParAgence = gestionParAgence;
 	}
 
@@ -50,15 +71,15 @@ public class FraisLocationAnnuelle {
 	/**
 	 * @return the chargesLocation
 	 */
-	public double getChargesLocation() {
-		return chargesLocation;
+	public double getFraisLocation() {
+		return fraisLocation;
 	}
 
 	/**
 	 * @return the chargesLocationReel
 	 */
-	public double getChargesLocationReel() {
-		return chargesLocationReel;
+	public double getFraisLocationReel() {
+		return fraisLocationReel;
 	}
 
 	/**
@@ -89,15 +110,15 @@ public class FraisLocationAnnuelle {
 	/**
 	 * @param chargesLocation the chargesLocation to set
 	 */
-	public void setChargesLocation(double chargesLocation) {
-		this.chargesLocation = chargesLocation;
+	public void setFraisLocation(double fraisLocation) {
+		this.fraisLocation = fraisLocation;
 	}
 
 	/**
 	 * @param chargesLocationReel the chargesLocationReel to set
 	 */
-	public void setChargesLocationReel(double chargesLocationReel) {
-		this.chargesLocationReel = chargesLocationReel;
+	public void setFraisLocationReel(double fraisLocationReel) {
+		this.fraisLocationReel = fraisLocationReel;
 	}
 
 	/**
@@ -129,9 +150,9 @@ public class FraisLocationAnnuelle {
 	 */
 	@Override
 	public String toString() {
-		return "Frais Location annuels ------------------------------------------" +
+		return "Frais Location annuels ----------------------------" +
 				"\nLes frais de gestion sont de " + fraisGestionLocation +
-				"\nLes charges de location sont de " + chargesLocation /*+
+				"\nLes charges de location sont de " + fraisLocation /*+
 				"\nL'assurance habitation est de " + gestionParAgence	+ 
 				"\nLes frais de travaux annuels sont de " + fraisGestionLocationReel +
 				"\nLa taxe d'habitation est de "	+ chargesLocationReel */;	

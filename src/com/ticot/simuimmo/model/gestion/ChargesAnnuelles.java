@@ -35,6 +35,25 @@ public class ChargesAnnuelles {
 	 * @param assuranceLocation
 	 * @param travauxAnnuels
 	 * @param taxeHabitation
+	 */
+	public ChargesAnnuelles(double chargesFixes, double taxeFonciere,
+			double assuranceLocation, double travauxAnnuels,
+			double taxeHabitation) {
+		super();
+		this.chargesFixes = chargesFixes;
+		this.taxeFonciere = taxeFonciere;
+		this.assuranceLocation = assuranceLocation;
+		this.travauxAnnuels = travauxAnnuels;
+		this.taxeHabitation = taxeHabitation;
+	}
+	
+	//Constructeur avec les valeurs utilisateurs
+	/**
+	 * @param chargesFixes
+	 * @param taxeFonciere
+	 * @param assuranceLocation
+	 * @param travauxAnnuels
+	 * @param taxeHabitation
 	 * @param charges
 	 */
 	public ChargesAnnuelles(double chargesFixes, double taxeFonciere,
@@ -165,7 +184,7 @@ public class ChargesAnnuelles {
 	 */
 	@Override
 	public String toString() {
-		return "Charges annuelles ------------------------------------------" +
+		return "Charges annuelles ---------------------------------" +
 				"\nLes charges fixes sont de " + chargesFixes +
 				"\nLa taxe foncière est de " + taxeFonciere +
 				"\nL'assurance habitation est de " + assuranceLocation	+ 

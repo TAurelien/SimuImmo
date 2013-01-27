@@ -29,20 +29,15 @@ public class RecetteLocative {
 	 * @param loyerNu
 	 * @param loyerMeuble
 	 * @param loyerNuit
-	 * @param loyerSaisonnier
-	 * @param recetteLocative
 	 * @param vacLocAnnuelle
 	 * @param vacLocSaisonnier
 	 */
-	public RecetteLocative(double loyerNu, double loyerMeuble,
-			double loyerNuit, double loyerSaisonnier, double recetteLocative,
+	public RecetteLocative(double loyerNu, double loyerMeuble, double loyerNuit,
 			int vacLocAnnuelle, int vacLocSaisonnier) {
 		super();
 		this.loyerNu = loyerNu;
 		this.loyerMeuble = loyerMeuble;
 		this.loyerNuit = loyerNuit;
-		this.loyerSaisonnier = loyerSaisonnier;
-		this.recetteLocative = recetteLocative;
 		this.vacLocAnnuelle = vacLocAnnuelle;
 		this.vacLocSaisonnier = vacLocSaisonnier;
 	}
@@ -162,14 +157,14 @@ public class RecetteLocative {
 	 */
 	@Override
 	public String toString() {
-		return "Recette locative ------------------------------------------"
+		return "Recette locative ------------------------------------"
 		+ "\nLe loyer en location nue est de " + loyerNu
-		+ "\nLe loyer en meublé est de " + loyerMeuble
+		+ "\nLe loyer en location meublé est de " + loyerMeuble
 		+ "\nLe loyer à la nuité est de " + loyerNuit
-		+ "\nLe loyer mensuel en saisonnier est de"	+ loyerSaisonnier
-		+ "\nLa recette locative mensuelle est de"	+ recetteLocative
-		+ "\nLa vacance locative annuelle est de"	+ vacLocAnnuelle + " mois"
-		+ "\nLa vacance locative mensuelle est de"	+ vacLocSaisonnier + " nuits";
+		+ "\nLe loyer mensuel en saisonnier est de " + loyerSaisonnier
+		+ "\nLa recette locative annuelle est de "	+ recetteLocative
+		+ "\nLa vacance locative annuelle est de "	+ vacLocAnnuelle + " mois"
+		+ "\nLa vacance locative mensuelle, en saisonnier est de "	+ vacLocSaisonnier + " nuits";
 	}
 
 	// TODO Faire le equal() de la classe RecetteLocative	

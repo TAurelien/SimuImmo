@@ -6,9 +6,13 @@ import com.ticot.simuimmo.model.acquisition.Acquisition;
 import com.ticot.simuimmo.model.acquisition.Emprunt;
 import com.ticot.simuimmo.model.acquisition.FraisAcquisition;
 
+/**
+ * @author Aurelien Ticot
+ *
+ */
 public class CalculsAcquisition {
 	
-	//Fonctions pour la partie Frais acquisition
+	//Fonctions pour la la classe Acquisition
 	//==============================================================================
 	//Fonction pour lancer les calculs de frais d'acquisition et d'emprunt
 	public static Acquisition initialiser(){

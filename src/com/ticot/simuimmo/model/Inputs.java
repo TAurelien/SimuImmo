@@ -26,17 +26,17 @@ public class Inputs {
 	public static double tauxAssuranceCredit = 0;			//Taux de l'assurance de credit
 	
 	//Partie Gestion remplies par l'utilisateur
-	public static String typeGestion = "";					//Choix du type de gestion du bien (location nu, meublé, saisonnière ou résidence principale)
-	public static double loyerNu = 0;						//Estimation du loyer mensuel en location nu
-	public static double loyerMeuble = 0;					//Estimation du loyer mensuel en location meublé
-	public static double loyerNuit = 0;						//Estimation du loyer à la nuité en location saisonnière
-	public static int vacLocAnnuelle = 0;					//En mois, estimation de la vacance locative annuelle pour location à l'année (nu ou meublé)
-	public static int vacLocSaisonnier = 0;					//En nuits par mois, estimation de la vacance locative pour la location saisonnière
-	public static double chargesFixes = 0;					//Estimation des charges fixes de copropriétés, ...
-	public static double taxeFonciere = 0;					//Estimation de la taxe foncière
-	public static double assuranceLocation = 0;				//Cout de l'assurance immobilière (assurance habitation, loyer impayé, ...) 
+	public static int typeGestion = 1;					//Choix du type de gestion du bien (location nu - 0, meublé - 1, saisonnière - 2 ou résidence principale - 3)
+	public static double loyerNu = 850;						//Estimation du loyer mensuel en location nu
+	public static double loyerMeuble = 1150;					//Estimation du loyer mensuel en location meublé
+	public static double loyerNuit = 100;						//Estimation du loyer à la nuité en location saisonnière
+	public static int vacLocAnnuelle = 1;					//En mois, estimation de la vacance locative annuelle pour location à l'année (nu ou meublé)
+	public static int vacLocSaisonnier = 10;					//En nuits par mois, estimation de la vacance locative pour la location saisonnière
+	public static double chargesFixes = 1176;					//Estimation des charges fixes de copropriétés, ...
+	public static double taxeFonciere = 300;					//Estimation de la taxe foncière
+	public static double assuranceLocation = 60;				//Cout de l'assurance immobilière (assurance habitation, loyer impayé, ...) 
 	public static double travauxAnnuels = 0;				//Estimation du cout des éventuels travaux par an
-	public static double taxeHabitation = 0;				//Estimation de la taxe d'habitation
+	public static double taxeHabitation = 300;				//Estimation de la taxe d'habitation
 	public static boolean gestionParAgence = true;			//Choix de la gestion de la location par une agence ou non
 	//Partie Gestion estimés mais l'utilisateur à la possibilité de les remplir
 	public static double charges = 0;						//Charges annuelles du bien
@@ -45,7 +45,7 @@ public class Inputs {
 	public static double fraisAccueil = 0;					//Frais d'accueil annuels pour la gestion en saisonnier 
 	public static double fraisMenage = 0;					//Frais de menage annuels pour la gestion en saisonnier
 	public static double fraisGestionSaisonnier = 0;		//Frais de gestion annuels pour la gestion en saisonnier
-	public static double chargesLocationSaisonniere = 0;	//Charges annuelles pour la location saisonnière
+	public static double fraisLocationSaisonniere = 0;	//Charges annuelles pour la location saisonnière
 	
 	//Partie Imposition remplies par l'utilisateur
 	public static double tauxMarginal = 0;					//Tranche marginale d'imposition

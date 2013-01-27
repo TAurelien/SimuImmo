@@ -13,7 +13,9 @@ public class Temp {
 	//==============================================================================
 	public static String aTester(){
 		
-		return CalculsAcquisition.initialiser().toString();
+		
+		return //CalculsAcquisition.initialiser().toString() +
+				CalculsGestion.initialiser().toString();
 	}
 	
 	//Fonctions à tester

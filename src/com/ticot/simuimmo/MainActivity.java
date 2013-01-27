@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
 	//Bouton de test
 	//==============================================================================
 	public void onClick (View v){
+		/*
 		Inputs.prixFAI = Double.valueOf(
 				((EditText)findViewById(R.id.valuePrixFAI)).getText().toString());
 		Inputs.travaux = Double.valueOf(
@@ -43,7 +44,7 @@ public class MainActivity extends Activity {
 				((EditText)findViewById(R.id.valueApport)).getText().toString()); 
 		Inputs.autresFrais = Double.valueOf(
 				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
-		
+		*/
 		TextView tv = (TextView) findViewById(R.id.text_result);
 		tv.setText(Temp.aTester());		
 	}

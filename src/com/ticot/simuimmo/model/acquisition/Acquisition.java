@@ -80,7 +80,7 @@ public class Acquisition {
 	 */
 	@Override
 	public String toString() {
-		return fraisAcquisition + "\n" + emprunt;
+		return fraisAcquisition + "\n\n" + emprunt;
 	}
 	
 	//TODO Faire le equal() de la classe Acquisiton

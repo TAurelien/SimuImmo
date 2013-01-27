@@ -10,11 +10,11 @@ public class FraisLocationSaisonniere {
 	// Déclaration des variables
 	// ==============================================================================
 	private double fraisAccueil = 0, fraisMenage = 0,
-			fraisGestionSaisonnier = 0, chargesLocationSaisonniere = 0;
+			fraisGestionSaisonnier = 0, fraisLocationSaisonniere = 0;
 
 	// Variables pour la prise en compte des valeurs réelles
 	private double fraisAccueilReel, fraisMenageReel,
-			fraisGestionSaisonnierReel, chargesLocationSaisonniereReel;
+			fraisGestionSaisonnierReel, fraisLocationSaisonniereReel;
 
 	// TODO Supprimer si les variables des valeurs réelles sont inutiles
 
@@ -33,15 +33,15 @@ public class FraisLocationSaisonniere {
 	 * @param fraisAccueil
 	 * @param fraisMenage
 	 * @param fraisGestionSaisonnier
-	 * @param chargesLocationSaisonniere
+	 * @param fraisLocationSaisonniere
 	 */
 	public FraisLocationSaisonniere(double fraisAccueil, double fraisMenage,
-			double fraisGestionSaisonnier, double chargesLocationSaisonniere) {
+			double fraisGestionSaisonnier, double fraisLocationSaisonniere) {
 		super();
 		this.fraisAccueil = fraisAccueil;
 		this.fraisMenage = fraisMenage;
 		this.fraisGestionSaisonnier = fraisGestionSaisonnier;
-		this.chargesLocationSaisonniere = chargesLocationSaisonniere;
+		this.fraisLocationSaisonniere = fraisLocationSaisonniere;
 	}
 
 	// TODO Modifier la javadoc des getters et setters de la classe
@@ -53,15 +53,15 @@ public class FraisLocationSaisonniere {
 	/**
 	 * @return the chargesLocationSaisonniere
 	 */
-	public double getChargesLocationSaisonniere() {
-		return chargesLocationSaisonniere;
+	public double getFraisLocationSaisonniere() {
+		return fraisLocationSaisonniere;
 	}
 
 	/**
 	 * @return the chargesLocationSaisonniereReel
 	 */
-	public double getChargesLocationSaisonniereReel() {
-		return chargesLocationSaisonniereReel;
+	public double getFraisLocationSaisonniereReel() {
+		return fraisLocationSaisonniereReel;
 	}
 
 	/**
@@ -110,20 +110,20 @@ public class FraisLocationSaisonniere {
 	// ==============================================================================
 
 	/**
-	 * @param chargesLocationSaisonniere
-	 *            the chargesLocationSaisonniere to set
+	 * @param fraisLocationSaisonniere
+	 *            the fraisLocationSaisonniere to set
 	 */
-	public void setChargesLocationSaisonniere(double chargesLocationSaisonniere) {
-		this.chargesLocationSaisonniere = chargesLocationSaisonniere;
+	public void setFraisLocationSaisonniere(double fraisLocationSaisonniere) {
+		this.fraisLocationSaisonniere = fraisLocationSaisonniere;
 	}
 
 	/**
-	 * @param chargesLocationSaisonniereReel
-	 *            the chargesLocationSaisonniereReel to set
+	 * @param fraisLocationSaisonniereReel
+	 *            the fraisLocationSaisonniereReel to set
 	 */
-	public void setChargesLocationSaisonniereReel(
-			double chargesLocationSaisonniereReel) {
-		this.chargesLocationSaisonniereReel = chargesLocationSaisonniereReel;
+	public void setFraisLocationSaisonniereReel(
+			double fraisLocationSaisonniereReel) {
+		this.fraisLocationSaisonniereReel = fraisLocationSaisonniereReel;
 	}
 
 	/**
@@ -189,7 +189,7 @@ public class FraisLocationSaisonniere {
 				+ "\nLes charges de ménage sont de " + fraisMenage
 				+ "\nLes frais de gestion sont de " + fraisGestionSaisonnier
 				+ "\nLe total des frais de location saisonnière sont de "
-				+ chargesLocationSaisonniere;
+				+ fraisLocationSaisonniere;
 	}
 
 	// TODO Faire le equal() de la classe FraisLocationSaisonniere

@@ -15,7 +15,8 @@ public class Gestion {
 	//FraisLocationSaisonnière et Recette Locative
 	
 	// TODO Define the ENUM for the "Type de gestion"
-	private String typeGestion = "";
+	//Pour le moment le type de gestion est un "int"
+	private int typeGestion;
 	private ChargesAnnuelles chargesAnnuelles;
 	private FraisLocationAnnuelle fraisLocationAnnuelle;
 	private FraisLocationSaisonniere fraisLocationSaisonniere;
@@ -41,7 +42,7 @@ public class Gestion {
 	 * @param fraisLocationSaisonniere
 	 * @param recetteLocative
 	 */
-	public Gestion(String typeGestion, ChargesAnnuelles chargesAnnuelles,
+	public Gestion(int typeGestion, ChargesAnnuelles chargesAnnuelles,
 			FraisLocationAnnuelle fraisLocationAnnuelle,
 			FraisLocationSaisonniere fraisLocationSaisonniere,
 			RecetteLocative recetteLocative) {
@@ -60,7 +61,7 @@ public class Gestion {
 	/**
 	 * @return the typeGestion
 	 */
-	public String getTypeGestion() {
+	public int getTypeGestion() {
 		return typeGestion;
 	}
 	
@@ -99,7 +100,7 @@ public class Gestion {
 	/**
 	 * @param typeGestion the typeGestion to set
 	 */
-	public void setTypeGestion(String typeGestion) {
+	public void setTypeGestion(int typeGestion) {
 		this.typeGestion = typeGestion;
 	}
 	
@@ -142,10 +143,10 @@ public class Gestion {
 	public String toString() {
 		return "Gestion ---------------------------" +
 				"\nLe type de gestion est " + typeGestion + 
-				"\n" + chargesAnnuelles +
-				"\n" + fraisLocationAnnuelle +
-				"\n" + fraisLocationSaisonniere +
-				"\n" + recetteLocative;
+				"\n\n" + chargesAnnuelles +
+				"\n\n" + fraisLocationAnnuelle +
+				"\n\n" + fraisLocationSaisonniere +
+				"\n\n" + recetteLocative;
 	}
 
 	// TODO Faire le equal() de la classe FraisLocationSaisonniere	
