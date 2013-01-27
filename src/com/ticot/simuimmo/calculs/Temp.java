@@ -14,7 +14,7 @@ public class Temp {
 	public static String aTester(){
 		
 		
-		return //CalculsAcquisition.initialiser().toString() +
+		return CalculsAcquisition.initialiser().toString() + "\n\n" +
 				CalculsGestion.initialiser().toString();
 	}
 	

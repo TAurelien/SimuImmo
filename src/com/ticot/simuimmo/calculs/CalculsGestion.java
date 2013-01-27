@@ -21,7 +21,7 @@ public class CalculsGestion {
 	public static Gestion initialiser(){
 		ChargesAnnuelles chargesAnnuelles = calculerChargesAnnuelles();
 		FraisLocationAnnuelle fraisLocationAnnuelle = calculerFraisLocationAnnuelle();
-		FraisLocationSaisonniere fraisLocationSaisonniere = null;
+		FraisLocationSaisonniere fraisLocationSaisonniere = calculerFraisLocationSaisonniere();
 		RecetteLocative recetteLocative = calculerRecetteLocative();
 		return new Gestion(Inputs.typeGestion, chargesAnnuelles, fraisLocationAnnuelle,
 				fraisLocationSaisonniere, recetteLocative);
@@ -56,7 +56,17 @@ public class CalculsGestion {
 	}
 	
 	//Fonction pour calculer les frais de location saisonnière
-	//public ..
+	public static FraisLocationSaisonniere calculerFraisLocationSaisonniere(){
+		FraisLocationSaisonniere fls = new FraisLocationSaisonniere();
+		fls.setFraisAccueil(calculFraisAccueil(Inputs.vacLocSaisonnier));
+		fls.setFraisMenage(calculFraisMenage(Inputs.vacLocSaisonnier));
+		fls.setFraisGestionSaisonnier(calculFraisGestionSaisonnier());
+		fls.setFraisLocationSaisonniere(calculFraisLocationSaisonier(
+				fls.getFraisAccueil(),
+				fls.getFraisMenage(),
+				fls.getFraisGestionSaisonnier()));
+		return fls;
+	}
 	
 	//==============================================================================
 	
@@ -131,17 +141,36 @@ public class CalculsGestion {
 		double cla = 0;
 		if (typeGestion == 0 || typeGestion == 1)
 				cla = fraisGestionAgence - taxeHabitation;
-		return cla; 
+		return cla;
 	}
-	
 	
 	//==============================================================================
 	
 	
 	//Fonctions pour la partie Charges de location saisonnière
 	//==============================================================================
-	//Calcul 
+	//Calcul des frais d'accueil
+	public static double calculFraisAccueil(int vacanceLoc){
+		return Settings.moisParAn * (Settings.nuitsParMois - vacanceLoc) / Settings.dureeSejourSaisonnier * Settings.fraisAccueilSaisonnier;
+	}
 	
+	//Calcul des frais de ménage
+	public static double calculFraisMenage(int vacanceLoc){
+		return Settings.moisParAn * (Settings.nuitsParMois - vacanceLoc) / Settings.dureeSejourSaisonnier * Settings.fraisMenageSaisonnier;
+	}	
+	
+	//Calcul des frais de gestion saisonnière
+	public static double calculFraisGestionSaisonnier(){
+		return Settings.moisParAn * Settings.fraisGestionMensuel;
+	}
+	
+	//Calcul des frais de location saisonnier
+	public static double calculFraisLocationSaisonier(double fraisAccueil, double fraisMenage, double fraisGestionSaisonnier){
+		double fls = 0;
+		if (Inputs.typeGestion == 2)
+			fls = fraisAccueil + fraisMenage + fraisGestionSaisonnier;
+		return fls;
+	}
 	
 	//==============================================================================	
 	
