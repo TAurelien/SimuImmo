@@ -27,6 +27,12 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	//A faire dans la MainActivity
+	//TODO Prendre en compte les champs obligatoires
+	//TODO Faire le collapse des champs moins importants
+	//TODO Prendre en compte les valeurs non-remplies et leur assigner une valeur par défaut = 0
+	
+	
 	//Bouton de test
 	//==============================================================================
 	public void onClick (View v){
