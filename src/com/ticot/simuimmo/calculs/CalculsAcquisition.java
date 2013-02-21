@@ -23,9 +23,10 @@ public class CalculsAcquisition {
 	
 	//Fonction pour calculer les frais acquisition
 	public static FraisAcquisition calculerFraisAcquisitions(){
-		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
-		fa.setNetVendeur(calculNetVendeur(fa.getPrixFAI(), Settings.pourcentageFraisAgence));
-		fa.setFraisAgence(calculFraisAgence(fa.getPrixFAI(), fa.getNetVendeur()));
+		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.agence, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
+		fa.setNetVendeur(calculNetVendeur(Inputs.prixFAI,fa.getAgence(), Settings.pourcentageFraisAgence));
+		fa.setFraisAgence(calculFraisAgence(fa.getNetVendeur(),fa.getAgence(), Settings.pourcentageFraisAgence));
+		fa.setPrixFAI(calculPrixFAI(fa.getNetVendeur(), fa.getFraisAgence()));
 		fa.setFraisNotaire(calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
 		fa.setHonoraireConseil(calculHonorairesConseil(fa.getConseil(), fa.getNetVendeur(),fa.getTravaux(), fa.getAmenagement(),Settings.pourcentageHonorairesConseil));
 		fa.setCoutTotal(calculCoutTotal(fa.getNetVendeur(), fa.getFraisAgence(),fa.getFraisNotaire(), fa.getTravaux(),fa.getAmenagement(), fa.getHonoraireConseil(),fa.getAutresFrais()));
@@ -57,15 +58,26 @@ public class CalculsAcquisition {
 	}
 	
 	//Calcul du Net vendeur
-	public static double  calculNetVendeur(double prixFAI, double pourcentageFraisAgence){
-		return  Math.round(prixFAI/(1 + pourcentageFraisAgence)/100)*100;
+	public static double  calculNetVendeur(double prixFAI, boolean agence, double pourcentageFraisAgence){
+		if (agence)
+			return  Math.round(prixFAI/(1 + pourcentageFraisAgence)/100)*100;
+		else
+			return prixFAI;
 	}
 
 	//Calcul des frais d'agence
-	public static double  calculFraisAgence(double prixFAI, double netVendeur){
-		return  prixFAI - netVendeur;
+	public static double  calculFraisAgence(double netVendeur, boolean agence, double pourcentageFraisAgence){
+		if (agence)
+			return  netVendeur * pourcentageFraisAgence;
+		else
+			return 0;
 	}
 
+	//Calcul des prix FAI
+	public static double  calculPrixFAI(double netVendeur, double fraisAgence){
+			return  netVendeur + fraisAgence;
+	}
+	
 	//Calcul des frais de notaire
 	public static double  calculFraisNotaire(double netVendeur, double pourcentageFraisNotaire){
 		return  Math.round(netVendeur * pourcentageFraisNotaire/10)*10;

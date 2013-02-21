@@ -10,6 +10,7 @@ public class Inputs {
 	//XXX Parmi toutes les valeurs du formulaires, certaines doivent être persistantes, donc être conservé en settings cachés
 	//Partie Acquisition remplies par l'utilisateur
 	public static double prixFAI = 0;						//Prix du bien, frais d'agence inclus
+	public static boolean agence = false;					//Choice to buy through an estate agency 
 	public static double travaux = 0;						//Cout des travaux de renovation
 	public static double amenagement = 0;					//Cout de l'amenagement pour une location meublé
 	public static boolean conseil = false;					//Choix de passer par un société de conseil pour la recherche, les travaux et l'amenagement

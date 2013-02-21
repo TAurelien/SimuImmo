@@ -1,5 +1,7 @@
 package com.ticot.simuimmo;
 
+import java.io.InvalidClassException;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -39,6 +41,10 @@ public class MainActivity extends Activity {
 		
 		Inputs.prixFAI = Double.valueOf(
 				((EditText)findViewById(R.id.valuePrixFAI)).getText().toString());
+		//Inputs.prixFAI = getDoubleValue(R.id.valuePrixFAI);
+		//System.out.println("Prix FAI = " + Inputs.prixFAI);
+		
+		Inputs.agence = ((CheckBox)findViewById(R.id.valueAgence)).isChecked();
 		Inputs.travaux = Double.valueOf(
 				((EditText)findViewById(R.id.valueTravaux)).getText().toString());
 		Inputs.dureeCredit = Integer.valueOf(
@@ -54,4 +60,10 @@ public class MainActivity extends Activity {
 		TextView tv = (TextView) findViewById(R.id.text_result);
 		tv.setText(Temp.aTester());		
 	}
+	
+	/*
+	private double getDoubleValue(int id){
+		return Double.valueOf(((EditText)findViewById(id)).getText().toString());
+	}
+	*/
 }

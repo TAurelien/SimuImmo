@@ -12,7 +12,7 @@ public class FraisAcquisition {
 	private double prixFAI = 0, netVendeur = 0, fraisAgence = 0, fraisNotaire = 0,
 			travaux = 0, amenagement = 0, honoraireConseil = 0, autresFrais = 0,
 			coutTotal = 0, apport = 0, sequestre = 0;
-	private boolean conseil = false;
+	private boolean agence = false, conseil = false;
 	
 	//variables pour la prise en compte des valeurs réelles
 	private double netVendeurReel, fraisAgenceReel, fraisNotaireReel,
@@ -33,16 +33,18 @@ public class FraisAcquisition {
 	//Constructeur avec les valeurs utilisateurs
 	/**
 	 * @param prixFAI
+	 * @param agence
 	 * @param travaux
 	 * @param amenagement
 	 * @param autresFrais
 	 * @param apport
 	 * @param conseil
 	 */
-	public FraisAcquisition(double prixFAI, double travaux, double amenagement,
+	public FraisAcquisition(double prixFAI, boolean agence, double travaux, double amenagement,
 			double autresFrais, double apport, boolean conseil) {
 		super();
 		this.prixFAI = prixFAI;
+		this.agence = agence;
 		this.travaux = travaux;
 		this.amenagement = amenagement;
 		this.autresFrais = autresFrais;
@@ -52,6 +54,7 @@ public class FraisAcquisition {
 	//Constructeur avec toutes les variables sauf les "Reel"
 	/**
 	 * @param prixFAI
+	 * @param agence
 	 * @param netVendeur
 	 * @param fraisAgence
 	 * @param fraisNotaire
@@ -64,12 +67,13 @@ public class FraisAcquisition {
 	 * @param apport
 	 * @param sequestre
 	 */
-	public FraisAcquisition(double prixFAI, double netVendeur,
+	public FraisAcquisition(double prixFAI, boolean agence, double netVendeur,
 			double fraisAgence, double fraisNotaire, double travaux,
 			double amenagement, boolean conseil, double honoraireConseil, double autresFrais,
 			double coutTotal, double apport, double sequestre) {
 		super();
 		this.prixFAI = prixFAI;
+		this.agence = agence;
 		this.netVendeur = netVendeur;
 		this.fraisAgence = fraisAgence;
 		this.fraisNotaire = fraisNotaire;
@@ -88,6 +92,13 @@ public class FraisAcquisition {
 	
 	//Getters
 	//==============================================================================
+
+	/**
+	 * @return the agence
+	 */
+	public boolean getAgence() {
+		return agence;
+	}
 	
 	/**
 	 * @return the amenagement
@@ -211,6 +222,13 @@ public class FraisAcquisition {
 	
 	//Setters
 	//==============================================================================
+
+	/**
+	 * @param agence the agence to set
+	 */
+	public void setAgence(boolean agence) {
+		this.agence = agence;
+	}
 	
 	/**
 	 * @param amenagement the amenagement to set
