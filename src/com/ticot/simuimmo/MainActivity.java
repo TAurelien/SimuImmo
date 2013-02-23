@@ -1,7 +1,5 @@
 package com.ticot.simuimmo;
 
-import java.io.InvalidClassException;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -11,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import com.ticot.simuimmo.calculs.Temp;
 import com.ticot.simuimmo.model.Inputs;
+import com.ticot.simuimmo.model.acquisition.Acquisition;
 
 public class MainActivity extends Activity {
 
@@ -58,7 +57,17 @@ public class MainActivity extends Activity {
 				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
 	
 		TextView tv = (TextView) findViewById(R.id.text_result);
-		tv.setText(Temp.aTester());		
+		tv.setText(Temp.aTester());
+		
+		Acquisition ca = Temp.Test2();
+		((TextView) findViewById(R.id.valueNetVendeur)).setText(
+				String.valueOf((ca.getFraisAcquisition()).getNetVendeur()));
+		((TextView) findViewById(R.id.valueFraisAgence)).setText(
+				String.valueOf((ca.getFraisAcquisition()).getFraisAgence()));
+		((TextView) findViewById(R.id.valueFraisNotaire)).setText(
+				String.valueOf((ca.getFraisAcquisition()).getFraisNotaire()));
+		((TextView) findViewById(R.id.valueHonoraireConseil)).setText(
+				String.valueOf((ca.getFraisAcquisition()).getHonoraireConseil()));
 	}
 	
 	/*
