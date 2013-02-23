@@ -13,15 +13,16 @@
 	    <LinearLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:padding="4dp"
+	        android:padding="16dp"
 	        android:orientation="vertical" >
 	        
 	        <TextView
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="Acquisition"
-	            android:textSize="20sp"
-	            android:textAlignment="center" />
+	            android:textSize="22sp"
+	            android:textAlignment="center"
+	            android:textColor="#33B5E5" />
 	
 	        <LinearLayout
 	            android:id="@+id/LayoutPrixFAI"
@@ -31,21 +32,24 @@
 	
 	            <TextView
 	                android:id="@+id/tvPrixFAI"
-	                android:layout_width="125dp"
+	                android:layout_width="157dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valuePrixFAI"
-	                android:text="Prix FAI" />
+	                android:text="Prix FAI"
+	                android:textSize="18sp" />
 	
 	            <EditText
 	                android:id="@+id/valuePrixFAI"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
+	                android:text="130000"
+	                android:textSize="18sp"
 	                android:inputType="numberDecimal" />
 	            
 	            <View
 	                android:layout_width="32dp"
-	                android:layout_height="match_parent" />
+	                android:layout_height="32dp" />
 	        </LinearLayout>
 	                
 	        <LinearLayout
@@ -56,17 +60,20 @@
 	
 	            <TextView
 	                android:id="@+id/tvNetVendeur"
-	                android:layout_width="125dp"
+	                android:layout_width="157dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueNetVendeur"
-	                android:text="Net vendeur" />
+	                android:text="Net vendeur"
+	                android:textSize="18sp" />
 	
 	            <TextView
 	                android:id="@+id/valueNetVendeur"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
-	                android:hint="0€" />
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
 	            
 		        <CheckBox
 		            android:id="@+id/ReelNetVendeur"
@@ -86,7 +93,8 @@
 	                android:layout_width="125dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueFraisAgence"
-	                android:text="Frais agence" />
+	                android:text="Frais agence"
+	                android:textSize="18sp" />
 	            
 	            <CheckBox
 	                android:id="@+id/valueAgence"
@@ -99,7 +107,9 @@
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
-	                android:hint="0€" />
+	                android:paddingLeft="12dp"
+	                android:hint="0"
+	                android:textSize="18sp" />
 	            
 		        <CheckBox
 		            android:id="@+id/ReelFraisAgence"
@@ -116,17 +126,20 @@
 	
 	            <TextView
 	                android:id="@+id/tvFraisNotaire"
-	                android:layout_width="125dp"
+	                android:layout_width="157dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueFraisNotaire"
-	                android:text="Frais notaire" />
+	                android:text="Frais notaire"
+	                android:textSize="18sp" />
 	
 	            <TextView
 	                android:id="@+id/valueFraisNotaire"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
-	                android:hint="0€" />
+	                android:paddingLeft="12dp"
+	                android:hint="0"
+	                android:textSize="18sp" />
 	            
 		        <CheckBox
 		            android:id="@+id/ReelFraisNotaire"
@@ -143,16 +156,19 @@
 	
 	            <TextView
 	                android:id="@+id/tvTravaux"
-	                android:layout_width="125dp"
+	                android:layout_width="157dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueTravaux"
-	                android:text="Travaux" />
+	                android:text="Travaux"
+	                android:textSize="18sp" />
 	
 	            <EditText
 	                android:id="@+id/valueTravaux"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
+	                android:text="20000"
+	                android:textSize="18sp"
 	                android:inputType="numberDecimal" />
 	
 	            <View
@@ -168,16 +184,19 @@
 	
 	            <TextView
 	                android:id="@+id/tvAmenagement"
-	                android:layout_width="125dp"
+	                android:layout_width="157dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueAmenagement"
-	                android:text="Amenagement" />
+	                android:text="Amenagement"
+	                android:textSize="18sp" />
 	
 	            <EditText
 	                android:id="@+id/valueAmenagement"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
+	                android:text="4000"
+	                android:textSize="18sp"
 	                android:inputType="numberDecimal" />
 	
 	            <View
@@ -196,7 +215,8 @@
 	                android:layout_width="125dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueHonoraireConseil"
-	                android:text="Conseil" />
+	                android:text="Conseil"
+	                android:textSize="18sp" />
 	
 		        <CheckBox
 		            android:id="@+id/valueConseil"
@@ -209,7 +229,9 @@
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
-	                android:hint="0€" />
+	                android:paddingLeft="12dp"
+	                android:hint="0"
+	                android:textSize="18sp" />
 	            
 		        <CheckBox
 		            android:id="@+id/ReelHonoraireConseil"
@@ -226,16 +248,19 @@
 	
 	            <TextView
 	                android:id="@+id/tvAutresFrais"
-	                android:layout_width="125dp"
+	                android:layout_width="157dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueAutresFrais"
-	                android:text="Autres frais" />
+	                android:text="Autres frais"
+	                android:textSize="18sp" />
 	
 	            <EditText
 	                android:id="@+id/valueAutresFrais"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
+	                android:text="2000"
+	                android:textSize="18sp"
 	                android:inputType="numberDecimal" />
 	            
 	            <View
@@ -251,16 +276,19 @@
 	
 	            <TextView
 	                android:id="@+id/tvApport"
-	                android:layout_width="125dp"
+	                android:layout_width="157dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueApport"
-	                android:text="Apport" />
+	                android:text="Apport"
+	                android:textSize="18sp" />
 	
 	            <EditText
 	                android:id="@+id/valueApport"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
+	                android:text="10000"
+	                android:textSize="18sp"
 	                android:inputType="numberDecimal" />
 	
 	            <View
@@ -272,8 +300,9 @@
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="Credit"
-	            android:textSize="20sp"
-	            android:textAlignment="center" />
+	            android:textSize="22sp"
+	            android:textAlignment="center"
+	            android:textColor="#33B5E5" />
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutDureeCredit"
@@ -283,16 +312,19 @@
 	
 	            <TextView
 	                android:id="@+id/tvDureeCredit"
-	                android:layout_width="125dp"
+	                android:layout_width="157dp"
 	                android:layout_height="wrap_content"
 	                android:labelFor="@+id/valueDureeCredit"
-	                android:text="Durée credit" />
+	                android:text="Durée credit"
+	                android:textSize="18sp" />
 	
 	            <EditText
 	                android:id="@+id/valueDureeCredit"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
+	                android:text="25"
+	                android:textSize="18sp"
 	                android:inputType="numberDecimal" />
 	
 	            <View
@@ -300,23 +332,34 @@
 	                android:layout_height="match_parent" />
 	         </LinearLayout>
 	
+	        <!-- 
 	        <Button
 	            android:id="@+id/btn_test"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:onClick="onClick"
-	            android:text="Bouton de test" />
+	            android:text="Bouton de test"
+	            android:textSize="18sp" />
+			 -->	
 	
+		    <TextView
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Resultats"
+	            android:textSize="22sp"
+	            android:textAlignment="center"
+	            android:textColor="#33B5E5" />
+		        
 	        <TextView
 	            android:id="@+id/text_result"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:text="Appuyer sur le bouton" />
+	            android:text="Appuyer sur le bouton"
+	            android:textSize="18sp" />
 	    </LinearLayout>
 	
 	</ScrollView>
 	
-	<!-- 
 	<RelativeLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
@@ -325,12 +368,13 @@
 	    
 	    <Button
 	        android:id="@+id/btn_calcul"
-	        android:layout_width="wrap_content"
+	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_centerHorizontal="true"
 	        android:onClick="onClick"
-	        android:text="Calculer" />
+	        android:text="Calculer"
+	        android:textSize="18sp" />
 	    
 	</RelativeLayout>
-	 -->
+	
 </RelativeLayout>

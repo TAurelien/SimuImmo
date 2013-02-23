@@ -57,7 +57,8 @@ public class MainActivity extends Activity {
 				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
 	
 		TextView tv = (TextView) findViewById(R.id.text_result);
-		tv.setText(Temp.aTester());
+		String sizetv = String.valueOf(tv.getTextSize());
+		tv.setText(Temp.aTester() + "\n\n" + sizetv);
 		
 		Acquisition ca = Temp.Test2();
 		((TextView) findViewById(R.id.valueNetVendeur)).setText(
