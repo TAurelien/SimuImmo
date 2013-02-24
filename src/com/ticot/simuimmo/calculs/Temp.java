@@ -3,18 +3,24 @@ package com.ticot.simuimmo.calculs;
 //Classe temporaire pour les tests de calculs
 
 import com.ticot.simuimmo.model.acquisition.Acquisition;
+import com.ticot.simuimmo.model.bien.Bien;
 import com.ticot.simuimmo.model.gestion.Gestion;
 
 public class Temp {
 
 	//Déclaration des variables de tests
 	//==========================================================================
-	//Celles venant d'autres calculs
+	//Celles venant d'autres calculs'
 	//...
 
 	//Fonction pour lancer les tests
 	//==============================================================================
 	
+	public static Bien test(){
+		Bien bien = new Bien();
+		return bien;
+	}
+
 	public static Acquisition TestAcquisition(){	
 		return CalculsAcquisition.initialiser();
 	}

@@ -2,16 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp" >
+    android:orientation="vertical" >
     
 	<ScrollView
 	    android:id="@+id/LayoutForm"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/LayoutCalculer"
 	    android:layout_alignParentTop="true"
-	    android:layout_above="@+id/LayoutCollapse" >
+	    android:layout_marginLeft="16dp"
+	    android:layout_marginRight="16dp"
+	    android:scrollbars="vertical|none" >
 	    
 	    <LinearLayout
 	        android:layout_width="match_parent"
@@ -21,10 +22,12 @@
 	        <TextView
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
+	            android:scrollbarAlwaysDrawVerticalTrack="false"
+	            android:scrollbars="none"
 	            android:text="Acquisition"
-	            android:textSize="22sp"
 	            android:textAlignment="center"
-	            android:textColor="#33B5E5" />
+	            android:textColor="#33B5E5"
+	            android:textSize="22sp" />
 	
 	        <LinearLayout
 	            android:id="@+id/LayoutPrixFAI"
@@ -357,7 +360,7 @@
 	       	<TextView
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
-	            android:text="Credit"
+	            android:text="Emprunt"
 	            android:textSize="22sp"
 	            android:textAlignment="center"
 	            android:textColor="#33B5E5" />
@@ -565,6 +568,15 @@
 	                android:layout_height="match_parent" />
 	        </LinearLayout>
 		        
+	       	<TextView 
+	        	android:id="@+id/Collapse"
+	        	android:layout_width="match_parent"
+	        	android:layout_height="match_parent"
+	        	android:textAlignment="center"
+	        	android:clickable="true"
+	        	android:text="Collapse"
+	        	android:textSize="18sp"/>
+	        
 	        <!-- 
 	        <Button
 	            android:id="@+id/btn_test"
@@ -573,7 +585,7 @@
 	            android:onClick="onClick"
 	            android:text="Bouton de test"
 	            android:textSize="18sp" />
-			 -->	
+			 	
 	
 		    <TextView
 	            android:layout_width="fill_parent"
@@ -589,27 +601,10 @@
 	            android:layout_height="wrap_content"
 	            android:text=""
 	            android:textSize="18sp" />
+	        -->
 	    </LinearLayout>
 	
 	</ScrollView>
-	
-	<LinearLayout 
-	    android:id="@+id/LayoutCollapse"
-	    android:layout_width="match_parent"
-	    android:layout_height="48dp"
-	    android:orientation="vertical"
-	    android:layout_above="@+id/LayoutCalculer">
-	    
-	    <TextView 
-	        android:id="@+id/Collapse"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:textAlignment="center"
-	        android:clickable="true"
-	        android:text="Collapse"
-	        android:textSize="18sp"/>
-	    
-	</LinearLayout>
 	 
 	<RelativeLayout
 	    android:id="@+id/LayoutCalculer"

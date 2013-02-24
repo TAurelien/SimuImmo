@@ -10,10 +10,14 @@ import android.widget.TextView;
 import com.ticot.simuimmo.calculs.Temp;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
+import com.ticot.simuimmo.model.bien.Bien;
 import com.ticot.simuimmo.model.gestion.Gestion;
 
 public class MainActivity extends Activity {
 
+	//Creation of the class Bien through the temporary class
+	public Bien bien = Temp.test();
+	
 	/**Called when the activity is first created*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,7 @@ public class MainActivity extends Activity {
 	//TODO Prendre en compte les valeurs non-remplies et leur assigner une valeur par défaut = 0
 	
 	
-	//Bouton de test
+	//Calculation button
 	//==============================================================================
 	public void onClick (View v){
 		
@@ -56,12 +60,20 @@ public class MainActivity extends Activity {
 				((EditText)findViewById(R.id.valueApport)).getText().toString()); 
 		Inputs.autresFrais = Double.valueOf(
 				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
-	
-		Acquisition a = Temp.TestAcquisition();
-		Gestion g = Temp.TestGestion();
+		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
 		
-		TextView tv = (TextView) findViewById(R.id.text_result);
-		tv.setText(a.toString() + "\n\n" + g.toString());
+		bien.setAcquisition(Temp.TestAcquisition());
+		bien.setGestion(Temp.TestGestion());
+		//Launch the update of the UI to display the computed values
+		fillComputedValues(bien.getAcquisition(), bien.getGestion());
+		
+		//TextView tv = (TextView) findViewById(R.id.text_result);
+		//tv.setText(a.toString() + "\n\n" + g.toString());
+		
+	}
+	
+	private void fillComputedValues(Acquisition a, Gestion g){
+		//Methods to update the UI fields with all the computed values
 		
 		//Fill computed values for FraisAcquisition
 		((TextView) findViewById(R.id.valueNetVendeur)).setText(
@@ -90,7 +102,6 @@ public class MainActivity extends Activity {
 				String.valueOf((a.getEmprunt()).getMensualiteCredit()));
 		((TextView) findViewById(R.id.valueTauxEndettement)).setText(
 				String.valueOf((a.getEmprunt()).getTauxEndettement()));
-		
 	}
 	
 	/*
