@@ -2,18 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
     
 	<ScrollView
+	    android:id="@+id/LayoutForm"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:layout_alignParentBottom="true"
-	    android:layout_alignParentTop="true" >
+	    android:layout_alignParentTop="true"
+	    android:layout_above="@+id/LayoutCollapse" >
 	    
 	    <LinearLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:padding="16dp"
 	        android:orientation="vertical" >
 	        
 	        <TextView
@@ -27,7 +29,7 @@
 	        <LinearLayout
 	            android:id="@+id/LayoutPrixFAI"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -55,7 +57,7 @@
 	        <LinearLayout
 	            android:id="@+id/layoutNetVendeur"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -85,7 +87,7 @@
 	        <LinearLayout
 	            android:id="@+id/layoutFraisAgence"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -121,7 +123,7 @@
 	        <LinearLayout
 	            android:id="@+id/layoutFraisNotaire"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -151,7 +153,7 @@
 	        <LinearLayout
 	            android:id="@+id/LayoutTravaux"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -179,7 +181,7 @@
 	        <LinearLayout
 	            android:id="@+id/layoutAmenagement"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -207,7 +209,7 @@
 	        <LinearLayout
 	            android:id="@+id/layoutHonoraireConseil"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -243,7 +245,7 @@
 	        <LinearLayout
 	            android:id="@+id/layoutAutresFrais"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -267,11 +269,39 @@
 	                android:layout_width="32dp"
 	                android:layout_height="match_parent" />
 	        </LinearLayout>
+
+	        <LinearLayout
+	            android:id="@+id/layoutCoutTotal"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal" >
 	
+	            <TextView
+	                android:id="@+id/tvCoutTotal"
+	                android:layout_width="157dp"
+	                android:layout_height="wrap_content"
+	                android:labelFor="@+id/valueCoutTotal"
+	                android:text="Cout total"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/valueCoutTotal"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
+	            
+	            <View
+	                android:layout_width="32dp"
+	                android:layout_height="match_parent" />
+	        </LinearLayout>
+	        
 	        <LinearLayout
 	            android:id="@+id/layoutApport"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -296,6 +326,34 @@
 	                android:layout_height="match_parent" />
 	        </LinearLayout>
 	
+	        <LinearLayout
+	            android:id="@+id/layoutSequestre"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:id="@+id/tvSequestre"
+	                android:layout_width="157dp"
+	                android:layout_height="wrap_content"
+	                android:labelFor="@+id/valueSequestre"
+	                android:text="Sequestre"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/valueSequestre"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
+	            
+	            <View
+	                android:layout_width="32dp"
+	                android:layout_height="match_parent" />
+	        </LinearLayout>
+	        
 	       	<TextView
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
@@ -305,9 +363,40 @@
 	            android:textColor="#33B5E5" />
 	        
 	        <LinearLayout
+	            android:id="@+id/layoutCapitalEmprunte"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:id="@+id/tvCapitalEmprunte"
+	                android:layout_width="157dp"
+	                android:layout_height="wrap_content"
+	                android:labelFor="@+id/valueCapitalEmprunte"
+	                android:text="Capital emprunté"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/valueCapitalEmprunte"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:hint="0"
+	                android:textSize="18sp" />
+	            
+		        <CheckBox
+		            android:id="@+id/ReelCapitalEmprunte"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:checked="false" />
+	        </LinearLayout>
+	       	
+	       	
+	        <LinearLayout
 	            android:id="@+id/layoutDureeCredit"
 	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
 	
 	            <TextView
@@ -332,6 +421,150 @@
 	                android:layout_height="match_parent" />
 	         </LinearLayout>
 	
+	        <LinearLayout
+	            android:id="@+id/layoutNbMensualite"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:id="@+id/tvNbMensualite"
+	                android:layout_width="157dp"
+	                android:layout_height="wrap_content"
+	                android:labelFor="@+id/valueNbMensualite"
+	                android:text="Nombre mensualité"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/valueNbMensualite"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
+	            
+	            <View
+	                android:layout_width="32dp"
+	                android:layout_height="match_parent" />
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:id="@+id/layoutTauxCredit"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:id="@+id/tvTauxCredit"
+	                android:layout_width="157dp"
+	                android:layout_height="wrap_content"
+	                android:labelFor="@+id/valueTauxCredit"
+	                android:text="Taux de credit"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/valueTauxCredit"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
+	            
+		        <CheckBox
+		            android:id="@+id/ReelTauxCredit"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:checked="false" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:id="@+id/layoutTauxAssurance"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:id="@+id/tvTauxAssurance"
+	                android:layout_width="157dp"
+	                android:layout_height="wrap_content"
+	                android:labelFor="@+id/valueTauxAssurance"
+	                android:text="Taux d'assurance"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/valueTauxAssurance"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
+	            
+		        <CheckBox
+		            android:id="@+id/ReelTauxAssurance"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:checked="false" />
+	        </LinearLayout>
+	        
+		    <LinearLayout
+	            android:id="@+id/layoutMensualite"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:id="@+id/tvMensualite"
+	                android:layout_width="157dp"
+	                android:layout_height="wrap_content"
+	                android:labelFor="@+id/valueMensualite"
+	                android:text="Mensualité"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/valueMensualite"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
+	            
+	            <View
+	                android:layout_width="32dp"
+	                android:layout_height="match_parent" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:id="@+id/layoutTauxEndettement"
+	            android:layout_width="match_parent"
+	            android:layout_height="48dp"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:id="@+id/tvTauxEndettement"
+	                android:layout_width="157dp"
+	                android:layout_height="wrap_content"
+	                android:labelFor="@+id/valueTauxEndettement"
+	                android:text="Taux d'endettement"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/valueTauxEndettement"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
+	            
+	            <View
+	                android:layout_width="32dp"
+	                android:layout_height="match_parent" />
+	        </LinearLayout>
+		        
 	        <!-- 
 	        <Button
 	            android:id="@+id/btn_test"
@@ -354,23 +587,44 @@
 	            android:id="@+id/text_result"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:text="Appuyer sur le bouton"
+	            android:text=""
 	            android:textSize="18sp" />
 	    </LinearLayout>
 	
 	</ScrollView>
 	
-	<RelativeLayout
+	<LinearLayout 
+	    android:id="@+id/LayoutCollapse"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
+	    android:layout_height="48dp"
+	    android:orientation="vertical"
+	    android:layout_above="@+id/LayoutCalculer">
+	    
+	    <TextView 
+	        android:id="@+id/Collapse"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:textAlignment="center"
+	        android:clickable="true"
+	        android:text="Collapse"
+	        android:textSize="18sp"/>
+	    
+	</LinearLayout>
+	 
+	<RelativeLayout
+	    android:id="@+id/LayoutCalculer"
+	    android:layout_width="match_parent"
+	    android:layout_height="48dp"
 	    android:layout_alignParentBottom="true"
-	    android:orientation="vertical" >
+	    android:orientation="vertical"
+	    android:padding="0dp" >
 	    
 	    <Button
 	        android:id="@+id/btn_calcul"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_centerHorizontal="true"
+	        android:padding="0dp"
 	        android:onClick="onClick"
 	        android:text="Calculer"
 	        android:textSize="18sp" />

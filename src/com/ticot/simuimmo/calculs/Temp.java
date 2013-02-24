@@ -3,6 +3,7 @@ package com.ticot.simuimmo.calculs;
 //Classe temporaire pour les tests de calculs
 
 import com.ticot.simuimmo.model.acquisition.Acquisition;
+import com.ticot.simuimmo.model.gestion.Gestion;
 
 public class Temp {
 
@@ -13,16 +14,13 @@ public class Temp {
 
 	//Fonction pour lancer les tests
 	//==============================================================================
-	public static String aTester(){
-		
-		
-		return CalculsAcquisition.initialiser().toString() + "\n\n" +
-				CalculsGestion.initialiser().toString();
+	
+	public static Acquisition TestAcquisition(){	
+		return CalculsAcquisition.initialiser();
 	}
 	
-	public static Acquisition Test2(){
-		
-		return CalculsAcquisition.initialiser();
+	public static Gestion TestGestion(){	
+		return CalculsGestion.initialiser();
 	}
 	
 	//Fonctions à tester

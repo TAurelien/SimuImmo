@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.ticot.simuimmo.calculs.Temp;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
+import com.ticot.simuimmo.model.gestion.Gestion;
 
 public class MainActivity extends Activity {
 
@@ -56,19 +57,40 @@ public class MainActivity extends Activity {
 		Inputs.autresFrais = Double.valueOf(
 				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
 	
-		TextView tv = (TextView) findViewById(R.id.text_result);
-		String sizetv = String.valueOf(tv.getTextSize());
-		tv.setText(Temp.aTester() + "\n\n" + sizetv);
+		Acquisition a = Temp.TestAcquisition();
+		Gestion g = Temp.TestGestion();
 		
-		Acquisition ca = Temp.Test2();
+		TextView tv = (TextView) findViewById(R.id.text_result);
+		tv.setText(a.toString() + "\n\n" + g.toString());
+		
+		//Fill computed values for FraisAcquisition
 		((TextView) findViewById(R.id.valueNetVendeur)).setText(
-				String.valueOf((ca.getFraisAcquisition()).getNetVendeur()));
+				String.valueOf((a.getFraisAcquisition()).getNetVendeur()));
 		((TextView) findViewById(R.id.valueFraisAgence)).setText(
-				String.valueOf((ca.getFraisAcquisition()).getFraisAgence()));
+				String.valueOf((a.getFraisAcquisition()).getFraisAgence()));
 		((TextView) findViewById(R.id.valueFraisNotaire)).setText(
-				String.valueOf((ca.getFraisAcquisition()).getFraisNotaire()));
+				String.valueOf((a.getFraisAcquisition()).getFraisNotaire()));
 		((TextView) findViewById(R.id.valueHonoraireConseil)).setText(
-				String.valueOf((ca.getFraisAcquisition()).getHonoraireConseil()));
+				String.valueOf((a.getFraisAcquisition()).getHonoraireConseil()));
+		((TextView) findViewById(R.id.valueCoutTotal)).setText(
+				String.valueOf((a.getFraisAcquisition()).getCoutTotal()));
+		((TextView) findViewById(R.id.valueSequestre)).setText(
+				String.valueOf((a.getFraisAcquisition()).getSequestre()));
+		
+		//Fill computed values for Emprunt
+		((TextView) findViewById(R.id.valueCapitalEmprunte)).setText(
+				String.valueOf((a.getEmprunt()).getCapitalEmprunte()));
+		((TextView) findViewById(R.id.valueNbMensualite)).setText(
+				String.valueOf((a.getEmprunt()).getNbMensualiteCredit()));
+		((TextView) findViewById(R.id.valueTauxCredit)).setText(
+				String.valueOf((a.getEmprunt()).getTauxCredit()));
+		((TextView) findViewById(R.id.valueTauxAssurance)).setText(
+				String.valueOf((a.getEmprunt()).getTauxAssuranceCredit()));
+		((TextView) findViewById(R.id.valueMensualite)).setText(
+				String.valueOf((a.getEmprunt()).getMensualiteCredit()));
+		((TextView) findViewById(R.id.valueTauxEndettement)).setText(
+				String.valueOf((a.getEmprunt()).getTauxEndettement()));
+		
 	}
 	
 	/*
