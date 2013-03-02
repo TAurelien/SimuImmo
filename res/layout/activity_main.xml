@@ -5,19 +5,20 @@
     android:orientation="vertical" >
     
 	<ScrollView
-	    android:id="@+id/LayoutForm"
+	    android:id="@+id/layoutScrollForm"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_above="@+id/LayoutCalculer"
 	    android:layout_alignParentTop="true"
-	    android:layout_marginLeft="16dp"
-	    android:layout_marginRight="16dp"
 	    android:scrollbars="vertical|none" >
 	    
 	    <LinearLayout
+	        android:id="@+id/layoutForm"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:orientation="vertical" >
+	        android:orientation="vertical"
+	       	android:layout_marginLeft="16dp"
+	    	android:layout_marginRight="16dp" >
 	        
 	        <TextView
 	            android:layout_width="fill_parent"
@@ -61,7 +62,8 @@
 	            android:id="@+id/layoutNetVendeur"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
-	            android:orientation="horizontal" >
+	            android:orientation="horizontal"
+	            android:tag="collapse" >
 	
 	            <TextView
 	                android:id="@+id/tvNetVendeur"

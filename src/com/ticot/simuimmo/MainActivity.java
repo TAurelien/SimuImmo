@@ -1,12 +1,20 @@
 package com.ticot.simuimmo;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Currency;
+import java.util.Locale;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewDebug.IntToString;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.LinearLayout;
 import com.ticot.simuimmo.calculs.Temp;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
@@ -70,38 +78,63 @@ public class MainActivity extends Activity {
 		//TextView tv = (TextView) findViewById(R.id.text_result);
 		//tv.setText(a.toString() + "\n\n" + g.toString());
 		
+		//testTag();
+
 	}
 	
 	private void fillComputedValues(Acquisition a, Gestion g){
-		//Methods to update the UI fields with all the computed values
+		//Methods to update the UI fields with all the computed values;
+		
+		DecimalFormat formatEur = new DecimalFormat("###,### €");
+		formatEur.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));
+		formatEur.setMaximumFractionDigits(2);
+		formatEur.setMinimumFractionDigits(2);
+		formatEur.setMinimumIntegerDigits(1);
+		DecimalFormat formatPer = new DecimalFormat("### %");
+		formatPer.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));
+		formatPer.setMaximumFractionDigits(2);
+		formatPer.setMinimumFractionDigits(2);
+		formatPer.setMinimumIntegerDigits(1);
 		
 		//Fill computed values for FraisAcquisition
 		((TextView) findViewById(R.id.valueNetVendeur)).setText(
-				String.valueOf((a.getFraisAcquisition()).getNetVendeur()));
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getNetVendeur())));
 		((TextView) findViewById(R.id.valueFraisAgence)).setText(
-				String.valueOf((a.getFraisAcquisition()).getFraisAgence()));
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getFraisAgence())));
 		((TextView) findViewById(R.id.valueFraisNotaire)).setText(
-				String.valueOf((a.getFraisAcquisition()).getFraisNotaire()));
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getFraisNotaire())));
 		((TextView) findViewById(R.id.valueHonoraireConseil)).setText(
-				String.valueOf((a.getFraisAcquisition()).getHonoraireConseil()));
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getHonoraireConseil())));
 		((TextView) findViewById(R.id.valueCoutTotal)).setText(
-				String.valueOf((a.getFraisAcquisition()).getCoutTotal()));
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getCoutTotal())));
 		((TextView) findViewById(R.id.valueSequestre)).setText(
-				String.valueOf((a.getFraisAcquisition()).getSequestre()));
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getSequestre())));
 		
 		//Fill computed values for Emprunt
 		((TextView) findViewById(R.id.valueCapitalEmprunte)).setText(
-				String.valueOf((a.getEmprunt()).getCapitalEmprunte()));
+				String.valueOf(formatEur.format((a.getEmprunt()).getCapitalEmprunte())));
 		((TextView) findViewById(R.id.valueNbMensualite)).setText(
-				String.valueOf((a.getEmprunt()).getNbMensualiteCredit()));
+				String.valueOf(formatEur.format((a.getEmprunt()).getNbMensualiteCredit())));
 		((TextView) findViewById(R.id.valueTauxCredit)).setText(
-				String.valueOf((a.getEmprunt()).getTauxCredit()));
+				String.valueOf(formatPer.format((a.getEmprunt()).getTauxCredit())));
 		((TextView) findViewById(R.id.valueTauxAssurance)).setText(
-				String.valueOf((a.getEmprunt()).getTauxAssuranceCredit()));
+				String.valueOf(formatPer.format((a.getEmprunt()).getTauxAssuranceCredit())));
 		((TextView) findViewById(R.id.valueMensualite)).setText(
-				String.valueOf((a.getEmprunt()).getMensualiteCredit()));
+				String.valueOf(formatEur.format((a.getEmprunt()).getMensualiteCredit())));
 		((TextView) findViewById(R.id.valueTauxEndettement)).setText(
-				String.valueOf((a.getEmprunt()).getTauxEndettement()));
+				String.valueOf(formatPer.format((a.getEmprunt()).getTauxEndettement())));
+	}
+	
+	private void testTag(){
+		LinearLayout ll = (LinearLayout)findViewById(R.id.layoutForm);
+		int childCount = ll.getChildCount();
+		System.out.println(childCount);
+		for (int i=0; i < childCount; i++){
+		      View v = ll.getChildAt(i);
+		      //if (v.getTag().toString().equals("collapse")){ 		//Condition doesn't work for view without tag, need to add a check if tag is empty
+		    //	  v.setVisibility(8);								//Methods is OK
+		      //}
+		}
 	}
 	
 	/*
