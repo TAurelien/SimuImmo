@@ -23,8 +23,7 @@ public class MainActivity extends Activity {
 
 	//Declaration of variables
 	public boolean AcquisitionCollpased = true; 
-	//Creation of the class Bien through the temporary class
-	public Bien bien = Temp.test();
+	public Bien bien = Temp.test();						//Creation of the class Bien through the temporary class
 	
 	/**Called when the activity is first created*/
 	@Override
@@ -34,12 +33,12 @@ public class MainActivity extends Activity {
 	}
 
 	//TODO onCreateOptionsMenu to do
-	@Override
+/*	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
-	}
+	}*/
 	
 	//To do list in the MainActivity
 	//TODO Take into account the mandatory fields
@@ -50,9 +49,10 @@ public class MainActivity extends Activity {
 	//Calculation button
 	//==============================================================================
 	public void onClick (View v){
+		//Methods to get user's inputs, launch calculation and fill back the result in the UI 
 		
-		//TODO Check user's input values (mandatory, empty, formated, ...) 
-		//Inputs.prixFAI = getDoubleValue(R.id.valuePrixFAI);
+		//Get the user's input values
+		//Inputs.prixFAI = getDoubleValue(R.id.valuePrixFAI);			//Test to check value before assign it to the variable
 		Inputs.prixFAI = Double.valueOf(
 				((EditText)findViewById(R.id.valuePrixFAI)).getText().toString());
 		Inputs.agence = ((CheckBox)findViewById(R.id.valueAgence)).isChecked();
@@ -67,18 +67,16 @@ public class MainActivity extends Activity {
 				((EditText)findViewById(R.id.valueApport)).getText().toString()); 
 		Inputs.autresFrais = Double.valueOf(
 				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
+		//TODO Check user's input values (mandatory, empty, formated, ...)
 		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
 		
-		//Popultate the created instance of Bien 
+		//Popultate the created instance of Bien (and run the different calculs)
 		bien.setAcquisition(Temp.TestAcquisition());
 		bien.setGestion(Temp.TestGestion());
 		
 		//Launch the update of the UI to display the computed values
 		fillComputedValues(bien.getAcquisition(), bien.getGestion());
 		
-		//Display the result of calculation through the dedicated textView (temporary solution for testing purpose)
-		//TextView tv = (TextView) findViewById(R.id.text_result);
-		//tv.setText(bien.getAcquisition().toString() + "\n\n" + bien.getGestion().toString());
 	}
 	
 	private void fillComputedValues(Acquisition a, Gestion g){
@@ -135,19 +133,21 @@ public class MainActivity extends Activity {
 		//Get the Form layout aggregating all fields
 		LinearLayout ll = (LinearLayout)findViewById(R.id.layoutForm);
 
-		//Get all 
+		//Get all childs of the Form layout and check for each one if their tag is "Collapsable"
 		for (int i=0; i < ll.getChildCount(); i++){
 			View v = ll.getChildAt(i);
 			if (v.getTag().toString().equals("Collapsable")){			//Condition doesn't work for view without tag, need to check if tag is empty
+				//If the item is "Collapsable"
 				//Checking if the UI is already collapsed or not
 				if (AcquisitionCollpased)
-					//If already collapse, so set to visible (0) 
+					//If already collapsed, so set the visibility to visible (0) 
 					v.setVisibility(0);
 				else
-					//If not collapse, so set to gone (8)
+					//If not already collapsed, so set the visibility to gone (8)
 					v.setVisibility(8);
 			}
 		}
+		//FInally update the global variable 
 		if (AcquisitionCollpased)
 			AcquisitionCollpased = false;
 		else
@@ -155,15 +155,80 @@ public class MainActivity extends Activity {
 	}
 	
 	public void switchRealField(View view){
-		switch (view.getId()){
+		//Methods to switch between the TextView (for the computed values) to the EditText (allowing user to fill its own real value)
+		
+		switch (view.getId()){		//Get the ID of the item requesting to switch TextView/EditText
+		//Several fields are able to switch between TextView and EditText
 		case R.id.ReelNetVendeur:
 			if (((CheckBox)view).isChecked()){
-				findViewById(R.id.valueNetVendeur).setVisibility(8);
-				findViewById(R.id.valueReelNetVendeur).setVisibility(0);
+				findViewById(R.id.valueNetVendeur).setVisibility(8);		//If checked turn TextView visibility to GONE
+				findViewById(R.id.valueReelNetVendeur).setVisibility(0);	//If checked turn EditText visibility to VISIBLE
+				findViewById(R.id.valueReelNetVendeur).requestFocus();		//If checked set focus to the EditText
 			} else{
-				findViewById(R.id.valueNetVendeur).setVisibility(0);
-				findViewById(R.id.valueReelNetVendeur).setVisibility(8);
+				findViewById(R.id.valueNetVendeur).setVisibility(0);		//If unchecked turn TextView visibility to VISIBLE
+				findViewById(R.id.valueReelNetVendeur).setVisibility(8);	//If unchecked turn EditText visibility to GONE
 			}
+			break;
+		case R.id.ReelFraisAgence:
+			if (((CheckBox)view).isChecked()){
+				findViewById(R.id.valueFraisAgence).setVisibility(8);
+				findViewById(R.id.valueReelFraisAgence).setVisibility(0);
+				findViewById(R.id.valueReelFraisAgence).requestFocus();
+			} else{
+				findViewById(R.id.valueFraisAgence).setVisibility(0);
+				findViewById(R.id.valueReelFraisAgence).setVisibility(8);
+			}
+			break;
+		case R.id.ReelFraisNotaire:
+			if (((CheckBox)view).isChecked()){
+				findViewById(R.id.valueFraisNotaire).setVisibility(8);
+				findViewById(R.id.valueReelFraisNotaire).setVisibility(0);
+				findViewById(R.id.valueReelFraisNotaire).requestFocus();
+			} else{
+				findViewById(R.id.valueFraisNotaire).setVisibility(0);
+				findViewById(R.id.valueReelFraisNotaire).setVisibility(8);
+			}
+			break;
+		case R.id.ReelHonoraireConseil:
+			if (((CheckBox)view).isChecked()){
+				findViewById(R.id.valueHonoraireConseil).setVisibility(8);
+				findViewById(R.id.valueReelHonoraireConseil).setVisibility(0);
+				findViewById(R.id.valueReelHonoraireConseil).requestFocus();
+			} else{
+				findViewById(R.id.valueHonoraireConseil).setVisibility(0);
+				findViewById(R.id.valueReelHonoraireConseil).setVisibility(8);
+			}
+			break;
+		case R.id.ReelCapitalEmprunte:
+			if (((CheckBox)view).isChecked()){
+				findViewById(R.id.valueCapitalEmprunte).setVisibility(8);
+				findViewById(R.id.valueReelCapitalEmprunte).setVisibility(0);
+				findViewById(R.id.valueReelCapitalEmprunte).requestFocus();
+			} else{
+				findViewById(R.id.valueCapitalEmprunte).setVisibility(0);
+				findViewById(R.id.valueReelCapitalEmprunte).setVisibility(8);
+			}
+			break;
+		case R.id.ReelTauxCredit:
+			if (((CheckBox)view).isChecked()){
+				findViewById(R.id.valueTauxCredit).setVisibility(8);
+				findViewById(R.id.valueReelTauxCredit).setVisibility(0);
+				findViewById(R.id.valueReelTauxCredit).requestFocus();
+			} else{
+				findViewById(R.id.valueTauxCredit).setVisibility(0);
+				findViewById(R.id.valueReelTauxCredit).setVisibility(8);
+			}
+			break;
+		case R.id.ReelTauxAssurance:
+			if (((CheckBox)view).isChecked()){
+				findViewById(R.id.valueTauxAssurance).setVisibility(8);
+				findViewById(R.id.valueReelTauxAssurance).setVisibility(0);
+				findViewById(R.id.valueReelTauxAssurance).requestFocus();
+			} else{
+				findViewById(R.id.valueTauxAssurance).setVisibility(0);
+				findViewById(R.id.valueReelTauxAssurance).setVisibility(8);
+			}
+			break;
 		}
 	}
 	
