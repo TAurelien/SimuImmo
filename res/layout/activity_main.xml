@@ -21,10 +21,9 @@
 	    	android:layout_marginRight="16dp" >
 	        
 	        <TextView
+	            android:tag="AlwaysShown"
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
-	            android:scrollbarAlwaysDrawVerticalTrack="false"
-	            android:scrollbars="none"
 	            android:text="Acquisition"
 	            android:textAlignment="center"
 	            android:textColor="#33B5E5"
@@ -32,6 +31,7 @@
 	
 	        <LinearLayout
 	            android:id="@+id/LayoutPrixFAI"
+	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -60,10 +60,11 @@
 	                
 	        <LinearLayout
 	            android:id="@+id/layoutNetVendeur"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
-	            android:orientation="horizontal"
-	            android:tag="collapse" >
+	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvNetVendeur"
@@ -75,6 +76,17 @@
 	
 	            <TextView
 	                android:id="@+id/valueNetVendeur"
+	                android:visibility="visible"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:textSize="18sp"
+	                android:hint="0" />
+	            
+	     		<EditText
+	                android:id="@+id/valueReelNetVendeur"
+	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
@@ -86,11 +98,14 @@
 		            android:id="@+id/ReelNetVendeur"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
-		            android:checked="false" />
+		            android:checked="false"
+		            android:onClick="switchRealField" />
 	        </LinearLayout>
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutFraisAgence"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -111,6 +126,17 @@
 	
 	            <TextView
 	                android:id="@+id/valueFraisAgence"
+	                android:visibility="visible"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:paddingLeft="12dp"
+	                android:hint="0"
+	                android:textSize="18sp" />
+	            
+	            <EditText
+	                android:id="@+id/valueReelFraisAgence"
+	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
@@ -127,6 +153,8 @@
 	
 	        <LinearLayout
 	            android:id="@+id/layoutFraisNotaire"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -157,6 +185,7 @@
 	        
 	        <LinearLayout
 	            android:id="@+id/LayoutTravaux"
+	           	android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -185,6 +214,7 @@
 	
 	        <LinearLayout
 	            android:id="@+id/layoutAmenagement"
+	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -213,6 +243,8 @@
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutHonoraireConseil"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -249,6 +281,8 @@
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutAutresFrais"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -277,6 +311,8 @@
 
 	        <LinearLayout
 	            android:id="@+id/layoutCoutTotal"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -305,6 +341,7 @@
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutApport"
+	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -333,6 +370,8 @@
 	
 	        <LinearLayout
 	            android:id="@+id/layoutSequestre"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -360,6 +399,7 @@
 	        </LinearLayout>
 	        
 	       	<TextView
+	       	    android:tag="AlwaysShown"
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="Emprunt"
@@ -369,6 +409,8 @@
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutCapitalEmprunte"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -400,6 +442,7 @@
 	       	
 	        <LinearLayout
 	            android:id="@+id/layoutDureeCredit"
+	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -428,6 +471,8 @@
 	
 	        <LinearLayout
 	            android:id="@+id/layoutNbMensualite"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -456,6 +501,8 @@
 
 	        <LinearLayout
 	            android:id="@+id/layoutTauxCredit"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -486,6 +533,8 @@
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutTauxAssurance"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -516,6 +565,7 @@
 	        
 		    <LinearLayout
 	            android:id="@+id/layoutMensualite"
+	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -544,6 +594,8 @@
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutTauxEndettement"
+	            android:tag="Collapsable"
+	            android:visibility="gone"
 	            android:layout_width="match_parent"
 	            android:layout_height="48dp"
 	            android:orientation="horizontal" >
@@ -570,14 +622,14 @@
 	                android:layout_height="match_parent" />
 	        </LinearLayout>
 		        
-	       	<TextView 
-	        	android:id="@+id/Collapse"
-	        	android:layout_width="match_parent"
+	       	<Button 
+	        	android:id="@+id/CollapseAcquisitionFields"
+	        	android:tag="AlwaysShown"
+	        	android:layout_width="wrap_content"
 	        	android:layout_height="match_parent"
-	        	android:textAlignment="center"
-	        	android:clickable="true"
-	        	android:text="Collapse"
-	        	android:textSize="18sp"/>
+	        	android:text="Afficher/Cacher"
+	        	android:textSize="18sp"
+	        	android:onClick="collapseUI"/>
 	        
 	        <!-- 
 	        <Button

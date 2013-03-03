@@ -12,16 +12,16 @@ import com.ticot.simuimmo.model.acquisition.FraisAcquisition;
  */
 public class CalculsAcquisition {
 	
-	//Fonctions pour la la classe Acquisition
+	//Functions for the class Acquisition
 	//==============================================================================
-	//Fonction pour lancer les calculs de frais d'acquisition et d'emprunt
+	//Function to launch the calcul of "FraisAcquisition" and "Emprunt"
 	public static Acquisition initialiser(){
 		FraisAcquisition fraisAcquisition = calculerFraisAcquisitions();
 		Emprunt emprunt = calculerEmprunt(fraisAcquisition);
 		return new Acquisition(fraisAcquisition, emprunt); 
 	}
 	
-	//Fonction pour calculer les frais acquisition
+	//Function to compute FraisAcquisition
 	public static FraisAcquisition calculerFraisAcquisitions(){
 		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.agence, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
 		fa.setNetVendeur(calculNetVendeur(Inputs.prixFAI,fa.getAgence(), Settings.pourcentageFraisAgence));
@@ -34,7 +34,7 @@ public class CalculsAcquisition {
 		return fa;
 	}
 
-	//Fonction pour calculer l'emprunt
+	//Function to compute Emprunt
 	public static Emprunt calculerEmprunt(FraisAcquisition fa){
 		Emprunt emprunt = new Emprunt(Inputs.dureeCredit);
 		emprunt.setTauxAssuranceCredit(Settings.tauxAssuranceCredit);
@@ -43,29 +43,29 @@ public class CalculsAcquisition {
 		emprunt.setTauxCredit(calculTauxCredit(emprunt.getDureeCredit()));
 		emprunt.setMensualiteCredit(calculMensualiteCredit(emprunt.getCapitalEmprunte(), emprunt.getNbMensualiteCredit(), 
 				emprunt.getTauxCredit(), emprunt.getTauxAssuranceCredit()));
-		emprunt.setTauxEndettement(0); //TODO Mettre à jour après calcul du taux d'endettement
+		emprunt.setTauxEndettement(0); //TODO Update after creation of the method for TauxEndettement 
 		return emprunt;
 	}
 	//==============================================================================
 	
 	
-	//Fonctions pour la partie Frais acquisition
+	//Functions for the part FraisAcquisition
 	//==============================================================================
-	//Calcul du cout total
+	//Method to compute CoutTotal
 	public static double calculCoutTotal(double netVendeur, double fraisAgence, double fraisNotaire, 
 			double travaux, double amenagement, double honoraireConseil, double autresFrais){
 		return netVendeur + fraisAgence + fraisNotaire + travaux + amenagement + honoraireConseil + autresFrais;
 	}
 	
-	//Calcul du Net vendeur
+	//Method to compute NetVendeur
 	public static double  calculNetVendeur(double prixFAI, boolean agence, double pourcentageFraisAgence){
-		if (agence)
-			return  Math.round(prixFAI/(1 + pourcentageFraisAgence)/100)*100;
+		if (agence)		//According to the choice of going through estate agency or not
+			return  prixFAI/(1 + pourcentageFraisAgence);
 		else
 			return prixFAI;
 	}
 
-	//Calcul des frais d'agence
+	//Method to compute FraisAgence
 	public static double  calculFraisAgence(double netVendeur, boolean agence, double pourcentageFraisAgence){
 		if (agence)
 			return  netVendeur * pourcentageFraisAgence;
@@ -73,39 +73,39 @@ public class CalculsAcquisition {
 			return 0;
 	}
 
-	//Calcul des prix FAI
+	//Method to compute PrixFAI
 	public static double  calculPrixFAI(double netVendeur, double fraisAgence){
 			return  netVendeur + fraisAgence;
 	}
 	
-	//Calcul des frais de notaire
+	//Method to compute FraisNotaire
 	public static double  calculFraisNotaire(double netVendeur, double pourcentageFraisNotaire){
-		return  Math.round(netVendeur * pourcentageFraisNotaire/10)*10;
+		return  netVendeur * pourcentageFraisNotaire;
 	}
 	
-	//Calcul des honoraires de conseils
+	//Method to compute HonorairesConseil
 	public static double calculHonorairesConseil(boolean conseil, double netVendeur, double travaux, 
 			double amenagement, double pourcentageHonorairesConseil){
-		if (conseil == true)
+		if (conseil == true)	//According to the choice of Conseil or not set by the user
 			return (netVendeur + travaux + amenagement) * pourcentageHonorairesConseil;
 		else
-			return 0d;
+			return 0d;	//If no Conseil, so HonorairesConseil equal zero
 	}
 	
-	//Calcul du sequestre
+	//Method to compute Sequestre
 	public static double  calculSequestre(double prixFAI, double pourcentageSequestre){
-		return  Math.round(prixFAI * pourcentageSequestre /10)*10;
+		return  prixFAI * pourcentageSequestre;
 	}	
 	
 	//==============================================================================
 	
 	
 	
-	//Fonctions pour la partie Emprunt
+	//Functions for the part Emprunt
 	//==============================================================================
-	//Calcul du taux de credit
+	//Method to compute TauxCredit
 	public static double calculTauxCredit(int dureeCredit){
-		switch (dureeCredit) {
+		switch (dureeCredit) {		//According to the value of DureeCredit
 		case 15:
 			return  Settings.taux15ans;
 		case 20:
@@ -119,22 +119,22 @@ public class CalculsAcquisition {
 		}
 	}
 	
-	//Calcul de la mensualité de credit
+	//Method to compute MensualiteCredit
 	public static double calculMensualiteCredit(double capitalEmprunte, int nbMensualiteCredit, double taux, double tauxAssurance){
-		return Math.round(((capitalEmprunte * taux/12)/(1-Math.pow((1+taux/12), (-nbMensualiteCredit))) + (capitalEmprunte * tauxAssurance/12))*100)/100;
+		return (capitalEmprunte * taux/12)/(1-Math.pow((1+taux/12), (-nbMensualiteCredit))) + (capitalEmprunte * tauxAssurance/12);
 	}
 	
-	//Calcul du nombre de mensualite
+	//Method to compute NbMensualite
 	public static int calculNbMensualiteCredit(int dureeCredit){
 		return dureeCredit * 12;
 	}
 	
-	//Calcul du capital emprunté
+	//Method to compute CapitalEmprunte
 	public static double calculCapitalEmprunte(double coutTotal, double apport){
-		return Math.round((coutTotal - apport)/10)*10;
+		return coutTotal - apport;
 	}
 	
-	//TODO Calcul du taux d'endettement à faire
+	//TODO Create the methods for the calculation of the TauxEndettement
 	
 	//==============================================================================
 	

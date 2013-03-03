@@ -2,19 +2,17 @@ package com.ticot.simuimmo;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
-import java.util.Currency;
 import java.util.Locale;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewDebug.IntToString;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
 import com.ticot.simuimmo.calculs.Temp;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
@@ -23,6 +21,8 @@ import com.ticot.simuimmo.model.gestion.Gestion;
 
 public class MainActivity extends Activity {
 
+	//Declaration of variables
+	public boolean AcquisitionCollpased = true; 
 	//Creation of the class Bien through the temporary class
 	public Bien bien = Temp.test();
 	
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 
-	//TODO onCreateOptionsMenu à traiter
+	//TODO onCreateOptionsMenu to do
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -41,21 +41,20 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	//A faire dans la MainActivity
-	//TODO Prendre en compte les champs obligatoires
-	//TODO Faire le collapse des champs moins importants
-	//TODO Prendre en compte les valeurs non-remplies et leur assigner une valeur par défaut = 0
+	//To do list in the MainActivity
+	//TODO Take into account the mandatory fields
+	//TODO Create the methods to collapse less important fields
+	//TODO Take into account the empty fields and if necessary assign them an appropriate value (0 for instance)
 	
 	
 	//Calculation button
 	//==============================================================================
 	public void onClick (View v){
 		
+		//TODO Check user's input values (mandatory, empty, formated, ...) 
+		//Inputs.prixFAI = getDoubleValue(R.id.valuePrixFAI);
 		Inputs.prixFAI = Double.valueOf(
 				((EditText)findViewById(R.id.valuePrixFAI)).getText().toString());
-		//Inputs.prixFAI = getDoubleValue(R.id.valuePrixFAI);
-		//System.out.println("Prix FAI = " + Inputs.prixFAI);
-		
 		Inputs.agence = ((CheckBox)findViewById(R.id.valueAgence)).isChecked();
 		Inputs.travaux = Double.valueOf(
 				((EditText)findViewById(R.id.valueTravaux)).getText().toString());
@@ -70,31 +69,36 @@ public class MainActivity extends Activity {
 				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
 		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
 		
+		//Popultate the created instance of Bien 
 		bien.setAcquisition(Temp.TestAcquisition());
 		bien.setGestion(Temp.TestGestion());
+		
 		//Launch the update of the UI to display the computed values
 		fillComputedValues(bien.getAcquisition(), bien.getGestion());
 		
+		//Display the result of calculation through the dedicated textView (temporary solution for testing purpose)
 		//TextView tv = (TextView) findViewById(R.id.text_result);
-		//tv.setText(a.toString() + "\n\n" + g.toString());
-		
-		//testTag();
-
+		//tv.setText(bien.getAcquisition().toString() + "\n\n" + bien.getGestion().toString());
 	}
 	
 	private void fillComputedValues(Acquisition a, Gestion g){
 		//Methods to update the UI fields with all the computed values;
 		
+		//Define the format for the values
 		DecimalFormat formatEur = new DecimalFormat("###,### €");
 		formatEur.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));
 		formatEur.setMaximumFractionDigits(2);
 		formatEur.setMinimumFractionDigits(2);
 		formatEur.setMinimumIntegerDigits(1);
-		DecimalFormat formatPer = new DecimalFormat("### %");
+		DecimalFormat formatPer = new DecimalFormat("## %");
 		formatPer.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));
 		formatPer.setMaximumFractionDigits(2);
 		formatPer.setMinimumFractionDigits(2);
 		formatPer.setMinimumIntegerDigits(1);
+		
+		//Format user's inputs for FraisAcquisition
+		//((EditText) findViewById(R.id.valuePrixFAI)).setText(
+		//		String.valueOf(formatEur.format((a.getFraisAcquisition()).getPrixFAI())));
 		
 		//Fill computed values for FraisAcquisition
 		((TextView) findViewById(R.id.valueNetVendeur)).setText(
@@ -125,15 +129,41 @@ public class MainActivity extends Activity {
 				String.valueOf(formatPer.format((a.getEmprunt()).getTauxEndettement())));
 	}
 	
-	private void testTag(){
+	public void collapseUI (View view){
+		//Methods to collapse or expand the UI to focus on most important fields or display all fields
+		
+		//Get the Form layout aggregating all fields
 		LinearLayout ll = (LinearLayout)findViewById(R.id.layoutForm);
-		int childCount = ll.getChildCount();
-		System.out.println(childCount);
-		for (int i=0; i < childCount; i++){
-		      View v = ll.getChildAt(i);
-		      //if (v.getTag().toString().equals("collapse")){ 		//Condition doesn't work for view without tag, need to add a check if tag is empty
-		    //	  v.setVisibility(8);								//Methods is OK
-		      //}
+
+		//Get all 
+		for (int i=0; i < ll.getChildCount(); i++){
+			View v = ll.getChildAt(i);
+			if (v.getTag().toString().equals("Collapsable")){			//Condition doesn't work for view without tag, need to check if tag is empty
+				//Checking if the UI is already collapsed or not
+				if (AcquisitionCollpased)
+					//If already collapse, so set to visible (0) 
+					v.setVisibility(0);
+				else
+					//If not collapse, so set to gone (8)
+					v.setVisibility(8);
+			}
+		}
+		if (AcquisitionCollpased)
+			AcquisitionCollpased = false;
+		else
+			AcquisitionCollpased = true;
+	}
+	
+	public void switchRealField(View view){
+		switch (view.getId()){
+		case R.id.ReelNetVendeur:
+			if (((CheckBox)view).isChecked()){
+				findViewById(R.id.valueNetVendeur).setVisibility(8);
+				findViewById(R.id.valueReelNetVendeur).setVisibility(0);
+			} else{
+				findViewById(R.id.valueNetVendeur).setVisibility(0);
+				findViewById(R.id.valueReelNetVendeur).setVisibility(8);
+			}
 		}
 	}
 	
