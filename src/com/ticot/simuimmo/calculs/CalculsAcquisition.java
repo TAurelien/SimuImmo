@@ -23,27 +23,76 @@ public class CalculsAcquisition {
 	
 	//Function to compute FraisAcquisition
 	public static FraisAcquisition calculerFraisAcquisitions(){
+		//constructor for FraisAcquisition
 		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.agence, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
-		fa.setNetVendeur(calculNetVendeur(Inputs.prixFAI,fa.getAgence(), Settings.pourcentageFraisAgence));
-		fa.setFraisAgence(calculFraisAgence(fa.getNetVendeur(),fa.getAgence(), Settings.pourcentageFraisAgence));
+		
+		//Set NetVendeur according to computed or user filled
+		if (Inputs.reelNetvendeur)
+			fa.setNetVendeur(Inputs.netVendeur);
+		else
+			fa.setNetVendeur(calculNetVendeur(Inputs.prixFAI,fa.getAgence(), Settings.pourcentageFraisAgence));
+		
+		//Set FraisAgence according to computed or user filled
+		if (Inputs.reelFraisAgence)
+			fa.setFraisAgence(Inputs.fraisAgence);
+		else
+			fa.setFraisAgence(calculFraisAgence(fa.getNetVendeur(),fa.getAgence(), Settings.pourcentageFraisAgence));
+		
+		//Set PrixFAI
 		fa.setPrixFAI(calculPrixFAI(fa.getNetVendeur(), fa.getFraisAgence()));
-		fa.setFraisNotaire(calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
-		fa.setHonoraireConseil(calculHonorairesConseil(fa.getConseil(), fa.getNetVendeur(),fa.getTravaux(), fa.getAmenagement(),Settings.pourcentageHonorairesConseil));
+		
+		//Set FraisNotaire according to computed or user filled
+		if (Inputs.reelFraisNotaire){
+			fa.setFraisNotaire(Inputs.fraisNotaire);
+			System.out.println("Frais de notaire: " + Inputs.fraisNotaire + "\n" + fa.getFraisNotaire());
+		}
+		else
+			fa.setFraisNotaire(calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
+		
+		//Set HonoraireConseil according to computed or user filled
+		if (Inputs.reelHonoraireConseil)
+			fa.setHonoraireConseil(Inputs.honoraireConseil);
+		else
+			fa.setHonoraireConseil(calculHonorairesConseil(fa.getConseil(), fa.getNetVendeur(),fa.getTravaux(), fa.getAmenagement(),Settings.pourcentageHonorairesConseil));
+		
+		//
 		fa.setCoutTotal(calculCoutTotal(fa.getNetVendeur(), fa.getFraisAgence(),fa.getFraisNotaire(), fa.getTravaux(),fa.getAmenagement(), fa.getHonoraireConseil(),fa.getAutresFrais()));
+		
+		//
 		fa.setSequestre(calculSequestre(fa.getPrixFAI(), Settings.pourcentageSequestre));
 		return fa;
 	}
 
 	//Function to compute Emprunt
 	public static Emprunt calculerEmprunt(FraisAcquisition fa){
+		//Constructor for Emprunt
 		Emprunt emprunt = new Emprunt(Inputs.dureeCredit);
-		emprunt.setTauxAssuranceCredit(Settings.tauxAssuranceCredit);
+		
+		//
+		if (Inputs.reelTauxAssurance)
+			emprunt.setTauxAssuranceCredit(Inputs.tauxAssuranceCredit);
+		else
+			emprunt.setTauxAssuranceCredit(Settings.tauxAssuranceCredit);
+		
+		
 		emprunt.setNbMensualiteCredit(calculNbMensualiteCredit(emprunt.getDureeCredit()));
-		emprunt.setCapitalEmprunte(calculCapitalEmprunte(fa.getCoutTotal(), fa.getApport()));
-		emprunt.setTauxCredit(calculTauxCredit(emprunt.getDureeCredit()));
+		
+		if (Inputs.reelCapitalEmrpunte)
+			emprunt.setCapitalEmprunte(Inputs.capitalEmprunte);
+		else
+			emprunt.setCapitalEmprunte(calculCapitalEmprunte(fa.getCoutTotal(), fa.getApport()));
+		
+		if (Inputs.reelTauxCredit)
+			emprunt.setTauxCredit(Inputs.tauxCredit);
+		else
+			emprunt.setTauxCredit(calculTauxCredit(emprunt.getDureeCredit()));
+		
+		
 		emprunt.setMensualiteCredit(calculMensualiteCredit(emprunt.getCapitalEmprunte(), emprunt.getNbMensualiteCredit(), 
 				emprunt.getTauxCredit(), emprunt.getTauxAssuranceCredit()));
+		
 		emprunt.setTauxEndettement(0); //TODO Update after creation of the method for TauxEndettement 
+		
 		return emprunt;
 	}
 	//==============================================================================

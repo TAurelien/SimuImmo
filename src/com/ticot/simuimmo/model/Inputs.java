@@ -25,6 +25,14 @@ public class Inputs {
 	public static double capitalEmprunte = 0;				//Valeur du capital emprunté
 	public static double tauxCredit = 0;					//Taux de credit
 	public static double tauxAssuranceCredit = 0;			//Taux de l'assurance de credit
+	// 
+	public static boolean reelNetvendeur = false;
+	public static boolean reelFraisAgence = false;
+	public static boolean reelFraisNotaire = false;
+	public static boolean reelHonoraireConseil = false;
+	public static boolean reelCapitalEmrpunte = false;
+	public static boolean reelTauxCredit = false;
+	public static boolean reelTauxAssurance = false;
 	
 	//Partie Gestion remplies par l'utilisateur
 	public static int typeGestion = 1;					//Choix du type de gestion du bien (location nu - 0, meublé - 1, saisonnière - 2 ou résidence principale - 3)

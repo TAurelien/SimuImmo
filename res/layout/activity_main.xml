@@ -44,16 +44,31 @@
 	                android:labelFor="@+id/valuePrixFAI"
 	                android:text="Prix FAI"
 	                android:textSize="18sp" />
-	
-	            <EditText
+	            
+	            <TextView
 	                android:id="@+id/valuePrixFAI"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
+	                android:hint="0"
+	                android:text="130000"
+	                android:gravity="right|center_vertical"
+	                android:paddingRight="12dp"
+	                android:textSize="18sp"
+	                android:visibility="gone" />
+	
+	            <EditText
+	                android:id="@+id/valueReelPrixFAI"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:layout_weight="1"
+	                android:gravity="right|center_vertical"
+	                android:inputType="numberDecimal"
 	                android:text="130000"
 	                android:textSize="18sp"
-	                android:inputType="numberDecimal" />
+	                android:visibility="visible" />
 	            
 	            <View
 	                android:layout_width="32dp"
@@ -85,8 +100,9 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:hint="0"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:visibility="visible" />
 	            
 	     		<EditText
@@ -96,7 +112,9 @@
 	     		    android:layout_gravity="center_vertical"
 	     		    android:layout_weight="1"
 	     		    android:inputType="numberDecimal"
+	     		    android:text="0"
 	     		    android:textSize="18sp"
+	     		    android:gravity="right|center_vertical"
 	     		    android:visibility="gone" />
 	            
 		        <CheckBox
@@ -140,9 +158,10 @@
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:hint="0"
-	                android:textSize="18sp" />
+	                android:textSize="18sp"
+	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
 	                android:id="@+id/valueReelFraisAgence"
@@ -152,6 +171,8 @@
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
+	                android:text="0"
 	                android:inputType="numberDecimal" />
 	            
 		        <CheckBox
@@ -187,9 +208,10 @@
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:hint="0"
-	                android:textSize="18sp" />
+	                android:textSize="18sp"
+	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
 	                android:id="@+id/valueReelFraisNotaire"
@@ -198,7 +220,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
+	                android:text="0"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
 		        <CheckBox
@@ -234,6 +258,7 @@
 	                android:layout_gravity="center_vertical"
 	                android:text="20000"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	
 	            <View
@@ -266,6 +291,7 @@
 	                android:layout_weight="1"
 	                android:text="4000"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	
 	            <View
@@ -305,9 +331,10 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:hint="0"
-	                android:textSize="18sp" />
+	                android:textSize="18sp"
+	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
 	                android:id="@+id/valueReelHonoraireConseil"
@@ -316,7 +343,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
+	                android:text="0"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
 		        <CheckBox
@@ -353,6 +382,7 @@
 	                android:layout_weight="1"
 	                android:text="2000"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
 	            <View
@@ -384,8 +414,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:hint="0" />
 	            
 	            <View
@@ -418,6 +449,7 @@
 	                android:layout_weight="1"
 	                android:text="10000"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	
 	            <View
@@ -449,8 +481,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:hint="0" />
 	            
 	            <View
@@ -493,9 +526,10 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:hint="0"
-	                android:textSize="18sp" />
+	                android:textSize="18sp"
+	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
 	                android:id="@+id/valueReelCapitalEmprunte"
@@ -504,7 +538,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
+	                android:text="0"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
 		        <CheckBox
@@ -541,6 +577,7 @@
 	                android:layout_weight="1"
 	                android:text="25"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	
 	            <View
@@ -572,8 +609,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:hint="0" />
 	            
 	            <View
@@ -606,8 +644,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:hint="0" />
 	            
 	            <EditText
@@ -617,7 +656,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
+	                android:text="0"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
 		        <CheckBox
@@ -653,8 +694,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:hint="0" />
 	            
 	            <EditText
@@ -664,7 +706,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
+	                android:text="0"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
 		        <CheckBox
@@ -698,8 +742,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:hint="0" />
 	            
 	            <View
@@ -731,8 +776,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingLeft="12dp"
+	                android:paddingRight="12dp"
 	                android:textSize="18sp"
+	                android:gravity="right|center_vertical"
 	                android:hint="0" />
 	            
 	            <View

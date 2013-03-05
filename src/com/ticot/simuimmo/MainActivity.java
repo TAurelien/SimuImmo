@@ -53,8 +53,32 @@ public class MainActivity extends Activity {
 		
 		//Get the user's input values
 		//Inputs.prixFAI = getDoubleValue(R.id.valuePrixFAI);			//Test to check value before assign it to the variable
+		
+		Inputs.reelNetvendeur = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
+		Inputs.reelFraisAgence = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
+		Inputs.reelFraisNotaire = ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked();
+		Inputs.reelHonoraireConseil = ((CheckBox)findViewById(R.id.ReelHonoraireConseil)).isChecked();
+		Inputs.reelCapitalEmrpunte = ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked();
+		Inputs.reelTauxCredit = ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked();
+		Inputs.reelTauxAssurance = ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked();
+		//====================================
+		Inputs.netVendeur = Double.valueOf(
+				((EditText)findViewById(R.id.valueReelNetVendeur)).getText().toString());
+		Inputs.fraisAgence = Double.valueOf(
+				((EditText)findViewById(R.id.valueReelFraisAgence)).getText().toString());
+		Inputs.fraisNotaire = Double.valueOf(
+				((EditText)findViewById(R.id.valueReelFraisNotaire)).getText().toString());
+		Inputs.honoraireConseil = Double.valueOf(
+				((EditText)findViewById(R.id.valueReelHonoraireConseil)).getText().toString());
+		Inputs.capitalEmprunte = Double.valueOf(
+				((EditText)findViewById(R.id.valueReelCapitalEmprunte)).getText().toString());
+		Inputs.tauxCredit = Double.valueOf(
+				((EditText)findViewById(R.id.valueReelTauxCredit)).getText().toString());
+		Inputs.tauxAssuranceCredit = Double.valueOf(
+				((EditText)findViewById(R.id.valueReelTauxAssurance)).getText().toString());
+		//====================================
 		Inputs.prixFAI = Double.valueOf(
-				((EditText)findViewById(R.id.valuePrixFAI)).getText().toString());
+				((EditText)findViewById(R.id.valueReelPrixFAI)).getText().toString());
 		Inputs.agence = ((CheckBox)findViewById(R.id.valueAgence)).isChecked();
 		Inputs.travaux = Double.valueOf(
 				((EditText)findViewById(R.id.valueTravaux)).getText().toString());
@@ -164,9 +188,15 @@ public class MainActivity extends Activity {
 				findViewById(R.id.valueNetVendeur).setVisibility(8);		//If checked turn TextView visibility to GONE
 				findViewById(R.id.valueReelNetVendeur).setVisibility(0);	//If checked turn EditText visibility to VISIBLE
 				findViewById(R.id.valueReelNetVendeur).requestFocus();		//If checked set focus to the EditText
+				if (((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked()){
+					findViewById(R.id.valueReelPrixFAI).setVisibility(8);
+					findViewById(R.id.valuePrixFAI).setVisibility(0);
+				}
 			} else{
 				findViewById(R.id.valueNetVendeur).setVisibility(0);		//If unchecked turn TextView visibility to VISIBLE
 				findViewById(R.id.valueReelNetVendeur).setVisibility(8);	//If unchecked turn EditText visibility to GONE
+				findViewById(R.id.valueReelPrixFAI).setVisibility(0);
+				findViewById(R.id.valuePrixFAI).setVisibility(8);
 			}
 			break;
 		case R.id.ReelFraisAgence:
@@ -174,9 +204,15 @@ public class MainActivity extends Activity {
 				findViewById(R.id.valueFraisAgence).setVisibility(8);
 				findViewById(R.id.valueReelFraisAgence).setVisibility(0);
 				findViewById(R.id.valueReelFraisAgence).requestFocus();
+				if (((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked()){
+					findViewById(R.id.valueReelPrixFAI).setVisibility(8);
+					findViewById(R.id.valuePrixFAI).setVisibility(0);
+				}
 			} else{
 				findViewById(R.id.valueFraisAgence).setVisibility(0);
 				findViewById(R.id.valueReelFraisAgence).setVisibility(8);
+				findViewById(R.id.valueReelPrixFAI).setVisibility(0);
+				findViewById(R.id.valuePrixFAI).setVisibility(8);
 			}
 			break;
 		case R.id.ReelFraisNotaire:
