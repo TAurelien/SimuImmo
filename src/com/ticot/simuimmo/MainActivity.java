@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -173,9 +174,15 @@ public class MainActivity extends Activity {
 		}
 		//FInally update the global variable 
 		if (AcquisitionCollpased)
+		{
 			AcquisitionCollpased = false;
+			((Button)view).setText("Afficher moins");
+		}		
 		else
+		{
 			AcquisitionCollpased = true;
+			((Button)view).setText("Afficher plus");
+		}
 	}
 	
 	public void switchRealField(View view){
