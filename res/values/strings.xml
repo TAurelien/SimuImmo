@@ -4,6 +4,6 @@
     <string name="app_name">SimuImmo</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="defaultValueZeroEuro">0 €</string>
+    <string name="defaultValueZeroEuro">0,00 €</string>
 
 </resources>

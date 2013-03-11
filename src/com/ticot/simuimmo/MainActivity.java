@@ -5,7 +5,6 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import android.os.Bundle;
 import android.app.Activity;
-import android.text.Editable;
 import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import com.ticot.simuimmo.calculs.Temp;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.Settings;
@@ -92,7 +90,6 @@ public class MainActivity extends Activity {
 		Inputs.conseil = ((CheckBox)findViewById(R.id.valueConseil)).isChecked();
 		Inputs.apport = Double.valueOf(checkValue((EditText)findViewById(R.id.valueApport),"0")); 
 		Inputs.autresFrais = Double.valueOf(checkValue((EditText)findViewById(R.id.valueAutresFrais),"0")); 
-		//TODO Check user's input values (mandatory, empty, formated, ...)
 		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
 		
 		//Popultate the created instance of Bien (and run the different calculs)
@@ -114,9 +111,17 @@ public class MainActivity extends Activity {
 		formatPer.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));
 		
 		//Format user's inputs for FraisAcquisition
+		((EditText) findViewById(R.id.valueReelPrixFAI)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getPrixFAI())));
+		((EditText) findViewById(R.id.valueTravaux)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getTravaux())));
+		((EditText) findViewById(R.id.valueAmenagement)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getAmenagement())));
+		((EditText) findViewById(R.id.valueAutresFrais)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getAutresFrais())));
+		((EditText) findViewById(R.id.valueApport)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getApport())));
 		
-		//((EditText) findViewById(R.id.valuePrixFAI)).setText(
-		//		String.valueOf(formatEur.format((a.getFraisAcquisition()).getPrixFAI())));
 		
 		//Fill computed values for FraisAcquisition
 		((TextView) findViewById(R.id.valueNetVendeur)).setText(
@@ -278,9 +283,18 @@ public class MainActivity extends Activity {
 		}
 		else
 		{
-			//TODO Take into account the mandatory fields
-			//TODO Check if value is already formated
+			//Check if value is already formated
 			value = view.getText().toString();
+			if (value.contains("€"))
+			{
+				value = value.replace('€', ' ');
+			}
+			if (value.contains("%"))
+			{
+				value = value.replace('%', ' ');
+			}
+			value = value.replace(',', '.');
+			value = value.replaceAll("\\s", "");
 		}
 		return value;
 	}
