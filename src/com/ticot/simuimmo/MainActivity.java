@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.ticot.simuimmo.calculs.Temp;
 import com.ticot.simuimmo.model.Inputs;
+import com.ticot.simuimmo.model.Settings;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
 import com.ticot.simuimmo.model.bien.Bien;
 import com.ticot.simuimmo.model.gestion.Gestion;
@@ -47,8 +48,25 @@ public class MainActivity extends Activity {
 	public void onClick (View v){
 		//Methods to get user's inputs, launch calculation and fill back the result in the UI 
 		
-		//Get the user's input values
+		//Check the mandatory fields
+		if (!(((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked() && ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked()))
+		{
+			if (((EditText)findViewById(R.id.valueReelPrixFAI)).getText().toString().isEmpty()
+					|| ((EditText)findViewById(R.id.valueReelPrixFAI)).getText().toString().equals("0"))
+			{
+				Toast.makeText(getBaseContext(), "Le prix FAI doit être supérieur à 0", Toast.LENGTH_SHORT).show();
+				//((TextView)findViewById(R.id.tvPrixFAI)).setTextColor(getResources().getColor(R.color.red));
+				return;
+			}
+			else
+			{
+				//((TextView)findViewById(R.id.tvPrixFAI)).setTextColor();
+				//TODO revert the change of text color to the textColorPrimary
+			}
+				
+		}
 		
+		//Get the user's input values
 		//====================================
 		Inputs.reelNetvendeur = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
 		Inputs.reelFraisAgence = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
@@ -63,8 +81,8 @@ public class MainActivity extends Activity {
 		Inputs.fraisNotaire = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelFraisNotaire),"0"));
 		Inputs.honoraireConseil = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelHonoraireConseil),"0"));
 		Inputs.capitalEmprunte = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelCapitalEmprunte),"0"));
-		Inputs.tauxCredit = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelTauxCredit),"0"));
-		Inputs.tauxAssuranceCredit = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelTauxAssurance),"0"));
+		Inputs.tauxCredit = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelTauxCredit), String.valueOf(Settings.taux25ans)));
+		Inputs.tauxAssuranceCredit = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelTauxAssurance),String.valueOf(Settings.tauxAssuranceCredit)));
 		//====================================
 		Inputs.prixFAI = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelPrixFAI),"0"));
 		Inputs.agence = ((CheckBox)findViewById(R.id.valueAgence)).isChecked();
