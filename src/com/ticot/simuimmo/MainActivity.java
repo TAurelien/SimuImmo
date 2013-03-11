@@ -141,7 +141,7 @@ public class MainActivity extends Activity {
 		((TextView) findViewById(R.id.valueCapitalEmprunte)).setText(
 				String.valueOf(formatEur.format((a.getEmprunt()).getCapitalEmprunte())));
 		((TextView) findViewById(R.id.valueNbMensualite)).setText(
-				String.valueOf(formatEur.format((a.getEmprunt()).getNbMensualiteCredit())));
+				String.valueOf((a.getEmprunt()).getNbMensualiteCredit()));
 		((TextView) findViewById(R.id.valueTauxCredit)).setText(
 				String.valueOf(formatPer.format((a.getEmprunt()).getTauxCredit())));
 		((TextView) findViewById(R.id.valueTauxAssurance)).setText(
