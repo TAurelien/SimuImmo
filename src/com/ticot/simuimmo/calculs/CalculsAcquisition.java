@@ -44,7 +44,6 @@ public class CalculsAcquisition {
 		//Set FraisNotaire according to computed or user filled
 		if (Inputs.reelFraisNotaire){
 			fa.setFraisNotaire(Inputs.fraisNotaire);
-			System.out.println("Frais de notaire: " + Inputs.fraisNotaire + "\n" + fa.getFraisNotaire());
 		}
 		else
 			fa.setFraisNotaire(calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
@@ -55,10 +54,10 @@ public class CalculsAcquisition {
 		else
 			fa.setHonoraireConseil(calculHonorairesConseil(fa.getConseil(), fa.getNetVendeur(),fa.getTravaux(), fa.getAmenagement(),Settings.pourcentageHonorairesConseil));
 		
-		//
+		//Set CoutTotal according to formula
 		fa.setCoutTotal(calculCoutTotal(fa.getNetVendeur(), fa.getFraisAgence(),fa.getFraisNotaire(), fa.getTravaux(),fa.getAmenagement(), fa.getHonoraireConseil(),fa.getAutresFrais()));
 		
-		//
+		//Set Sequestre according to formula
 		fa.setSequestre(calculSequestre(fa.getPrixFAI(), Settings.pourcentageSequestre));
 		return fa;
 	}
@@ -188,16 +187,17 @@ public class CalculsAcquisition {
 	}
 	
 	//Method to compute Credit
-	
 	public static double[][] calculCredit(double capitalEmprunte, int nbMensualiteCredit, double taux, double tauxAssurance, double mensualiteCredit){
 		double[][] credit = new double[(nbMensualiteCredit + 1)][7];
 		int i = 0, j = 0;
 		
+		//Initialize line 0 of the table with value 0
 		for (i = 0; i < 7; i++)
 		{
 			credit[0][i] = 0;
 		}
 		
+		//Initialize the first line of the table
 		credit[1][0] = 1;
 		credit[1][1] = 1;
 		credit[1][2] = mensualiteCredit;
@@ -207,9 +207,12 @@ public class CalculsAcquisition {
 		credit[1][6] = credit[1][2] - credit[1][3] - credit[1][5];
 		//System.out.println(credit[1][0] + " " + credit[1][1] + " " + credit[1][2] + " " + credit[1][3] + " " + credit[1][4] + " " + credit[1][5] + " " + credit[1][6]);
 		
+		//Calculate the different values for each Echeance 
 		j = 2;
 		for (i = 2; i < nbMensualiteCredit + 1; i++)
 		{
+			
+			//Column Année, set the information of Année, +1 each 12 Echeance
 			if (j > 12)
 			{
 				credit[i][0] = credit[i-1][0] + 1;
@@ -219,12 +222,19 @@ public class CalculsAcquisition {
 			{
 				credit[i][0] = credit[i-1][0];
 				j++;
-			}			
+			}
+			
+			//Column Echeance
 			credit[i][1] = i;
+			//Column Mensualite
 			credit[i][2] = credit[i-1][2];
+			//Column Assurance part of the Mensualite
 			credit[i][3] = capitalEmprunte * tauxAssurance /12;
+			//Column Capital restant du
 			credit[i][4] = credit[i-1][4] - credit[i-1][6];
+			//Column Interet d'emprunt
 			credit[i][5] = credit[i][4] * taux /12;
+			//Column Remboursement Capital
 			credit[i][6] = credit[i][2] - credit[i][3] - credit[i][5];
 			//System.out.println(credit[i][0] + " " + credit[i][1] + " " + credit[i][2] + " " + credit[i][3] + " " + credit[i][4] + " " + credit[i][5] + " " + credit[i][6]);
 		}
@@ -234,15 +244,17 @@ public class CalculsAcquisition {
 	
 	//Method to compute Credit
 	public static double[][] calculCreditAn(double credit[][], int dureeCredit){
-		//TODO Make the calculation fo the CreditAn
+		//Set a table for the Credit per year, each line is a single year
 		double[][] creditAn = new double[(dureeCredit + 1)][7];
 		int i = 0, j = 0;
 		
+		//Initialize line 0 of the table with value 0
 		for (i = 0; i < 7; i++)
 		{
 			credit[0][i] = 0;
 		}
 		
+		//Set for each line the total value of each Echeance for 1 year
 		for (i = 1; i < dureeCredit + 1; i++)
 		{
 			creditAn[i][0] = i;
