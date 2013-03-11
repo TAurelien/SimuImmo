@@ -92,7 +92,11 @@ public class CalculsAcquisition {
 				emprunt.getTauxCredit(), emprunt.getTauxAssuranceCredit()));
 		
 		emprunt.setTauxEndettement(0); //TODO Update after creation of the method for TauxEndettement 
-		
+
+		emprunt.setCredit(calculCredit(emprunt.getCapitalEmprunte(), emprunt.getNbMensualiteCredit(), emprunt.getTauxCredit(),
+				emprunt.getTauxAssuranceCredit(), emprunt.getMensualiteCredit()));
+		emprunt.setCreditAn(calculCreditAn(emprunt.getCredit(),emprunt.getDureeCredit()));
+
 		return emprunt;
 	}
 	//==============================================================================
@@ -181,6 +185,80 @@ public class CalculsAcquisition {
 	//Method to compute CapitalEmprunte
 	public static double calculCapitalEmprunte(double coutTotal, double apport){
 		return coutTotal - apport;
+	}
+	
+	//Method to compute Credit
+	
+	public static double[][] calculCredit(double capitalEmprunte, int nbMensualiteCredit, double taux, double tauxAssurance, double mensualiteCredit){
+		double[][] credit = new double[(nbMensualiteCredit + 1)][7];
+		int i = 0, j = 0;
+		
+		for (i = 0; i < 7; i++)
+		{
+			credit[0][i] = 0;
+		}
+		
+		credit[1][0] = 1;
+		credit[1][1] = 1;
+		credit[1][2] = mensualiteCredit;
+		credit[1][3] = capitalEmprunte * tauxAssurance /12;
+		credit[1][4] = capitalEmprunte;
+		credit[1][5] = credit[1][4] * taux /12;
+		credit[1][6] = credit[1][2] - credit[1][3] - credit[1][5];
+		//System.out.println(credit[1][0] + " " + credit[1][1] + " " + credit[1][2] + " " + credit[1][3] + " " + credit[1][4] + " " + credit[1][5] + " " + credit[1][6]);
+		
+		j = 2;
+		for (i = 2; i < nbMensualiteCredit + 1; i++)
+		{
+			if (j > 12)
+			{
+				credit[i][0] = credit[i-1][0] + 1;
+				j = 2;
+			}
+			else
+			{
+				credit[i][0] = credit[i-1][0];
+				j++;
+			}			
+			credit[i][1] = i;
+			credit[i][2] = credit[i-1][2];
+			credit[i][3] = capitalEmprunte * tauxAssurance /12;
+			credit[i][4] = credit[i-1][4] - credit[i-1][6];
+			credit[i][5] = credit[i][4] * taux /12;
+			credit[i][6] = credit[i][2] - credit[i][3] - credit[i][5];
+			//System.out.println(credit[i][0] + " " + credit[i][1] + " " + credit[i][2] + " " + credit[i][3] + " " + credit[i][4] + " " + credit[i][5] + " " + credit[i][6]);
+		}
+		
+		return credit;
+	}
+	
+	//Method to compute Credit
+	public static double[][] calculCreditAn(double credit[][], int dureeCredit){
+		//TODO Make the calculation fo the CreditAn
+		double[][] creditAn = new double[(dureeCredit + 1)][7];
+		int i = 0, j = 0;
+		
+		for (i = 0; i < 7; i++)
+		{
+			credit[0][i] = 0;
+		}
+		
+		for (i = 1; i < dureeCredit + 1; i++)
+		{
+			creditAn[i][0] = i;
+			creditAn[i][1] = i * 12;
+			for (j = ((i - 1) * 12) + 1; j < i * 12 + 1; j++)
+			{
+				creditAn[i][2] = creditAn[i][2] + credit[j][2];
+				creditAn[i][3] = creditAn[i][3] + credit[j][3];
+				creditAn[i][4] = credit[j][4];
+				creditAn[i][5] = creditAn[i][5] + credit[j][5];
+				creditAn[i][6] = creditAn[i][6] + credit[j][6];
+			}
+			//System.out.println(creditAn[i][0] + " " + creditAn[i][1] + " " + creditAn[i][2] + " " + creditAn[i][3] + " " + creditAn[i][4] + " " + creditAn[i][5] + " " + creditAn[i][6]);
+		}
+		
+		return creditAn;
 	}
 	
 	//TODO Create the methods for the calculation of the TauxEndettement

@@ -10,7 +10,7 @@ public class Emprunt {
 	//Déclaration des variables
 	//==============================================================================
 	private double capitalEmprunte = 0, mensualiteCredit = 0, tauxCredit = 0,
-			tauxAssuranceCredit = 0, tauxEndettement = 0;
+			tauxAssuranceCredit = 0, tauxEndettement = 0, credit[][], creditAn[][];
 	private int dureeCredit = 0, nbMensualiteCredit = 0;
 	
 	//Variables pour la prise en compte des valeurs réelles
@@ -28,6 +28,7 @@ public class Emprunt {
 		super();
 	}
 
+	//TODO Remove construtor except the empty one
 	//Constructeur avec les valeurs utilisateurs
 	/**
 	 * @param dureeCredit
@@ -80,6 +81,20 @@ public class Emprunt {
 		return capitalEmprunteReel;
 	}
 
+	/**
+	 * @return the credit
+	 */
+	public double[][] getCredit() {
+		return credit;
+	}
+
+	/**
+	 * @return the credit
+	 */
+	public double[][] getCreditAn() {
+		return creditAn;
+	}
+	
 	/**
 	 * @return the dureeCredit
 	 */
@@ -154,6 +169,20 @@ public class Emprunt {
 		this.capitalEmprunteReel = capitalEmprunteReel;
 	}
 
+	/**
+	 * @param credit the credit to set
+	 */
+	public void setCredit(double credit[][]) {
+		this.credit = credit;
+	}
+
+	/**
+	 * @param credit the creditAn to set
+	 */
+	public void setCreditAn(double creditAn[][]) {
+		this.creditAn = creditAn;
+	}
+	
 	/**
 	 * @param dureeCredit the dureeCredit to set
 	 */
