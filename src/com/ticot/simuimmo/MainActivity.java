@@ -5,6 +5,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import android.os.Bundle;
 import android.app.Activity;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
@@ -34,18 +35,12 @@ public class MainActivity extends Activity {
 	}
 
 	//TODO onCreateOptionsMenu to do
-/*	@Override
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
-	}*/
-	
-	//To do list in the MainActivity
-	//TODO Take into account the mandatory fields
-	//TODO Create the methods to collapse less important fields
-	//TODO Take into account the empty fields and if necessary assign them an appropriate value (0 for instance)
-	
+	}
 	
 	//Calculation button
 	//==============================================================================
@@ -53,8 +48,8 @@ public class MainActivity extends Activity {
 		//Methods to get user's inputs, launch calculation and fill back the result in the UI 
 		
 		//Get the user's input values
-		//Inputs.prixFAI = getDoubleValue(R.id.valuePrixFAI);			//Test to check value before assign it to the variable
 		
+		//====================================
 		Inputs.reelNetvendeur = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
 		Inputs.reelFraisAgence = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
 		Inputs.reelFraisNotaire = ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked();
@@ -63,35 +58,22 @@ public class MainActivity extends Activity {
 		Inputs.reelTauxCredit = ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked();
 		Inputs.reelTauxAssurance = ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked();
 		//====================================
-		Inputs.netVendeur = Double.valueOf(
-				((EditText)findViewById(R.id.valueReelNetVendeur)).getText().toString());
-		Inputs.fraisAgence = Double.valueOf(
-				((EditText)findViewById(R.id.valueReelFraisAgence)).getText().toString());
-		Inputs.fraisNotaire = Double.valueOf(
-				((EditText)findViewById(R.id.valueReelFraisNotaire)).getText().toString());
-		Inputs.honoraireConseil = Double.valueOf(
-				((EditText)findViewById(R.id.valueReelHonoraireConseil)).getText().toString());
-		Inputs.capitalEmprunte = Double.valueOf(
-				((EditText)findViewById(R.id.valueReelCapitalEmprunte)).getText().toString());
-		Inputs.tauxCredit = Double.valueOf(
-				((EditText)findViewById(R.id.valueReelTauxCredit)).getText().toString());
-		Inputs.tauxAssuranceCredit = Double.valueOf(
-				((EditText)findViewById(R.id.valueReelTauxAssurance)).getText().toString());
+		Inputs.netVendeur = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelNetVendeur),"0"));
+		Inputs.fraisAgence = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelFraisAgence),"0"));
+		Inputs.fraisNotaire = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelFraisNotaire),"0"));
+		Inputs.honoraireConseil = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelHonoraireConseil),"0"));
+		Inputs.capitalEmprunte = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelCapitalEmprunte),"0"));
+		Inputs.tauxCredit = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelTauxCredit),"0"));
+		Inputs.tauxAssuranceCredit = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelTauxAssurance),"0"));
 		//====================================
-		Inputs.prixFAI = Double.valueOf(
-				((EditText)findViewById(R.id.valueReelPrixFAI)).getText().toString());
+		Inputs.prixFAI = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelPrixFAI),"0"));
 		Inputs.agence = ((CheckBox)findViewById(R.id.valueAgence)).isChecked();
-		Inputs.travaux = Double.valueOf(
-				((EditText)findViewById(R.id.valueTravaux)).getText().toString());
-		Inputs.dureeCredit = Integer.valueOf(
-				((EditText)findViewById(R.id.valueDureeCredit)).getText().toString());
-		Inputs.amenagement = Double.valueOf(
-				((EditText)findViewById(R.id.valueAmenagement)).getText().toString());
+		Inputs.travaux = Double.valueOf(checkValue((EditText)findViewById(R.id.valueTravaux),"0"));
+		Inputs.dureeCredit = Integer.valueOf(checkValue((EditText)findViewById(R.id.valueDureeCredit),"25"));
+		Inputs.amenagement = Double.valueOf(checkValue((EditText)findViewById(R.id.valueAmenagement),"0"));
 		Inputs.conseil = ((CheckBox)findViewById(R.id.valueConseil)).isChecked();
-		Inputs.apport = Double.valueOf(
-				((EditText)findViewById(R.id.valueApport)).getText().toString()); 
-		Inputs.autresFrais = Double.valueOf(
-				((EditText)findViewById(R.id.valueAutresFrais)).getText().toString()); 
+		Inputs.apport = Double.valueOf(checkValue((EditText)findViewById(R.id.valueApport),"0")); 
+		Inputs.autresFrais = Double.valueOf(checkValue((EditText)findViewById(R.id.valueAutresFrais),"0")); 
 		//TODO Check user's input values (mandatory, empty, formated, ...)
 		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
 		
@@ -108,18 +90,13 @@ public class MainActivity extends Activity {
 		//Methods to update the UI fields with all the computed values;
 		
 		//Define the format for the values
-		DecimalFormat formatEur = new DecimalFormat("###,### €");
+		DecimalFormat formatEur = new DecimalFormat("###,##0.00 €");
 		formatEur.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));
-		formatEur.setMaximumFractionDigits(2);
-		formatEur.setMinimumFractionDigits(2);
-		formatEur.setMinimumIntegerDigits(1);
-		DecimalFormat formatPer = new DecimalFormat("## %");
+		DecimalFormat formatPer = new DecimalFormat("#0.00 %");
 		formatPer.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));
-		formatPer.setMaximumFractionDigits(2);
-		formatPer.setMinimumFractionDigits(2);
-		formatPer.setMinimumIntegerDigits(1);
 		
 		//Format user's inputs for FraisAcquisition
+		
 		//((EditText) findViewById(R.id.valuePrixFAI)).setText(
 		//		String.valueOf(formatEur.format((a.getFraisAcquisition()).getPrixFAI())));
 		
@@ -192,18 +169,18 @@ public class MainActivity extends Activity {
 		//Several fields are able to switch between TextView and EditText
 		case R.id.ReelNetVendeur:
 			if (((CheckBox)view).isChecked()){
-				findViewById(R.id.valueNetVendeur).setVisibility(8);		//If checked turn TextView visibility to GONE
-				findViewById(R.id.valueReelNetVendeur).setVisibility(0);	//If checked turn EditText visibility to VISIBLE
-				findViewById(R.id.valueReelNetVendeur).requestFocus();		//If checked set focus to the EditText
-				if (((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked()){
-					findViewById(R.id.valueReelPrixFAI).setVisibility(8);
-					findViewById(R.id.valuePrixFAI).setVisibility(0);
+				findViewById(R.id.valueNetVendeur).setVisibility(8);				//If checked turn TextView visibility to GONE
+				findViewById(R.id.valueReelNetVendeur).setVisibility(0);			//If checked turn EditText visibility to VISIBLE
+				findViewById(R.id.valueReelNetVendeur).requestFocus();				//If checked set focus to the EditText
+				if (((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked()){	//
+					findViewById(R.id.valueReelPrixFAI).setVisibility(8);			//
+					findViewById(R.id.valuePrixFAI).setVisibility(0);				//
 				}
 			} else{
-				findViewById(R.id.valueNetVendeur).setVisibility(0);		//If unchecked turn TextView visibility to VISIBLE
-				findViewById(R.id.valueReelNetVendeur).setVisibility(8);	//If unchecked turn EditText visibility to GONE
-				findViewById(R.id.valueReelPrixFAI).setVisibility(0);
-				findViewById(R.id.valuePrixFAI).setVisibility(8);
+				findViewById(R.id.valueNetVendeur).setVisibility(0);				//If unchecked turn TextView visibility to VISIBLE
+				findViewById(R.id.valueReelNetVendeur).setVisibility(8);			//If unchecked turn EditText visibility to GONE
+				findViewById(R.id.valueReelPrixFAI).setVisibility(0);				//
+				findViewById(R.id.valuePrixFAI).setVisibility(8);					//
 			}
 			break;
 		case R.id.ReelFraisAgence:
@@ -275,9 +252,18 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	/*
-	private double getDoubleValue(int id){
-		return Double.valueOf(((EditText)findViewById(id)).getText().toString());
+	private String checkValue(EditText view, String defaultValue){
+		String value;
+		if (view.getText().toString().isEmpty())
+		{
+			value = defaultValue;
+		}
+		else
+		{
+			//TODO Take into account the mandatory fields
+			//TODO Check if value is already formated
+			value = view.getText().toString();
+		}
+		return value;
 	}
-	*/
 }
