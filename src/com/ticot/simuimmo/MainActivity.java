@@ -23,7 +23,8 @@ import com.ticot.simuimmo.model.gestion.Gestion;
 public class MainActivity extends Activity {
 
 	//Declaration of variables
-	public boolean AcquisitionCollpased = true; 
+	public boolean AcquisitionCollpased = true;
+	public boolean emptyMandatoryField = false;
 	public Bien bien = Temp.test();						//Creation of the class Bien through the temporary class
 	
 	/**Called when the activity is first created*/
@@ -65,32 +66,13 @@ public class MainActivity extends Activity {
 		}
 		
 		//Get the user's input values
-		//====================================
-		Inputs.reelNetvendeur = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
-		Inputs.reelFraisAgence = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
-		Inputs.reelFraisNotaire = ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked();
-		Inputs.reelHonoraireConseil = ((CheckBox)findViewById(R.id.ReelHonoraireConseil)).isChecked();
-		Inputs.reelCapitalEmrpunte = ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked();
-		Inputs.reelTauxCredit = ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked();
-		Inputs.reelTauxAssurance = ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked();
-		//====================================
-		Inputs.netVendeur = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelNetVendeur),"0"));
-		Inputs.fraisAgence = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelFraisAgence),"0"));
-		Inputs.fraisNotaire = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelFraisNotaire),"0"));
-		Inputs.honoraireConseil = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelHonoraireConseil),"0"));
-		Inputs.capitalEmprunte = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelCapitalEmprunte),"0"));
-		Inputs.tauxCredit = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelTauxCredit), String.valueOf(Settings.taux25ans)));
-		Inputs.tauxAssuranceCredit = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelTauxAssurance),String.valueOf(Settings.tauxAssuranceCredit)));
-		//====================================
-		Inputs.prixFAI = Double.valueOf(checkValue((EditText)findViewById(R.id.valueReelPrixFAI),"0"));
-		Inputs.agence = ((CheckBox)findViewById(R.id.valueAgence)).isChecked();
-		Inputs.travaux = Double.valueOf(checkValue((EditText)findViewById(R.id.valueTravaux),"0"));
-		Inputs.dureeCredit = Integer.valueOf(checkValue((EditText)findViewById(R.id.valueDureeCredit),"25"));
-		Inputs.amenagement = Double.valueOf(checkValue((EditText)findViewById(R.id.valueAmenagement),"0"));
-		Inputs.conseil = ((CheckBox)findViewById(R.id.valueConseil)).isChecked();
-		Inputs.apport = Double.valueOf(checkValue((EditText)findViewById(R.id.valueApport),"0")); 
-		Inputs.autresFrais = Double.valueOf(checkValue((EditText)findViewById(R.id.valueAutresFrais),"0")); 
-		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
+		getFormInput();
+		
+		if (emptyMandatoryField)
+		{
+			Toast.makeText(getBaseContext(), "Certains champs sont obligatoires", Toast.LENGTH_SHORT).show();	//TODO Avoid hardcoded value
+			return;
+		}
 		
 		//Popultate the created instance of Bien (and run the different calculs)
 		bien.setAcquisition(Temp.TestAcquisition());
@@ -99,6 +81,39 @@ public class MainActivity extends Activity {
 		//Launch the update of the UI to display the computed values
 		fillComputedValues(bien.getAcquisition(), bien.getGestion());
 		
+	}
+	
+	private void getFormInput(){
+		//Get the user's input values
+		//====================================
+		//Boolean to know if computed are user input
+		Inputs.reelNetvendeur = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
+		Inputs.reelFraisAgence = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
+		Inputs.reelFraisNotaire = ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked();
+		Inputs.reelHonoraireConseil = ((CheckBox)findViewById(R.id.ReelHonoraireConseil)).isChecked();
+		Inputs.reelCapitalEmrpunte = ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked();
+		Inputs.reelTauxCredit = ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked();
+		Inputs.reelTauxAssurance = ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked();
+		//====================================
+		//Field that can be either computed or input from user
+		Inputs.prixFAI = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelPrixFAI),"0"));
+		Inputs.netVendeur = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelNetVendeur),"0"));
+		Inputs.fraisAgence = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelFraisAgence),"0"));
+		Inputs.fraisNotaire = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelFraisNotaire),"0"));
+		Inputs.honoraireConseil = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelHonoraireConseil),"0"));
+		Inputs.capitalEmprunte = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelCapitalEmprunte),"0"));
+		Inputs.tauxCredit = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelTauxCredit), String.valueOf(Settings.taux25ans)));
+		Inputs.tauxAssuranceCredit = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelTauxAssurance),String.valueOf(Settings.tauxAssuranceCredit)));
+		//====================================
+		//Field that are always user input
+		Inputs.agence = ((CheckBox)findViewById(R.id.valueAgence)).isChecked();
+		Inputs.travaux = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueTravaux),"0"));
+		Inputs.dureeCredit = Integer.valueOf(checkFieldValue((EditText)findViewById(R.id.valueDureeCredit),"25"));
+		Inputs.amenagement = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueAmenagement),"0"));
+		Inputs.conseil = ((CheckBox)findViewById(R.id.valueConseil)).isChecked();
+		Inputs.apport = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueApport),"0")); 
+		Inputs.autresFrais = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueAutresFrais),"0")); 
+		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
 	}
 	
 	private void fillComputedValues(Acquisition a, Gestion g){
@@ -161,7 +176,7 @@ public class MainActivity extends Activity {
 		//Get all childs of the Form layout and check for each one if their tag is "Collapsable"
 		for (int i=0; i < ll.getChildCount(); i++){
 			View v = ll.getChildAt(i);
-			if (v.getTag().toString().equals("Collapsable")){			//Condition doesn't work for view without tag, need to check if tag is empty
+			if (v.getTag().toString().contains("Collapsable")){			//Condition doesn't work for view without tag, need to check if tag is empty
 				//If the item is "Collapsable"
 				//Checking if the UI is already collapsed or not
 				if (AcquisitionCollpased)
@@ -197,12 +212,16 @@ public class MainActivity extends Activity {
 				findViewById(R.id.valueReelNetVendeur).requestFocus();				//If checked set focus to the EditText
 				if (((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked()){	//
 					findViewById(R.id.valueReelPrixFAI).setVisibility(8);			//
+					findViewById(R.id.valueReelPrixFAI).setTag("Optional");			//TODO avoid harcoded value
 					findViewById(R.id.valuePrixFAI).setVisibility(0);				//
+				}else{
+					findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");
 				}
 			} else{
 				findViewById(R.id.valueNetVendeur).setVisibility(0);				//If unchecked turn TextView visibility to VISIBLE
 				findViewById(R.id.valueReelNetVendeur).setVisibility(8);			//If unchecked turn EditText visibility to GONE
 				findViewById(R.id.valueReelPrixFAI).setVisibility(0);				//
+				findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");			//
 				findViewById(R.id.valuePrixFAI).setVisibility(8);					//
 			}
 			break;
@@ -213,12 +232,16 @@ public class MainActivity extends Activity {
 				findViewById(R.id.valueReelFraisAgence).requestFocus();
 				if (((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked()){
 					findViewById(R.id.valueReelPrixFAI).setVisibility(8);
+					findViewById(R.id.valueReelPrixFAI).setTag("Optional");
 					findViewById(R.id.valuePrixFAI).setVisibility(0);
+				}else{
+					findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");
 				}
 			} else{
 				findViewById(R.id.valueFraisAgence).setVisibility(0);
 				findViewById(R.id.valueReelFraisAgence).setVisibility(8);
 				findViewById(R.id.valueReelPrixFAI).setVisibility(0);
+				findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");
 				findViewById(R.id.valuePrixFAI).setVisibility(8);
 			}
 			break;
@@ -275,11 +298,19 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	private String checkValue(EditText view, String defaultValue){
-		String value;
+	private String checkFieldValue(EditText view, String defaultValue){
+		String value = null;
 		if (view.getText().toString().isEmpty())
 		{
-			value = defaultValue;
+			//if (view.getTag().toString().isEmpty())
+			//	value = defaultValue;
+			//else if (view.getTag().toString().contains("Mandatory"))
+			//{
+			//	emptyMandatoryField = true;
+			//	view.setBackgroundColor(getResources().getColor(R.color.red));
+			//}
+			//else
+				value = defaultValue;
 		}
 		else
 		{

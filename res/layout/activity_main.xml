@@ -60,6 +60,7 @@
 	
 	            <EditText
 	                android:id="@+id/valueReelPrixFAI"
+	                android:tag="Mandatory"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
@@ -107,6 +108,7 @@
 	            
 	     		<EditText
 	     		    android:id="@+id/valueReelNetVendeur"
+	     		    android:tag="Mandatory"
 	     		    android:layout_width="0dp"
 	     		    android:layout_height="wrap_content"
 	     		    android:layout_gravity="center_vertical"
@@ -165,6 +167,7 @@
 	            
 	            <EditText
 	                android:id="@+id/valueReelFraisAgence"
+	                android:tag="Mandatory"
 	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
@@ -215,6 +218,7 @@
 	            
 	            <EditText
 	                android:id="@+id/valueReelFraisNotaire"
+	                android:tag="Optional"
 	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
@@ -252,6 +256,7 @@
 	
 	            <EditText
 	                android:id="@+id/valueTravaux"
+	                android:tag="Optional"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
@@ -285,6 +290,7 @@
 	
 	            <EditText
 	                android:id="@+id/valueAmenagement"
+	                android:tag="Optional"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
@@ -338,6 +344,7 @@
 	            
 	            <EditText
 	                android:id="@+id/valueReelHonoraireConseil"
+	                android:tag="Optional"
 	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
@@ -376,6 +383,7 @@
 	
 	            <EditText
 	                android:id="@+id/valueAutresFrais"
+	                android:tag="Optional"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
@@ -443,6 +451,7 @@
 	
 	            <EditText
 	                android:id="@+id/valueApport"
+	                android:tag="Optional"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
@@ -533,6 +542,7 @@
 	            
 	            <EditText
 	                android:id="@+id/valueReelCapitalEmprunte"
+	                android:tag="Mandatory"
 	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
@@ -571,6 +581,7 @@
 	
 	            <EditText
 	                android:id="@+id/valueDureeCredit"
+	                android:tag="Mandatory"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
@@ -651,6 +662,7 @@
 	            
 	            <EditText
 	                android:id="@+id/valueReelTauxCredit"
+	                android:tag="Optional"
 	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
@@ -701,6 +713,7 @@
 	            
 	            <EditText
 	                android:id="@+id/valueReelTauxAssurance"
+	                android:tag="Optional"
 	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
