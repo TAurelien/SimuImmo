@@ -108,7 +108,7 @@
 	            
 	     		<EditText
 	     		    android:id="@+id/valueReelNetVendeur"
-	     		    android:tag="Mandatory"
+	     		    android:tag="Optional"
 	     		    android:layout_width="0dp"
 	     		    android:layout_height="wrap_content"
 	     		    android:layout_gravity="center_vertical"
@@ -167,7 +167,7 @@
 	            
 	            <EditText
 	                android:id="@+id/valueReelFraisAgence"
-	                android:tag="Mandatory"
+	                android:tag="Optional"
 	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
@@ -542,7 +542,7 @@
 	            
 	            <EditText
 	                android:id="@+id/valueReelCapitalEmprunte"
-	                android:tag="Mandatory"
+	                android:tag="Optional"
 	                android:visibility="gone"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
