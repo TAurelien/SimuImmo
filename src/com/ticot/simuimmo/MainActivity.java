@@ -99,6 +99,30 @@ public class MainActivity extends Activity {
 		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
 	}
 	
+	private String checkFieldValue(EditText view, String defaultValue){
+		String value = null;
+		//TODO Find a way to come back to the default background value
+		//view.setBackgroundColor(getResources().getColor(R.color.white));
+		if (!view.getText().toString().isEmpty())	//If there is no value
+		{
+			//Check if value is already formated, if yes, will replace 
+			value = view.getText().toString();
+			value = value.replaceAll("[^0-9,.]", "");
+			value = value.replace(',', '.');		//TODO Take care of the localization with a different separator
+		}
+		if (view.getText().toString().isEmpty() || value == "")	//If there is no value
+		{
+			if (view.getTag().toString().contains("Mandatory"))	//Check of the tag that has "Mandatory" attributes
+			{
+				emptyMandatoryField = true;
+				view.setBackgroundColor(getResources().getColor(R.color.red_light));
+			}
+			value = defaultValue;	//Finally return the default value
+		}
+		//Return the value
+		return value;
+	}
+	
 	private void fillComputedValues(Acquisition a, Gestion g){
 		//Methods to update the UI fields with all the computed values;
 		
@@ -285,37 +309,5 @@ public class MainActivity extends Activity {
 			}
 			break;
 		}
-	}
-	
-	private String checkFieldValue(EditText view, String defaultValue){
-		String value = null;
-		//TODO Find a way to come back to the default background value
-		//view.setBackgroundColor();
-		if (view.getText().toString().isEmpty())	//If there is no value
-		{
-			if (view.getTag().toString().contains("Mandatory"))	//Check of the tag that has "Mandatory" attributes
-			{
-				emptyMandatoryField = true;
-				view.setBackgroundColor(getResources().getColor(R.color.red_light));
-			}
-			value = defaultValue;	//Finally return the default value
-		}
-		else
-		{
-			//Check if value is already formated, if yes, will replace 
-			value = view.getText().toString();
-			if (value.contains("€"))
-			{
-				value = value.replace('€', ' ');	//Remove all '€' sign by whitespace
-			}
-			if (value.contains("%"))
-			{
-				value = value.replace('%', ' ');	//Remove all '%' sign by whitespace
-			}
-			value = value.replace(',', '.');		//TODO Take care of the localization with a different separator
-			value = value.replaceAll("\\s", "");	//Finally remove whitespaces
-		}
-		//Return the value
-		return value;
 	}
 }
