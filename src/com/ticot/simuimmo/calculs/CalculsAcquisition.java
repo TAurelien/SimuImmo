@@ -26,20 +26,30 @@ public class CalculsAcquisition {
 		//constructor for FraisAcquisition
 		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.agence, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
 		
-		//Set NetVendeur according to computed or user filled
-		if (Inputs.reelNetvendeur)
+		if (Inputs.reelNetvendeur && !Inputs.reelFraisAgence)
+		{
 			fa.setNetVendeur(Inputs.netVendeur);
-		else
-			fa.setNetVendeur(calculNetVendeur(Inputs.prixFAI,fa.getAgence(), Settings.pourcentageFraisAgence));
-		
-		//Set FraisAgence according to computed or user filled
-		if (Inputs.reelFraisAgence)
+			fa.setFraisAgence(fa.getPrixFAI() - fa.getNetVendeur());
+		}
+
+		if (Inputs.reelFraisAgence && !Inputs.reelNetvendeur)
+		{
 			fa.setFraisAgence(Inputs.fraisAgence);
-		else
-			fa.setFraisAgence(calculFraisAgence(fa.getNetVendeur(),fa.getAgence(), Settings.pourcentageFraisAgence));
+			fa.setNetVendeur(fa.getPrixFAI() - fa.getFraisAgence());
+		}
 		
-		//Set PrixFAI
-		fa.setPrixFAI(calculPrixFAI(fa.getNetVendeur(), fa.getFraisAgence()));
+		if (!Inputs.reelNetvendeur && !Inputs.reelFraisAgence)
+		{
+			fa.setNetVendeur(calculNetVendeur(Inputs.prixFAI,fa.getAgence(), Settings.pourcentageFraisAgence));
+			fa.setFraisAgence(calculFraisAgence(fa.getNetVendeur(),fa.getAgence(), Settings.pourcentageFraisAgence));
+		}
+		
+		if (Inputs.reelNetvendeur && Inputs.reelFraisAgence)
+		{
+			fa.setNetVendeur(Inputs.netVendeur);
+			fa.setFraisAgence(Inputs.fraisAgence);
+			fa.setPrixFAI(fa.getNetVendeur() + fa.getFraisAgence());	//TODO Could be simplified
+		}
 		
 		//Set FraisNotaire according to computed or user filled
 		if (Inputs.reelFraisNotaire){

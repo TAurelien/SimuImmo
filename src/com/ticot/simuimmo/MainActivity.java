@@ -150,17 +150,34 @@ public class MainActivity extends Activity {
 		//Format user's inputs for FraisAcquisition
 		((EditText) findViewById(R.id.valueReelPrixFAI)).setText(
 				String.valueOf(formatEur.format((a.getFraisAcquisition()).getPrixFAI())));
+		((EditText) findViewById(R.id.valueReelNetVendeur)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getNetVendeur())));
+		((EditText) findViewById(R.id.valueReelFraisAgence)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getFraisAgence())));
+		((EditText) findViewById(R.id.valueReelFraisNotaire)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getFraisNotaire())));
 		((EditText) findViewById(R.id.valueTravaux)).setText(
 				String.valueOf(formatEur.format((a.getFraisAcquisition()).getTravaux())));
 		((EditText) findViewById(R.id.valueAmenagement)).setText(
 				String.valueOf(formatEur.format((a.getFraisAcquisition()).getAmenagement())));
+		((EditText) findViewById(R.id.valueReelHonoraireConseil)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getHonoraireConseil())));
 		((EditText) findViewById(R.id.valueAutresFrais)).setText(
 				String.valueOf(formatEur.format((a.getFraisAcquisition()).getAutresFrais())));
 		((EditText) findViewById(R.id.valueApport)).setText(
 				String.valueOf(formatEur.format((a.getFraisAcquisition()).getApport())));
-		
+
+		//Format user's inputs for Emprunt
+		((EditText) findViewById(R.id.valueReelCapitalEmprunte)).setText(
+				String.valueOf(formatEur.format((a.getEmprunt()).getCapitalEmprunte())));
+		((EditText) findViewById(R.id.valueReelTauxCredit)).setText(
+				String.valueOf(formatPer.format((a.getEmprunt()).getTauxCredit())));
+		((EditText) findViewById(R.id.valueReelTauxAssurance)).setText(
+				String.valueOf(formatPer.format((a.getEmprunt()).getTauxAssuranceCredit())));
 		
 		//Fill computed values for FraisAcquisition
+		((TextView) findViewById(R.id.valuePrixFAI)).setText(
+				String.valueOf(formatEur.format((a.getFraisAcquisition()).getPrixFAI())));
 		((TextView) findViewById(R.id.valueNetVendeur)).setText(
 				String.valueOf(formatEur.format((a.getFraisAcquisition()).getNetVendeur())));
 		((TextView) findViewById(R.id.valueFraisAgence)).setText(
