@@ -72,6 +72,16 @@ public class MainActivity extends Activity {
 		
 	}
 	
+	public void onPause(){
+		super.onPause();
+		getFormInput();
+	}
+	
+	public void onResume(){
+		super.onResume();
+		System.out.println("onResume");
+	}
+	
 	private void getFormInput(){
 		//Get the user's input values from the EditText and CheckBox
 		//Values are set in an Input class, used afterward
