@@ -23,8 +23,8 @@ import com.ticot.simuimmo.model.gestion.Gestion;
 public class MainActivity extends Activity {
 
 	//Declaration of variables
-	public boolean AcquisitionCollpased = true;
-	public boolean emptyMandatoryField = false;
+	public boolean AcquisitionCollpased = true;			//Global variable to know the state of the UI, collapsed or expanded
+	public boolean emptyMandatoryField = false;			//Global variable to know if mandatory field have been found empty or not
 	public Bien bien = Temp.test();						//Creation of the class Bien through the temporary class
 	
 	/**Called when the activity is first created*/
@@ -47,19 +47,23 @@ public class MainActivity extends Activity {
 	public void onClick (View v){
 		//Methods to get user's inputs, launch calculation and fill back the result in the UI 
 		
-		//
+		//Initialize the Mandatory variable
 		emptyMandatoryField = false;
+		
 		//Get and check the user's input values
 		getFormInput();
 		
-		//If the emptyMandatoryField has been switched to "True" during the check, then 
+		//If the emptyMandatoryField has been switched to "True" during the check
+		//So display a message saying some fields require correct value
+		//And quit the method, so no calculation performed
 		if (emptyMandatoryField)
 		{
 			Toast.makeText(getBaseContext(), "Certains champs sont obligatoires", Toast.LENGTH_SHORT).show();	//TODO Avoid hardcoded value
-			return;	//End the method 
+			return;
 		}
 		
-		//Popultate the created instance of Bien (and run the different calculs)
+		//If mandatory fields have appropriate value
+		//Popultate the created instance of Bien (and run the different calculs) temporarily through the Temp class
 		bien.setAcquisition(Temp.TestAcquisition());
 	//	bien.setGestion(Temp.TestGestion());
 		
@@ -69,8 +73,9 @@ public class MainActivity extends Activity {
 	}
 	
 	private void getFormInput(){
-		//Get the user's input values
-		//====================================
+		//Get the user's input values from the EditText and CheckBox
+		//Values are set in an Input class, used afterward
+
 		//Boolean to know if computed are user input
 		Inputs.reelNetvendeur = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
 		Inputs.reelFraisAgence = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
@@ -79,7 +84,7 @@ public class MainActivity extends Activity {
 		Inputs.reelCapitalEmrpunte = ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked();
 		Inputs.reelTauxCredit = ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked();
 		Inputs.reelTauxAssurance = ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked();
-		//====================================
+		
 		//Get and check input filled by user
 		Inputs.prixFAI = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelPrixFAI),"0"));
 		Inputs.netVendeur = Double.valueOf(checkFieldValue((EditText)findViewById(R.id.valueReelNetVendeur),"0"));
@@ -100,26 +105,36 @@ public class MainActivity extends Activity {
 	}
 	
 	private String checkFieldValue(EditText view, String defaultValue){
+		//Method to check the value of a field, if empty, if mandatory
+		
+		//Initialize the returned variable
 		String value = null;
-		//TODO Find a way to come back to the default background value
-		//view.setBackgroundColor(getResources().getColor(R.color.white));
-		if (!view.getText().toString().isEmpty())	//If there is no value
-		{
-			//Check if value is already formated, if yes, will replace 
+		
+		//Initialize the background of the parent of the view, in case it have already been highlighted
+		((View) view.getParent()).setBackgroundResource(0);
+		
+		//If the user field is not empty, so check if it is formated
+		//Then replace characters to get the appropriate numbers (Double format => 130000.00) 
+		if (!view.getText().toString().isEmpty())
+		{ 
 			value = view.getText().toString();
 			value = value.replaceAll("[^0-9,.]", "");
 			value = value.replace(',', '.');		//TODO Take care of the localization with a different separator
 		}
-		if (view.getText().toString().isEmpty() || value == "")	//If there is no value
+		
+		//If the user field is empty or the result of the previous replacement is empty
+		//Check if the field is mandatory (tagged as "Mandatory") => if yes, change the gloabl variable and highlight the parents background
+		if (view.getText().toString().isEmpty() || value == "")
 		{
-			if (view.getTag().toString().contains("Mandatory"))	//Check of the tag that has "Mandatory" attributes
+			if (view.getTag().toString().contains("Mandatory"))
 			{
 				emptyMandatoryField = true;
-				view.setBackgroundColor(getResources().getColor(R.color.red_light));
+				((View) view.getParent()).setBackgroundResource(R.color.red_light);
 			}
-			value = defaultValue;	//Finally return the default value
+			value = defaultValue;	//Whatever the mandatory value, return the default value to avoid error
 		}
-		//Return the value
+		
+		//Finally return the value
 		return value;
 	}
 	
@@ -194,16 +209,17 @@ public class MainActivity extends Activity {
 					v.setVisibility(8);
 			}
 		}
-		//FInally update the global variable 
+		
+		//Finally update the global variable 
 		if (AcquisitionCollpased)
 		{
 			AcquisitionCollpased = false;
-			((Button)view).setText("Afficher moins");
+			((Button)view).setText("Afficher moins");	//TODO avoid harcoded value
 		}		
 		else
 		{
 			AcquisitionCollpased = true;
-			((Button)view).setText("Afficher plus");
+			((Button)view).setText("Afficher plus");	//TODO avoid harcoded value
 		}
 	}
 	
@@ -212,26 +228,27 @@ public class MainActivity extends Activity {
 		
 		switch (view.getId()){		//Get the ID of the item requesting to switch TextView/EditText
 		//Several fields are able to switch between TextView and EditText
+		
 		case R.id.ReelNetVendeur:
-			if (((CheckBox)view).isChecked()){
-				findViewById(R.id.valueNetVendeur).setVisibility(8);				//If checked turn TextView visibility to GONE
-				findViewById(R.id.valueReelNetVendeur).setVisibility(0);			//If checked turn EditText visibility to VISIBLE
-				findViewById(R.id.valueReelNetVendeur).requestFocus();				//If checked set focus to the EditText
-				findViewById(R.id.valueReelNetVendeur).setTag("Mandatory");
-				if (((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked()){	//
-					findViewById(R.id.valueReelPrixFAI).setVisibility(8);			//
-					findViewById(R.id.valueReelPrixFAI).setTag("Optional");			//TODO avoid harcoded value
-					findViewById(R.id.valuePrixFAI).setVisibility(0);				//
+			if (((CheckBox)view).isChecked()){										//If it has been checked
+				findViewById(R.id.valueNetVendeur).setVisibility(8);				//Turn TextView visibility to GONE
+				findViewById(R.id.valueReelNetVendeur).setVisibility(0);			//Turn EditText visibility to VISIBLE
+				findViewById(R.id.valueReelNetVendeur).requestFocus();				//Set focus to the EditText
+				findViewById(R.id.valueReelNetVendeur).setTag("Mandatory");			//Set the tag of NetVendeur as mandatory TODO avoid harcoded value
+				if (((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked()){	//If ReelFraisAgence is checked, so PrixFAI will be computed, so switch the EditText to a TextView 
+					findViewById(R.id.valueReelPrixFAI).setVisibility(8);			//Turn PrixFAI EditText visibility to GONE
+					findViewById(R.id.valueReelPrixFAI).setTag("Optional");			//Set the tag of valueReelPrixFAI as optional TODO avoid harcoded value
+					findViewById(R.id.valuePrixFAI).setVisibility(0);				//Turn PrixFAI TextView visibility to VISIBLE
 				}else{
-					findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");
+					findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");		//
 				}
-			} else{
-				findViewById(R.id.valueNetVendeur).setVisibility(0);				//If unchecked turn TextView visibility to VISIBLE
-				findViewById(R.id.valueReelNetVendeur).setVisibility(8);			//If unchecked turn EditText visibility to GONE
-				findViewById(R.id.valueReelNetVendeur).setTag("Optional");
-				findViewById(R.id.valueReelPrixFAI).setVisibility(0);				//
-				findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");			//
-				findViewById(R.id.valuePrixFAI).setVisibility(8);					//
+			} else{																	//If it has been unchecked
+				findViewById(R.id.valueNetVendeur).setVisibility(0);				//Turn TextView visibility to VISIBLE
+				findViewById(R.id.valueReelNetVendeur).setVisibility(8);			//Turn EditText visibility to GONE
+				findViewById(R.id.valueReelNetVendeur).setTag("Optional");			//Set the tag of NetVendeur as optional TODO avoid harcoded value
+				findViewById(R.id.valueReelPrixFAI).setVisibility(0);				//Turn PrixFAI EditText visibility to VISIBLE
+				findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");			//Set the tag of valueReelPrixFAI as mandatory TODO avoid harcoded value
+				findViewById(R.id.valuePrixFAI).setVisibility(8);					//Turn PrixFAI TextView visibility to GONE
 			}
 			break;
 		case R.id.ReelFraisAgence:

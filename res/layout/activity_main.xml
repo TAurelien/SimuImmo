@@ -17,33 +17,36 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:orientation="vertical"
-	       	android:layout_marginLeft="16dp"
-	    	android:layout_marginRight="16dp" >
+	       	android:layout_marginLeft="8dp"
+	    	android:layout_marginRight="8dp" >
 	        
 	        <TextView
 	            android:tag="AlwaysShown"
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
-	            android:text="Acquisition"
+	            android:paddingLeft="@dimen/category_label_paddingleft"
+	            android:text="Frais d'acquisition"
 	            android:textAlignment="center"
-	            android:textColor="#33B5E5"
-	            android:textSize="22sp" />
+	            android:textColor="@color/blue_light"
+	            android:textSize="@dimen/large_text_size" />
 	
 	        <LinearLayout
 	            android:id="@+id/LayoutPrixFAI"
 	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvPrixFAI"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valuePrixFAI"
 	                android:text="Prix FAI"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	            
 	            <TextView
 	                android:id="@+id/valuePrixFAI"
@@ -54,8 +57,8 @@
 	                android:text=""
 	                android:hint="@string/defaultValueZeroEuro"
 	                android:gravity="right|center_vertical"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp"
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size"
 	                android:visibility="gone" />
 	
 	            <EditText
@@ -68,11 +71,11 @@
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal"
 	                android:text="130 000,00 €"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:visibility="visible" />
 	            
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
@@ -82,17 +85,19 @@
 	            android:visibility="gone"
 	            android:tag="Collapsable"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvNetVendeur"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueNetVendeur"
 	                android:text="Net vendeur"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueNetVendeur"
@@ -101,8 +106,8 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:hint="@string/defaultValueZeroEuro"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp"
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:visibility="visible" />
 	            
@@ -115,7 +120,7 @@
 	     		    android:layout_weight="1"
 	     		    android:inputType="numberDecimal"
 	     		    android:text=""
-	     		    android:textSize="18sp"
+	     		    android:textSize="@dimen/medium_text_size"
 	     		    android:gravity="right|center_vertical"
 	     		    android:visibility="gone" />
 	            
@@ -134,17 +139,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvFraisAgence"
-	                android:layout_width="125dp"
+	                android:layout_width="@dimen/field_label_with_option_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueFraisAgence"
 	                android:text="Frais agence"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	            
 	            <CheckBox
 	                android:id="@+id/valueAgence"
@@ -160,9 +167,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
-	                android:paddingRight="12dp"
+	                android:paddingRight="@dimen/field_paddingRight"
 	                android:hint="@string/defaultValueZeroEuro"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
@@ -173,7 +180,7 @@
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:text=""
 	                android:inputType="numberDecimal" />
@@ -192,17 +199,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvFraisNotaire"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueFraisNotaire"
 	                android:text="Frais notaire"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueFraisNotaire"
@@ -211,9 +220,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
-	                android:paddingRight="12dp"
+	                android:paddingRight="@dimen/field_paddingRight"
 	                android:hint="@string/defaultValueZeroEuro"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
@@ -225,7 +234,7 @@
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
 	                android:text=""
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
@@ -242,17 +251,19 @@
 	            android:id="@+id/LayoutTravaux"
 	           	android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvTravaux"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueTravaux"
 	                android:text="Travaux"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <EditText
 	                android:id="@+id/valueTravaux"
@@ -262,12 +273,12 @@
 	                android:layout_weight="1"
 	                android:layout_gravity="center_vertical"
 	                android:text="20 000,00 €"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
@@ -276,17 +287,19 @@
 	            android:id="@+id/layoutAmenagement"
 	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvAmenagement"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueAmenagement"
 	                android:text="Amenagement"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <EditText
 	                android:id="@+id/valueAmenagement"
@@ -296,12 +309,12 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:text="4 000,00 €"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical"/>
 	        </LinearLayout>
@@ -311,17 +324,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvHonoraireConseil"
-	                android:layout_width="125dp"
+	                android:layout_width="@dimen/field_label_with_option_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueHonoraireConseil"
 	                android:text="Conseil"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 		        <CheckBox
 		            android:id="@+id/valueConseil"
@@ -337,9 +352,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingRight="12dp"
+	                android:paddingRight="@dimen/field_paddingRight"
 	                android:hint="@string/defaultValueZeroEuro"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
@@ -351,7 +366,7 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:text=""
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
@@ -369,17 +384,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvAutresFrais"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueAutresFrais"
 	                android:text="Autres frais"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <EditText
 	                android:id="@+id/valueAutresFrais"
@@ -389,12 +406,12 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:text="2 000,00 €"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
@@ -404,17 +421,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvCoutTotal"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueCoutTotal"
 	                android:text="Cout total"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueCoutTotal"
@@ -422,13 +441,13 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp"
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
@@ -437,17 +456,19 @@
 	            android:id="@+id/layoutApport"
 	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvApport"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueApport"
 	                android:text="Apport"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <EditText
 	                android:id="@+id/valueApport"
@@ -457,12 +478,12 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:text="10 000,00 €"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
@@ -472,17 +493,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvSequestre"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueSequestre"
 	                android:text="Sequestre"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueSequestre"
@@ -490,13 +513,13 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp"
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
@@ -506,27 +529,30 @@
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:layout_gravity="center_vertical"
+	            android:paddingLeft="@dimen/category_label_paddingleft"
 	            android:text="Emprunt"
-	            android:textSize="22sp"
+	            android:textSize="@dimen/large_text_size"
 	            android:textAlignment="center"
-	            android:textColor="#33B5E5" />
+	            android:textColor="@color/blue_light" />
 	        
 	        <LinearLayout
 	            android:id="@+id/layoutCapitalEmprunte"
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvCapitalEmprunte"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueCapitalEmprunte"
 	                android:text="Capital emprunté"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueCapitalEmprunte"
@@ -535,9 +561,9 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingRight="12dp"
+	                android:paddingRight="@dimen/field_paddingRight"
 	                android:hint="@string/defaultValueZeroEuro"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
@@ -549,7 +575,7 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:text=""
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
@@ -567,17 +593,19 @@
 	            android:id="@+id/layoutDureeCredit"
 	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvDureeCredit"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueDureeCredit"
 	                android:text="Durée credit"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <EditText
 	                android:id="@+id/valueDureeCredit"
@@ -587,12 +615,12 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:text="25"
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	         </LinearLayout>
@@ -602,17 +630,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvNbMensualite"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueNbMensualite"
 	                android:text="Nombre mensualité"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueNbMensualite"
@@ -620,13 +650,13 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp"
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
@@ -636,17 +666,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvTauxCredit"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueTauxCredit"
 	                android:text="Taux de credit"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueTauxCredit"
@@ -655,8 +687,8 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp"
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
@@ -669,7 +701,7 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:text=""
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
@@ -687,17 +719,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvTauxAssurance"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueTauxAssurance"
 	                android:text="Taux d'assurance"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueTauxAssurance"
@@ -706,8 +740,8 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp"
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
@@ -720,7 +754,7 @@
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
 	                android:text=""
-	                android:textSize="18sp"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:inputType="numberDecimal" />
 	            
@@ -737,17 +771,19 @@
 	            android:id="@+id/layoutMensualite"
 	            android:tag="AlwaysShown"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvMensualite"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueMensualite"
 	                android:text="Mensualité"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueMensualite"
@@ -757,11 +793,11 @@
 	                android:layout_weight="1"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp" />
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size" />
 	            
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
@@ -771,17 +807,19 @@
 	            android:tag="Collapsable"
 	            android:visibility="gone"
 	            android:layout_width="match_parent"
-	            android:layout_height="48dp"
+	            android:layout_height="@dimen/item_height"
+	            android:layout_marginRight="@dimen/item_marginRight"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:id="@+id/tvTauxEndettement"
-	                android:layout_width="157dp"
+	                android:layout_width="@dimen/field_label_width"
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="@dimen/field_label_paddingleft"
 	                android:labelFor="@+id/valueTauxEndettement"
 	                android:text="Taux d'endettement"
-	                android:textSize="18sp" />
+	                android:textSize="@dimen/medium_text_size" />
 	
 	            <TextView
 	                android:id="@+id/valueTauxEndettement"
@@ -789,60 +827,25 @@
 	                android:layout_height="wrap_content"
 	                android:layout_gravity="center_vertical"
 	                android:layout_weight="1"
-	                android:paddingRight="12dp"
-	                android:textSize="18sp"
+	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
 	            <View
-	                android:layout_width="32dp"
+	                android:layout_width="@dimen/field_emptyView_width"
 	                android:layout_height="match_parent"
 	                android:layout_gravity="center_vertical" />
 	        </LinearLayout>
-		     
-	        <!-- 
-	       	<Button
-	       	    android:id="@+id/CollapseAcquisitionFields"
-	       	    android:layout_width="wrap_content"
-	       	    android:layout_height="wrap_content"
-	       	    android:layout_gravity="center_horizontal"
-	       	    android:onClick="collapseUI"
-	       	    android:tag="AlwaysShown"
-	       	    android:text="Afficher/Cacher"
-	       	    android:textSize="18sp" />
 	        
-	        <Button
-	            android:id="@+id/btn_test"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:onClick="onClick"
-	            android:text="Bouton de test"
-	            android:textSize="18sp" />
-			 	
-	
-		    <TextView
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:text="Resultats"
-	            android:textSize="22sp"
-	            android:textAlignment="center"
-	            android:textColor="#33B5E5" />
-		        
-	        <TextView
-	            android:id="@+id/text_result"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:text=""
-	            android:textSize="18sp" />
-	        -->
 	    </LinearLayout>
-	
+	    
 	</ScrollView>
 	 
 	<RelativeLayout
 	    android:id="@+id/LayoutCalculer"
 	    android:layout_width="match_parent"
-	    android:layout_height="48dp"
+	    android:layout_height="@dimen/item_height"
 	    android:layout_alignParentBottom="true"
 	    android:orientation="vertical"
 	    android:padding="0dp" >
@@ -855,7 +858,7 @@
 	       	android:onClick="collapseUI"
 	       	android:tag="AlwaysShown"
 	       	android:text="Afficher plus"
-	       	android:textSize="18sp" />
+	       	android:textSize="@dimen/medium_text_size" />
 	    
 	    <Button
 	        android:id="@+id/btn_calcul"
@@ -865,7 +868,7 @@
 	        android:padding="0dp"
 	        android:onClick="onClick"
 	        android:text="Calculer"
-	        android:textSize="18sp" />
+	        android:textSize="@dimen/medium_text_size" />
 	    
 	</RelativeLayout>
 	

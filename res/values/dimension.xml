@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="field_label_width">165dp</dimen>
+    <dimen name="field_label_with_option_width">117dp</dimen>
+    <dimen name="field_label_paddingleft">8dp</dimen>
+    <dimen name="field_paddingRight">12dp</dimen>
+    <dimen name="field_emptyView_width">32dp</dimen>
+    <dimen name="category_label_paddingleft">16dp</dimen>
+    <dimen name="item_height">48dp</dimen>
+    <dimen name="item_marginRight">8dp</dimen>
+    <dimen name="medium_text_size">18sp</dimen>
+    <dimen name="large_text_size">22sp</dimen>
+</resources>
