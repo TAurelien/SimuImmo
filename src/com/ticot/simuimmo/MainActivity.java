@@ -27,6 +27,9 @@ public class MainActivity extends Activity {
 	public boolean emptyMandatoryField = false;			//Global variable to know if mandatory field have been found empty or not
 	public Bien bien = Temp.test();						//Creation of the class Bien through the temporary class
 	
+	//For backup testing purpose
+	public Object[] backupInput = null;
+	
 	/**Called when the activity is first created*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,14 +75,33 @@ public class MainActivity extends Activity {
 		
 	}
 	
+	////Testing backup => ISSUE
 	public void onPause(){
 		super.onPause();
-		getFormInput();
+		//backupInput = backupInputs();
 	}
 	
+	////Testing backup => ISSUE
 	public void onResume(){
 		super.onResume();
-		System.out.println("onResume");
+		System.out.println(backupInput);
+	}
+	
+	//Testing backup => ISSUE
+	@SuppressWarnings("null")
+	private Object[] backupInputs(){
+		Object[] temp = null;
+		
+		temp[0] = AcquisitionCollpased;
+		temp[1] = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
+		temp[2] = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
+		temp[3] = ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked();
+		temp[4] = ((CheckBox)findViewById(R.id.ReelHonoraireConseil)).isChecked();
+		temp[5] = ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked();
+		temp[6] = ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked();
+		temp[7] = ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked();
+		
+		return temp;
 	}
 	
 	private void getFormInput(){
