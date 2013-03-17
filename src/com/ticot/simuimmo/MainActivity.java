@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.ticot.simuimmo.calculs.Temp;
+import com.ticot.simuimmo.model.Backup;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.Settings;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
@@ -27,8 +28,6 @@ public class MainActivity extends Activity {
 	public boolean emptyMandatoryField = false;			//Global variable to know if mandatory field have been found empty or not
 	public Bien bien = Temp.test();						//Creation of the class Bien through the temporary class
 	
-	//For backup testing purpose
-	public Object[] backupInput = null;
 	
 	/**Called when the activity is first created*/
 	@Override
@@ -73,26 +72,42 @@ public class MainActivity extends Activity {
 		//Launch the update of the UI to display the computed values
 		fillComputedValues(bien.getAcquisition(), bien.getGestion());
 		
+		Backup.calculBackup = true;
+		
 	}
 	
-	////Testing backup => ISSUE
 	public void onPause(){
 		super.onPause();
-		//backupInput = backupInputs();
+		Backup.demarrage = true;
+		backupInputs();
+		//Inputs.collapsebackup = AcquisitionCollpased;	//A supprimer
 	}
 	
-	////Testing backup => ISSUE
 	public void onResume(){
 		super.onResume();
-		System.out.println(backupInput);
+		if (Backup.demarrage)
+		{
+			if (Backup.calculBackup)
+			{
+				bien = Backup.bienBackup;
+				fillComputedValues(bien.getAcquisition(), bien.getGestion());
+			}
+			
+			AcquisitionCollpased = !(Backup.collapsebackup);
+			//AcquisitionCollpased = !((Boolean)Inputs.backupInputs[0]);
+			collapseUI((Button)findViewById(R.id.btn_CollapseAcquisitionFields));
+		}
 	}
 	
-	//Testing backup => ISSUE
-	@SuppressWarnings("null")
-	private Object[] backupInputs(){
-		Object[] temp = null;
+	private void backupInputs(){
 		
-		temp[0] = AcquisitionCollpased;
+		if (Backup.calculBackup)
+		{
+			Backup.bienBackup = bien;
+		}
+		
+		//Object[] temp = null;
+		/*temp[0] = AcquisitionCollpased;
 		temp[1] = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
 		temp[2] = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
 		temp[3] = ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked();
@@ -100,8 +115,9 @@ public class MainActivity extends Activity {
 		temp[5] = ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked();
 		temp[6] = ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked();
 		temp[7] = ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked();
+		*/
 		
-		return temp;
+		//Inputs.backupInputs = 
 	}
 	
 	private void getFormInput(){
@@ -190,7 +206,6 @@ public class MainActivity extends Activity {
 				String.valueOf(formatEur.format((a.getFraisAcquisition()).getAutresFrais())));
 		((EditText) findViewById(R.id.valueApport)).setText(
 				String.valueOf(formatEur.format((a.getFraisAcquisition()).getApport())));
-		
 		
 		//Fill computed values for FraisAcquisition
 		((TextView) findViewById(R.id.valueNetVendeur)).setText(
