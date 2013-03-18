@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">SimuImmo</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
+    <!--Default values-->
     <string name="defaultValueZeroEuro">0,00 €</string>
     <string name="defaultValueZeroPer">0,00 %</string>
-
+    <string name="default_value_prix_fai">130 000,00 €</string>
+    <string name="default_value_amenagement">4 000,00 €</string>
+    <string name="default_value_travaux">20 000,00 €</string>
+    <string name="default_value_autres_frais">2 000,00 €</string>
+    <string name="default_value_apport">10 000,00 €</string>
+    <string name="default_value_duree_credit">25</string>
+    
+    <!--Texts-->
+    <string name="app_name">Simulateur Immobilier</string>
+    <string name="menu_settings">Settings</string> 
+    <string name="frais_acquisition">Frais d\'acquisition</string>
+    <string name="prix_fai">Prix FAI</string>
+    <string name="net_vendeur">Net vendeur</string>
+    <string name="frais_agence">Frais d\'agence</string>
+    <string name="frais_notaire">Frais de notaire</string>
+    <string name="travaux">Travaux</string>
+    <string name="amenagement">Amenagement</string>
+    <string name="conseil">Conseil</string>
+    <string name="autres_frais">Autres frais</string>
+    <string name="cout_total">Cout total</string>
+    <string name="apport">Apport</string>
+    <string name="sequestre">Sequestre</string>
+    <string name="emprunt">Emprunt</string>
+    <string name="capital_emprunte">Capital emprunté</string>
+    <string name="duree_du_credit">Durée du credit</string>
+    <string name="nombre_mensualite">Nombre mensualité</string>
+    <string name="taux_de_credit">Taux de credit</string>
+    <string name="taux_assurance">Taux d\'assurance</string>
+    <string name="mensualite">Mensualité</string>
+    <string name="taux_endettement">Taux d\'endettement</string>
+    <string name="afficher_plus">Afficher plus</string>
+    <string name="afficher_moins">Afficher moins</string>
+    <string name="calculer">Calculer</string>
+    
+    <!--Messages-->
+    <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>
+    
 </resources>

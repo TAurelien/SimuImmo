@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 		//And quit the method, so no calculation performed
 		if (emptyMandatoryField)
 		{
-			Toast.makeText(getBaseContext(), "Certains champs sont obligatoires", Toast.LENGTH_SHORT).show();	//TODO Avoid hardcoded value
+			Toast.makeText(getBaseContext(), R.string.message_champs_obligatoires, Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
@@ -231,12 +231,12 @@ public class MainActivity extends Activity {
 		if (AcquisitionCollpased)
 		{
 			AcquisitionCollpased = false;
-			((Button)view).setText("Afficher moins");	//TODO avoid harcoded value
+			((Button)view).setText(R.string.afficher_moins);
 		}		
 		else
 		{
 			AcquisitionCollpased = true;
-			((Button)view).setText("Afficher plus");	//TODO avoid harcoded value
+			((Button)view).setText(R.string.afficher_plus);
 		}
 	}
 	
@@ -251,10 +251,10 @@ public class MainActivity extends Activity {
 				findViewById(R.id.valueNetVendeur).setVisibility(8);				//Turn TextView visibility to GONE
 				findViewById(R.id.valueReelNetVendeur).setVisibility(0);			//Turn EditText visibility to VISIBLE
 				findViewById(R.id.valueReelNetVendeur).requestFocus();				//Set focus to the EditText
-				findViewById(R.id.valueReelNetVendeur).setTag("Mandatory");			//Set the tag of NetVendeur as mandatory TODO avoid harcoded value
+				findViewById(R.id.valueReelNetVendeur).setTag("Mandatory");			//Set the tag of NetVendeur as mandatory
 				if (((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked()){	//If ReelFraisAgence is checked, so PrixFAI will be computed, so switch the EditText to a TextView 
 					findViewById(R.id.valueReelPrixFAI).setVisibility(8);			//Turn PrixFAI EditText visibility to GONE
-					findViewById(R.id.valueReelPrixFAI).setTag("Optional");			//Set the tag of valueReelPrixFAI as optional TODO avoid harcoded value
+					findViewById(R.id.valueReelPrixFAI).setTag("Optional");			//Set the tag of valueReelPrixFAI as optional
 					findViewById(R.id.valuePrixFAI).setVisibility(0);				//Turn PrixFAI TextView visibility to VISIBLE
 				}else{
 					findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");		//
@@ -262,9 +262,9 @@ public class MainActivity extends Activity {
 			} else{																	//If it has been unchecked
 				findViewById(R.id.valueNetVendeur).setVisibility(0);				//Turn TextView visibility to VISIBLE
 				findViewById(R.id.valueReelNetVendeur).setVisibility(8);			//Turn EditText visibility to GONE
-				findViewById(R.id.valueReelNetVendeur).setTag("Optional");			//Set the tag of NetVendeur as optional TODO avoid harcoded value
+				findViewById(R.id.valueReelNetVendeur).setTag("Optional");			//Set the tag of NetVendeur as optional
 				findViewById(R.id.valueReelPrixFAI).setVisibility(0);				//Turn PrixFAI EditText visibility to VISIBLE
-				findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");			//Set the tag of valueReelPrixFAI as mandatory TODO avoid harcoded value
+				findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");			//Set the tag of valueReelPrixFAI as mandatory
 				findViewById(R.id.valuePrixFAI).setVisibility(8);					//Turn PrixFAI TextView visibility to GONE
 			}
 			break;
