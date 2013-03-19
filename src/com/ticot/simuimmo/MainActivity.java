@@ -108,7 +108,7 @@ public class MainActivity extends Activity {
 		//Method to check the value of a field, if empty, if mandatory
 		
 		//Initialize the returned variable
-		String value = null;
+		String value = "";
 		
 		//Initialize the background of the parent of the view, in case it have already been highlighted
 		((View) view.getParent()).setBackgroundResource(0);
@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
 		
 		//If the user field is empty or the result of the previous replacement is empty
 		//Check if the field is mandatory (tagged as "Mandatory") => if yes, change the gloabl variable and highlight the parents background
-		if (view.getText().toString().isEmpty() || value == "")
+		if (view.getText().toString().isEmpty() || value == "" || value.replaceAll("[^0-9]", "").isEmpty())
 		{
 			if (view.getTag().toString().contains("Mandatory"))
 			{
