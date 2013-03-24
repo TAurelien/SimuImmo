@@ -5,7 +5,9 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -34,13 +36,28 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 
-	//TODO onCreateOptionsMenu to do
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item){
+		switch (item.getItemId()){
+		case R.id.menu_settings:
+			launchPreferenceActivity();
+			return true;
+		}
+		return false;
+	}
+	
+	public void launchPreferenceActivity(){
+		Intent i = new Intent("com.ticot.simuimmo.AppPreferenceActivity");
+		startActivity(i);
+	}
+	
 	
 	//Calculation button
 	//==============================================================================
