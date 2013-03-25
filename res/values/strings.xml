@@ -10,7 +10,18 @@
     <string name="default_value_apport">10 000,00 €</string>
     <string name="default_value_duree_credit">25</string>
     
-    <!--Texts-->
+    <!--Default values for preferences-->
+    <string name="defaultPreferencePourcentageFraisAgence">0.075</string>
+    <string name="defaultPreferencePourcentageFraisNotaire">0.075</string>
+    <string name="defaultPreferencePourcentageHonorairesConseil">0.08</string>
+    <string name="defaultPreferenceTaux15ans">0.0318</string>
+    <string name="defaultPreferenceTaux20ans">0.034</string>
+    <string name="defaultPreferenceTaux25ans">0.0365</string>
+    <string name="defaultPreferenceTaux30ans">0.044</string>
+    <string name="defaultPreferenceTauxAssuranceCredit">0.0036</string>
+    <string name="defaultPreferencePourcentageSequestre">0.1</string>
+    
+    <!--Texts UI main activity-->
     <string name="app_name">Simulateur Immobilier</string>
     <string name="menu_settings">Settings</string> 
     <string name="frais_acquisition">Frais d\'acquisition</string>
@@ -36,6 +47,26 @@
     <string name="afficher_plus">Afficher plus</string>
     <string name="afficher_moins">Afficher moins</string>
     <string name="calculer">Calculer</string>
+    
+    <!--Texts UI Preference activity-->
+    <string name="preferenceTitle_PourcentageFraisAgence">Frais d\'agence</string>
+    <string name="preferenceSum_PourcentageFraisAgence">Entrer le pourcentage de frais d\'agence</string>
+    <string name="preferenceTitle_PourcentageFraisNotaire">Frais de notaire</string>
+    <string name="preferenceSum_PourcentageFraisNotaire">Entrer le pourcentage de frais de notaire</string>
+    <string name="preferenceTitle_PourcentageHonorairesConseil">Frais des honoraires de conseil</string>
+    <string name="preferenceSum_PourcentageHonorairesConseil">Entrer le pourcentage de frais des honoraires de conseil</string>
+    <string name="preferenceTitle_Taux15ans">Taux à 15 ans</string>
+    <string name="preferenceSum_Taux15ans">Entrer le taux de credit à 15 ans</string>
+    <string name="preferenceTitle_Taux20ans">Taux à 20 ans</string>
+    <string name="preferenceSum_Taux20ans">Entrer le taux de credit à 20 ans</string>
+    <string name="preferenceTitle_Taux25ans">Taux à 25 ans</string>
+    <string name="preferenceSum_Taux25ans">Entrer le taux de credit à 25 ans</string>
+    <string name="preferenceTitle_Taux30ans">Taux à 30 ans</string>
+    <string name="preferenceSum_Taux30ans">Entrer le taux de credit à 30 ans</string>
+	<string name="preferenceTitle_TauxAssuranceCredit">Taux d\'assurance</string>
+    <string name="preferenceSum_TauxAssuranceCredit">Entrer le taux d\'assurance de credit</string>
+    <string name="preferenceTitle_PourcentageSequestre">Sequestre</string>
+    <string name="preferenceSum_PourcentageSequestre">Entrer le pourcentage du sequestre</string>
     
     <!--Messages-->
     <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>
