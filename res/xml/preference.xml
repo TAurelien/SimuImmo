@@ -2,49 +2,49 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
     <PreferenceCategory android:title="@string/frais_acquisition">
         <EditTextPreference
-            android:key="pourcentageFraisAgence"
+            android:key="PREF_KEY_pourcentageFraisAgence"
             android:title="@string/preferenceTitle_PourcentageFraisAgence"
             android:summary="@string/preferenceSum_PourcentageFraisAgence"
             android:defaultValue="@string/defaultPreferencePourcentageFraisAgence" />
         <EditTextPreference
-            android:key="pourcentageFraisNotaire"
+            android:key="PREF_KEY_pourcentageFraisNotaire"
             android:title="@string/preferenceTitle_PourcentageFraisNotaire"
             android:summary="@string/preferenceSum_PourcentageFraisNotaire"
             android:defaultValue="@string/defaultPreferencePourcentageFraisNotaire" />
         <EditTextPreference
-            android:key="pourcentageHonorairesConseil"
+            android:key="PREF_KEY_pourcentageHonorairesConseil"
             android:title="@string/preferenceTitle_PourcentageHonorairesConseil"
             android:summary="@string/preferenceSum_PourcentageHonorairesConseil"
             android:defaultValue="@string/defaultPreferencePourcentageHonorairesConseil" />
         <EditTextPreference
-            android:key="pourcentageSequestre"
+            android:key="PREF_KEY_pourcentageSequestre"
             android:title="@string/preferenceTitle_PourcentageSequestre"
             android:summary="@string/preferenceSum_PourcentageSequestre"
             android:defaultValue="@string/defaultPreferencePourcentageSequestre" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/emprunt">
         <EditTextPreference
-            android:key="taux15ans"
+            android:key="PREF_KEY_taux15ans"
             android:summary="@string/preferenceSum_Taux15ans"
             android:title="@string/preferenceTitle_Taux15ans"
             android:defaultValue="@string/defaultPreferenceTaux15ans" />
         <EditTextPreference
-            android:key="taux20ans"
+            android:key="PREF_KEY_taux20ans"
             android:title="@string/preferenceTitle_Taux20ans"
             android:summary="@string/preferenceSum_Taux20ans"
             android:defaultValue="@string/defaultPreferenceTaux20ans" />
         <EditTextPreference
-            android:key="taux25ans"
+            android:key="PREF_KEY_taux25ans"
             android:title="@string/preferenceTitle_Taux25ans"
             android:summary="@string/preferenceSum_Taux25ans"
             android:defaultValue="@string/defaultPreferenceTaux25ans" />
         <EditTextPreference
-            android:key="taux30ans"
+            android:key="PREF_KEY_taux30ans"
             android:title="@string/preferenceTitle_Taux30ans"
             android:summary="@string/preferenceSum_Taux30ans"
             android:defaultValue="@string/defaultPreferenceTaux30ans" />
         <EditTextPreference
-            android:key="tauxAssuranceCredit"
+            android:key="PREF_KEY_tauxAssuranceCredit"
             android:title="@string/preferenceTitle_TauxAssuranceCredit"
             android:summary="@string/preferenceSum_TauxAssuranceCredit"
             android:defaultValue="@string/defaultPreferenceTauxAssuranceCredit" />

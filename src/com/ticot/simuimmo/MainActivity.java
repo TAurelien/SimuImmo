@@ -4,8 +4,10 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +36,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preference, false);
 	}
 
 	@Override
@@ -58,6 +61,21 @@ public class MainActivity extends Activity {
 		startActivity(i);
 	}
 	
+	public void LoadPreferences(){
+	
+		SharedPreferences appPrefs = getSharedPreferences("appPreferences", MODE_PRIVATE);
+		Settings.pourcentageFraisAgence = Double.valueOf(appPrefs.getString("PREF_KEY_pourcentageFraisAgence",""));
+		Settings.pourcentageFraisNotaire = Double.valueOf(appPrefs.getString("PREF_KEY_pourcentageFraisNotaire",""));
+		Settings.pourcentageHonorairesConseil = Double.valueOf(appPrefs.getString("PREF_KEY_pourcentageHonorairesConseil",""));
+		Settings.taux15ans = Double.valueOf(appPrefs.getString("PREF_KEY_taux15ans",""));
+		Settings.taux20ans = Double.valueOf(appPrefs.getString("PREF_KEY_taux20ans",""));
+		Settings.taux25ans = Double.valueOf(appPrefs.getString("PREF_KEY_taux25ans",""));
+		Settings.taux30ans = Double.valueOf(appPrefs.getString("PREF_KEY_taux25ans",""));
+		Settings.tauxAssuranceCredit = Double.valueOf(appPrefs.getString("PREF_KEY_tauxAssuranceCredit",""));
+		Settings.pourcentageSequestre = Double.valueOf(appPrefs.getString("PREF_KEY_pourcentageSequestre",""));
+		
+	}
+	
 	
 	//Calculation button
 	//==============================================================================
@@ -80,6 +98,9 @@ public class MainActivity extends Activity {
 		}
 		
 		//If mandatory fields have appropriate value
+		//Load the settings
+		LoadPreferences();
+		
 		//Popultate the created instance of Bien (and run the different calculs) temporarily through the Temp class
 		bien.setAcquisition(Temp.TestAcquisition());
 	//	bien.setGestion(Temp.TestGestion());
