@@ -25,6 +25,10 @@ public class MainActivity extends Activity {
 
 	//Declaration of variables
 	public boolean AcquisitionCollpased = true;			//Global variable to know the state of the UI, collapsed or expanded
+	public boolean backupCalcul = false;
+	private static final String KEY_BACKUP_collapsed = "backupCollapsed";
+	private static final String KEY_BACKUP_calcul = "backupCalcul";
+	private static final String KEY_BACKUP_realValueState = "backupRealValueState";
 	public boolean emptyMandatoryField = false;			//Global variable to know if mandatory field have been found empty or not
 	public Bien bien = Temp.test();						//Creation of the class Bien through the temporary class
 	
@@ -34,6 +38,18 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		if (savedInstanceState != null){
+			AcquisitionCollpased = !savedInstanceState.getBoolean(KEY_BACKUP_collapsed);
+			collapseUI((Button)findViewById(R.id.btn_CollapseAcquisitionFields));
+			backupCalcul = savedInstanceState.getBoolean(KEY_BACKUP_calcul);
+			if (savedInstanceState.getBoolean(KEY_BACKUP_calcul))
+			{
+				bien = Backup.bienBackup;
+				fillComputedValues(bien.getAcquisition(), bien.getGestion());
+			}
+			restoreRealValueState(savedInstanceState.getBooleanArray(KEY_BACKUP_realValueState));
+		}
 	}
 
 	//TODO onCreateOptionsMenu to do
@@ -72,52 +88,46 @@ public class MainActivity extends Activity {
 		//Launch the update of the UI to display the computed values
 		fillComputedValues(bien.getAcquisition(), bien.getGestion());
 		
-		Backup.calculBackup = true;
+		backupCalcul = true;
 		
 	}
 	
-	public void onPause(){
-		super.onPause();
-		Backup.demarrage = true;
-		backupInputs();
-		//Inputs.collapsebackup = AcquisitionCollpased;	//A supprimer
-	}
-	
-	public void onResume(){
-		super.onResume();
-		if (Backup.demarrage)
-		{
-			if (Backup.calculBackup)
-			{
-				bien = Backup.bienBackup;
-				fillComputedValues(bien.getAcquisition(), bien.getGestion());
-			}
-			
-			AcquisitionCollpased = !(Backup.collapsebackup);
-			//AcquisitionCollpased = !((Boolean)Inputs.backupInputs[0]);
-			collapseUI((Button)findViewById(R.id.btn_CollapseAcquisitionFields));
-		}
-	}
-	
-	private void backupInputs(){
-		
-		if (Backup.calculBackup)
-		{
+	public void onSaveInstanceState(Bundle outState){
+		super.onSaveInstanceState(outState);
+		outState.putBoolean(KEY_BACKUP_collapsed, AcquisitionCollpased);
+		outState.putBoolean(KEY_BACKUP_calcul, backupCalcul);
+		outState.putBooleanArray(KEY_BACKUP_realValueState, backupRealValueState());
+		if (backupCalcul)
 			Backup.bienBackup = bien;
-		}
+	}
+
+	private boolean[] backupRealValueState(){
+		boolean[] table = {((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelHonoraireConseil)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked()};
+		return table;
+	}
+	
+	private void restoreRealValueState(boolean[] table){
+		((CheckBox)findViewById(R.id.ReelNetVendeur)).setChecked(table[0]);
+		((CheckBox)findViewById(R.id.ReelFraisAgence)).setChecked(table[1]);
+		((CheckBox)findViewById(R.id.ReelFraisNotaire)).setChecked(table[2]);
+		((CheckBox)findViewById(R.id.ReelHonoraireConseil)).setChecked(table[3]);
+		((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).setChecked(table[4]);
+		((CheckBox)findViewById(R.id.ReelTauxCredit)).setChecked(table[5]);
+		((CheckBox)findViewById(R.id.ReelTauxAssurance)).setChecked(table[6]);
 		
-		//Object[] temp = null;
-		/*temp[0] = AcquisitionCollpased;
-		temp[1] = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
-		temp[2] = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
-		temp[3] = ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked();
-		temp[4] = ((CheckBox)findViewById(R.id.ReelHonoraireConseil)).isChecked();
-		temp[5] = ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked();
-		temp[6] = ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked();
-		temp[7] = ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked();
-		*/
-		
-		//Inputs.backupInputs = 
+		switchRealField(((CheckBox)findViewById(R.id.ReelNetVendeur)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelFraisAgence)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelFraisNotaire)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelHonoraireConseil)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelCapitalEmprunte)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelTauxCredit)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelTauxAssurance)));
 	}
 	
 	private void getFormInput(){
