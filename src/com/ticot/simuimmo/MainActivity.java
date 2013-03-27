@@ -221,7 +221,7 @@ public class MainActivity extends Activity {
 		
 		//If the user field is empty or the result of the previous replacement is empty
 		//Check if the field is mandatory (tagged as "Mandatory") => if yes, change the gloabl variable and highlight the parents background
-		if (view.getText().toString().isEmpty() || value == "" || value.replaceAll("[^0-9]", "").isEmpty())
+		if (view.getText().toString().isEmpty() || value == "" || value.replaceAll("[^1-9]", "").isEmpty())
 		{
 			if (view.getTag().toString().contains("Mandatory"))
 			{
