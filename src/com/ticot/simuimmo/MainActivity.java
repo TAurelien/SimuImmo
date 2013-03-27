@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.ticot.simuimmo.calculs.Temp;
+import com.ticot.simuimmo.model.Backup;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.Settings;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
@@ -28,15 +29,33 @@ public class MainActivity extends Activity {
 
 	//Declaration of variables
 	public boolean AcquisitionCollpased = true;			//Global variable to know the state of the UI, collapsed or expanded
+	public boolean backupCalcul = false;
+	private static final String KEY_BACKUP_collapsed = "backupCollapsed";
+	private static final String KEY_BACKUP_calcul = "backupCalcul";
+	private static final String KEY_BACKUP_realValueState = "backupRealValueState";
 	public boolean emptyMandatoryField = false;			//Global variable to know if mandatory field have been found empty or not
 	public Bien bien = Temp.test();						//Creation of the class Bien through the temporary class
+	
 	
 	/**Called when the activity is first created*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preference, false);
+
+		if (savedInstanceState != null){
+			AcquisitionCollpased = !savedInstanceState.getBoolean(KEY_BACKUP_collapsed);
+			collapseUI((Button)findViewById(R.id.btn_CollapseAcquisitionFields));
+			backupCalcul = savedInstanceState.getBoolean(KEY_BACKUP_calcul);
+			if (savedInstanceState.getBoolean(KEY_BACKUP_calcul))
+			{
+				bien = Backup.bienBackup;
+				fillComputedValues(bien.getAcquisition(), bien.getGestion());
+			}
+			restoreRealValueState(savedInstanceState.getBooleanArray(KEY_BACKUP_realValueState));
+		}
 	}
 
 	@Override
@@ -108,6 +127,46 @@ public class MainActivity extends Activity {
 		//Launch the update of the UI to display the computed values
 		fillComputedValues(bien.getAcquisition(), bien.getGestion());
 		
+		backupCalcul = true;
+		
+	}
+	
+	public void onSaveInstanceState(Bundle outState){
+		super.onSaveInstanceState(outState);
+		outState.putBoolean(KEY_BACKUP_collapsed, AcquisitionCollpased);
+		outState.putBoolean(KEY_BACKUP_calcul, backupCalcul);
+		outState.putBooleanArray(KEY_BACKUP_realValueState, backupRealValueState());
+		if (backupCalcul)
+			Backup.bienBackup = bien;
+	}
+
+	private boolean[] backupRealValueState(){
+		boolean[] table = {((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelHonoraireConseil)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked(),
+		                   ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked()};
+		return table;
+	}
+	
+	private void restoreRealValueState(boolean[] table){
+		((CheckBox)findViewById(R.id.ReelNetVendeur)).setChecked(table[0]);
+		((CheckBox)findViewById(R.id.ReelFraisAgence)).setChecked(table[1]);
+		((CheckBox)findViewById(R.id.ReelFraisNotaire)).setChecked(table[2]);
+		((CheckBox)findViewById(R.id.ReelHonoraireConseil)).setChecked(table[3]);
+		((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).setChecked(table[4]);
+		((CheckBox)findViewById(R.id.ReelTauxCredit)).setChecked(table[5]);
+		((CheckBox)findViewById(R.id.ReelTauxAssurance)).setChecked(table[6]);
+		
+		switchRealField(((CheckBox)findViewById(R.id.ReelNetVendeur)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelFraisAgence)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelFraisNotaire)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelHonoraireConseil)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelCapitalEmprunte)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelTauxCredit)));
+		switchRealField(((CheckBox)findViewById(R.id.ReelTauxAssurance)));
 	}
 	
 	private void getFormInput(){
