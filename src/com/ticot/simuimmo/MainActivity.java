@@ -17,7 +17,9 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import com.ticot.simuimmo.calculs.Temp;
+
+import com.ticot.simuimmo.calculs.CalculsAcquisition;
+import com.ticot.simuimmo.calculs.CalculsGestion;
 import com.ticot.simuimmo.model.Backup;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.Settings;
@@ -34,7 +36,7 @@ public class MainActivity extends Activity {
 	private static final String KEY_BACKUP_calcul = "backupCalcul";
 	private static final String KEY_BACKUP_realValueState = "backupRealValueState";
 	public boolean emptyMandatoryField = false;			//Global variable to know if mandatory field have been found empty or not
-	public Bien bien = Temp.test();						//Creation of the class Bien through the temporary class
+	public Bien bien = new Bien();						//Creation of the class Bien through the temporary class
 	
 	
 	/**Called when the activity is first created*/
@@ -121,8 +123,9 @@ public class MainActivity extends Activity {
 		LoadPreferences();
 		
 		//Popultate the created instance of Bien (and run the different calculs) temporarily through the Temp class
-		bien.setAcquisition(Temp.TestAcquisition());
-	//	bien.setGestion(Temp.TestGestion());
+		//TODO Review the methods, maybe create a dedicated method for the class Bien to launch the calculs
+		bien.setAcquisition(CalculsAcquisition.initialiser());
+	//	bien.setGestion(CalculsGestion.initialiser());
 		
 		//Launch the update of the UI to display the computed values
 		fillComputedValues(bien.getAcquisition(), bien.getGestion());
