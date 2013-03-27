@@ -3,6 +3,7 @@
     <!--Default values-->
     <string name="defaultValueZeroEuro">0,00 €</string>
     <string name="defaultValueZeroPer">0,00 %</string>
+    <string name="defaultValueZero">0</string>
     <string name="default_value_prix_fai">130 000,00 €</string>
     <string name="default_value_amenagement">4 000,00 €</string>
     <string name="default_value_travaux">20 000,00 €</string>

@@ -653,7 +653,7 @@
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
-	                android:hint="@string/defaultValueZeroEuro" />
+	                android:hint="@string/defaultValueZero" />
 	            
 	            <View
 	                android:layout_width="@dimen/field_emptyView_width"
