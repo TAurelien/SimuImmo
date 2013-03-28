@@ -24,7 +24,7 @@
     
     <!--Texts UI main activity-->
     <string name="app_name">Simulateur Immobilier</string>
-    <string name="menu_settings">Settings</string> 
+    <string name="menu_settings">Paramètres</string> 
     <string name="frais_acquisition">Frais d\'acquisition</string>
     <string name="prix_fai">Prix FAI</string>
     <string name="net_vendeur">Net vendeur</string>

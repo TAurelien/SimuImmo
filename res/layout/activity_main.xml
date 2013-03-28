@@ -866,7 +866,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_toRightOf="@+id/btn_CollapseAcquisitionFields"
 	        android:padding="0dp"
-	        android:onClick="onClick"
+	        android:onClick="onClickCalcul"
 	        android:text="@string/calculer"
 	        android:textSize="@dimen/medium_text_size" />
 	    

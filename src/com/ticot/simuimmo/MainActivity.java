@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.ticot.simuimmo.calculs.CalculsAcquisition;
-import com.ticot.simuimmo.calculs.CalculsGestion;
+//import com.ticot.simuimmo.calculs.CalculsGestion;
 import com.ticot.simuimmo.model.Backup;
 import com.ticot.simuimmo.model.Inputs;
 import com.ticot.simuimmo.model.Settings;
@@ -30,11 +30,11 @@ import com.ticot.simuimmo.model.gestion.Gestion;
 public class MainActivity extends Activity {
 
 	//Declaration of variables
-	public boolean AcquisitionCollpased = true;			//Global variable to know the state of the UI, collapsed or expanded
-	public boolean backupCalcul = false;
 	private static final String KEY_BACKUP_collapsed = "backupCollapsed";
 	private static final String KEY_BACKUP_calcul = "backupCalcul";
 	private static final String KEY_BACKUP_realValueState = "backupRealValueState";
+	public boolean AcquisitionCollpased = true;			//Global variable to know the state of the UI, collapsed or expanded
+	public boolean backupCalcul = false;
 	public boolean emptyMandatoryField = false;			//Global variable to know if mandatory field have been found empty or not
 	public Bien bien = new Bien();						//Creation of the class Bien through the temporary class
 	
@@ -100,7 +100,7 @@ public class MainActivity extends Activity {
 	
 	//Calculation button
 	//==============================================================================
-	public void onClick (View v){
+	public void onClickCalcul (View v){
 		//Methods to get user's inputs, launch calculation and fill back the result in the UI 
 		
 		//Initialize the Mandatory variable
@@ -219,7 +219,21 @@ public class MainActivity extends Activity {
 		{ 
 			value = view.getText().toString();
 			value = value.replaceAll("[^0-9,.]", "");
-			value = value.replace(',', '.');		//TODO Take care of the localization with a different separator
+			//TODO Take care of the localization with a different separator
+			value = value.replace(',', '.');
+			switch (view.getId()){
+			//TODO instead of using hardcoded id, use the tag with a vlue to check view requiring this check
+			case R.id.valueReelTauxCredit:
+				if (!value.startsWith("0.0")){
+					value = String.valueOf(Double.valueOf(value)/100);
+				}
+				break;
+			case R.id.valueReelTauxAssurance:
+				if (!value.startsWith("0.00")){
+					value = String.valueOf(Double.valueOf(value)/100);
+				}
+				break;
+			}
 		}
 		
 		//If the user field is empty or the result of the previous replacement is empty
@@ -231,7 +245,8 @@ public class MainActivity extends Activity {
 				emptyMandatoryField = true;
 				((View) view.getParent()).setBackgroundResource(R.color.red_light);
 			}
-			value = defaultValue;	//Whatever the mandatory value, return the default value to avoid error
+			//Whatever the mandatory value, return the default value to avoid error
+			value = defaultValue;
 		}
 		
 		//Finally return the value
