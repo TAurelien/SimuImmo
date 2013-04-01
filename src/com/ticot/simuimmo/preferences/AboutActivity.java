@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package com.ticot.simuimmo;
+package com.ticot.simuimmo.preferences;
 
+import com.ticot.simuimmo.R;
+import android.app.Activity;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceManager;
 
-public class AppPreferenceActivity extends PreferenceActivity{
+/**
+ * 
+ * 
+ * @author Aurelien Ticot
+ * @version 1.0
+ */
+public class AboutActivity extends Activity {
+
 	@Override
-	public void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
-		
-		PreferenceManager prefMgr = getPreferenceManager();
-		prefMgr.setSharedPreferencesName("appPreferences");
-		
-		//---load the preferences from an XML file---
-		//TODO Update settings with Preference Fragments
-		addPreferencesFromResource(R.xml.preference);
+	protected void onCreate(Bundle savedInstanceState){
+		setContentView(R.layout.activity_about);
 	}
 }

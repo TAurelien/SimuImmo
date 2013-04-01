@@ -69,7 +69,11 @@ limitations under the License.
 		    </PreferenceCategory>
 	    </PreferenceScreen>
     </PreferenceCategory>
+    <!-- 
     <PreferenceCategory android:title="@string/preferenceTitle_information">
-        <PreferenceScreen android:title="@string/about"></PreferenceScreen>
+        <Preference android:title="@string/about">
+            <Intent android:action="com.ticot.simuimmo.AboutActivity"/>
+        </Preference>
     </PreferenceCategory>
+     -->
 </PreferenceScreen>

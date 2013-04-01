@@ -38,11 +38,20 @@ limitations under the License.
             </intent-filter>
         </activity>
         <activity 
-            android:name=".AppPreferenceActivity"
+            android:name=".preferences.AppPreferenceActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo" >
             <intent-filter>
                 <action android:name="com.ticot.simuimmo.AppPreferenceActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name=".preferences.AboutActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo">
+            <intent-filter>
+                <action android:name="com.ticot.simuimmo.AboutActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
