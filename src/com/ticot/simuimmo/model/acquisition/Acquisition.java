@@ -1,88 +1,142 @@
+/*
+ * Copyright (C) 2013 Aurélien Ticot
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.ticot.simuimmo.model.acquisition;
 
-//TODO Modifier la javadoc de la classe Acquisition
 /**
+ * The class Acquisition represents the acquisition part of the real estate deal.
+ * <p>It's characterized by 2 estimations: the cost of the acquisition (FraisAcquisition) and the details of the loan (Emprunt).</p>
+ * 
+ * @see FraisAcquisition
+ * @see Emprunt
+ * 
  * @author Aurelien Ticot
- *
+ * @version 1.0
  */
 public class Acquisition {
-
-	//Déclaration des variables
-	//==============================================================================
-	//La classe Acquisition se compose des deux classes Emprunt et FraisAcquisitions
-	private Emprunt emprunt;
-	private FraisAcquisition fraisAcquisition;
-
 	
+	
+	//==============================================================================
+	//Variables declaration
+	//==============================================================================
+	
+	/**
+	 * The Emprunt part of the acquisition.
+	 * <p>For additional information refer to the Emprunt class.</p>
+	 * @see Emprunt
+	 */
+	private Emprunt emprunt;
+	
+	/**
+	 * The costs of the acquistion.
+	 * <p>For additional information refer to the FraisAcquisition class.</p>
+	 * @see FraisAcquisition
+	 */
+	private FraisAcquisition fraisAcquisition;
+	
+	
+	
+	//==============================================================================
 	//Constructeurs
 	//==============================================================================
-	//Constructeur vide
+
 	/**
-	 * 
+	 * Constructor of Acquisition.
+	 * <p>Empty constructor.</p>
 	 */
 	public Acquisition() {
 		super();
 	}
 	
-	//Constructeur avec les deux variables
 	/**
+	 * Constructor of Acquisition.
+	 * <p>Constructor with the 2 variables fraisAcquisition and emprunt.</p>
+	 * 
 	 * @param fraisAcquisition
 	 * @param emprunt
+	 * 
+	 * @see FraisAcquisition
+	 * @see Emprunt
 	 */
 	public Acquisition(FraisAcquisition fraisAcquisition, Emprunt emprunt) {
 		super();
 		this.fraisAcquisition = fraisAcquisition;
 		this.emprunt = emprunt;
 	}
-
 	
+	
+	
+	//==============================================================================
 	//Getters
 	//==============================================================================
 	
 	/**
-	 * @return Retourne l'emprunt
+	 * Return the estimation of the loan.
+	 * @return an instance of Emprunt.
+	 * @see Emprunt
 	 */
 	public Emprunt getEmprunt() {
 		return emprunt;
 	}
 	
 	/**
-	 * @return Retourne les frais d'acquisition
+	 * Return the estimation of the acquisition costs.
+	 * @return an instance of FraisAcquisition
+	 * @see FraisAcquisition
 	 */
 	public FraisAcquisition getFraisAcquisition() {
 		return fraisAcquisition;
 	}
 	
 	
+	
+	//==============================================================================
 	//Setters
 	//==============================================================================
 	
 	/**
-	 * @param Definit l'emprunt
+	 * Define the loan.
+	 * @param emprunt the instance of Emprunt to set.
+	 * @see Emprunt
 	 */
 	public void setEmprunt(Emprunt emprunt) {
 		this.emprunt = emprunt;
 	}
 	
 	/**
-	 * @param Definit les frais d'acquisition
+	 * Define the cost of acquisition.
+	 * @param fraisAcquisition the instance of FraisAcquisition to set.
+	 * @see FraisAcquisition
 	 */
 	public void setFraisAcquisition(FraisAcquisition fraisAcquisition) {
 		this.fraisAcquisition = fraisAcquisition;
 	}
 	
+	
+	
+	//==============================================================================
+	//Other methods
 	//==============================================================================
 
-	//TODO Eventuellement modifier le toString() de la classe Acquisition
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return fraisAcquisition + "\n\n" + emprunt;
+		return fraisAcquisition + "\n\n" + 
+				emprunt;
 	}
 	
-	//TODO Faire le equal() de la classe Acquisiton
+	//TODO Define the methods equal() of the class Bien
 	
 }

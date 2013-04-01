@@ -1,13 +1,43 @@
+/*
+ * Copyright (C) 2013 Aurélien Ticot
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.ticot.simuimmo.model.acquisition;
 
-//TODO Modifier la javadoc de la classe Emprunt
 /**
+ * The class Emprunt represents the details of the loan for a real estate transaction.
+ * <p>It's characterized by several variables:
+ * <ul>
+ * <li>capitalEmprunte: the borrowed capital</li>
+ * <li>mensualiteCredit: the monthly credit</li> 
+ * <li>tauxCredit: the rate of the loan</li>
+ * <li>tauxAssuranceCredit: the credit insurrance rate</li>
+ * <li>dureeCredit: the duration of the loan</li>
+ * <li>nbMensualiteCredit: the number of monthly credit</li>
+ * <li>credit: a table representing the complete credit over the duration</li>
+ * <li>creditAn: a synthesis table of the loan per year</li>
+ * </ul>
+ * </p>
+ * 
  * @author Aurelien Ticot
- *
+ * @version 1.0
  */
 public class Emprunt {
 
-	//Déclaration des variables
+	//==============================================================================
+	//Variables declaration
 	//==============================================================================
 	private double capitalEmprunte = 0, mensualiteCredit = 0, tauxCredit = 0,
 			tauxAssuranceCredit = 0, tauxEndettement = 0, credit[][], creditAn[][];
@@ -15,12 +45,13 @@ public class Emprunt {
 	
 	//Variables pour la prise en compte des valeurs réelles
 	private double capitalEmprunteReel, tauxCreditReel, tauxAssuranceCreditReel;
-	//TODO Supprimer si les variables des valeurs réelles sont inutiles
 	
 	
-	//Constructeurs
+	
 	//==============================================================================
-	//Constructeur vide
+	//Constructors
+	//==============================================================================
+
 	/**
 	 * 
 	 */
@@ -28,8 +59,6 @@ public class Emprunt {
 		super();
 	}
 
-	//TODO Remove construtor except the empty one
-	//Constructeur avec les valeurs utilisateurs
 	/**
 	 * @param dureeCredit
 	 */
@@ -60,10 +89,10 @@ public class Emprunt {
 		this.dureeCredit = dureeCredit;
 		this.nbMensualiteCredit = nbMensualiteCredit;
 	}
-
-	//TODO Modifier la javadoc des getters et setters de la classe Emprunt
-
 	
+	
+	
+	//==============================================================================
 	//Getters
 	//==============================================================================
 	
@@ -152,6 +181,8 @@ public class Emprunt {
 	}
 
 	
+	
+	//==============================================================================
 	//Setters
 	//==============================================================================
 	
@@ -239,13 +270,12 @@ public class Emprunt {
 		this.tauxEndettement = tauxEndettement;
 	}
 	
-	//==============================================================================
 	
-	//TODO Faire le toString() de la classe Emprunt 
+	
+	//==============================================================================
+	//Other methods
+	//==============================================================================
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return "Emprunt ------------------------------------------" +
@@ -255,12 +285,9 @@ public class Emprunt {
 				"\nLa mensualité de credit est de " + mensualiteCredit +
 				"\nLe taux de credit est de "	+ tauxCredit +
 				"\nLe taux d'assurance est de " + tauxAssuranceCredit /*+
-				"\nLe taux d'endettement est de NA" + tauxEndettement +
-				"\nLe capital emprunté réel est de =" + capitalEmprunteReel +
-				"\nLe taux de credit réel est de =" + tauxCreditReel	+
-				"\nLe taux d'assurance réel est de =" + tauxAssuranceCreditReel*/;
+				"\nLe taux d'endettement est de NA" + tauxEndettement*/;
 	}	
 	
-	//TODO Faire le equal() de la classe Emprunt
+	//TODO Define the methods equal() of the class Bien
 	
 }

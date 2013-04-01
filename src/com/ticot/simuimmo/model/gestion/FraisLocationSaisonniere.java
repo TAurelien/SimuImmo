@@ -1,6 +1,22 @@
+/*
+ * Copyright (C) 2013 Aurélien Ticot
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.ticot.simuimmo.model.gestion;
 
-//TODO Modifier la javadoc de la classe FraisLocationSaisonniere
+//TODO Modify the javadoc
 /**
  * @author Aurelien Ticot
  * 
@@ -16,7 +32,6 @@ public class FraisLocationSaisonniere {
 	private double fraisAccueilReel, fraisMenageReel,
 			fraisGestionSaisonnierReel, fraisLocationSaisonniereReel;
 
-	// TODO Supprimer si les variables des valeurs réelles sont inutiles
 
 	// Constructeurs
 	// ==============================================================================
@@ -44,7 +59,6 @@ public class FraisLocationSaisonniere {
 		this.fraisLocationSaisonniere = fraisLocationSaisonniere;
 	}
 
-	// TODO Modifier la javadoc des getters et setters de la classe
 	// XXX FraisLocationSaisonniere
 
 	// Getters
@@ -176,7 +190,7 @@ public class FraisLocationSaisonniere {
 
 	// ==============================================================================
 
-	// TODO Faire le toString() de la classe FraisLocationSaisonniere
+	// 
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -192,5 +206,5 @@ public class FraisLocationSaisonniere {
 				+ fraisLocationSaisonniere;
 	}
 
-	// TODO Faire le equal() de la classe FraisLocationSaisonniere
+	// TODO Define the methods equal() of the class Bien
 }

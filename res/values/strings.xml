@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Copyright (C) 2013 Aurélien Ticot
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ -->
 <resources>
     <!--Default values-->
     <string name="defaultValueZeroEuro">0,00 €</string>
@@ -24,7 +39,7 @@
     
     <!--Texts UI main activity-->
     <string name="app_name">Simulateur Immobilier</string>
-    <string name="menu_settings">Paramètres</string> 
+    <string name="menu_settings">Paramètres</string>
     <string name="frais_acquisition">Frais d\'acquisition</string>
     <string name="prix_fai">Prix FAI</string>
     <string name="net_vendeur">Net vendeur</string>
@@ -50,6 +65,11 @@
     <string name="calculer">Calculer</string>
     
     <!--Texts UI Preference activity-->
+    <string name="preferenceTitle_acquisition">Acquisition</string>
+    <string name="preferenceSum_acquisition">Definir les variables pour la partie Acquisition</string>
+    <string name="preferenceTitle_application_parameters">Paramètres d\'application</string>
+    <string name="preferenceTitle_default_values">Valeurs par défaut</string>
+    <string name="preferenceTitle_information">informations</string>
     <string name="preferenceTitle_PourcentageFraisAgence">Frais d\'agence</string>
     <string name="preferenceSum_PourcentageFraisAgence">Entrer le pourcentage de frais d\'agence</string>
     <string name="preferenceTitle_PourcentageFraisNotaire">Frais de notaire</string>
@@ -68,6 +88,9 @@
     <string name="preferenceSum_TauxAssuranceCredit">Entrer le taux d\'assurance de credit</string>
     <string name="preferenceTitle_PourcentageSequestre">Sequestre</string>
     <string name="preferenceSum_PourcentageSequestre">Entrer le pourcentage du sequestre</string>
+    <string name="help">Aide</string>
+    <string name="about">A propos</string>
+    <string name="license">Licence</string>
     
     <!--Messages-->
     <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>

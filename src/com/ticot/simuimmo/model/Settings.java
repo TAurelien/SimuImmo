@@ -1,13 +1,35 @@
+/*
+ * Copyright (C) 2013 Aurélien Ticot
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.ticot.simuimmo.model;
 
 /**
+ * 
+ * 
  * @author Aurelien Ticot
+ * @version 1.0
  */
 public class Settings {
 
-	//Déclaration des variables venant des hypothèses
 	//==============================================================================
-	//Partie Acquisition
+	//Variables declaration
+	//==============================================================================
+	
+	//=== Acquisition ==============================================================
+	
 	public static double pourcentageFraisAgence = 0.075;		//Pourcentage des frais d'agence à l'achat d'un bien
 	public static double pourcentageFraisNotaire = 0.075;		//Pourcentage des frais de notaire à l'achat d'un bien
 	public static double pourcentageHonorairesConseil = 0.08;	//Pourcentage des honoraires de conseil pour la recherche d'un bien
@@ -18,13 +40,15 @@ public class Settings {
 	public static double tauxAssuranceCredit = 0.0036;			//Estimation du taux d'assurance credit
 	public static double pourcentageSequestre = 0.1;			//Pourcentage du sequestre à laisser en acompte à l'achat d'un bien
 	
-	//A categoriser
+	//=== To categorize ============================================================
+	
 	public static double achatSousMarche = 0.3; 				//Pourcentage d'acquisition sous le marché
 	public static double revenuMensuelNet = 2500;				//Revenu mensuel net servant au calcul du taux d'endettement
 	public static double autresRevenus = 0; 					//Autres revenus mensuel rentrant en compte dans le calcul du taux d'endettement
 	public static double autresCredit = 0; 						//Valeur mensuelle des autres credit pour le calcul du taux d'endettement
 	
-	//Partie Gestion
+	//=== Gestion ==================================================================
+	
 	public static int moisParAn = 12;							//Nombre de mois par an, pour les calculs en saisonnier
 	public static int nuitsParMois = 30;						//Nombre de nuits par mois, pour les calculs en saisonnier
 	public static int nuitsParAn = 365;							//Nombre de nuits par an, pour les calculs en saisonnier
@@ -37,7 +61,8 @@ public class Settings {
 	public static double fraisGestionAgence = 0.06; 			//Frais de gestion de location par une agence
 	public static double maxMensualitéRP = 900; 				//Mensualité maximum supporté en cas de choix Résidence Principale
 	
-	//Partie Imposition
+	//=== Imposition ===============================================================
+	
 	public static double abattementMicroFoncier = 0.3;			//Abattement de revenus en regime micro foncier
 	public static double limiteRegimeMicro = 32000;				//Limite de revenus en regime micro
 	public static double limiteRegimeMicroFoncier = 15000;		//Limite de revenus en regime micro foncier
@@ -49,14 +74,15 @@ public class Settings {
 	public static int dureeAmortissmentMeubles = 10;			//Durée d'amortissement des meubles, choix à 10 ans généralement
 	public static boolean priseEnCompteClasseTourisme = false;	//Choix de prise en compte des classé de tourisme ou non
 	
-	//Partie Cash Flow
+	//=== CashFlow =================================================================
+	
 	public static double maxCashFlowNeg = 500;					//Maximum de cash flow négatif mensuel
 	
-	//Partie Revente
+	//=== Revente ==================================================================
+	
 	public static double evoPrixImmobilier = 0.01;				//Evolution des prix de l'immobilier par an
 	public static double reventeAuDessusMarche = 0.1;			//Revente au dessus des prix du marché
 	public static double minPlusValueRP = 20000;				//Minimum de plus value à la revente en Résidence principale
 	public static double tauxImpotPlusValue = 0.19;				//Taux d'imposition de la plus value
 	
-	//==============================================================================
 }
