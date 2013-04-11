@@ -16,41 +16,89 @@
 
 package com.ticot.simuimmo.model.gestion;
 
-//TODO Modify the javadoc
 /**
+ * The class Gestion represents the management of the real estate.
+ * <p>It's characterized by 5 variables:
+ * <ul>
+ * <li>typeGestion: the type of management</li>
+ * <li>chargesAnnuelles: the annual expenses</li>
+ * <li>fraisLocationAnnuelle: the annual renting expenses</li>
+ * <li>fraisLocationSaisonniere: the annual seasonal renting expenses</li>
+ * <li>recetteLocative: the rental income</li>
+ * </ul>
+ * </p>
+ * 
+ * @see ChargesAnnuelles
+ * @see FraisLocationAnnuelle
+ * @see FraisLocationSaisonniere
+ * @see RecetteLocative
+ * 
  * @author Aurelien Ticot
- *
+ * @version 1.0
  */
 public class Gestion {
 	
-	//TODO Structurer la classe Gestion
 	
-	//Déclaration des variables
 	//==============================================================================
-	//La classe Gestion se compose des 4 classes ChargesAnnuelles, FraisLocationAnnuelle
-	//FraisLocationSaisonnière et Recette Locative
+	//Variables declaration
+	//==============================================================================
 	
-	// TODO Define the ENUM for the "Type de gestion"
-	//Pour le moment le type de gestion est un "int"
+	/**The type of management.*/
 	private int typeGestion;
+	// TODO Change the type of typeGestion
+	
+	/**
+	 * The annual expenses.
+	 * <p>For additional information refer to the ChargesAnnuelles class.</p>
+	 * @see ChargesAnnuelles
+	 */
 	private ChargesAnnuelles chargesAnnuelles;
+	
+	/**
+	 * The annual renting expenses.
+	 * <p>For additional information refer to the FraisLocationAnnuelle class.</p>
+	 * @see FraisLocationAnnuelle
+	 */
 	private FraisLocationAnnuelle fraisLocationAnnuelle;
+	
+	/**
+	 * The annual seasonal renting expenses.
+	 * <p>For additional information refer to the FraisLocationSaisonniere class.</p>
+	 * @see FraisLocationSaisonniere
+	 */
 	private FraisLocationSaisonniere fraisLocationSaisonniere;
+	
+	/**
+	 * The rental income.
+	 * <p>For additional information refer to the RecetteLocative class.</p>
+	 * @see RecetteLocative
+	 */
 	private RecetteLocative recetteLocative;
 	
 	
+	
+	//==============================================================================
 	//Constructeurs
 	//==============================================================================
-	//Constructeur vide
+
 	/**
-	 * 
+	 * Constructor of Gestion.
+	 * <p>Empty constructor.</p>
 	 */
 	public Gestion() {
 		super();
 	}
 	
-	//Constructeur avec toutes les variables
 	/**
+	 * Constructor of Gestion.
+	 * <p>Constructor with all variables.</p>
+	 * 
+	 * @see ChargesAnnuelles
+	 * @see FraisLocationAnnuelle
+	 * @see FraisLocationSaisonniere
+	 * @see RecetteLocative
+	 * 
+	 * @param typeGestion
 	 * @param fraisAnnuels
 	 * @param fraisLocationAnnuelle
 	 * @param fraisLocationSaisonniere
@@ -69,93 +117,114 @@ public class Gestion {
 	}	
 	
 	
+	
+	//==============================================================================
 	//Getters
 	//==============================================================================
 	
 	/**
-	 * @return the typeGestion
+	 * Return the type of management.
+	 * @return an integer representing the type of management (typeGestion).
 	 */
 	public int getTypeGestion() {
 		return typeGestion;
 	}
 	
 	/**
-	 * @return Retourne les frais annuels
+	 * Return the estimation of the annual expenses.
+	 * @return an instance of ChargesAnnuelles.
+	 * @see ChargesAnnuelles
 	 */
 	public ChargesAnnuelles getChargesAnnuelles() {
 		return chargesAnnuelles;
 	}
 
 	/**
-	 * @return Retourne les frais de location annuelle
+	 * Return the estimation of the annual renting expenses.
+	 * @return an instance of FraisLocationAnnuelle.
+	 * @see FraisLocationAnnuelle
 	 */
 	public FraisLocationAnnuelle getFraisLocationAnnuelle() {
 		return fraisLocationAnnuelle;
 	}
 	
 	/**
-	 * @return Retourne les frais de location saisonniere
+	 * Return the estimation of the annual seasonal renting expenses.
+	 * @return an instance of FraisLocationSaisonniere.
+	 * @see FraisLocationSaisonniere
 	 */
 	public FraisLocationSaisonniere getFraisLocationSaisonniere() {
 		return fraisLocationSaisonniere;
 	}
 	
 	/**
-	 * @return Retourne la recette locative
+	 * Return the estimation of the rental income.
+	 * @return an instance of RecetteLocative.
+	 * @see RecetteLocative
 	 */
 	public RecetteLocative getRecetteLocative() {
 		return recetteLocative;
 	}
 	
 	
+	
+	//==============================================================================
 	//Setters
 	//==============================================================================
 	
 	/**
-	 * @param typeGestion the typeGestion to set
+	 * Define the type of management (typeGestion).
+	 * @param typeGestion the integer of the type of management to set.
 	 */
 	public void setTypeGestion(int typeGestion) {
 		this.typeGestion = typeGestion;
 	}
 	
 	/**
-	 * @param Definit les frais annuels
+	 * Define the annual expenses.
+	 * @param chargesAnnuelles the instance of ChargesAnnuelles to set.
+	 * @see ChargesAnnuelles
 	 */
 	public void setChargesAnnuelles(ChargesAnnuelles chargesAnnuelles) {
 		this.chargesAnnuelles = chargesAnnuelles;
 	}
 	
 	/**
-	 * @param Definit les frais de location annuelle
+	 * Define the annual renting expenses.
+	 * @param fraisLocationAnnuelle the instance of FraisLocationAnnuelle to set.
+	 * @see FraisLocationAnnuelle
 	 */
 	public void setFraisLocationAnnuelle(FraisLocationAnnuelle fraisLocationAnnuelle) {
 		this.fraisLocationAnnuelle = fraisLocationAnnuelle;
 	}
 	
 	/**
-	 * @param Definit les frais de location saisonniere
+	 * Define the annual seasonal renting expenses.
+	 * @param fraisLocationSaisonniere the instance of FraisLocationSaisonniere to set.
+	 * @see FraisLocationSaisonniere
 	 */
-	public void setFraisLocationSaisonniere(
-			FraisLocationSaisonniere fraisLocationSaisonniere) {
+	public void setFraisLocationSaisonniere(FraisLocationSaisonniere fraisLocationSaisonniere) {
 		this.fraisLocationSaisonniere = fraisLocationSaisonniere;
 	}
 	
 	/**
-	 * @param Definit la recette locative
+	 * Define the rental income.
+	 * @param recetteLocative the instance of RecetteLocative to set.
+	 * @see RecetteLocative
 	 */
 	public void setRecetteLocative(RecetteLocative recetteLocative) {
 		this.recetteLocative = recetteLocative;
 	}
+	
+	
+	
+	//==============================================================================
+	//Other methods
+	//==============================================================================
 
-	// ==============================================================================
-
-	// 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "Gestion ---------------------------" +
+		return "=== Gestion ===" +
 				"\nLe type de gestion est " + typeGestion + 
 				"\n\n" + chargesAnnuelles +
 				"\n\n" + fraisLocationAnnuelle +

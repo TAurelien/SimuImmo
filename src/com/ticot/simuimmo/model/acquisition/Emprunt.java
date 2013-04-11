@@ -18,6 +18,7 @@ package com.ticot.simuimmo.model.acquisition;
 
 /**
  * The class Emprunt represents the details of the loan for a real estate transaction.
+ * <p>The class Emprunt is part of the class Acquisition. </br>The additional costs of acquisition are represented by the class FraisAcquisition.</p> 
  * <p>It's characterized by several variables:
  * <ul>
  * <li>capitalEmprunte: the borrowed capital</li>
@@ -31,6 +32,9 @@ package com.ticot.simuimmo.model.acquisition;
  * </ul>
  * </p>
  * 
+ * @see Acquisition
+ * @see FraisAcquisition
+ * 
  * @author Aurelien Ticot
  * @version 1.0
  */
@@ -39,12 +43,48 @@ public class Emprunt {
 	//==============================================================================
 	//Variables declaration
 	//==============================================================================
-	private double capitalEmprunte = 0, mensualiteCredit = 0, tauxCredit = 0,
-			tauxAssuranceCredit = 0, tauxEndettement = 0, credit[][], creditAn[][];
-	private int dureeCredit = 0, nbMensualiteCredit = 0;
 	
-	//Variables pour la prise en compte des valeurs réelles
-	private double capitalEmprunteReel, tauxCreditReel, tauxAssuranceCreditReel;
+	/**The borrowed capital.*/
+	private double capitalEmprunte = 0;
+	
+	/**The monthly credit.*/
+	private double mensualiteCredit = 0;
+	
+	/**The rate of the loan.*/
+	private double tauxCredit = 0;
+	
+	/**The credit insurrance rate.*/
+	private double tauxAssuranceCredit = 0;
+	
+	/**The debt ratio.*/
+	private double tauxEndettement = 0;
+	
+	/**A table representing the complete credit over the duration.*/
+	private double credit[][];
+	
+	/**A synthesis table of the loan per year.*/
+	private double creditAn[][];
+	
+	/**The duration of the loan.*/
+	private int dureeCredit = 0;
+	
+	/**The number of monthly credit.*/
+	private int nbMensualiteCredit = 0;
+	
+	/*** The real borrowed capital.
+	 * @deprecated
+	 */
+	private double capitalEmprunteReel;
+	
+	/**The real rate of the loan.
+	 * @deprecated
+	 */
+	private double tauxCreditReel;
+	
+	/**The real credit insurance rate.
+	 * @deprecated
+	 */
+	private double tauxAssuranceCreditReel;
 	
 	
 	
@@ -53,13 +93,17 @@ public class Emprunt {
 	//==============================================================================
 
 	/**
-	 * 
+	 * Constructor of Emprunt.
+	 * <p>Empty constructor.</p>
 	 */
 	public Emprunt() {
 		super();
 	}
 
 	/**
+	 * Constructor of Emprunt.
+	 * <p>Constructor with the variable dureeCredit.</p>
+	 * 
 	 * @param dureeCredit
 	 */
 	public Emprunt(int dureeCredit) {
@@ -67,8 +111,10 @@ public class Emprunt {
 		this.dureeCredit = dureeCredit;
 	}
 	
-	//Constructeur avec toutes les variables sauf les "Reel"
 	/**
+	 * Constructor of Emprunt.
+	 * <p>Constructor with all variables except the real variables</p>
+	 * 
 	 * @param capitalEmprunte
 	 * @param mensualiteCredit
 	 * @param tauxCredit
@@ -97,84 +143,99 @@ public class Emprunt {
 	//==============================================================================
 	
 	/**
-	 * @return the capitalEmprunte
+	 * Return the borrowed capital.
+	 * @return a double representing the borrowed capital (capitalEmprunte).
 	 */
 	public double getCapitalEmprunte() {
 		return capitalEmprunte;
 	}
 
 	/**
-	 * @return the capitalEmprunteReel
+	 * Return the real borrowed capital.
+	 * @return a double representing the real borrowed capital (capitalEmprunteReel).
+	 * @deprecated
 	 */
 	public double getCapitalEmprunteReel() {
 		return capitalEmprunteReel;
 	}
 
 	/**
-	 * @return the credit
+	 * Return the details of the loan per month (credit).
+	 * @return a table of double representing the loan (credit).
 	 */
 	public double[][] getCredit() {
 		return credit;
 	}
 
 	/**
-	 * @return the credit
+	 * Return the details of the loan per year (creditAn).
+	 * @return a table of double representing the loan per year (creditAn).
 	 */
 	public double[][] getCreditAn() {
 		return creditAn;
 	}
 	
 	/**
-	 * @return the dureeCredit
+	 * Return the duration of the loan. 
+	 * @return an integer representing the duration in year of the loan (dureeCredit).
 	 */
 	public int getDureeCredit() {
 		return dureeCredit;
 	}
 
 	/**
-	 * @return the mensualiteCredit
+	 * Return the monthly credit.
+	 * @return a double representing the monthly credit (mensualiteCredit).
 	 */
 	public double getMensualiteCredit() {
 		return mensualiteCredit;
 	}
 
 	/**
-	 * @return the nbMensualiteCredit
+	 * Return the number of montly credit.
+	 * @return an integer representing the number of monthly  credit (nbMensualiteCredit).
 	 */
 	public int getNbMensualiteCredit() {
 		return nbMensualiteCredit;
 	}
 
 	/**
-	 * @return the tauCreditReel
+	 * Return the real rate of the loan.
+	 * @return a double representing the real rate of the loan (tauxCreditReel).
+	 * @deprecated
 	 */
 	public double getTauxCreditReel() {
 		return tauxCreditReel;
 	}
 
 	/**
-	 * @return the tauxAssuranceCredit
+	 * Return the credit insurance rate.
+	 * @return a double representing the credit insurance rate (tauxAssuranceCredit).
 	 */
 	public double getTauxAssuranceCredit() {
 		return tauxAssuranceCredit;
 	}
 
 	/**
-	 * @return the tauxAssuranceCreditReel
+	 * Return the real credit insurance rate.
+	 * @return a double representing the real credit insurance rate (tauxAssuranceCreditReel).
+	 * @deprecated
 	 */
 	public double getTauxAssuranceCreditReel() {
 		return tauxAssuranceCreditReel;
 	}
 
 	/**
-	 * @return the tauxCredit
+	 * Return the rate of the loan.
+	 * @return a double representing the rate of the loan (tauxCredit).
 	 */
 	public double getTauxCredit() {
 		return tauxCredit;
 	}
 
 	/**
-	 * @return the tauxEndettement
+	 * Return the debt ratio.
+	 * @return a double representing the debt ratio (tauxEndettement).
 	 */
 	public double getTauxEndettement() {
 		return tauxEndettement;
@@ -187,84 +248,99 @@ public class Emprunt {
 	//==============================================================================
 	
 	/**
-	 * @param capitalEmprunte the capitalEmprunte to set
+	 * Define the borrowed capital of the loan.
+	 * @param capitalEmprunte the double of borrowed capital to set.
 	 */
 	public void setCapitalEmprunte(double capitalEmprunte) {
 		this.capitalEmprunte = capitalEmprunte;
 	}
 
 	/**
-	 * @param capitalEmprunteReel the capitalEmprunteReel to set
+	 * Define the real borrowed capital of the loan.
+	 * @param capitalEmprunteReel the double of borrowed capital to set.
+	 * @deprecated
 	 */
 	public void setCapitalEmprunteReel(double capitalEmprunteReel) {
 		this.capitalEmprunteReel = capitalEmprunteReel;
 	}
 
 	/**
-	 * @param credit the credit to set
+	 * Define the details of the loan, per month.
+	 * @param credit the table of double of the details of the loan to set.
 	 */
 	public void setCredit(double credit[][]) {
 		this.credit = credit;
 	}
 
 	/**
-	 * @param credit the creditAn to set
+	 * Define the details of the loan, per year.
+	 * @param creditAn the table of double of the details of the loan to set.
 	 */
 	public void setCreditAn(double creditAn[][]) {
 		this.creditAn = creditAn;
 	}
 	
 	/**
-	 * @param dureeCredit the dureeCredit to set
+	 * Define the duration of the loan.
+	 * @param dureeCredit the integer of the duration of the loan to set.
 	 */
 	public void setDureeCredit(int dureeCredit) {
 		this.dureeCredit = dureeCredit;
 	}
 
 	/**
-	 * @param mensualitéCredit the mensualitéCredit to set
+	 * Define the monthly credit.
+	 * @param mensualiteCredit the double of the monthly credit to set.
 	 */
 	public void setMensualiteCredit(double mensualiteCredit) {
 		this.mensualiteCredit = mensualiteCredit;
 	}
 
 	/**
-	 * @param nbMensualiteCredit the nbMensualiteCredit to set
+	 * Define the number of monthly credit.
+	 * @param nbMensualiteCredit the integer of the number of monthly credit to set.
 	 */
 	public void setNbMensualiteCredit(int nbMensualiteCredit) {
 		this.nbMensualiteCredit = nbMensualiteCredit;
 	}
 
 	/**
-	 * @param tauCreditReel the tauCreditReel to set
+	 * Define the real rate of the loan.
+	 * @param tauxCreditReel the double of the real rate of the loan to set.
+	 * @deprecated
 	 */
 	public void setTauxCreditReel(double tauxCreditReel) {
 		this.tauxCreditReel = tauxCreditReel;
 	}
 
 	/**
-	 * @param tauxAssuranceCredit the tauxAssuranceCredit to set
+	 * Define the credit insurance rate.
+	 * @param tauxAssuranceCredit the double of the credit insurance rate to set.
 	 */
 	public void setTauxAssuranceCredit(double tauxAssuranceCredit) {
 		this.tauxAssuranceCredit = tauxAssuranceCredit;
 	}
 
 	/**
-	 * @param tauxAssuranceCreditReel the tauxAssuranceCreditReel to set
+	 * Define the real credit insurance rate.
+	 * @param tauxAssuranceCreditReel the double of the real credit insurance rate to set.
+	 * @deprecated
 	 */
 	public void setTauxAssuranceCreditReel(double tauxAssuranceCreditReel) {
 		this.tauxAssuranceCreditReel = tauxAssuranceCreditReel;
 	}
 
 	/**
-	 * @param tauxCredit the tauxCredit to set
+	 * Define the rate of the loan.
+	 * @param tauxCredit the double of the rate of the loan to set.
 	 */
 	public void setTauxCredit(double tauxCredit) {
 		this.tauxCredit = tauxCredit;
 	}
 
 	/**
-	 * @param tauxEndettement the tauxEndettement to set
+	 * define the debt ratio.
+	 * @param tauxEndettement the double of the debt ratio to set.
 	 */
 	public void setTauxEndettement(double tauxEndettement) {
 		this.tauxEndettement = tauxEndettement;
@@ -278,7 +354,7 @@ public class Emprunt {
 
 	@Override
 	public String toString() {
-		return "Emprunt ------------------------------------------" +
+		return "=== Emprunt ===" +
 				"\nLa durée du credit est de " + dureeCredit +
 				"\nLe nombre de mensualité est de " + nbMensualiteCredit +
 				"\nLe capital emprunté est de " + capitalEmprunte	+ 

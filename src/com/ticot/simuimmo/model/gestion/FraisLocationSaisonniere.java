@@ -16,35 +16,82 @@
 
 package com.ticot.simuimmo.model.gestion;
 
-//TODO Modify the javadoc
 /**
- * @author Aurelien Ticot
+ * The class FraisLocationSaisonniere represents the details of the annual rental expenses in seasonal rent.
+ * <p>The class FraisLocationSaisonniere is part of the class Gestion.</p> 
+ * <p>It's characterized by several variables:
+ * <ul>
+ * <li>fraisAccueil: the welcoming expense</li>
+ * <li>fraisMenage: the cleaning expense</li> 
+ * <li>fraisGestionSaisonnier: the management expense, in seasonal</li>
+ * <li>fraisLocationSaisonniere: the overal cost</li>
+ * </ul>
+ * </p>
  * 
+ * @see Gestion
+ * @see ChargesAnnuelles
+ * @see FraisLocationAnnuelle
+ * @see RecetteLocative
+ * 
+ * @author Aurelien Ticot
+ * @version 1.0
  */
 public class FraisLocationSaisonniere {
 
-	// Déclaration des variables
-	// ==============================================================================
-	private double fraisAccueil = 0, fraisMenage = 0,
-			fraisGestionSaisonnier = 0, fraisLocationSaisonniere = 0;
+	//==============================================================================
+	//Variables declaration
+	//==============================================================================
+	
+	/**The welcoming expense.*/
+	private double fraisAccueil = 0;
+	
+	/**The cleaning expense.*/
+	private double fraisMenage = 0;
+	
+	/**The management expense, in seasonal.*/
+	private double fraisGestionSaisonnier = 0;
+	
+	/**The overal cost.*/
+	private double fraisLocationSaisonniere = 0;
+	
+	/**The real welcoming expense.
+	 * @deprecated
+	 */
+	private double fraisAccueilReel;
+	
+	/**The real cleaning expense.
+	 * @deprecated
+	 */
+	private double fraisMenageReel;
+	
+	/**The real management expense, in seasonal.
+	 * @deprecated
+	 */
+	private double fraisGestionSaisonnierReel;
+	
+	/**The real overal cost.
+	 * @deprecated
+	 */
+	private double fraisLocationSaisonniereReel;
+	
+	
+	
+	//==============================================================================
+	//Constructors
+	//==============================================================================
 
-	// Variables pour la prise en compte des valeurs réelles
-	private double fraisAccueilReel, fraisMenageReel,
-			fraisGestionSaisonnierReel, fraisLocationSaisonniereReel;
-
-
-	// Constructeurs
-	// ==============================================================================
-	// Constructeur vide
 	/**
-		 * 
-		 */
+	 * Constructor of FraisLocationSaisonniere.
+	 * <p>Empty constructor.</p>
+	 */
 	public FraisLocationSaisonniere() {
 		super();
 	}
 
-	//Constructeur avec les valeurs utilisateurs
 	/**
+	 * Constructor of FraisLocationSaisonniere.
+	 * <p>Constructor with all variables.</p>
+	 * 
 	 * @param fraisAccueil
 	 * @param fraisMenage
 	 * @param fraisGestionSaisonnier
@@ -58,144 +105,161 @@ public class FraisLocationSaisonniere {
 		this.fraisGestionSaisonnier = fraisGestionSaisonnier;
 		this.fraisLocationSaisonniere = fraisLocationSaisonniere;
 	}
-
-	// XXX FraisLocationSaisonniere
-
-	// Getters
-	// ==============================================================================
-
+	
+	
+	
+	//==============================================================================
+	//Getters
+	//==============================================================================
+	
 	/**
-	 * @return the chargesLocationSaisonniere
+	 * Return the overal cost.
+	 * @return a double representing the overall cost (fraisLocationSaisonniere).
 	 */
 	public double getFraisLocationSaisonniere() {
 		return fraisLocationSaisonniere;
 	}
 
 	/**
-	 * @return the chargesLocationSaisonniereReel
+	 * Return the real overall cost.
+	 * @return a double representing the real overall cost (fraisLocationSaisonniereReel).
+	 * @deprecated
 	 */
 	public double getFraisLocationSaisonniereReel() {
 		return fraisLocationSaisonniereReel;
 	}
 
 	/**
-	 * @return the fraisAccueil
+	 * Return the welcoming expense.
+	 * @return a double representing the welcoming expense (fraisAccueil).
 	 */
 	public double getFraisAccueil() {
 		return fraisAccueil;
 	}
 
 	/**
-	 * @return the fraisAccueilReel
+	 * Return the real welcoming expense.
+	 * @return a double representing the welcoming expense (fraisAccueilReel).
+	 * @deprecated
 	 */
 	public double getFraisAccueilReel() {
 		return fraisAccueilReel;
 	}
 
 	/**
-	 * @return the fraisGestionSaisonnier
+	 * Return the management expense.
+	 * @return a double representing the management expense (fraisGestionSaisonnier)
 	 */
 	public double getFraisGestionSaisonnier() {
 		return fraisGestionSaisonnier;
 	}
 
 	/**
-	 * @return the fraisGestionSaisonnierReel
+	 * Return the real management expense.
+	 * @return a double representing the real management expense (fraisGestionSaisonnierReel).
+	 * @deprecated
 	 */
 	public double getFraisGestionSaisonnierReel() {
 		return fraisGestionSaisonnierReel;
 	}
 
 	/**
-	 * @return the fraisMenage
+	 * Return the cleaning expense.
+	 * @return a double representing the cleaning expense (fraisMenage).
 	 */
 	public double getFraisMenage() {
 		return fraisMenage;
 	}
 
 	/**
-	 * @return the fraisMenageReel
+	 * Return the real cleaning expense.
+	 * @return a double representing the real cleaning expense (fraisMenageReel).
+	 * @deprecated
 	 */
 	public double getFraisMenageReel() {
 		return fraisMenageReel;
 	}
-
-	// Setters
-	// ==============================================================================
-
+	
+	
+	
+	//==============================================================================
+	//Setters
+	//==============================================================================
+	
 	/**
-	 * @param fraisLocationSaisonniere
-	 *            the fraisLocationSaisonniere to set
+	 * Define the overall cost. 
+	 * @param fraisLocationSaisonniere the double of the overall cost to set.
 	 */
 	public void setFraisLocationSaisonniere(double fraisLocationSaisonniere) {
 		this.fraisLocationSaisonniere = fraisLocationSaisonniere;
 	}
 
 	/**
-	 * @param fraisLocationSaisonniereReel
-	 *            the fraisLocationSaisonniereReel to set
+	 * Define the real overall cost.
+	 * @param fraisLocationSaisonniereReel the double of the real overall cost to set.
+	 * @deprecated
 	 */
-	public void setFraisLocationSaisonniereReel(
-			double fraisLocationSaisonniereReel) {
+	public void setFraisLocationSaisonniereReel(double fraisLocationSaisonniereReel) {
 		this.fraisLocationSaisonniereReel = fraisLocationSaisonniereReel;
 	}
 
 	/**
-	 * @param fraisAccueil
-	 *            the fraisAccueil to set
+	 * Define the welcoming expense.
+	 * @param fraisAccueil the double of the welcoming expense to set.
 	 */
 	public void setFraisAccueil(double fraisAccueil) {
 		this.fraisAccueil = fraisAccueil;
 	}
 
 	/**
-	 * @param fraisAccueilReel
-	 *            the fraisAccueilReel to set
+	 * Define the real welcoming expense.
+	 * @param fraisAccueilReel the double of the real welcoming expense to set.
+	 * @deprecated
 	 */
 	public void setFraisAccueilReel(double fraisAccueilReel) {
 		this.fraisAccueilReel = fraisAccueilReel;
 	}
 
 	/**
-	 * @param fraisGestionSaisonnier
-	 *            the fraisGestionSaisonnier to set
+	 * Define the management expense.
+	 * @param fraisGestionSaisonnier the double of the management expense to set.
 	 */
 	public void setFraisGestionSaisonnier(double fraisGestionSaisonnier) {
 		this.fraisGestionSaisonnier = fraisGestionSaisonnier;
 	}
 
 	/**
-	 * @param fraisGestionSaisonnierReel
-	 *            the fraisGestionSaisonnierReel to set
+	 * Define the real management expense.
+	 * @param fraisGestionSaisonnierReel the double of the real management expense to set.
+	 * @deprecated
 	 */
 	public void setFraisGestionSaisonnierReel(double fraisGestionSaisonnierReel) {
 		this.fraisGestionSaisonnierReel = fraisGestionSaisonnierReel;
 	}
 
 	/**
-	 * @param fraisMenage
-	 *            the fraisMenage to set
+	 * Define the cleaning expense.
+	 * @param fraisMenage the double of the cleaning expense to set.
 	 */
 	public void setFraisMenage(double fraisMenage) {
 		this.fraisMenage = fraisMenage;
 	}
 
 	/**
-	 * @param fraisMenageReel
-	 *            the fraisMenageReel to set
+	 * defin the real cleaning expense.
+	 * @param fraisMenageReel the double of the real cleaning expense to set.
+	 * @deprecated
 	 */
 	public void setFraisMenageReel(double fraisMenageReel) {
 		this.fraisMenageReel = fraisMenageReel;
 	}
+	
+	
+	
+	//==============================================================================
+	//Other methods
+	//==============================================================================
 
-	// ==============================================================================
-
-	// 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return "Frais location saisonnière -------------------------"

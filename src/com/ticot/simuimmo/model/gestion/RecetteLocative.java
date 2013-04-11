@@ -16,32 +16,76 @@
 
 package com.ticot.simuimmo.model.gestion;
 
-//TODO Modify the javadoc
 /**
+ * The class RecetteLocative represents the details of the rental income for a real estate.
+ * <p>The class RecetteLocative is part of the class Gestion.</p> 
+ * <p>It's characterized by several variables:
+ * <ul>
+ * <li>loyerNu: the plain rent, per month</li>
+ * <li>loyerMeuble: the furnished rent, per month</li> 
+ * <li>loyerNuit: the seasonal rent, per night</li>
+ * <li>loyerSaisonnier: the seasonal rent, per month</li>
+ * <li>recetteLocative: the rental income, for a year</li>
+ * <li>vacLocAnnuelle: the rental vacancy, in month per year</li>
+ * <li>vacLocSaisonnier: the rental vacancy in seasonal rent, in night per month</li>
+ * </ul>
+ * </p>
+ * 
+ * @see Gestion
+ * @see FraisLocationAnnuelle
+ * @see FraisLocationSaisonniere
+ * @see ChargesAnnuelles
+ * 
  * @author Aurelien Ticot
- *
+ * @version 1.0
  */
 public class RecetteLocative {
 
-	// Déclaration des variables
-	// ==============================================================================
-	private double loyerNu = 0, loyerMeuble = 0,
-			loyerNuit = 0, loyerSaisonnier = 0, recetteLocative = 0;
-	private int vacLocAnnuelle = 0, vacLocSaisonnier = 0;
+	//==============================================================================
+	//Variables declaration
+	//==============================================================================
+	
+	/**The plain rent, per month.*/
+	private double loyerNu = 0;
+	
+	/**The furnished rent, per month.*/
+	private double loyerMeuble = 0;
+	
+	/**The seasonal rent, per night.*/
+	private double loyerNuit = 0;
+	
+	/**The seasonal rent, per month.*/
+	private double loyerSaisonnier = 0;
+	
+	/**The rental income, for a year.*/
+	private double recetteLocative = 0;
+	
+	/**The rental vacancy, in month per year.
+	 * <p>Not used for seasonal rental.</p>*/
+	private int vacLocAnnuelle = 0;
+	
+	/**The rental vacancy in seasonal rent, in night per month.
+	 * <p>Not used for plain and furnished rental.</p>*/
+	private int vacLocSaisonnier = 0;
 	
 	
-	// Constructeurs
-	// ==============================================================================
-	// Constructeur vide
+	
+	//==============================================================================
+	//Constructors
+	//==============================================================================
+
 	/**
-	 * 
+	 * Constructor of RecetteLocative.
+	 * <p>Empty constructor.</p>
 	 */
 	public RecetteLocative() {
 		super();
 	}
 	
-	//Constructeur avec les valeurs utilisateurs
 	/**
+	 * Constructor of RecetteLocative.
+	 * <p>Constructor with the user's varaibles.</p>
+	 * 
 	 * @param loyerNu
 	 * @param loyerMeuble
 	 * @param loyerNuit
@@ -57,122 +101,140 @@ public class RecetteLocative {
 		this.vacLocAnnuelle = vacLocAnnuelle;
 		this.vacLocSaisonnier = vacLocSaisonnier;
 	}
-
-
-	// Getters
-	// ==============================================================================
-
+	
+	
+	
+	//==============================================================================
+	//Getters
+	//==============================================================================
+	
 	/**
-	 * @return the loyerMeuble
+	 * Return the furnished rent.
+	 * @return a double representing the furnished rent (loyerMeuble).
 	 */
 	public double getLoyerMeuble() {
 		return loyerMeuble;
 	}
 	
 	/**
-	 * @return the loyerNu
+	 * Return the plain rent.
+	 * @return a double representing the plain rent (loyerNu).
 	 */
 	public double getLoyerNu() {
 		return loyerNu;
 	}
 	
 	/**
-	 * @return the loyerNuit
+	 * Return the seasonal rent, per night.
+	 * @return a double representing the seasonal rent, per night (loyerNuit).
 	 */
 	public double getLoyerNuit() {
 		return loyerNuit;
 	}
 	
 	/**
-	 * @return the loyerSaisonnier
+	 * Return the seasonal rent, per month.
+	 * @return a double representing the seasonal rent, per month (loyerSaisonnier).
 	 */
 	public double getLoyerSaisonnier() {
 		return loyerSaisonnier;
 	}
 	
 	/**
-	 * @return the recetteLocative
+	 * Return the rental income, per year.
+	 * @return a double representing the rental income (recetteLocative).
 	 */
 	public double getRecetteLocative() {
 		return recetteLocative;
 	}
 	
 	/**
-	 * @return the vacLocAnnuelle
+	 * Return the rental vacancy, in month per year.
+	 * @return an integer representing the rental vacancy, in month per year (vacLocAnnuelle).
 	 */
 	public int getVacLocAnnuelle() {
 		return vacLocAnnuelle;
 	}
 	
 	/**
-	 * @return the vacLocSaisonnier
+	 * Return the rental vacancy, in night per month.
+	 * @return an integer representing the rental vacancy, in night per month (vacLocSaisonnier).
 	 */
 	public int getVacLocSaisonnier() {
 		return vacLocSaisonnier;
 	}
-
 	
-	// Setters
-	// ==============================================================================
-
+	
+	
+	//==============================================================================
+	//Setters
+	//==============================================================================
+	
 	/**
-	 * @param loyerMeuble the loyerMeuble to set
+	 * Define the furnished rent. 
+	 * @param loyerMeuble the double of the furnished rent to set.
 	 */
 	public void setLoyerMeuble(double loyerMeuble) {
 		this.loyerMeuble = loyerMeuble;
 	}
 	
 	/**
-	 * @param loyerNu the loyerNu to set
+	 * Define the plain rent.
+	 * @param loyerNu the double of the plain rent to set.
 	 */
 	public void setLoyerNu(double loyerNu) {
 		this.loyerNu = loyerNu;
 	}
 	
 	/**
-	 * @param loyerNuit the loyerNuit to set
+	 * Define the seasonal rent, per night.
+	 * @param loyerNuit the double of the seasonal rent, per night to set.
 	 */
 	public void setLoyerNuit(double loyerNuit) {
 		this.loyerNuit = loyerNuit;
 	}
 	
 	/**
-	 * @param loyerSaisonnier the loyerSaisonnier to set
+	 * Define the seasonal rent, per month.
+	 * @param loyerSaisonnier the double of the seasonal rent, per month to set.
 	 */
 	public void setLoyerSaisonnier(double loyerSaisonnier) {
 		this.loyerSaisonnier = loyerSaisonnier;
 	}
 	
 	/**
-	 * @param recetteLocative the recetteLocative to set
+	 * Define the rental income, per year.
+	 * @param recetteLocative the double of the rental income to set.
 	 */
 	public void setRecetteLocative(double recetteLocative) {
 		this.recetteLocative = recetteLocative;
 	}
 	
 	/**
-	 * @param vacLocAnnuelle the vacLocAnnuelle to set
+	 * Define the rental vacancy, in month per year.
+	 * @param vacLocAnnuelle the integer of the rental vacancy to set.
 	 */
 	public void setVacLocAnnuelle(int vacLocAnnuelle) {
 		this.vacLocAnnuelle = vacLocAnnuelle;
 	}
 	
 	/**
-	 * @param vacLocSaisonnier the vacLocSaisonnier to set
+	 * Define the rental vacancy, in night per month.
+	 * @param vacLocSaisonnier the double of the rental vacancy, in night per month to set.
 	 */
 	public void setVacLocSaisonnier(int vacLocSaisonnier) {
 		this.vacLocSaisonnier = vacLocSaisonnier;
 	}
+	
+	
+	
+	//==============================================================================
+	//Other methods
+	//==============================================================================
 
-	// ==============================================================================
-
-	// 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "Recette locative ------------------------------------"
+		return "=== Recette locative ==="
 		+ "\nLe loyer en location nue est de " + loyerNu
 		+ "\nLe loyer en location meublé est de " + loyerMeuble
 		+ "\nLe loyer à la nuité est de " + loyerNuit

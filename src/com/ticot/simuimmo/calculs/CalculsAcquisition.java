@@ -23,21 +23,36 @@ import com.ticot.simuimmo.model.acquisition.Emprunt;
 import com.ticot.simuimmo.model.acquisition.FraisAcquisition;
 
 /**
+ * The class CalculsAcquisition aggregates all the necessary calculations for the Acquisition part of the transaction. 
  * @author Aurelien Ticot
  * @version 1.0
  */
 public class CalculsAcquisition {
 	
+	//==============================================================================
 	//Functions for the class Acquisition
 	//==============================================================================
-	//Function to launch the calcul of "FraisAcquisition" and "Emprunt"
+	
+	/**
+	 * Method to launch the calcul of "FraisAcquisition" and "Emprunt"
+	 * 
+	 * @return an instance of Acquisition.
+	 * 
+	 * @since 1.0
+	 */
 	public static Acquisition initialiser(){
 		FraisAcquisition fraisAcquisition = calculerFraisAcquisitions();
 		Emprunt emprunt = calculerEmprunt(fraisAcquisition);
 		return new Acquisition(fraisAcquisition, emprunt); 
 	}
 	
-	//Function to compute FraisAcquisition
+	/**
+	 * Function to compute FraisAcquisition.
+	 * 
+	 * @return an instance of FraisAcquisition.
+	 * 
+	 * @since 1.0
+	 */
 	public static FraisAcquisition calculerFraisAcquisitions(){
 		//constructor for FraisAcquisition
 		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.agence, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
@@ -88,7 +103,15 @@ public class CalculsAcquisition {
 		return fa;
 	}
 
-	//Function to compute Emprunt
+	/**
+	 * Function to compute Emprunt.
+	 * 
+	 * @param fa an instance of FraisAcquisition.
+	 * 
+	 * @return an instance of Emprunt.
+	 * 
+	 * @since 1.0
+	 */
 	public static Emprunt calculerEmprunt(FraisAcquisition fa){
 		//Constructor for Emprunt
 		Emprunt emprunt = new Emprunt(Inputs.dureeCredit);
@@ -124,18 +147,46 @@ public class CalculsAcquisition {
 
 		return emprunt;
 	}
-	//==============================================================================
 	
 	
-	//Functions for the part FraisAcquisition
+	
 	//==============================================================================
-	//Method to compute CoutTotal
+	//Functions for the FraisAcquisition
+	//==============================================================================
+	
+	/**
+	 * Method to compute the overall cost of the transaction (CoutTotal).
+	 * 
+	 * @param netVendeur a double of the net seller price.
+	 * @param fraisAgence a double of the agency fees.
+	 * @param fraisNotaire a double of the notary fees.
+	 * @param travaux a double of the necessary work for the real estate.
+	 * @param amenagement a double of the furnishing of the real estate.
+	 * @param honoraireConseil a double of the real estate hunter fees.
+	 * @param autresFrais a double of the other fees.
+	 * 
+	 * @return a double of the overall cost of the transaction.
+	 * 
+	 * @see FraisAcquisition
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculCoutTotal(double netVendeur, double fraisAgence, double fraisNotaire, 
 			double travaux, double amenagement, double honoraireConseil, double autresFrais){
 		return netVendeur + fraisAgence + fraisNotaire + travaux + amenagement + honoraireConseil + autresFrais;
 	}
 	
-	//Method to compute NetVendeur
+	/**
+	 * Method to compute the net seller price (NetVendeur).
+	 * 
+	 * @param prixFAI a double of the price of the real estate.
+	 * @param agence a boolean of the decision to go through an estate agency.
+	 * @param pourcentageFraisAgence a double of the agency fees rate.
+	 * 
+	 * @return a double representing the net seller price.
+	 * 
+	 * @see FraisAcquisition
+	 */
 	public static double  calculNetVendeur(double prixFAI, boolean agence, double pourcentageFraisAgence){
 		if (agence)		//According to the choice of going through estate agency or not
 			return  prixFAI/(1 + pourcentageFraisAgence);
@@ -143,7 +194,19 @@ public class CalculsAcquisition {
 			return prixFAI;
 	}
 
-	//Method to compute FraisAgence
+	/**
+	 * Method to compute the agency fees (FraisAgence).
+	 * 
+	 * @param netVendeur a double of the net seller price.
+	 * @param agence a boolean of the decision to go through an estate agency.
+	 * @param pourcentageFraisAgence a double of the agency fees rate.
+	 * 
+	 * @return a double representing the agency fees.
+	 * 
+	 * @see FraisAcquisition
+	 * 
+	 * @since 1.0
+	 */
 	public static double  calculFraisAgence(double netVendeur, boolean agence, double pourcentageFraisAgence){
 		if (agence)
 			return  netVendeur * pourcentageFraisAgence;
@@ -151,39 +214,102 @@ public class CalculsAcquisition {
 			return 0;
 	}
 
-	//Method to compute PrixFAI
+	/**
+	 * Method to compute PrixFAI
+	 * 
+	 * @param netVendeur a double of the net seller price.
+	 * @param fraisAgence a double of the agency fees.
+	 * 
+	 * @return a double representing the price of the real estate, agency fees included.
+	 * 
+	 * @see FraisAcquisition
+	 * 
+	 * @since 1.0
+	 */
 	public static double  calculPrixFAI(double netVendeur, double fraisAgence){
 			return  netVendeur + fraisAgence;
 	}
 	
-	//Method to compute FraisNotaire
+	/**
+	 * Method to compute the notary fees (FraisNotaire).
+	 * 
+	 * @param netVendeur a double of the net seller price of the real estate.
+	 * @param pourcentageFraisNotaire a double of the rate of the notary fees.
+	 * 
+	 * @return a double representing the notary fees.
+	 * 
+	 * @see FraisAcquisition
+	 * 
+	 * @since 1.0
+	 */
 	public static double  calculFraisNotaire(double netVendeur, double pourcentageFraisNotaire){
 		return  netVendeur * pourcentageFraisNotaire;
 	}
 	
-	//Method to compute HonorairesConseil
+	/**
+	 * Method to compute the fees of the real estate hunter (HonorairesConseil).
+	 * 
+	 * @param conseil a boolean of the decision to go through a real estate hunter.
+	 * @param netVendeur a double of the the net seller price.
+	 * @param travaux a double of the necessary work of the real estate.
+	 * @param amenagement a double of the necessary furnishing for the real estate. 
+	 * @param pourcentageHonorairesConseil a double of the percentage for the fees of the hunter.
+	 * 
+	 * @return a double representing the fezes of the real estate hunter.
+	 * 
+	 * @see FraisAcquisition
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculHonorairesConseil(boolean conseil, double netVendeur, double travaux, 
 			double amenagement, double pourcentageHonorairesConseil){
-		if (conseil == true)	//According to the choice of Conseil or not set by the user
+		//According to the decision to go through a real estate hunter
+		if (conseil == true)
+			//If yes, the fees is the rate times the total of net seller price + the work + the furnishing
+			//I consider the hunter also help for the work and the furnishing as well as the purchase.
 			return (netVendeur + travaux + amenagement) * pourcentageHonorairesConseil;
 		else
-			return 0d;	//If no Conseil, so HonorairesConseil equal zero
+			return 0d;
 	}
 	
-	//Method to compute Sequestre
+	/**
+	 * Method to compute the deposit while buying a real estate (Sequestre).
+	 * 
+	 * @param prixFAI a double of the price of the real estate, agency fees included.
+	 * @param pourcentageSequestre a double of the percentage of deposit.
+	 * 
+	 * @return a double representing the deposit.
+	 * 
+	 * @see FraisAcquisition
+	 * 
+	 * @since 1.0
+	 */
 	public static double  calculSequestre(double prixFAI, double pourcentageSequestre){
 		return  prixFAI * pourcentageSequestre;
 	}	
 	
+	
+	
+	//==============================================================================
+	//Functions for the Emprunt
 	//==============================================================================
 	
-	
-	
-	//Functions for the part Emprunt
-	//==============================================================================
-	//Method to compute TauxCredit
+	/**
+	 * Method to get an estimated value of the loan rate (TauxCredit).
+	 * <p>Based on the settings values.</p>
+	 * 
+	 * @param dureeCredit an integer of the duration of the loan.
+	 * 
+	 * @return a double representing the loan rate.
+	 * 
+	 * @see Emprunt
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculTauxCredit(int dureeCredit){
-		switch (dureeCredit) {		//According to the value of DureeCredit
+		//TODO Change the calculation by setting the more close value according to the duration
+		switch (dureeCredit) {
+		//According to the value of DureeCredit
 		case 15:
 			return  Settings.taux15ans;
 		case 20:
@@ -197,22 +323,70 @@ public class CalculsAcquisition {
 		}
 	}
 	
-	//Method to compute MensualiteCredit
+	/**
+	 * Method to compute the value of the monthly credit (MensualiteCredit).
+	 * 
+	 * @param capitalEmprunte a double of the borrowing capital.
+	 * @param nbMensualiteCredit an integer of the number of monthly credit. 
+	 * @param taux a double of the loan rate.
+	 * @param tauxAssurance a double of the loan insurance rate.
+	 * 
+	 * @return a double representing the value of the monthly credit.
+	 * 
+	 * @see Emprunt
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculMensualiteCredit(double capitalEmprunte, int nbMensualiteCredit, double taux, double tauxAssurance){
 		return (capitalEmprunte * taux/12)/(1-Math.pow((1+taux/12), (-nbMensualiteCredit))) + (capitalEmprunte * tauxAssurance/12);
 	}
 	
-	//Method to compute NbMensualite
+	/**
+	 * Method to compute the number of monthly credit (NbMensualite).
+	 * 
+	 * @param dureeCredit an integer of the duration of the loan.
+	 * 
+	 * @return an integer representing the number of monthly credit of the loan.
+	 * 
+	 * @see Emprunt
+	 * 
+	 * @since 1.0
+	 */
 	public static int calculNbMensualiteCredit(int dureeCredit){
 		return dureeCredit * 12;
 	}
 	
-	//Method to compute CapitalEmprunte
+	/**
+	 * Method to compute the borrowing capital of the loan (CapitalEmprunte).
+	 * 
+	 * @param coutTotal a double of the overall cost of the transaction.
+	 * @param apport a double of the the buyer contribution.
+	 *  
+	 * @return a double representing the borrowing capital.
+	 * 
+	 * @see Emprunt
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculCapitalEmprunte(double coutTotal, double apport){
 		return coutTotal - apport;
 	}
 	
-	//Method to compute Credit
+	/**
+	 * Method to compute the details of the loan, per month (Credit).
+	 * 
+	 * @param capitalEmprunte a double of the borrowing capital. 
+	 * @param nbMensualiteCredit an integer of the number of monthly credit.
+	 * @param taux a double of the loan rate.
+	 * @param tauxAssurance a double of the loan insurance rate.
+	 * @param mensualiteCredit a double of the value of the monthly credit.
+	 * 
+	 * @return a table of double representing the details of the loan, per month.
+	 * 
+	 * @see Emprunt
+	 * 
+	 * @since 1.0
+	 */
 	public static double[][] calculCredit(double capitalEmprunte, int nbMensualiteCredit, double taux, double tauxAssurance, double mensualiteCredit){
 		double[][] credit = new double[(nbMensualiteCredit + 1)][7];
 		int i = 0, j = 0;
@@ -231,7 +405,6 @@ public class CalculsAcquisition {
 		credit[1][4] = capitalEmprunte;
 		credit[1][5] = credit[1][4] * taux /12;
 		credit[1][6] = credit[1][2] - credit[1][3] - credit[1][5];
-		//System.out.println(credit[1][0] + " " + credit[1][1] + " " + credit[1][2] + " " + credit[1][3] + " " + credit[1][4] + " " + credit[1][5] + " " + credit[1][6]);
 		
 		//Calculate the different values for each Echeance 
 		j = 2;
@@ -262,13 +435,23 @@ public class CalculsAcquisition {
 			credit[i][5] = credit[i][4] * taux /12;
 			//Column Remboursement Capital
 			credit[i][6] = credit[i][2] - credit[i][3] - credit[i][5];
-			//System.out.println(credit[i][0] + " " + credit[i][1] + " " + credit[i][2] + " " + credit[i][3] + " " + credit[i][4] + " " + credit[i][5] + " " + credit[i][6]);
 		}
 		
 		return credit;
 	}
 	
-	//Method to compute Credit
+	/**
+	 * Method to compute the details of the loan, per year (CreditAn).
+	 * 
+	 * @param credit the table of the details of the laon, per month.
+	 * @param dureeCredit the duration opf the loan.
+	 * 
+	 * @return a table of double representing the details of the loan, per year.
+	 * 
+	 * @see Emprunt
+	 * 
+	 * @since 1.0
+	 */
 	public static double[][] calculCreditAn(double credit[][], int dureeCredit){
 		//Set a table for the Credit per year, each line is a single year
 		double[][] creditAn = new double[(dureeCredit + 1)][7];
@@ -280,27 +463,42 @@ public class CalculsAcquisition {
 			credit[0][i] = 0;
 		}
 		
-		//Set for each line the total value of each Echeance for 1 year
+		//Set for each line the total value of each Echeance for 1 year, except for the column 0 and 1
 		for (i = 1; i < dureeCredit + 1; i++)
 		{
+			//Column Année
 			creditAn[i][0] = i;
+			//Column Echeance
 			creditAn[i][1] = i * 12;
 			for (j = ((i - 1) * 12) + 1; j < i * 12 + 1; j++)
 			{
+				//Column Mensualite
 				creditAn[i][2] = creditAn[i][2] + credit[j][2];
+				//Column Assurance part of the Mensualite
 				creditAn[i][3] = creditAn[i][3] + credit[j][3];
+				//Column Capital restant du
 				creditAn[i][4] = credit[j][4];
+				//Column Interet d'emprunt
 				creditAn[i][5] = creditAn[i][5] + credit[j][5];
+				//Column Remboursement Capital
 				creditAn[i][6] = creditAn[i][6] + credit[j][6];
 			}
-			//System.out.println(creditAn[i][0] + " " + creditAn[i][1] + " " + creditAn[i][2] + " " + creditAn[i][3] + " " + creditAn[i][4] + " " + creditAn[i][5] + " " + creditAn[i][6]);
 		}
 		
 		return creditAn;
 	}
 	
-	//TODO Create the methods for the calculation of the TauxEndettement
-	
-	//==============================================================================
-	
+	/**
+	 * Method to compute TauxEndettement
+	 * 
+	 * @return
+	 * 
+	 * @see Emprunt
+	 * 
+	 * @since 1.0
+	 */
+	public static double calculTauxEndettement(){
+		//TODO Create the methods for the calculation of the TauxEndettement
+		return 0;
+	}
 }

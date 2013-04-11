@@ -18,7 +18,12 @@ package com.ticot.simuimmo.model.acquisition;
 
 /**
  * The class Acquisition represents the acquisition part of the real estate deal.
- * <p>It's characterized by 2 estimations: the cost of the acquisition (FraisAcquisition) and the details of the loan (Emprunt).</p>
+ * <p>It's characterized by 2 estimations:
+ * <ul>
+ * <li>fraisAcquisition: the cost of the acquisition</li>
+ * <li>emprunt: the details of the loan</li>
+ * </ul>
+ * </p>
  * 
  * @see FraisAcquisition
  * @see Emprunt

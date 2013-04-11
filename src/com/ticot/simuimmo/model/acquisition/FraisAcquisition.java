@@ -16,37 +16,121 @@
 
 package com.ticot.simuimmo.model.acquisition;
 
-//TODO Modify the javadoc
 /**
+ * The class FraisAcquisition represents all acquisition costs in a real estate transaction.
+ * <p>The class FraisAcquisition is part of the class Acquisition. </br>The loan is represented by the class Emprunt.</p> 
+ * <p>It's characterized by several variables:
+ * <ul>
+ * <li>prixFAI: the price of the real estate, agency fees included</li>
+ * <li>netVendeur: the net seller price</li>
+ * <li>fraisAgence: the agency fees</li>
+ * <li>fraisNotaire: the notary fees</li>
+ * <li>travaux: the real estate work</li>
+ * <li>amenagement: the furnishing of the real estate</li>
+ * <li>honoraireConseil: the real estate hunter fees</li>
+ * <li>autresFrais: the other costs</li>
+ * <li>coutTotal: the overall cost</li>
+ * <li>apport: the buyer own contribution</li>
+ * <li>sequestre: the deposit</li>
+ * <li>agence: the decision to go through real estate agency or not</li>
+ * <li>conseil: the decision to go through a real estate hunter or not</li>
+ * </ul>
+ * </p>
+ * 
+ * @see Acquisition
+ * @see Emprunt
+ * 
  * @author Aurelien Ticot
- *
+ * @version 1.0
  */
 public class FraisAcquisition {
 	
-	//Déclaration des variables
 	//==============================================================================
-	private double prixFAI = 0, netVendeur = 0, fraisAgence = 0, fraisNotaire = 0,
-			travaux = 0, amenagement = 0, honoraireConseil = 0, autresFrais = 0,
-			coutTotal = 0, apport = 0, sequestre = 0;
-	private boolean agence = false, conseil = false;
+	//Variables declaration
+	//==============================================================================
 	
-	//variables pour la prise en compte des valeurs réelles
-	private double netVendeurReel, fraisAgenceReel, fraisNotaireReel,
-			honoraireConseilReel, apportReel;
+	/**The price of the real estate, agency fees included.*/
+	private double prixFAI = 0;
+	
+	/**The net seller price.*/
+	private double netVendeur = 0;
+	
+	/**The agency fees.*/
+	private double fraisAgence = 0;
+	
+	/**The notary fees.*/
+	private double fraisNotaire = 0;
+	
+	/**The real estate work.*/
+	private double travaux = 0;
+	
+	/**The furnishing of the real estate.*/
+	private double amenagement = 0;
+	
+	/**The real estate hunter fees.*/
+	private double honoraireConseil = 0;
+	
+	/**The other costs.*/
+	private double autresFrais = 0;
+	
+	/**The overall cost.*/
+	private double coutTotal = 0;
+	
+	/**The buyer own contribution.*/
+	private double apport = 0;
+	
+	/**The deposit.*/
+	private double sequestre = 0;
+	
+	/**The decision to go through real estate agency or not.*/
+	private boolean agence = false;
+	
+	/**The decision to go through a real estate hunter or not.*/
+	private boolean conseil = false;
+	
+	/**The real net seller price.
+	 * @deprecated
+	 */
+	private double netVendeurReel;
+	
+	/**The real agency fees.
+	 * @deprecated
+	 */
+	private double fraisAgenceReel;
+	
+	/**The real notary fees.
+	 * @deprecated
+	 */
+	private double fraisNotaireReel;
+	
+	/**The real estate hunter real fees.
+	 * @deprecated
+	 */
+	private double honoraireConseilReel;
+	
+	/**The real buyer own contribution.
+	 * @deprecated
+	 */
+	private double apportReel;
+	
+	
+	
+	//==============================================================================
+	//Constructors
+	//==============================================================================
 
-	
-	//Constructeurs
-	//==============================================================================
-	//Constructeur vide
 	/**
-	 * 
+	 * Constructor of FraisAcquisition.
+	 * <p>Empty constructor.</p>
 	 */
 	public FraisAcquisition() {
 		super();
 	}
 	
-	//Constructeur avec les valeurs utilisateurs
 	/**
+	 * Constructor of FraisAcquisition.
+	 * <p>Constructor with all user's inputs.</p>
+	 * 
 	 * @param prixFAI
 	 * @param agence
 	 * @param travaux
@@ -66,8 +150,11 @@ public class FraisAcquisition {
 		this.apport = apport;
 		this.conseil = conseil;
 	}
-	//Constructeur avec toutes les variables sauf les "Reel"
+
 	/**
+	 * Constructor of FraisAcquisition.
+	 * <p>Constructor with all variables except the real variables</p>
+	 * 
 	 * @param prixFAI
 	 * @param agence
 	 * @param netVendeur
@@ -101,273 +188,325 @@ public class FraisAcquisition {
 		this.apport = apport;
 		this.sequestre = sequestre;
 	}
-
 	
 	
+	
+	//==============================================================================
 	//Getters
 	//==============================================================================
-
+	
 	/**
-	 * @return the agence
+	 * Return the decision to go through a real estate agency.
+	 * @return a boolean representing the decision to go through a real estate agency (agence).
 	 */
 	public boolean getAgence() {
 		return agence;
 	}
 	
 	/**
-	 * @return the amenagement
+	 * Return the furnishing of the real estate.
+	 * @return a double representing the furnishing of the real estate (amenagement).
 	 */
 	public double getAmenagement() {
 		return amenagement;
 	}
 
 	/**
-	 * @return the apport
+	 * Return the buyer contribution.
+	 * @return a double representing the buyer contribution (apport).
 	 */
 	public double getApport() {
 		return apport;
 	}
 
 	/**
-	 * @return the apportReel
+	 * Return the real buyer contribution.
+	 * @return a double representing the real buyer contribution (apportReel).
+	 * @deprecated
 	 */
 	public double getApportReel() {
 		return apportReel;
 	}
 
 	/**
-	 * @return the autresFrais
+	 * Return the other costs.
+	 * @return a double representing the other costs (autresFrais).
 	 */
 	public double getAutresFrais() {
 		return autresFrais;
 	}
 
 	/**
-	 * @return the coutTotal
+	 * Return the overall cost.
+	 * @return a double representing the overall cost (coutTotal).
 	 */
 	public double getCoutTotal() {
 		return coutTotal;
 	}
 
 	/**
-	 * @return the conseil
+	 * Return the decision to go through a real estate hunter.
+	 * @return a boolean representing the decision to go through a real estate hunter (conseil).
 	 */
 	public boolean getConseil() {
 		return conseil;
 	}	
 	
 	/**
-	 * @return the fraisAgence
+	 * Return the agency fees.
+	 * @return a double representing the agency fees (fraisAgence).
 	 */
 	public double getFraisAgence() {
 		return fraisAgence;
 	}
 
 	/**
-	 * @return the fraisAgenceReel
+	 * Return the real agency fees.
+	 * @return a double representing the real agency fees (fraisAgenceReel).
+	 * @deprecated
 	 */
 	public double getFraisAgenceReel() {
 		return fraisAgenceReel;
 	}
 
 	/**
-	 * @return the fraisNotaire
+	 * Return the notary fees.
+	 * @return a double representing the notary fees (fraisNotaire).
 	 */
 	public double getFraisNotaire() {
 		return fraisNotaire;
 	}
 
 	/**
-	 * @return the fraisNotaireReel
+	 * Return the real notary fees.
+	 * @return a double representing the real notary fees (fraisNotaireReel).
+	 * @deprecated
 	 */
 	public double getFraisNotaireReel() {
 		return fraisNotaireReel;
 	}
 
 	/**
-	 * @return the honoraireConseil
+	 * Return the real estate hunter fees.
+	 * @return a double representing the real estate hunter fees (honoraireConseil).
 	 */
 	public double getHonoraireConseil() {
 		return honoraireConseil;
 	}
 
 	/**
-	 * @return the honoraireConseilReel
+	 * Return the real estate hunter real fees.
+	 * @return a double representing the real estate hunter real fees (honoraireConseilReel).
+	 * @deprecated
 	 */
 	public double getHonoraireConseilReel() {
 		return honoraireConseilReel;
 	}
 
 	/**
-	 * @return the netVendeur
+	 * Return the net seller price.
+	 * @return a double representing the net seller price (netVendeur).
 	 */
 	public double getNetVendeur() {
 		return netVendeur;
 	}
 
 	/**
-	 * @return the netVendeurReel
+	 * Return the real net seller price.
+	 * @return a double representing the real net seller price (netVendeurReel).
+	 * @deprecated
 	 */
 	public double getNetVendeurReel() {
 		return netVendeurReel;
 	}
 
 	/**
-	 * @return the prixFAI
+	 * Return the price of the real estate, agency fees included.
+	 * @return a double representing the price of the real estate, agency fees included (prixFAI).
 	 */
 	public double getPrixFAI() {
 		return prixFAI;
 	}
 
 	/**
-	 * @return the sequestre
+	 * Return the deposit.
+	 * @return a double representing the deposit (sequestre).
 	 */
 	public double getSequestre() {
 		return sequestre;
 	}
 
 	/**
-	 * @return the travaux
+	 * Return the real estate necessary work.
+	 * @return a double representing the necessary work in the real estate (travaux).
 	 */
 	public double getTravaux() {
 		return travaux;
 	}
+
 	
 	
+	//==============================================================================
 	//Setters
 	//==============================================================================
-
+	
 	/**
-	 * @param agence the agence to set
+	 * Define the decision to go through a real estate agency.
+	 * @param agence the boolean of the decision to set.
 	 */
 	public void setAgence(boolean agence) {
 		this.agence = agence;
 	}
 	
 	/**
-	 * @param amenagement the amenagement to set
+	 * Define the furnishing of the real estate.
+	 * @param amenagement the double of the furnishing to set.
 	 */
 	public void setAmenagement(double amenagement) {
 		this.amenagement = amenagement;
 	}
 
 	/**
-	 * @param apport the apport to set
+	 * Define the buyer contribution.
+	 * @param apport the double of the buyer conrtribution to set.
 	 */
 	public void setApport(double apport) {
 		this.apport = apport;
 	}
 
 	/**
-	 * @param apportReel the apportReel to set
+	 * Define the real buyer contribution.
+	 * @param apportReel the double of the buyer contribution to set.
+	 * @deprecated
 	 */
 	public void setApportReel(double apportReel) {
 		this.apportReel = apportReel;
 	}
 
 	/**
-	 * @param autresFrais the autresFrais to set
+	 * define the other costs.
+	 * @param autresFrais the double of the other costs to set.
 	 */
 	public void setAutresFrais(double autresFrais) {
 		this.autresFrais = autresFrais;
 	}
 
 	/**
-	 * @param coutTotal the coutTotal to set
+	 * Define the overall cost.
+	 * @param coutTotal the double of the overall cost to set.
 	 */
 	public void setCoutTotal(double coutTotal) {
 		this.coutTotal = coutTotal;
 	}
 
 	/**
-	 * @param conseil the conseil to set
+	 * define the decision to go through a real estate hunter.
+	 * @param conseil the boolean of the decision to set.
 	 */
 	public void setConseil(boolean conseil) {
 		this.conseil = conseil;
 	}
 	
 	/**
-	 * @param fraisAgence the fraisAgence to set
+	 * Define the agency fees.
+	 * @param fraisAgence the double of the agency fees to set.
 	 */
 	public void setFraisAgence(double fraisAgence) {
 		this.fraisAgence = fraisAgence;
 	}
 
 	/**
-	 * @param fraisAgenceReel the fraisAgenceReel to set
+	 * Define the real agency fees.
+	 * @param fraisAgenceReel the double of the real agency fees to set.
+	 * @deprecated
 	 */
 	public void setFraisAgenceReel(double fraisAgenceReel) {
 		this.fraisAgenceReel = fraisAgenceReel;
 	}
 
 	/**
-	 * @param fraisNotaire the fraisNotaire to set
+	 * Define the notary fees.
+	 * @param fraisNotaire the double of the notary fees to set.
 	 */
 	public void setFraisNotaire(double fraisNotaire) {
 		this.fraisNotaire = fraisNotaire;
 	}
 
 	/**
-	 * @param fraisNotaireReel the fraisNotaireReel to set
+	 * Define the real notary fees.
+	 * @param fraisNotaireReel the double of the real notary fees to set.
+	 * @deprecated
 	 */
 	public void setFraisNotaireReel(double fraisNotaireReel) {
 		this.fraisNotaireReel = fraisNotaireReel;
 	}
 
 	/**
-	 * @param honoraireConseil the honoraireConseil to set
+	 * Define the real estate hunter fees.
+	 * @param honoraireConseil the double of the real estate fees to set.
 	 */
 	public void setHonoraireConseil(double honoraireConseil) {
 		this.honoraireConseil = honoraireConseil;
 	}
 
 	/**
-	 * @param honoraireConseilReel the honoraireConseilReel to set
+	 * Define the real estate hunter real fees.
+	 * @param honoraireConseilReel the double of the real estate hunter real fees to set.
+	 * @deprecated
 	 */
 	public void setHonoraireConseilReel(double honoraireConseilReel) {
 		this.honoraireConseilReel = honoraireConseilReel;
 	}
 
-	/**
-	 * @param netVendeur the netVendeur to set
+	/**Define the net seller price.
+	 * @param netVendeur the double of the net seller price to set.
 	 */
 	public void setNetVendeur(double netVendeur) {
 		this.netVendeur = netVendeur;
 	}
 
 	/**
-	 * @param netVendeurReel the netVendeurReel to set
+	 * Define the real net seller price.
+	 * @param netVendeurReel the double of the real net seller price to set.
+	 * @deprecated
 	 */
 	public void setNetVendeurReel(double netVendeurReel) {
 		this.netVendeurReel = netVendeurReel;
 	}
 
 	/**
-	 * @param prixFAI the prixFAI to set
+	 * Define the price of the real estate, agency fees included.
+	 * @param prixFAI the double of the price of the real estate to set.
 	 */
 	public void setPrixFAI(double prixFAI) {
 		this.prixFAI = prixFAI;
 	}
 
 	/**
-	 * @param sequestre the sequestre to set
+	 * Define the deposit of the transaction.
+	 * @param sequestre the double of the deposit to set.
 	 */
 	public void setSequestre(double sequestre) {
 		this.sequestre = sequestre;
 	}
 
 	/**
-	 * @param travaux the travaux to set
+	 * Define the necessary work of the real estate. 
+	 * @param travaux the double of the necessary work to set.
 	 */
 	public void setTravaux(double travaux) {
 		this.travaux = travaux;
 	}
-
-	//==============================================================================
 	
+	
+	
+	//==============================================================================
+	//Other methods
+	//==============================================================================
+
 	@Override
 	public String toString() {
-		return "Frais d'acquisitions -------------------------------" +
+		return "=== Frais d'acquisitions ===" +
 				"\nLe prix FAI est de " + prixFAI +
 				"\nLe prix net vendeur est de " + netVendeur +
 				"\nLes frais d'agence sont de " + fraisAgence +
@@ -378,11 +517,7 @@ public class FraisAcquisition {
 				"\nLes autres frais sont de " + autresFrais +
 				"\nLe cout total est de " + coutTotal +
 				"\nAvec un apport de " + apport +
-				"\nLe sequestre sera de " + sequestre /*+
-				", netVendeurReel=" + netVendeurReel + ", fraisAgenceReel="
-				+ fraisAgenceReel + ", fraisNotaireReel=" + fraisNotaireReel
-				+ ", honoraireConseilReel=" + honoraireConseilReel
-				+ ", apportReel=" + apportReel + "]"*/;
+				"\nLe sequestre sera de " + sequestre;
 
 	}
 	

@@ -43,35 +43,66 @@ import com.ticot.simuimmo.model.acquisition.Acquisition;
 import com.ticot.simuimmo.model.bien.Bien;
 import com.ticot.simuimmo.model.gestion.Gestion;
 
+/**
+ * The main activity of the application. Represents the UI of the form.
+ * 
+ * @author Aurelien Ticot
+ * @version 1.0
+ */
 public class MainActivity extends Activity {
 
-	//Declaration of variables
-	private static final String KEY_BACKUP_collapsed = "backupCollapsed";
-	private static final String KEY_BACKUP_calcul = "backupCalcul";
-	private static final String KEY_BACKUP_realValueState = "backupRealValueState";
-	public boolean AcquisitionCollpased = true;			//Global variable to know the state of the UI, collapsed or expanded
-	public boolean backupCalcul = false;
-	public boolean emptyMandatoryField = false;			//Global variable to know if mandatory field have been found empty or not
-	public Bien bien = new Bien();						//Creation of the class Bien through the temporary class
+	//==============================================================================
+	//Variables declaration
+	//==============================================================================
 	
+	/**Backup key to save the UI collapse state.*/
+	private static final String KEY_BACKUP_collapsed = "backupCollapsed";
+	
+	/**Backup key to save the calcul state.*/
+	private static final String KEY_BACKUP_calcul = "backupCalcul";
+	
+	/**Backup key to save the real value state.*/
+	private static final String KEY_BACKUP_realValueState = "backupRealValueState";
+	
+	/**Global variable to know the state of the UI, collapsed or expanded.*/
+	public boolean AcquisitionCollpased = true;
+	
+	/**State of the calcul for backup. This state indicates if a calcul has been performed and must be backup.*/
+	public boolean backupCalcul = false;
+	
+	/**Global variable to know if mandatory field have been found empty or not.*/
+	public boolean emptyMandatoryField = false;
+	
+	/**Creation of an instance of Bien, this object will get all values.*/
+	public Bien bien = new Bien();
+
+	
+	
+	//==============================================================================
+	//Methods
+	//==============================================================================
 	
 	/**Called when the activity is first created*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//Build the UI
 		setContentView(R.layout.activity_main);
 
 		PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preference, false);
 
+		//retreive the previous session
 		if (savedInstanceState != null){
 			AcquisitionCollpased = !savedInstanceState.getBoolean(KEY_BACKUP_collapsed);
 			collapseUI((Button)findViewById(R.id.btn_CollapseAcquisitionFields));
 			backupCalcul = savedInstanceState.getBoolean(KEY_BACKUP_calcul);
 			if (savedInstanceState.getBoolean(KEY_BACKUP_calcul))
 			{
+				//If a calcul was performed, get the backed-up instance of Bien and display it in the UI.
 				bien = Backup.bienBackup;
 				fillComputedValues(bien.getAcquisition(), bien.getGestion());
 			}
+			//restore also the state of the CheckBoxes for the real fields. 
 			restoreRealValueState(savedInstanceState.getBooleanArray(KEY_BACKUP_realValueState));
 		}
 	}
@@ -93,11 +124,21 @@ public class MainActivity extends Activity {
 		return false;
 	}
 	
+	/**
+	 * Method to launch the settings page.
+	 * 
+	 * @since 1.0
+	 */
 	public void launchPreferenceActivity(){
 		Intent i = new Intent("com.ticot.simuimmo.AppPreferenceActivity");
 		startActivity(i);
 	}
 	
+	/**
+	 * Method to load the preferences (settings).
+	 * 
+	 * @since 1.0
+	 */
 	public void LoadPreferences(){
 	
 		SharedPreferences appPrefs = getSharedPreferences("appPreferences", MODE_PRIVATE);
@@ -113,11 +154,14 @@ public class MainActivity extends Activity {
 		
 	}
 	
-	
-	//Calculation button
-	//==============================================================================
-	public void onClickCalcul (View v){
-		//Methods to get user's inputs, launch calculation and fill back the result in the UI 
+	/**
+	 * Methods to get user's inputs, launch calculation and fill back the result in the UI
+	 * 
+	 * @param view representing the object that run the method. (not used in that case)
+	 * 
+	 * @since 1.0
+	 */
+	public void onClickCalcul (View view){ 
 		
 		//Initialize the Mandatory variable
 		emptyMandatoryField = false;
@@ -159,6 +203,22 @@ public class MainActivity extends Activity {
 			Backup.bienBackup = bien;
 	}
 
+	/**
+	 * Method to create a boolean table with the state of the CheckBox of real fields.
+	 * <p>A field may have 2 objects:
+	 * <ul>
+	 * <li>A TextView to display computed value</li>
+	 * <li>An EditText to enter and display user's value</li>
+	 * </ul>
+	 * To switch from one to another, there is a CheckBox. The value of this checkBox informs whether the application must compute the value and display it or take the value from the field as an input. 
+	 * </p>
+	 * 
+	 * @return a table with the states of the CheckBoxes.
+	 * 
+	 * @see MainActivity#restoreRealValueState(boolean[])
+	 * 
+	 * @since 1.0
+	 */
 	private boolean[] backupRealValueState(){
 		boolean[] table = {((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked(),
 		                   ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked(),
@@ -166,10 +226,20 @@ public class MainActivity extends Activity {
 		                   ((CheckBox)findViewById(R.id.ReelHonoraireConseil)).isChecked(),
 		                   ((CheckBox)findViewById(R.id.ReelCapitalEmprunte)).isChecked(),
 		                   ((CheckBox)findViewById(R.id.ReelTauxCredit)).isChecked(),
-		                   ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked()};
+		                   ((CheckBox)findViewById(R.id.ReelTauxAssurance)).isChecked()
+		                   };
 		return table;
 	}
 	
+	/**
+	 * Method to restore the states of the CheckBoxes for real fields.
+	 * 
+	 * @param table a boolean table aggregating the states of the CheckBoxes.
+	 * 
+	 * @see MainActivity#backupRealValueState()
+	 * 
+	 * @since 1.0
+	 */
 	private void restoreRealValueState(boolean[] table){
 		((CheckBox)findViewById(R.id.ReelNetVendeur)).setChecked(table[0]);
 		((CheckBox)findViewById(R.id.ReelFraisAgence)).setChecked(table[1]);
@@ -188,11 +258,17 @@ public class MainActivity extends Activity {
 		switchRealField(((CheckBox)findViewById(R.id.ReelTauxAssurance)));
 	}
 	
+	/**
+	 * Get the user's input values from the EditText and CheckBox.
+	 * Values are set in an Input class, used afterward.
+	 * 
+	 * @see Input
+	 * 
+	 * @since 1.0
+	 */
 	private void getFormInput(){
-		//Get the user's input values from the EditText and CheckBox
-		//Values are set in an Input class, used afterward
 
-		//Boolean to know if computed are user input
+		//Boolean to know if the field is computed ore considered as a user input
 		Inputs.reelNetvendeur = ((CheckBox)findViewById(R.id.ReelNetVendeur)).isChecked();
 		Inputs.reelFraisAgence = ((CheckBox)findViewById(R.id.ReelFraisAgence)).isChecked();
 		Inputs.reelFraisNotaire = ((CheckBox)findViewById(R.id.ReelFraisNotaire)).isChecked();
@@ -220,13 +296,21 @@ public class MainActivity extends Activity {
 		//TODO Directly instanciate the fields' values in the object Bien instead of the Inputs intermediate classe
 	}
 	
+	/**
+	 * Method to check the value of a field, if empty, if mandatory, if well-not formated.
+	 * 
+	 * @param view representing the EditText object of the field to get the value from.
+	 * @param defaultValue the default value to set in cas the field is not correct and not mandatory.
+	 * 
+	 * @return a String representing the value of the field after checking.
+	 * 
+	 * @since 1.0
+	 */
 	private String checkFieldValue(EditText view, String defaultValue){
-		//Method to check the value of a field, if empty, if mandatory
 		
-		//Initialize the returned variable
 		String value = "";
 		
-		//Initialize the background of the parent of the view, in case it have already been highlighted
+		//Initialize the background of the parent of the view, in case it have already been highlighted.
 		((View) view.getParent()).setBackgroundResource(0);
 		
 		//If the user field is not empty, so check if it is formated
@@ -269,8 +353,15 @@ public class MainActivity extends Activity {
 		return value;
 	}
 	
+	/**
+	 * Methods to update the UI fields with all the computed values.
+	 * 
+	 * @param a an instance of Acquisition.
+	 * @param g an instance of Gestion.
+	 * 
+	 * @since 1.0
+	 */
 	private void fillComputedValues(Acquisition a, Gestion g){
-		//Methods to update the UI fields with all the computed values;
 		
 		//Define the format for the values
 		DecimalFormat formatEur = new DecimalFormat("###,##0.00 €");
@@ -337,8 +428,14 @@ public class MainActivity extends Activity {
 				String.valueOf(formatPer.format((a.getEmprunt()).getTauxEndettement())));
 	}
 	
+	/**
+	 * Method to collapse or expand the UI to focus on most important fields or display all fields.
+	 * 
+	 * @param view representing the View object that runs the method.
+	 * 
+	 * @since 1.0
+	 */
 	public void collapseUI (View view){
-		//Methods to collapse or expand the UI to focus on most important fields or display all fields
 		
 		//Get the Form layout aggregating all fields
 		LinearLayout ll = (LinearLayout)findViewById(R.id.layoutForm);
@@ -371,8 +468,14 @@ public class MainActivity extends Activity {
 		}
 	}
 	
+	/**
+	 * Method to switch between the TextView (for the computed values) to the EditText (allowing user to fill its own real value).
+	 * 
+	 * @param view representing the View object that runs the method. 
+	 * 
+	 * @since 1.0
+	 */
 	public void switchRealField(View view){
-		//Methods to switch between the TextView (for the computed values) to the EditText (allowing user to fill its own real value)
 		
 		switch (view.getId()){		//Get the ID of the item requesting to switch TextView/EditText
 		//Several fields are able to switch between TextView and EditText

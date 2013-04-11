@@ -25,15 +25,30 @@ import com.ticot.simuimmo.model.gestion.FraisLocationSaisonniere;
 import com.ticot.simuimmo.model.gestion.RecetteLocative;
 
 /**
+ * The class CalculsGestion aggregates all the necessary calculations for the management part of the real estate.
  * @author Aurelien Ticot
- *
+ * @version 1.0
  */
 public class CalculsGestion {
-
+	
+	
+	
+	//==============================================================================
 	//Fonctions pour la la classe Gestion
 	//==============================================================================
-	//Fonction pour lancer les calculs des charges annuelles, des frais de location annuelles,
-	//des frais de location saisonnière et les recettes locative
+	
+	/**
+	 * Method to launch the calcul of "ChargesAnnuelles", "FraisLocationAnnuelle", "FraisLocationSaisonniere" and "RecetteLocative".
+	 * 
+	 * @return an instance of Gestion.
+	 * 
+	 * @see ChargesAnnuelles
+	 * @see FraisLocationAnnuelle
+	 * @see FraisLocationSaisonniere
+	 * @see RecetteLocative
+	 * 
+	 * @since 1.0
+	 */
 	public static Gestion initialiser(){
 		ChargesAnnuelles chargesAnnuelles = calculerChargesAnnuelles();
 		FraisLocationAnnuelle fraisLocationAnnuelle = calculerFraisLocationAnnuelle();
@@ -43,7 +58,15 @@ public class CalculsGestion {
 				fraisLocationSaisonniere, recetteLocative);
 	}
 
-	//Fonction pour définir l'objet RecetteLocative
+	/**
+	 * Method to compute RecetteLocative.
+	 * 
+	 * @return an instance of RecetteLocative.
+	 * 
+	 * @see RecetteLocative
+	 * 
+	 * @since 1.0
+	 */
 	public static RecetteLocative calculerRecetteLocative(){
 		RecetteLocative rl = new RecetteLocative(Inputs.loyerNu, Inputs.loyerMeuble, Inputs.loyerNuit, Inputs.vacLocAnnuelle, Inputs.vacLocSaisonnier);
 		rl.setLoyerSaisonnier(calculLoyerSaisonnier(rl.getLoyerNuit(), rl.getVacLocSaisonnier()));
@@ -52,8 +75,15 @@ public class CalculsGestion {
 		return rl;
 	}
 	
-	//Fonction pour définir l'objet ChargesAnnuelles
-	//public ...
+	/**
+	 * Method to compute ChargesAnnuelles.
+	 * 
+	 * @return an instance of ChargesAnnuelles.
+	 * 
+	 * @see ChargesAnnuelles
+	 * 
+	 * @since 1.0
+	 */
 	public static ChargesAnnuelles calculerChargesAnnuelles(){
 		ChargesAnnuelles ca = new ChargesAnnuelles(Inputs.chargesFixes, Inputs.taxeFonciere, Inputs.assuranceLocation, Inputs.travauxAnnuels, Inputs.taxeHabitation);
 		ca.setCharges(calculChargesAnnuelles(
@@ -61,7 +91,15 @@ public class CalculsGestion {
 		return ca;
 	}
 	
-	//Fonction pour calculer les frais de location annuelle
+	/**
+	 * Method to compute FraisLocationAnnuelle.
+	 * 
+	 * @return an instance of FraisLocationAnnuelle.
+	 * 
+	 * @see FraisLocationAnnuelle
+	 * 
+	 * @since 1.0
+	 */
 	public static FraisLocationAnnuelle calculerFraisLocationAnnuelle(){
 		FraisLocationAnnuelle fla = new FraisLocationAnnuelle(Inputs.gestionParAgence);
 		//TODO evaluer s'il est judicieux de mettre le type de gestion dans le fonction de calcul 
@@ -71,7 +109,15 @@ public class CalculsGestion {
 		return fla;
 	}
 	
-	//Fonction pour calculer les frais de location saisonnière
+	/**
+	 * Method to compute FraisLocationSaisonniere.
+	 * 
+	 * @return an instance of FraisLocationSaisonniere.
+	 * 
+	 * @see FraisLocationSaisonniere
+	 * 
+	 * @since 1.0
+	 */
 	public static FraisLocationSaisonniere calculerFraisLocationSaisonniere(){
 		FraisLocationSaisonniere fls = new FraisLocationSaisonniere();
 		fls.setFraisAccueil(calculFraisAccueil(Inputs.vacLocSaisonnier));
@@ -84,12 +130,24 @@ public class CalculsGestion {
 		return fls;
 	}
 	
-	//==============================================================================
 	
 	
-	//Fonctions pour la partie Recette locative 
 	//==============================================================================
-	//Calcul du loyer en saisonnier
+	//Functions for the RecetteLocative 
+	//==============================================================================
+	
+	/**
+	 * Method to compute the seasonal rent, per month.
+	 * 
+	 * @param loyerNuit a double of the seasonal rent, per night.
+	 * @param vacLocSaisonnier an integer of the rental vacancy in seasonal rent, in night per month.
+	 * 
+	 * @return a double representing the seasonal rent, per month (loyerSaisonnier).
+	 * 
+	 * @see RecetteLocative
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculLoyerSaisonnier(double loyerNuit, int vacLocSaisonnier){
 		double ls = 0;
 		if (vacLocSaisonnier < Settings.nuitsParMois)
@@ -97,12 +155,26 @@ public class CalculsGestion {
 		return ls;
 	}
 	
-	//Calcul du la recette locative annuelle
-	//TODO Changer le type de gestion en "int"
+	/**
+	 * Method to compute the rental income, for a year.
+	 * 
+	 * @param typeGestion an integer of the type of management.
+	 * @param loyerNu a double of the plain rent, per month.
+	 * @param loyerMeuble a double of the furnished rent, per month.
+	 * @param loyerNuit a double of the seasonal rent, per night.
+	 * @param vacLocAnnuelle an integer of the rental vacancy, in month per year.
+	 * @param vacLocSaisonnier an integer of the rental vacancy in seasonal rent, in night per month.
+	 * 
+	 * @return a double representing the rental income, for a year (recetteLocative).
+	 * 
+	 * @see RecetteLocative
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculRecetteLocative(int typeGestion, double loyerNu, double loyerMeuble, double loyerNuit, int vacLocAnnuelle, int vacLocSaisonnier){
 		double rl = 0;
 		
-		//TODO Evaluer si c'est une bonne chose de mettre le choix du type de gestion dans la fonction de calcul 
+		//TODO Check whether it's a good idea to use the type of management in the methode 
 		switch (typeGestion) {
 		case 0:					//0 = "Location nue"
 			rl = loyerNu * (Settings.moisParAn - vacLocAnnuelle);
@@ -125,22 +197,50 @@ public class CalculsGestion {
 		return rl;
 	}
 	
-	//==============================================================================
 	
 	
-	//Fonctions pour la partie Charges annuelles
 	//==============================================================================
-	//Calcul des charges annuelles
+	//Functions for the ChargesAnnuelles
+	//==============================================================================
+	
+	/**
+	 * Method to compute the total annual expenses.
+	 * 
+	 * @param chargesFixes a double of the fixed expenses (condominium).
+	 * @param taxeFonciere a double of the French property tax.
+	 * @param assuranceLocation a double of the rental insurance costs.
+	 * @param travauxAnnuels a double of the annual work costs.
+	 * @param taxeHabitation a double of the French housing tax.
+	 * 
+	 * @return a double representing the total annual expenses (charges).
+	 * 
+	 * @see ChargesAnnuelles
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculChargesAnnuelles(double chargesFixes, double taxeFonciere, double assuranceLocation, double travauxAnnuels, double taxeHabitation){
 		return chargesFixes + taxeFonciere + assuranceLocation + travauxAnnuels + taxeHabitation;
 	}
 		
-	//==============================================================================
 	
 	
-	//Fonctions pour la partie Charges de location annuelles
 	//==============================================================================
-	//Calcul des frais de gestion annuelle par une agence
+	//Functions for the FraisLocationAnnuelles
+	//==============================================================================
+	
+	/**
+	 * Method to compute the expenses for the management through estate agency.
+	 * 
+	 * @param loyerNu a double of the plain rent, per month.
+	 * @param loyerMeuble a double of the furnished rent, per month.
+	 * @param vacanceLoc an integer of the rental vacancy, in month per year.
+	 * 
+	 * @return a double representing the expenses for the management through estate agency (fraisGestionLocation).
+	 * 
+	 * @see FraisLocationAnnuelles
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculFraisGestion(double loyerNu, double loyerMeuble, int vacanceLoc){
 		double fa = 0;
 		if (Inputs.typeGestion == 0)
@@ -152,7 +252,19 @@ public class CalculsGestion {
 		return fa;
 	}
 	
-	//Calcul des charges de location annuelles
+	/**
+	 * Method to compute the total expense of the rental.
+	 * 
+	 * @param typeGestion an integer of the type of management.
+	 * @param fraisGestionAgence a double of the expense for the management through estate agency.
+	 * @param taxeHabitation a double of the French housing tax.
+	 * 
+	 * @return a double representing the total expense of th rental (fraisLocation).
+	 * 
+	 * @see FraisLocationAnnuelle
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculFraisLocationAnnuelle (int typeGestion, double fraisGestionAgence, double taxeHabitation){
 		double cla = 0;
 		if (typeGestion == 0 || typeGestion == 1)
@@ -160,34 +272,72 @@ public class CalculsGestion {
 		return cla;
 	}
 	
-	//==============================================================================
 	
 	
-	//Fonctions pour la partie Charges de location saisonnière
 	//==============================================================================
-	//Calcul des frais d'accueil
+	//Functions for the FraisLocationSaisonniere
+	//==============================================================================
+	
+	/**
+	 * Method to compute the welcoming expense in seasonal rental.
+	 * 
+	 * @param vacanceLoc a double of the rental vacancy in seasonal rent, in night per month.
+	 * 
+	 * @return a double representing the welcoming expense (fraisAccueil).
+	 * 
+	 * @see FraisLocationSaisonniere
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculFraisAccueil(int vacanceLoc){
 		return Settings.moisParAn * (Settings.nuitsParMois - vacanceLoc) / Settings.dureeSejourSaisonnier * Settings.fraisAccueilSaisonnier;
 	}
 	
-	//Calcul des frais de ménage
+	/**
+	 * Method to compute the cleaning expense in seasonal rental. 
+	 * 
+	 * @param vacanceLoc a double of the rental vacancy in seasonal rent, in night per month.
+	 * 
+	 * @return a double reprenseting the cleaning expense (fraisMenage).
+	 * 
+	 * @see FraisLocationSaisonniere
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculFraisMenage(int vacanceLoc){
 		return Settings.moisParAn * (Settings.nuitsParMois - vacanceLoc) / Settings.dureeSejourSaisonnier * Settings.fraisMenageSaisonnier;
 	}	
 	
-	//Calcul des frais de gestion saisonnière
+	/**
+	 * Method to compute the management expense, in seasonal rental.
+	 * 
+	 * @return a double representing the management expense, in seasonal rental.
+	 * 
+	 * @see FraisLocationSaisonniere
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculFraisGestionSaisonnier(){
 		return Settings.moisParAn * Settings.fraisGestionMensuel;
 	}
 	
-	//Calcul des frais de location saisonnier
+	/**
+	 * Method to compute the overall cost of the seasonal rental.
+	 * 
+	 * @param fraisAccueil a double of the welcoming expense in seasonal rental.
+	 * @param fraisMenage a dbouel of the cleaning expense in seasonal rental.
+	 * @param fraisGestionSaisonnier a double of the management expense, in seasonal rental.
+	 * 
+	 * @return a double representing the overal cost in seasonal rental (fraisLocationSaisonniere).
+	 * 
+	 * @see FraisLocationSaisonniere
+	 * 
+	 * @since 1.0
+	 */
 	public static double calculFraisLocationSaisonier(double fraisAccueil, double fraisMenage, double fraisGestionSaisonnier){
 		double fls = 0;
 		if (Inputs.typeGestion == 2)
 			fls = fraisAccueil + fraisMenage + fraisGestionSaisonnier;
 		return fls;
 	}
-	
-	//==============================================================================	
-	
 }

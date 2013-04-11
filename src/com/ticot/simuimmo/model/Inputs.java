@@ -17,7 +17,11 @@
 package com.ticot.simuimmo.model;
 
 /**
+ * The class Inputs is used as a temporary class to store the user's inputs.
+ * <p>All computations are base on values from this inputs class.</p>
+ * <p><The variables don't represent the user's preferences, there is a dedicated Settings class for them.</p>
  * 
+ * @see Settings
  * 
  * @author Aurelien Ticot
  * @version 1.0
@@ -28,78 +32,206 @@ public class Inputs {
 	//Variables declaration
 	//==============================================================================
 	
-	//XXX Parmi toutes les valeurs du formulaires, certaines doivent être persistantes, donc être conservé en settings cachés
-	//Partie Acquisition remplies par l'utilisateur
+	//=== Acquisition ==============================================================
 	
-	public static double prixFAI = 0;						//Prix du bien, frais d'agence inclus
-	public static boolean agence = false;					//Choice to buy through an estate agency 
-	public static double travaux = 0;						//Cout des travaux de renovation
-	public static double amenagement = 0;					//Cout de l'amenagement pour une location meublé
-	public static boolean conseil = false;					//Choix de passer par un société de conseil pour la recherche, les travaux et l'amenagement
-	public static double apport = 0;						//Valeur de l'apport personnel
-	public static double autresFrais = 0;					//Autres frais d'acquisition (frais bancaires, ...)
-	public static int dureeCredit = 0;						//Durée du credit demandé
+	/**Temporary: user's input.</br>
+	 * The price of the real estate, agency fees included.*/
+	public static double prixFAI = 0;
 	
-	//Partie Acquisition estimées mais l'utilisateur à la possibilité de les remplir
+	/**Temporary: user's input.</br>
+	 * Choice to buy through an estate agency*/
+	public static boolean agence = false; 
 	
-	public static double netVendeur = 0;					//Prix d'achat du bien (frais d'agence exclue) 
-	public static double fraisAgence = 0;					//Frais d'agence
-	public static double fraisNotaire = 0;					//Frais de notaire
-	public static double honoraireConseil = 0;				//Honoraires de la société de conseil pour la recherche, les travaux et l'amenagement
-	public static double capitalEmprunte = 0;				//Valeur du capital emprunté
-	public static double tauxCredit = 0;					//Taux de credit
-	public static double tauxAssuranceCredit = 0;			//Taux de l'assurance de credit
+	/**Temporary: user's input.</br>
+	 * The real estate work.*/
+	public static double travaux = 0;
 	
-	// 
+	/**Temporary: user's input.</br>
+	 * The furnishing of the real estate.*/
+	public static double amenagement = 0;
 	
+	/**Temporary: user's input.</br>
+	 * The decision to go through a real estate hunter or not.*/
+	public static boolean conseil = false;
+	
+	/**Temporary: user's input.</br>
+	 * The buyer own contribution.*/
+	public static double apport = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The other costs.*/
+	public static double autresFrais = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The duration of the loan.*/
+	public static int dureeCredit = 0;
+
+	/**Temporary: user's input.</br>
+	 * The net seller price.*/
+	public static double netVendeur = 0; 
+	
+	/**Temporary: user's input.</br>
+	 * The agency fees.*/
+	public static double fraisAgence = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The notary fees.*/
+	public static double fraisNotaire = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The real estate hunter fees.*/
+	public static double honoraireConseil = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The borrowed capital.*/
+	public static double capitalEmprunte = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The rate of the loan.*/
+	public static double tauxCredit = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The credit insurrance rate.*/
+	public static double tauxAssuranceCredit = 0;
+	
+	/**Temporary: user's input.</br>
+	 * Real value for net seller price.*/
 	public static boolean reelNetvendeur = false;
+	
+	/**Temporary: user's input.</br>
+	 * Real value for agency fees.*/
 	public static boolean reelFraisAgence = false;
+	
+	/**Temporary: user's input.</br>
+	 * Real value for notary fees.*/
 	public static boolean reelFraisNotaire = false;
+	
+	/**Temporary: user's input.</br>
+	 * Real value for hunter fees.*/
 	public static boolean reelHonoraireConseil = false;
+	
+	/**Temporary: user's input.</br>
+	 * Real value for borrowed capital.*/
 	public static boolean reelCapitalEmrpunte = false;
+	
+	/**Temporary: user's input.</br>
+	 * Real value for loan rate.*/
 	public static boolean reelTauxCredit = false;
+	
+	/**Temporary: user's input.</br>
+	 * Real value for loan insurance rate.*/
 	public static boolean reelTauxAssurance = false;
 	
-	//Partie Gestion remplies par l'utilisateur
+	//=== Gestion ==================================================================
 	
-	public static int typeGestion = 1;						//Choix du type de gestion du bien (location nu - 0, meublé - 1, saisonnière - 2 ou résidence principale - 3)
-	public static double loyerNu = 850;						//Estimation du loyer mensuel en location nu
-	public static double loyerMeuble = 1150;				//Estimation du loyer mensuel en location meublé
-	public static double loyerNuit = 100;					//Estimation du loyer à la nuité en location saisonnière
-	public static int vacLocAnnuelle = 1;					//En mois, estimation de la vacance locative annuelle pour location à l'année (nu ou meublé)
-	public static int vacLocSaisonnier = 10;				//En nuits par mois, estimation de la vacance locative pour la location saisonnière
-	public static double chargesFixes = 1176;				//Estimation des charges fixes de copropriétés, ...
-	public static double taxeFonciere = 300;				//Estimation de la taxe foncière
-	public static double assuranceLocation = 60;			//Cout de l'assurance immobilière (assurance habitation, loyer impayé, ...) 
-	public static double travauxAnnuels = 0;				//Estimation du cout des éventuels travaux par an
-	public static double taxeHabitation = 300;				//Estimation de la taxe d'habitation
-	public static boolean gestionParAgence = true;			//Choix de la gestion de la location par une agence ou non
+	/**Temporary: user's input.</br>
+	 * Type of management.
+	 * (plain rental - 0, furnished rental - 1, seasonal rental - 2 or main home - 3)*/
+	public static int typeGestion = 1;
 	
-	//Partie Gestion estimés mais l'utilisateur à la possibilité de les remplir
+	/**Temporary: user's input.</br>
+	 * The plain rent, per month.*/
+	public static double loyerNu = 850;
 	
-	public static double charges = 0;						//Charges annuelles du bien
-	public static double fraisGestionLocation = 0;			//Frais de gestion de la location par une agence
-	public static double chargesLocation = 0;				//Charges annuelles de location
-	public static double fraisAccueil = 0;					//Frais d'accueil annuels pour la gestion en saisonnier 
-	public static double fraisMenage = 0;					//Frais de menage annuels pour la gestion en saisonnier
-	public static double fraisGestionSaisonnier = 0;		//Frais de gestion annuels pour la gestion en saisonnier
-	public static double fraisLocationSaisonniere = 0;		//Charges annuelles pour la location saisonnière
+	/**Temporary: user's input.</br>
+	 * The furnished rent, per month.*/
+	public static double loyerMeuble = 1150;
 	
-	//Partie Imposition remplies par l'utilisateur
+	/**Temporary: user's input.</br>
+	 * The seasonal rent, per night.*/
+	public static double loyerNuit = 100;
 	
-	public static double tauxMarginal = 0;					//Tranche marginale d'imposition
-	public static double fraisComptable = 0;				//Frais Comptable pour le calcul en frais réels
+	/**Temporary: user's input.</br>
+	 * The rental vacancy, in month per year.
+	 * <p>Not used for seasonal rental.</p>*/
+	public static int vacLocAnnuelle = 1;
 	
-	//Partie CashFlow remplies par l'utilisateur
+	/**Temporary: user's input.</br>
+	 * The rental vacancy in seasonal rent, in night per month.
+	 * <p>Not used for plain and furnished rental.</p>*/
+	public static int vacLocSaisonnier = 10;
 	
-	public static double loyerActuel = 0;					//Cout mensuel du loyer actuel
+	/**Temporary: user's input.</br>
+	 * The fixed expenses (condominium).*/
+	public static double chargesFixes = 1176;
 	
-	//Partie Revente remplies par l'utilisateur
+	/**Temporary: user's input.</br>
+	 * The French property tax.*/
+	public static double taxeFonciere = 300;
 	
-	public static int reventeAprès = 0;						//en année de possession avant revente 
+	/**Temporary: user's input.</br>
+	 * The rental insurance costs.*/
+	public static double assuranceLocation = 60; 
 	
-	//Partie Revente estimés mais l'utilisateur à la possibilité de les remplir
+	/**Temporary: user's input.</br>
+	 * The annual work costs.*/
+	public static double travauxAnnuels = 0;
 	
-	public static double valeurRevente = 0;					//Valeur de revente estimé
+	/**Temporary: user's input.</br>
+	 * The French housing tax.*/
+	public static double taxeHabitation = 300;
+	
+	/**Temporary: user's input.</br>
+	 * The decision to manage through estate agency*/
+	public static boolean gestionParAgence = true;
+	
+	/**Temporary: user's input.</br>
+	 * The total annual expenses.*/
+	public static double charges = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The expenses for the management through estate agency.*/
+	public static double fraisGestionLocation = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The expenses for the rental (ad).*/
+	public static double fraisLocation = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The welcoming expense.*/
+	public static double fraisAccueil = 0; 
+	
+	/**Temporary: user's input.</br>
+	 * The cleaning expense.*/
+	public static double fraisMenage = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The management expense, in seasonal.*/
+	public static double fraisGestionSaisonnier = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The overal cost.*/
+	public static double fraisLocationSaisonniere = 0;
+	
+	//=== Imposition ===============================================================
+	
+	/**Temporary: user's input.</br>
+	 * The tax rate.
+	 */
+	public static double tauxMarginal = 0;
+	
+	/**Temporary: user's input.</br>
+	 * The accountant fees.
+	 */
+	public static double fraisComptable = 0;
+	
+	//=== CashFlow =================================================================
+	
+	/**Temporary: user's input.</br>
+	 * The current rent.
+	 */
+	public static double loyerActuel = 0;
+	
+	//=== Revente ==================================================================
+	
+	/**Temporary: user's input.</br>
+	 * The estimated sell after ..years.
+	 */
+	public static int reventeAprès = 0; 
+	
+	/**Temporary: user's input.</br>
+	 * The estimated value of the real estate while selling. 
+	 */
+	public static double valeurRevente = 0;
 	
 }

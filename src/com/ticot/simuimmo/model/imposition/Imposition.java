@@ -18,7 +18,7 @@ package com.ticot.simuimmo.model.imposition;
 
 /**
  * @author Aurelien Ticot
- *
+ * @version 1.0
  */
 public class Imposition {
 
