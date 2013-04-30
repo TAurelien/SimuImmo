@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -364,7 +364,7 @@ public class MainActivity extends Activity {
 	private void fillComputedValues(Acquisition a, Gestion g){
 		
 		//Define the format for the values
-		DecimalFormat formatEur = new DecimalFormat("###,##0.00 €");
+		DecimalFormat formatEur = new DecimalFormat("###,##0.00 �");
 		formatEur.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));
 		DecimalFormat formatPer = new DecimalFormat("#0.00 %");
 		formatPer.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.FRANCE));

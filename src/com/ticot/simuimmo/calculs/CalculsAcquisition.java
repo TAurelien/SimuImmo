@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -411,7 +411,7 @@ public class CalculsAcquisition {
 		for (i = 2; i < nbMensualiteCredit + 1; i++)
 		{
 			
-			//Column Année, set the information of Année, +1 each 12 Echeance
+			//Column Annee, set the information of Annee, +1 each 12 Echeance
 			if (j > 12)
 			{
 				credit[i][0] = credit[i-1][0] + 1;
@@ -466,7 +466,7 @@ public class CalculsAcquisition {
 		//Set for each line the total value of each Echeance for 1 year, except for the column 0 and 1
 		for (i = 1; i < dureeCredit + 1; i++)
 		{
-			//Column Année
+			//Column Annee
 			creditAn[i][0] = i;
 			//Column Echeance
 			creditAn[i][1] = i * 12;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ public class Revente {
 	}
 
 	/**
-	 * @return Retourne le ROI  après renovation
+	 * @return Retourne le ROI  apres renovation
 	 */
 	public ROIRenovation getRoiRenovation() {
 		return roiRenovation;
@@ -77,7 +77,7 @@ public class Revente {
 	}
 
 	/**
-	 * @param Definit les ROI après renovation
+	 * @param Definit les ROI apres renovation
 	 */
 	public void setRoiRenovation(ROIRenovation roiRenovation) {
 		this.roiRenovation = roiRenovation;

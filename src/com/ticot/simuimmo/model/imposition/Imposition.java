@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public class Imposition {
 		this.detailsFraisReels = detailsFraisReels;
 	}
 	/**
-	 * @return Retourne les details des frais réels
+	 * @return Retourne les details des frais reels
 	 */
 	public DetailsFraisReels getDetailsFraisReels() {
 		return detailsFraisReels;
@@ -56,7 +56,7 @@ public class Imposition {
 		this.detailsFraisReels = detailsFraisReels;
 	}
 	/**
-	 * @param Définit les details de l'imposition
+	 * @param Definit les details de l'imposition
 	 */
 	public void setDetailsImposition(DetailsImposition detailsImposition) {
 		this.detailsImposition = detailsImposition;

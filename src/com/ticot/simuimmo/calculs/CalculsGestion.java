@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,16 +179,16 @@ public class CalculsGestion {
 		case 0:					//0 = "Location nue"
 			rl = loyerNu * (Settings.moisParAn - vacLocAnnuelle);
 			break;
-		case 1:					//1 = "Location meublé"
+		case 1:					//1 = "Location meublee"
 			rl = loyerMeuble * (Settings.moisParAn - vacLocAnnuelle);
 			break;
-		case 2:					//2 = "Location saisonnière"
+		case 2:					//2 = "Location saisonniere"
 			rl = loyerNuit * (Settings.nuitsParMois - vacLocSaisonnier) * Settings.moisParAn;
 			break;
-		case 3:					//3 = "Résidence principale"
+		case 3:					//3 = "Residence principale"
 			rl = 0;
 			break;
-		default:				//Au cas où, je redefinis en location meublé
+		default:				//Au cas ou, je redefinis en location meublee
 			Inputs.typeGestion = 1;
 			rl = loyerMeuble * (Settings.moisParAn - vacLocAnnuelle);
 			break;

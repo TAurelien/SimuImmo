@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -260,7 +260,7 @@ public class ChargesAnnuelles {
 	public String toString() {
 		return "=== Charges annuelles ===" +
 				"\nLes charges fixes sont de " + chargesFixes +
-				"\nLa taxe foncière est de " + taxeFonciere +
+				"\nLa taxe fonciere est de " + taxeFonciere +
 				"\nL'assurance habitation est de " + assuranceLocation	+ 
 				"\nLes frais de travaux annuels sont de " + travauxAnnuels +
 				"\nLa taxe d'habitation est de "	+ taxeHabitation +

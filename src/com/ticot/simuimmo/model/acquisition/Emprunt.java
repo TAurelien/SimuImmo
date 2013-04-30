@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -339,7 +339,7 @@ public class Emprunt {
 	}
 
 	/**
-	 * define the debt ratio.
+	 * Define the debt ratio.
 	 * @param tauxEndettement the double of the debt ratio to set.
 	 */
 	public void setTauxEndettement(double tauxEndettement) {
@@ -355,10 +355,10 @@ public class Emprunt {
 	@Override
 	public String toString() {
 		return "=== Emprunt ===" +
-				"\nLa durée du credit est de " + dureeCredit +
-				"\nLe nombre de mensualité est de " + nbMensualiteCredit +
-				"\nLe capital emprunté est de " + capitalEmprunte	+ 
-				"\nLa mensualité de credit est de " + mensualiteCredit +
+				"\nLa duree du credit est de " + dureeCredit +
+				"\nLe nombre de mensualite est de " + nbMensualiteCredit +
+				"\nLe capital emprunte est de " + capitalEmprunte	+ 
+				"\nLa mensualite de credit est de " + mensualiteCredit +
 				"\nLe taux de credit est de "	+ tauxCredit +
 				"\nLe taux d'assurance est de " + tauxAssuranceCredit /*+
 				"\nLe taux d'endettement est de NA" + tauxEndettement*/;

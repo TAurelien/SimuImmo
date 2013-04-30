@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,8 +236,8 @@ public class RecetteLocative {
 	public String toString() {
 		return "=== Recette locative ==="
 		+ "\nLe loyer en location nue est de " + loyerNu
-		+ "\nLe loyer en location meublé est de " + loyerMeuble
-		+ "\nLe loyer à la nuité est de " + loyerNuit
+		+ "\nLe loyer en location meublee est de " + loyerMeuble
+		+ "\nLe loyer à la nuitee est de " + loyerNuit
 		+ "\nLe loyer mensuel en saisonnier est de " + loyerSaisonnier
 		+ "\nLa recette locative annuelle est de "	+ recetteLocative
 		+ "\nLa vacance locative annuelle est de "	+ vacLocAnnuelle + " mois"

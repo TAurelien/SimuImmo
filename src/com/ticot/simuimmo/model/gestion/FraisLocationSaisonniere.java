@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -246,7 +246,7 @@ public class FraisLocationSaisonniere {
 	}
 
 	/**
-	 * defin the real cleaning expense.
+	 * Define the real cleaning expense.
 	 * @param fraisMenageReel the double of the real cleaning expense to set.
 	 * @deprecated
 	 */
@@ -262,11 +262,11 @@ public class FraisLocationSaisonniere {
 
 	@Override
 	public String toString() {
-		return "Frais location saisonnière -------------------------"
+		return "Frais location saisonniere -------------------------"
 				+ "\nLes frais d'accueil sont de " + fraisAccueil
-				+ "\nLes charges de ménage sont de " + fraisMenage
+				+ "\nLes charges de menage sont de " + fraisMenage
 				+ "\nLes frais de gestion sont de " + fraisGestionSaisonnier
-				+ "\nLe total des frais de location saisonnière sont de "
+				+ "\nLe total des frais de location saisonniere sont de "
 				+ fraisLocationSaisonniere;
 	}
 

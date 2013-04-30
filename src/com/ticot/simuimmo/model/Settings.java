@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,7 +107,7 @@ public class Settings {
 	public static double fraisGestionAgence = 0.06;
 	
 	/**Maximum monthly credit expected in Main Home.*/
-	public static double maxMensualitéRP = 900;
+	public static double maxMensualite = 900;
 	
 	//=== Imposition ===============================================================
 	
@@ -123,7 +123,7 @@ public class Settings {
 	/**Tax allowance of income in the French regim "micro BIC".*/
 	public static double abattementMicroBIC = 0.5;
 	
-	/**Tax allowance of income in the French regim "meublé classé de tourisme".*/
+	/**Tax allowance of income in the French regim "meublee classe de tourisme".*/
 	public static double abattementClasseTourisme = 0.71;
 	
 	/**Tax rate for the French "CSG CRDS".*/
@@ -138,7 +138,7 @@ public class Settings {
 	/**Depreciation duration of the furnishing = usualy 10 years.*/
 	public static int dureeAmortissmentMeubles = 10;
 	
-	/**decision to take into account the French regim "classé de tourisme". True = Yes.*/
+	/**decision to take into account the French regim "classe de tourisme". True = Yes.*/
 	public static boolean priseEnCompteClasseTourisme = false;
 	
 	//=== CashFlow =================================================================

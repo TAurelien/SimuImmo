@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Aurélien Ticot
+ * Copyright (C) 2013 Aurelien Ticot
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,6 +128,7 @@ public class Inputs {
 	 * Type of management.
 	 * (plain rental - 0, furnished rental - 1, seasonal rental - 2 or main home - 3)*/
 	public static int typeGestion = 1;
+	//TODO To change the type of the variable typeGestion
 	
 	/**Temporary: user's input.</br>
 	 * The plain rent, per month.*/
@@ -227,7 +228,7 @@ public class Inputs {
 	/**Temporary: user's input.</br>
 	 * The estimated sell after ..years.
 	 */
-	public static int reventeAprès = 0; 
+	public static int reventeApres = 0; 
 	
 	/**Temporary: user's input.</br>
 	 * The estimated value of the real estate while selling. 
