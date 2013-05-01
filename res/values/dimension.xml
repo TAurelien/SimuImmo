@@ -23,6 +23,9 @@ limitations under the License.
     <dimen name="category_label_paddingleft">16dp</dimen>
     <dimen name="item_height">48dp</dimen>
     <dimen name="item_marginRight">8dp</dimen>
+    <dimen name="small_text_size">14sp</dimen>
     <dimen name="medium_text_size">18sp</dimen>
     <dimen name="large_text_size">22sp</dimen>
+    <dimen name="about_logo_margin">20dp</dimen>
+    <dimen name="about_textview_margin">8dp</dimen>
 </resources>

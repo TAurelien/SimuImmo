@@ -15,7 +15,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
  -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <!-- <PreferenceCategory android:title="@string/preferenceTitle_application_parameters"></PreferenceCategory> -->
+    <!--
+    <PreferenceCategory android:title="@string/preferenceTitle_application_parameters">
+    </PreferenceCategory>
+    -->
     <PreferenceCategory android:title="@string/preferenceTitle_default_values">
 	    <PreferenceScreen android:title="@string/preferenceTitle_acquisition" android:summary="@string/preferenceSum_acquisition">
 		    <PreferenceCategory android:title="@string/frais_acquisition">
@@ -69,11 +72,13 @@ limitations under the License.
 		    </PreferenceCategory>
 	    </PreferenceScreen>
     </PreferenceCategory>
-    <!-- 
+    <!--
     <PreferenceCategory android:title="@string/preferenceTitle_information">
-        <Preference android:title="@string/about">
-            <Intent android:action="com.ticot.simuimmo.AboutActivity"/>
+    	<Preference android:title="@string/about">
+    		<intent android:action="com.ticot.simuimmo.activities.AboutActivity"
+    		    android:targetClass="com.ticot.simuimmo.activities.AboutActivity"
+    		    android:targetPackage="com.ticot.simuimmo.activities"/>
         </Preference>
     </PreferenceCategory>
-     -->
+    -->
 </PreferenceScreen>
