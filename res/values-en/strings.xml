@@ -1,0 +1,13 @@
+<resources>
+
+    
+    <!-- Texts UI About activity -->
+    <string name="About_logo_contentDescription">Logo of the application</string>
+    <string name="about_version">Version</string>
+    <string name="about_description">This application aims to simulate a complete real estate transaction.</string>
+    <string name="about_termOfUse">This application is intended for information purpose only. The author cannot be held responsible of any actions done by the user following the usage of this application.</string>
+
+    <!--Messages-->
+    <string name="message_champs_obligatoires">Some fields are mandatory</string>
+
+</resources>

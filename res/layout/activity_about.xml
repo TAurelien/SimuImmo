@@ -17,9 +17,86 @@ limitations under the License.
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
-    <TextView 
-        android:text="Test"/>
+    android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/about_tvAppName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/about_textview_margin"
+        android:textSize="@dimen/large_text_size" />
+    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:contentDescription="@string/About_logo_contentDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/about_logo_margin" />
+
+    <TextView
+        android:id="@+id/about_tvVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_version"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/about_textview_margin"
+        android:layout_marginLeft="@dimen/about_textview_margin"
+        android:layout_marginRight="@dimen/about_textview_margin"
+        android:textSize="@dimen/medium_text_size" />
+    <TextView
+        android:id="@+id/about_tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_description"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/about_textview_margin"
+        android:layout_marginLeft="@dimen/about_textview_margin"
+        android:layout_marginRight="@dimen/about_textview_margin"
+        android:textSize="@dimen/medium_text_size" />
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+        android:id="@+id/about_tvTermOfUse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_termOfUse"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/about_textview_margin"
+        android:layout_marginRight="@dimen/about_textview_margin"
+        android:textSize="@dimen/small_text_size" />
+    </ScrollView>
+    <TextView
+        android:id="@+id/about_tvCopyright"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_copyright"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/about_textview_margin"
+        android:layout_marginLeft="@dimen/about_textview_margin"
+        android:layout_marginRight="@dimen/about_textview_margin"
+        android:textSize="@dimen/medium_text_size" />
+
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <TextView
+	        android:id="@+id/about_tvLicense"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/about_license"
+	        android:gravity="center_horizontal"
+	        android:layout_marginTop="@dimen/about_textview_margin"
+	        android:layout_marginLeft="@dimen/about_textview_margin"
+	        android:layout_marginRight="@dimen/about_textview_margin"
+	        android:textSize="@dimen/small_text_size"
+	        android:autoLink="web" />
+    </ScrollView>
+    
 </LinearLayout>

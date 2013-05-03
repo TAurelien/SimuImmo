@@ -39,7 +39,6 @@ limitations under the License.
     
     <!--Texts UI main activity-->
     <string name="app_name">Simulateur Immobilier</string>
-    <string name="menu_settings">Paramètres</string>
     <string name="frais_acquisition">Frais d\'acquisition</string>
     <string name="prix_fai">Prix FAI</string>
     <string name="net_vendeur">Net vendeur</string>
@@ -63,6 +62,10 @@ limitations under the License.
     <string name="afficher_plus">Afficher plus</string>
     <string name="afficher_moins">Afficher moins</string>
     <string name="calculer">Calculer</string>
+    
+    <!--Texts UI main activity > Menu -->
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_about">A propos</string>
     
     <!--Texts UI Preference activity-->
     <string name="preferenceTitle_acquisition">Acquisition</string>
@@ -92,7 +95,18 @@ limitations under the License.
     <string name="about">A propos</string>
     <string name="license">Licence</string>
     
+    <!-- Texts UI About activity -->
+    <string name="About_logo_contentDescription">"Logo de l'application"</string>
+    <string name="about_version">Version</string>
+    <string name="about_description">Cette application a pour but de simuler les différentes parties d\'un investissement immobilier.</string>
+    <string name="about_termOfUse">Cette application est fournie a titre informatif uniquement. L\'auteur ne pourrait être tenu responsable de quelconques actions réalisées par l\'utilisateur suivant l\'utilisation de cette application.</string>
+    <string name="about_copyright">© 2013 Aurelien Ticot</string>
+    <string name="about_license">Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+\n\nhttp://www.apache.org/licenses/LICENSE-2.0
+\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</string>
+     
     <!--Messages-->
     <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>
+    
     
 </resources>

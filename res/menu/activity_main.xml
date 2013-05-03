@@ -14,17 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
  -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-     
+     <!-- TODO Rename as activity_main_menu.xml -->
     <item 
         android:id="@+id/menu_settings" 
         android:orderInCategory="100" 
         android:showAsAction="never" 
         android:title="@string/menu_settings" />
-	<!--
      <item
-        android:id="@+id/menu_help"
+        android:id="@+id/menu_about"
         android:orderInCategory="110"
         android:showAsAction="never"
-        android:title="@string/menu_help"/>
-     -->
+        android:title="@string/menu_about"/>
 </menu>

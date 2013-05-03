@@ -119,21 +119,15 @@ public class MainActivity extends Activity {
 	
 		switch (item.getItemId()) {
 			case R.id.menu_settings:
-				launchPreferenceActivity();
+				//Launch the activity "Preference"
+				startActivity(new Intent(".activities.AppPreferenceActivity"));
+				return true;
+			case R.id.menu_about:
+				//Launch the activity "About"
+				startActivity(new Intent(".activities.AboutActivity"));
 				return true;
 		}
 		return false;
-	}
-	
-	/**
-	 * Method to launch the settings page.
-	 * 
-	 * @since 1.0
-	 */
-	public void launchPreferenceActivity() {
-	
-		final Intent i = new Intent("com.ticot.simuimmo.AppPreferenceActivity");
-		startActivity(i);
 	}
 	
 	/**
@@ -535,7 +529,7 @@ public class MainActivity extends Activity {
 						findViewById(R.id.valuePrixFAI).setVisibility(0); //Turn PrixFAI TextView visibility to VISIBLE
 					}
 					else {
-						findViewById(R.id.valueReelPrixFAI).setTag("Mandatory"); //
+						findViewById(R.id.valueReelPrixFAI).setTag("Mandatory");
 					}
 				}
 				else { //If it has been unchecked
