@@ -1,33 +1,34 @@
 /*
  * Copyright (C) 2013 Aurelien Ticot
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+ * file except in compliance with the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 
 package com.ticot.simuimmo.calculs;
 
-import com.ticot.simuimmo.model.Settings;
 import com.ticot.simuimmo.model.Inputs;
+import com.ticot.simuimmo.model.Settings;
 import com.ticot.simuimmo.model.acquisition.Acquisition;
 import com.ticot.simuimmo.model.acquisition.Emprunt;
 import com.ticot.simuimmo.model.acquisition.FraisAcquisition;
 
 /**
- * The class CalculsAcquisition aggregates all the necessary calculations for the Acquisition part of the transaction. 
+ * The class CalculsAcquisition aggregates all the necessary calculations for the
+ * Acquisition part of the transaction.
+ * 
  * @author Aurelien Ticot
  * @version 1.0
  */
 public class CalculsAcquisition {
+	
 	
 	//==============================================================================
 	//Functions for the class Acquisition
@@ -40,10 +41,11 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static Acquisition initialiser(){
-		FraisAcquisition fraisAcquisition = calculerFraisAcquisitions();
-		Emprunt emprunt = calculerEmprunt(fraisAcquisition);
-		return new Acquisition(fraisAcquisition, emprunt); 
+	public static Acquisition initialiser() {
+	
+		final FraisAcquisition fraisAcquisition = calculerFraisAcquisitions();
+		final Emprunt emprunt = calculerEmprunt(fraisAcquisition);
+		return new Acquisition(fraisAcquisition, emprunt);
 	}
 	
 	/**
@@ -53,56 +55,65 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static FraisAcquisition calculerFraisAcquisitions(){
+	public static FraisAcquisition calculerFraisAcquisitions() {
+	
 		//constructor for FraisAcquisition
-		FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.agence, Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport, Inputs.conseil);
+		final FraisAcquisition fa = new FraisAcquisition(Inputs.prixFAI, Inputs.agence,
+				Inputs.travaux, Inputs.amenagement, Inputs.autresFrais, Inputs.apport,
+				Inputs.conseil);
 		
-		if (Inputs.reelNetvendeur && !Inputs.reelFraisAgence)
-		{
+		if (Inputs.reelNetvendeur && !Inputs.reelFraisAgence) {
 			fa.setNetVendeur(Inputs.netVendeur);
 			fa.setFraisAgence(fa.getPrixFAI() - fa.getNetVendeur());
 		}
-
-		if (Inputs.reelFraisAgence && !Inputs.reelNetvendeur)
-		{
+		
+		if (Inputs.reelFraisAgence && !Inputs.reelNetvendeur) {
 			fa.setFraisAgence(Inputs.fraisAgence);
 			fa.setNetVendeur(fa.getPrixFAI() - fa.getFraisAgence());
 		}
 		
-		if (!Inputs.reelNetvendeur && !Inputs.reelFraisAgence)
-		{
-			fa.setNetVendeur(calculNetVendeur(Inputs.prixFAI,fa.getAgence(), Settings.pourcentageFraisAgence));
-			fa.setFraisAgence(calculFraisAgence(fa.getNetVendeur(),fa.getAgence(), Settings.pourcentageFraisAgence));
+		if (!Inputs.reelNetvendeur && !Inputs.reelFraisAgence) {
+			fa.setNetVendeur(calculNetVendeur(Inputs.prixFAI, fa.getAgence(),
+					Settings.pourcentageFraisAgence));
+			fa.setFraisAgence(calculFraisAgence(fa.getNetVendeur(), fa.getAgence(),
+					Settings.pourcentageFraisAgence));
 		}
 		
-		if (Inputs.reelNetvendeur && Inputs.reelFraisAgence)
-		{
+		if (Inputs.reelNetvendeur && Inputs.reelFraisAgence) {
 			fa.setNetVendeur(Inputs.netVendeur);
 			fa.setFraisAgence(Inputs.fraisAgence);
-			fa.setPrixFAI(fa.getNetVendeur() + fa.getFraisAgence());	//TODO Could be simplified
+			fa.setPrixFAI(fa.getNetVendeur() + fa.getFraisAgence()); //TODO Could be simplified
 		}
 		
 		//Set FraisNotaire according to computed or user filled
-		if (Inputs.reelFraisNotaire){
+		if (Inputs.reelFraisNotaire) {
 			fa.setFraisNotaire(Inputs.fraisNotaire);
 		}
-		else
-			fa.setFraisNotaire(calculFraisNotaire(fa.getNetVendeur(), Settings.pourcentageFraisNotaire));
+		else {
+			fa.setFraisNotaire(calculFraisNotaire(fa.getNetVendeur(),
+					Settings.pourcentageFraisNotaire));
+		}
 		
 		//Set HonoraireConseil according to computed or user filled
-		if (Inputs.reelHonoraireConseil)
+		if (Inputs.reelHonoraireConseil) {
 			fa.setHonoraireConseil(Inputs.honoraireConseil);
-		else
-			fa.setHonoraireConseil(calculHonorairesConseil(fa.getConseil(), fa.getNetVendeur(),fa.getTravaux(), fa.getAmenagement(),Settings.pourcentageHonorairesConseil));
+		}
+		else {
+			fa.setHonoraireConseil(calculHonorairesConseil(fa.getConseil(),
+					fa.getNetVendeur(), fa.getTravaux(), fa.getAmenagement(),
+					Settings.pourcentageHonorairesConseil));
+		}
 		
 		//Set CoutTotal according to formula
-		fa.setCoutTotal(calculCoutTotal(fa.getNetVendeur(), fa.getFraisAgence(),fa.getFraisNotaire(), fa.getTravaux(),fa.getAmenagement(), fa.getHonoraireConseil(),fa.getAutresFrais()));
+		fa.setCoutTotal(calculCoutTotal(fa.getNetVendeur(), fa.getFraisAgence(),
+				fa.getFraisNotaire(), fa.getTravaux(), fa.getAmenagement(),
+				fa.getHonoraireConseil(), fa.getAutresFrais()));
 		
 		//Set Sequestre according to formula
 		fa.setSequestre(calculSequestre(fa.getPrixFAI(), Settings.pourcentageSequestre));
 		return fa;
 	}
-
+	
 	/**
 	 * Function to compute Emprunt.
 	 * 
@@ -112,43 +123,49 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static Emprunt calculerEmprunt(FraisAcquisition fa){
+	public static Emprunt calculerEmprunt(FraisAcquisition fa) {
+	
 		//Constructor for Emprunt
-		Emprunt emprunt = new Emprunt(Inputs.dureeCredit);
+		final Emprunt emprunt = new Emprunt(Inputs.dureeCredit);
 		
 		//
-		if (Inputs.reelTauxAssurance)
+		if (Inputs.reelTauxAssurance) {
 			emprunt.setTauxAssuranceCredit(Inputs.tauxAssuranceCredit);
-		else
+		}
+		else {
 			emprunt.setTauxAssuranceCredit(Settings.tauxAssuranceCredit);
-		
+		}
 		
 		emprunt.setNbMensualiteCredit(calculNbMensualiteCredit(emprunt.getDureeCredit()));
 		
-		if (Inputs.reelCapitalEmrpunte)
+		if (Inputs.reelCapitalEmrpunte) {
 			emprunt.setCapitalEmprunte(Inputs.capitalEmprunte);
-		else
-			emprunt.setCapitalEmprunte(calculCapitalEmprunte(fa.getCoutTotal(), fa.getApport()));
+		}
+		else {
+			emprunt.setCapitalEmprunte(calculCapitalEmprunte(fa.getCoutTotal(),
+					fa.getApport()));
+		}
 		
-		if (Inputs.reelTauxCredit)
+		if (Inputs.reelTauxCredit) {
 			emprunt.setTauxCredit(Inputs.tauxCredit);
-		else
+		}
+		else {
 			emprunt.setTauxCredit(calculTauxCredit(emprunt.getDureeCredit()));
+		}
 		
-		
-		emprunt.setMensualiteCredit(calculMensualiteCredit(emprunt.getCapitalEmprunte(), emprunt.getNbMensualiteCredit(), 
-				emprunt.getTauxCredit(), emprunt.getTauxAssuranceCredit()));
+		emprunt.setMensualiteCredit(calculMensualiteCredit(emprunt.getCapitalEmprunte(),
+				emprunt.getNbMensualiteCredit(), emprunt.getTauxCredit(),
+				emprunt.getTauxAssuranceCredit()));
 		
 		emprunt.setTauxEndettement(0); //TODO Update after creation of the method for TauxEndettement 
-
-		emprunt.setCredit(calculCredit(emprunt.getCapitalEmprunte(), emprunt.getNbMensualiteCredit(), emprunt.getTauxCredit(),
+		
+		emprunt.setCredit(calculCredit(emprunt.getCapitalEmprunte(),
+				emprunt.getNbMensualiteCredit(), emprunt.getTauxCredit(),
 				emprunt.getTauxAssuranceCredit(), emprunt.getMensualiteCredit()));
-		emprunt.setCreditAn(calculCreditAn(emprunt.getCredit(),emprunt.getDureeCredit()));
-
+		emprunt.setCreditAn(calculCreditAn(emprunt.getCredit(), emprunt.getDureeCredit()));
+		
 		return emprunt;
 	}
-	
-	
 	
 	//==============================================================================
 	//Functions for the FraisAcquisition
@@ -171,9 +188,12 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double calculCoutTotal(double netVendeur, double fraisAgence, double fraisNotaire, 
-			double travaux, double amenagement, double honoraireConseil, double autresFrais){
-		return netVendeur + fraisAgence + fraisNotaire + travaux + amenagement + honoraireConseil + autresFrais;
+	public static double calculCoutTotal(double netVendeur, double fraisAgence,
+			double fraisNotaire, double travaux, double amenagement,
+			double honoraireConseil, double autresFrais) {
+	
+		return netVendeur + fraisAgence + fraisNotaire + travaux + amenagement
+				+ honoraireConseil + autresFrais;
 	}
 	
 	/**
@@ -187,13 +207,17 @@ public class CalculsAcquisition {
 	 * 
 	 * @see FraisAcquisition
 	 */
-	public static double  calculNetVendeur(double prixFAI, boolean agence, double pourcentageFraisAgence){
-		if (agence)		//According to the choice of going through estate agency or not
-			return  prixFAI/(1 + pourcentageFraisAgence);
-		else
+	public static double calculNetVendeur(double prixFAI, boolean agence,
+			double pourcentageFraisAgence) {
+	
+		if (agence) {
+			return prixFAI / (1 + pourcentageFraisAgence);
+		}
+		else {
 			return prixFAI;
+		}
 	}
-
+	
 	/**
 	 * Method to compute the agency fees (FraisAgence).
 	 * 
@@ -207,13 +231,18 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double  calculFraisAgence(double netVendeur, boolean agence, double pourcentageFraisAgence){
-		if (agence)
-			return  netVendeur * pourcentageFraisAgence;
-		else
+	public static double calculFraisAgence(double netVendeur, boolean agence,
+			double pourcentageFraisAgence) {
+	
+		//According to the choice of going through estate agency or not
+		if (agence) {
+			return netVendeur * pourcentageFraisAgence;
+		}
+		else {
 			return 0;
+		}
 	}
-
+	
 	/**
 	 * Method to compute PrixFAI
 	 * 
@@ -226,8 +255,9 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double  calculPrixFAI(double netVendeur, double fraisAgence){
-			return  netVendeur + fraisAgence;
+	public static double calculPrixFAI(double netVendeur, double fraisAgence) {
+	
+		return netVendeur + fraisAgence;
 	}
 	
 	/**
@@ -242,8 +272,10 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double  calculFraisNotaire(double netVendeur, double pourcentageFraisNotaire){
-		return  netVendeur * pourcentageFraisNotaire;
+	public static double calculFraisNotaire(double netVendeur,
+			double pourcentageFraisNotaire) {
+	
+		return netVendeur * pourcentageFraisNotaire;
 	}
 	
 	/**
@@ -252,8 +284,9 @@ public class CalculsAcquisition {
 	 * @param conseil a boolean of the decision to go through a real estate hunter.
 	 * @param netVendeur a double of the the net seller price.
 	 * @param travaux a double of the necessary work of the real estate.
-	 * @param amenagement a double of the necessary furnishing for the real estate. 
-	 * @param pourcentageHonorairesConseil a double of the percentage for the fees of the hunter.
+	 * @param amenagement a double of the necessary furnishing for the real estate.
+	 * @param pourcentageHonorairesConseil a double of the percentage for the fees of the
+	 * hunter.
 	 * 
 	 * @return a double representing the fezes of the real estate hunter.
 	 * 
@@ -261,15 +294,18 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double calculHonorairesConseil(boolean conseil, double netVendeur, double travaux, 
-			double amenagement, double pourcentageHonorairesConseil){
+	public static double calculHonorairesConseil(boolean conseil, double netVendeur,
+			double travaux, double amenagement, double pourcentageHonorairesConseil) {
+	
 		//According to the decision to go through a real estate hunter
-		if (conseil == true)
+		if (conseil == true) {
 			//If yes, the fees is the rate times the total of net seller price + the work + the furnishing
 			//I consider the hunter also help for the work and the furnishing as well as the purchase.
 			return (netVendeur + travaux + amenagement) * pourcentageHonorairesConseil;
-		else
+		}
+		else {
 			return 0d;
+		}
 	}
 	
 	/**
@@ -284,11 +320,10 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double  calculSequestre(double prixFAI, double pourcentageSequestre){
-		return  prixFAI * pourcentageSequestre;
-	}	
+	public static double calculSequestre(double prixFAI, double pourcentageSequestre) {
 	
-	
+		return prixFAI * pourcentageSequestre;
+	}
 	
 	//==============================================================================
 	//Functions for the Emprunt
@@ -296,7 +331,9 @@ public class CalculsAcquisition {
 	
 	/**
 	 * Method to get an estimated value of the loan rate (TauxCredit).
-	 * <p>Based on the settings values.</p>
+	 * <p>
+	 * Based on the settings values.
+	 * </p>
 	 * 
 	 * @param dureeCredit an integer of the duration of the loan.
 	 * 
@@ -306,20 +343,21 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double calculTauxCredit(int dureeCredit){
+	public static double calculTauxCredit(int dureeCredit) {
+	
 		//TODO Change the calculation by setting the more close value according to the duration
 		switch (dureeCredit) {
 		//According to the value of DureeCredit
-		case 15:
-			return  Settings.taux15ans;
-		case 20:
-			return Settings.taux20ans;
-		case 25:
-			return Settings.taux25ans;
-		case 30:
-			return Settings.taux30ans;
-		default:
-			return Settings.taux25ans;
+			case 15:
+				return Settings.taux15ans;
+			case 20:
+				return Settings.taux20ans;
+			case 25:
+				return Settings.taux25ans;
+			case 30:
+				return Settings.taux30ans;
+			default:
+				return Settings.taux25ans;
 		}
 	}
 	
@@ -327,7 +365,7 @@ public class CalculsAcquisition {
 	 * Method to compute the value of the monthly credit (MensualiteCredit).
 	 * 
 	 * @param capitalEmprunte a double of the borrowing capital.
-	 * @param nbMensualiteCredit an integer of the number of monthly credit. 
+	 * @param nbMensualiteCredit an integer of the number of monthly credit.
 	 * @param taux a double of the loan rate.
 	 * @param tauxAssurance a double of the loan insurance rate.
 	 * 
@@ -337,8 +375,11 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double calculMensualiteCredit(double capitalEmprunte, int nbMensualiteCredit, double taux, double tauxAssurance){
-		return (capitalEmprunte * taux/12)/(1-Math.pow((1+taux/12), (-nbMensualiteCredit))) + (capitalEmprunte * tauxAssurance/12);
+	public static double calculMensualiteCredit(double capitalEmprunte,
+			int nbMensualiteCredit, double taux, double tauxAssurance) {
+	
+		return (((capitalEmprunte * taux) / 12) / (1 - Math.pow((1 + (taux / 12)),
+				(-nbMensualiteCredit)))) + ((capitalEmprunte * tauxAssurance) / 12);
 	}
 	
 	/**
@@ -352,7 +393,8 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static int calculNbMensualiteCredit(int dureeCredit){
+	public static int calculNbMensualiteCredit(int dureeCredit) {
+	
 		return dureeCredit * 12;
 	}
 	
@@ -361,21 +403,22 @@ public class CalculsAcquisition {
 	 * 
 	 * @param coutTotal a double of the overall cost of the transaction.
 	 * @param apport a double of the the buyer contribution.
-	 *  
+	 * 
 	 * @return a double representing the borrowing capital.
 	 * 
 	 * @see Emprunt
 	 * 
 	 * @since 1.0
 	 */
-	public static double calculCapitalEmprunte(double coutTotal, double apport){
+	public static double calculCapitalEmprunte(double coutTotal, double apport) {
+	
 		return coutTotal - apport;
 	}
 	
 	/**
 	 * Method to compute the details of the loan, per month (Credit).
 	 * 
-	 * @param capitalEmprunte a double of the borrowing capital. 
+	 * @param capitalEmprunte a double of the borrowing capital.
 	 * @param nbMensualiteCredit an integer of the number of monthly credit.
 	 * @param taux a double of the loan rate.
 	 * @param tauxAssurance a double of the loan insurance rate.
@@ -387,13 +430,14 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double[][] calculCredit(double capitalEmprunte, int nbMensualiteCredit, double taux, double tauxAssurance, double mensualiteCredit){
-		double[][] credit = new double[(nbMensualiteCredit + 1)][7];
+	public static double[][] calculCredit(double capitalEmprunte, int nbMensualiteCredit,
+			double taux, double tauxAssurance, double mensualiteCredit) {
+	
+		final double[][] credit = new double[(nbMensualiteCredit + 1)][7];
 		int i = 0, j = 0;
 		
 		//Initialize line 0 of the table with value 0
-		for (i = 0; i < 7; i++)
-		{
+		for (i = 0; i < 7; i++) {
 			credit[0][i] = 0;
 		}
 		
@@ -401,38 +445,35 @@ public class CalculsAcquisition {
 		credit[1][0] = 1;
 		credit[1][1] = 1;
 		credit[1][2] = mensualiteCredit;
-		credit[1][3] = capitalEmprunte * tauxAssurance /12;
+		credit[1][3] = (capitalEmprunte * tauxAssurance) / 12;
 		credit[1][4] = capitalEmprunte;
-		credit[1][5] = credit[1][4] * taux /12;
+		credit[1][5] = (credit[1][4] * taux) / 12;
 		credit[1][6] = credit[1][2] - credit[1][3] - credit[1][5];
 		
 		//Calculate the different values for each Echeance 
 		j = 2;
-		for (i = 2; i < nbMensualiteCredit + 1; i++)
-		{
+		for (i = 2; i < (nbMensualiteCredit + 1); i++) {
 			
 			//Column Annee, set the information of Annee, +1 each 12 Echeance
-			if (j > 12)
-			{
-				credit[i][0] = credit[i-1][0] + 1;
+			if (j > 12) {
+				credit[i][0] = credit[i - 1][0] + 1;
 				j = 2;
 			}
-			else
-			{
-				credit[i][0] = credit[i-1][0];
+			else {
+				credit[i][0] = credit[i - 1][0];
 				j++;
 			}
 			
 			//Column Echeance
 			credit[i][1] = i;
 			//Column Mensualite
-			credit[i][2] = credit[i-1][2];
+			credit[i][2] = credit[i - 1][2];
 			//Column Assurance part of the Mensualite
-			credit[i][3] = capitalEmprunte * tauxAssurance /12;
+			credit[i][3] = (capitalEmprunte * tauxAssurance) / 12;
 			//Column Capital restant du
-			credit[i][4] = credit[i-1][4] - credit[i-1][6];
+			credit[i][4] = credit[i - 1][4] - credit[i - 1][6];
 			//Column Interet d'emprunt
-			credit[i][5] = credit[i][4] * taux /12;
+			credit[i][5] = (credit[i][4] * taux) / 12;
 			//Column Remboursement Capital
 			credit[i][6] = credit[i][2] - credit[i][3] - credit[i][5];
 		}
@@ -452,26 +493,24 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double[][] calculCreditAn(double credit[][], int dureeCredit){
+	public static double[][] calculCreditAn(double credit[][], int dureeCredit) {
+	
 		//Set a table for the Credit per year, each line is a single year
-		double[][] creditAn = new double[(dureeCredit + 1)][7];
+		final double[][] creditAn = new double[(dureeCredit + 1)][7];
 		int i = 0, j = 0;
 		
 		//Initialize line 0 of the table with value 0
-		for (i = 0; i < 7; i++)
-		{
+		for (i = 0; i < 7; i++) {
 			credit[0][i] = 0;
 		}
 		
 		//Set for each line the total value of each Echeance for 1 year, except for the column 0 and 1
-		for (i = 1; i < dureeCredit + 1; i++)
-		{
+		for (i = 1; i < (dureeCredit + 1); i++) {
 			//Column Annee
 			creditAn[i][0] = i;
 			//Column Echeance
 			creditAn[i][1] = i * 12;
-			for (j = ((i - 1) * 12) + 1; j < i * 12 + 1; j++)
-			{
+			for (j = ((i - 1) * 12) + 1; j < ((i * 12) + 1); j++) {
 				//Column Mensualite
 				creditAn[i][2] = creditAn[i][2] + credit[j][2];
 				//Column Assurance part of the Mensualite
@@ -497,7 +536,8 @@ public class CalculsAcquisition {
 	 * 
 	 * @since 1.0
 	 */
-	public static double calculTauxEndettement(){
+	public static double calculTauxEndettement() {
+	
 		//TODO Create the methods for the calculation of the TauxEndettement
 		return 0;
 	}
