@@ -21,7 +21,7 @@ package com.ticot.simuimmo.model.cashflow;
 public class CashFlow {
 	
 	
-	//TODO Structurer la classe CashFlow
+	//TODO Structure the class CashFlow
 	private CashFlowAnnee1 cashFlowAnnee1;
 	
 	private DonneesEntree donneesEntree;
@@ -35,7 +35,10 @@ public class CashFlow {
 	 * @param rendements
 	 * @param cashFlowAnnee1
 	 * @param patrimoineAnnee1
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public CashFlow(DonneesEntree donneesEntree, Rendements rendements,
 			CashFlowAnnee1 cashFlowAnnee1, PatrimoineAnnee1 patrimoineAnnee1) {
 	

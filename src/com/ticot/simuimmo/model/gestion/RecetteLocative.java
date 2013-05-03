@@ -105,7 +105,10 @@ public class RecetteLocative {
 	 * @param loyerNuit
 	 * @param vacLocAnnuelle
 	 * @param vacLocSaisonnier
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public RecetteLocative(double loyerNu, double loyerMeuble, double loyerNuit,
 			int vacLocAnnuelle, int vacLocSaisonnier) {
 	

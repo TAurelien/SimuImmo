@@ -99,7 +99,10 @@ public class ChargesAnnuelles {
 	 * @param assuranceLocation
 	 * @param travauxAnnuels
 	 * @param taxeHabitation
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public ChargesAnnuelles(double chargesFixes, double taxeFonciere,
 			double assuranceLocation, double travauxAnnuels, double taxeHabitation) {
 	
@@ -123,7 +126,10 @@ public class ChargesAnnuelles {
 	 * @param travauxAnnuels
 	 * @param taxeHabitation
 	 * @param charges
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public ChargesAnnuelles(double chargesFixes, double taxeFonciere,
 			double assuranceLocation, double travauxAnnuels, double taxeHabitation,
 			double charges) {

@@ -21,7 +21,7 @@ package com.ticot.simuimmo.model.imposition;
 public class Imposition {
 	
 	
-	//TODO Structurer la classe Imposition
+	//TODO Structure the class Imposition
 	
 	private DetailsFraisReels detailsFraisReels;
 	
@@ -30,7 +30,10 @@ public class Imposition {
 	/**
 	 * @param detailsImposition
 	 * @param detailsFraisReels
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public Imposition(DetailsImposition detailsImposition,
 			DetailsFraisReels detailsFraisReels) {
 	

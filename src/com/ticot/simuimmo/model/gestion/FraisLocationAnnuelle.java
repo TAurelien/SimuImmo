@@ -88,7 +88,10 @@ public class FraisLocationAnnuelle {
 	 * Constructor of FraisLocationAnnuelle.
 	 * 
 	 * @param gestionParAgence
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public FraisLocationAnnuelle(boolean gestionParAgence) {
 	
 		super();
@@ -100,7 +103,10 @@ public class FraisLocationAnnuelle {
 	 * 
 	 * @param fraisGestionLocation
 	 * @param gestionParAgence
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public FraisLocationAnnuelle(double fraisGestionLocation, boolean gestionParAgence) {
 	
 		super();
@@ -114,7 +120,10 @@ public class FraisLocationAnnuelle {
 	 * @param fraisGestionLocation
 	 * @param chargesLocation
 	 * @param gestionParAgence
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public FraisLocationAnnuelle(double fraisGestionLocation, double fraisLocation,
 			boolean gestionParAgence) {
 	

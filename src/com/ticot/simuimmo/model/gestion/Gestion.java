@@ -118,7 +118,10 @@ public class Gestion {
 	 * @param fraisLocationAnnuelle
 	 * @param fraisLocationSaisonniere
 	 * @param recetteLocative
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public Gestion(int typeGestion, ChargesAnnuelles chargesAnnuelles,
 			FraisLocationAnnuelle fraisLocationAnnuelle,
 			FraisLocationSaisonniere fraisLocationSaisonniere,

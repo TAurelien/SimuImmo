@@ -21,7 +21,7 @@ package com.ticot.simuimmo.model.revente;
 public class Revente {
 	
 	
-	//TODO Structurer la classe Revente
+	//TODO Structure the class Revente
 	
 	private CoutAcquisition coutAcquisition;
 	
@@ -33,7 +33,10 @@ public class Revente {
 	 * @param coutAcquisition
 	 * @param roiRenovation
 	 * @param detailsRevente
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public Revente(CoutAcquisition coutAcquisition, ROIRenovation roiRenovation,
 			DetailsRevente detailsRevente) {
 	

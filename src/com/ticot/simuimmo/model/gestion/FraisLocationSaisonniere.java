@@ -114,7 +114,10 @@ public class FraisLocationSaisonniere {
 	 * @param fraisMenage
 	 * @param fraisGestionSaisonnier
 	 * @param fraisLocationSaisonniere
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public FraisLocationSaisonniere(double fraisAccueil, double fraisMenage,
 			double fraisGestionSaisonnier, double fraisLocationSaisonniere) {
 	

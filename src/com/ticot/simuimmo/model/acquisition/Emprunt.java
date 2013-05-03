@@ -120,7 +120,10 @@ public class Emprunt {
 	 * </p>
 	 * 
 	 * @param dureeCredit
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public Emprunt(int dureeCredit) {
 	
 		super();
@@ -140,7 +143,10 @@ public class Emprunt {
 	 * @param tauxEndettement
 	 * @param dureeCredit
 	 * @param nbMensualiteCredit
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public Emprunt(double capitalEmprunte, double mensualiteCredit, double tauxCredit,
 			double tauxAssuranceCredit, double tauxEndettement, int dureeCredit,
 			int nbMensualiteCredit) {

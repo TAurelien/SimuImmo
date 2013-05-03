@@ -160,7 +160,10 @@ public class FraisAcquisition {
 	 * @param autresFrais
 	 * @param apport
 	 * @param conseil
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public FraisAcquisition(double prixFAI, boolean agence, double travaux,
 			double amenagement, double autresFrais, double apport, boolean conseil) {
 	
@@ -193,7 +196,10 @@ public class FraisAcquisition {
 	 * @param coutTotal
 	 * @param apport
 	 * @param sequestre
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public FraisAcquisition(double prixFAI, boolean agence, double netVendeur,
 			double fraisAgence, double fraisNotaire, double travaux, double amenagement,
 			boolean conseil, double honoraireConseil, double autresFrais,

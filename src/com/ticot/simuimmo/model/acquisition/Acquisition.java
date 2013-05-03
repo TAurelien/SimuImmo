@@ -83,7 +83,10 @@ public class Acquisition {
 	 * 
 	 * @see FraisAcquisition
 	 * @see Emprunt
+	 * 
+	 * @deprecated
 	 */
+	@Deprecated
 	public Acquisition(FraisAcquisition fraisAcquisition, Emprunt emprunt) {
 	
 		super();
