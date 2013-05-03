@@ -29,7 +29,7 @@ limitations under the License.
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.ticot.simuimmo.MainActivity"
+            android:name="com.ticot.simuimmo.activities.MainActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>

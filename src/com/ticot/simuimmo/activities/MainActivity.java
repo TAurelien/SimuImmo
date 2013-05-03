@@ -12,7 +12,7 @@
  * permissions and limitations under the License.
  */
 
-package com.ticot.simuimmo;
+package com.ticot.simuimmo.activities;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -31,6 +31,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.ticot.simuimmo.R;
+import com.ticot.simuimmo.R.color;
+import com.ticot.simuimmo.R.id;
+import com.ticot.simuimmo.R.layout;
+import com.ticot.simuimmo.R.menu;
+import com.ticot.simuimmo.R.string;
+import com.ticot.simuimmo.R.xml;
 import com.ticot.simuimmo.calculs.CalculsAcquisition;
 import com.ticot.simuimmo.model.Backup;
 import com.ticot.simuimmo.model.Inputs;
