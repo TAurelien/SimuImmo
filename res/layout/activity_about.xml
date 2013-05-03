@@ -81,18 +81,7 @@ limitations under the License.
         android:layout_marginLeft="@dimen/about_textview_margin"
         android:layout_marginRight="@dimen/about_textview_margin"
         android:textSize="@dimen/medium_text_size" />
-    <!-- 
-    <TextView
-        android:id="@+id/about_tvSeeLicense"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_seeLicense"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="@dimen/about_textview_margin"
-        android:layout_marginLeft="@dimen/about_textview_margin"
-        android:layout_marginRight="@dimen/about_textview_margin"
-        android:textSize="@dimen/medium_text_size" />
-    -->
+
     <ScrollView 
         android:layout_width="match_parent"
         android:layout_height="0dp"

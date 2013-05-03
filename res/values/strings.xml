@@ -96,17 +96,15 @@ limitations under the License.
     <string name="license">Licence</string>
     
     <!-- Texts UI About activity -->
-    <string name="About_logo_contentDescription">Logo of the application</string>
+    <string name="About_logo_contentDescription">"Logo de l'application"</string>
     <string name="about_version">Version</string>
-    <string name="about_description">This application aims to simulate a complete real estate transaction.</string>
-    <string name="about_termOfUse">This application is intended for information purpose only. The author cannot be held responsible of any actions done by the user following the usage of this application.</string>
+    <string name="about_description">Cette application a pour but de simuler les différentes parties d'un investissement immobilier.</string>
+    <string name="about_termOfUse">Cette application est fournie a titre informatif uniquement. L'auteur ne pourrait être tenu responsable de quelconques actions réalisées par l'utilisateur suivant l'utilisation de cette application.</string>
     <string name="about_copyright">© 2013 Aurelien Ticot</string>
-    <string name="about_seeLicense">see license</string>
     <string name="about_license">Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 \n\nhttp://www.apache.org/licenses/LICENSE-2.0
 \n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</string>
-    
-    
+     
     <!--Messages-->
     <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>
     
