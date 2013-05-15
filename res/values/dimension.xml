@@ -14,7 +14,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
     <dimen name="field_label_width">165dp</dimen>
     <dimen name="field_label_with_option_width">117dp</dimen>
     <dimen name="field_label_paddingleft">8dp</dimen>
@@ -28,4 +29,5 @@ limitations under the License.
     <dimen name="large_text_size">22sp</dimen>
     <dimen name="about_logo_margin">20dp</dimen>
     <dimen name="about_textview_margin">8dp</dimen>
+    
 </resources>
