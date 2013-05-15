@@ -19,6 +19,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import com.ticot.simuimmo.BuildConfig;
 import com.ticot.simuimmo.R;
 
 /**
@@ -46,7 +47,9 @@ public class AboutActivity extends Activity {
 					+ getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
 		}
 		catch (final NameNotFoundException e) {
-			Log.v(tag, e.getMessage());
+			if (BuildConfig.DEBUG) {
+				Log.v(tag, e.getMessage());
+			}
 		}
 		
 		((TextView) findViewById(R.id.about_tvVersion)).setText(app_ver);
