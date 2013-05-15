@@ -14,83 +14,63 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  -->
-<resources>
-    <!--Default values-->
-    <string name="defaultValueZeroEuro">0,00 €</string>
-    <string name="defaultValueZeroPer">0,00 %</string>
-    <string name="defaultValueZero">0</string>
-    <string name="default_value_prix_fai">0,00 €</string>
-    <string name="default_value_amenagement">0,00 €</string>
-    <string name="default_value_travaux">0,00 €</string>
-    <string name="default_value_autres_frais">2 000,00 €</string>
-    <string name="default_value_apport">0,00 €</string>
-    <string name="default_value_duree_credit">25</string>
-    
-    <!--Default values for preferences-->
-    <string name="defaultPreferencePourcentageFraisAgence">0.075</string>
-    <string name="defaultPreferencePourcentageFraisNotaire">0.075</string>
-    <string name="defaultPreferencePourcentageHonorairesConseil">0.08</string>
-    <string name="defaultPreferenceTaux15ans">0.0318</string>
-    <string name="defaultPreferenceTaux20ans">0.034</string>
-    <string name="defaultPreferenceTaux25ans">0.0365</string>
-    <string name="defaultPreferenceTaux30ans">0.044</string>
-    <string name="defaultPreferenceTauxAssuranceCredit">0.0036</string>
-    <string name="defaultPreferencePourcentageSequestre">0.1</string>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources">
     
     <!--Texts UI main activity-->
-    <string name="app_name">Simulateur Immobilier</string>
-    <string name="frais_acquisition">Frais d\'acquisition</string>
-    <string name="prix_fai">Prix FAI</string>
-    <string name="net_vendeur">Net vendeur</string>
-    <string name="frais_agence">Frais agence</string>
-    <string name="frais_notaire">Frais de notaire</string>
-    <string name="travaux">Travaux</string>
-    <string name="amenagement">Amenagement</string>
-    <string name="conseil">Conseil</string>
-    <string name="autres_frais">Autres frais</string>
-    <string name="cout_total">Cout total</string>
-    <string name="apport">Apport</string>
-    <string name="sequestre">Sequestre</string>
-    <string name="emprunt">Emprunt</string>
-    <string name="capital_emprunte">Capital emprunté</string>
-    <string name="duree_du_credit">Durée du credit</string>
-    <string name="nombre_mensualite">Nombre mensualité</string>
-    <string name="taux_de_credit">Taux de credit</string>
-    <string name="taux_assurance">Taux d\'assurance</string>
-    <string name="mensualite">Mensualité</string>
-    <string name="taux_endettement">Taux d\'endettement</string>
-    <string name="afficher_plus">Afficher plus</string>
-    <string name="afficher_moins">Afficher moins</string>
-    <string name="calculer">Calculer</string>
+    <string name="app_name" translatable="false">Simulateur Immobilier</string>
+    <string name="frais_acquisition" translatable="false">Frais d\'acquisition</string>
+    <string name="prix_fai" translatable="false">Prix FAI</string>
+    <string name="net_vendeur" translatable="false">Net vendeur</string>
+    <string name="frais_agence" translatable="false">Frais agence</string>
+    <string name="frais_notaire" translatable="false">Frais de notaire</string>
+    <string name="travaux" translatable="false">Travaux</string>
+    <string name="amenagement" translatable="false">Amenagement</string>
+    <string name="conseil" translatable="false">Conseil</string>
+    <string name="autres_frais" translatable="false">Autres frais</string>
+    <string name="cout_total" translatable="false">Cout total</string>
+    <string name="apport" translatable="false">Apport</string>
+    <string name="sequestre" translatable="false">Sequestre</string>
+    <string name="emprunt" translatable="false">Emprunt</string>
+    <string name="capital_emprunte" translatable="false">Capital emprunté</string>
+    <string name="duree_du_credit" translatable="false">Durée du credit</string>
+    <string name="nombre_mensualite" translatable="false">Nombre mensualité</string>
+    <string name="taux_de_credit" translatable="false">Taux de credit</string>
+    <string name="taux_assurance" translatable="false">Taux d\'assurance</string>
+    <string name="mensualite" translatable="false">Mensualité</string>
+    <string name="taux_endettement" translatable="false">Taux d\'endettement</string>
+    <string name="afficher_plus" translatable="false">Afficher plus</string>
+    <string name="afficher_moins" translatable="false">Afficher moins</string>
+    <string name="calculer" translatable="false">Calculer</string>
     
     <!--Texts UI main activity > Menu -->
     <string name="menu_settings">Paramètres</string>
     <string name="menu_about">A propos</string>
     
     <!--Texts UI Preference activity-->
-    <string name="preferenceTitle_acquisition">Acquisition</string>
-    <string name="preferenceSum_acquisition">Definir les variables pour la partie Acquisition</string>
-    <string name="preferenceTitle_application_parameters">Paramètres d\'application</string>
-    <string name="preferenceTitle_default_values">Valeurs par défaut</string>
-    <string name="preferenceTitle_information">informations</string>
-    <string name="preferenceTitle_PourcentageFraisAgence">Frais d\'agence</string>
-    <string name="preferenceSum_PourcentageFraisAgence">Entrer le pourcentage de frais d\'agence</string>
-    <string name="preferenceTitle_PourcentageFraisNotaire">Frais de notaire</string>
-    <string name="preferenceSum_PourcentageFraisNotaire">Entrer le pourcentage de frais de notaire</string>
-    <string name="preferenceTitle_PourcentageHonorairesConseil">Frais des honoraires de conseil</string>
-    <string name="preferenceSum_PourcentageHonorairesConseil">Entrer le pourcentage de frais des honoraires de conseil</string>
-    <string name="preferenceTitle_Taux15ans">Taux à 15 ans</string>
-    <string name="preferenceSum_Taux15ans">Entrer le taux de credit à 15 ans</string>
-    <string name="preferenceTitle_Taux20ans">Taux à 20 ans</string>
-    <string name="preferenceSum_Taux20ans">Entrer le taux de credit à 20 ans</string>
-    <string name="preferenceTitle_Taux25ans">Taux à 25 ans</string>
-    <string name="preferenceSum_Taux25ans">Entrer le taux de credit à 25 ans</string>
-    <string name="preferenceTitle_Taux30ans">Taux à 30 ans</string>
-    <string name="preferenceSum_Taux30ans">Entrer le taux de credit à 30 ans</string>
-	<string name="preferenceTitle_TauxAssuranceCredit">Taux d\'assurance</string>
-    <string name="preferenceSum_TauxAssuranceCredit">Entrer le taux d\'assurance de credit</string>
-    <string name="preferenceTitle_PourcentageSequestre">Sequestre</string>
-    <string name="preferenceSum_PourcentageSequestre">Entrer le pourcentage du sequestre</string>
+    <string name="preferenceTitle_acquisition" translatable="false">Acquisition</string>
+    <string name="preferenceSum_acquisition" translatable="false">Definir les variables pour la partie Acquisition</string>
+    <string name="preferenceTitle_application_parameters" translatable="false">Paramètres d\'application</string>
+    <string name="preferenceTitle_default_values" translatable="false">Valeurs par défaut</string>
+    <string name="preferenceTitle_information" translatable="false">informations</string>
+    <string name="preferenceTitle_PourcentageFraisAgence" translatable="false">Frais d\'agence</string>
+    <string name="preferenceSum_PourcentageFraisAgence" translatable="false">Entrer le pourcentage de frais d\'agence</string>
+    <string name="preferenceTitle_PourcentageFraisNotaire" translatable="false">Frais de notaire</string>
+    <string name="preferenceSum_PourcentageFraisNotaire" translatable="false">Entrer le pourcentage de frais de notaire</string>
+    <string name="preferenceTitle_PourcentageHonorairesConseil" translatable="false">Frais des honoraires de conseil</string>
+    <string name="preferenceSum_PourcentageHonorairesConseil" translatable="false">Entrer le pourcentage de frais des honoraires de conseil</string>
+    <string name="preferenceTitle_Taux15ans" translatable="false">Taux à 15 ans</string>
+    <string name="preferenceSum_Taux15ans" translatable="false">Entrer le taux de credit à 15 ans</string>
+    <string name="preferenceTitle_Taux20ans" translatable="false">Taux à 20 ans</string>
+    <string name="preferenceSum_Taux20ans" translatable="false">Entrer le taux de credit à 20 ans</string>
+    <string name="preferenceTitle_Taux25ans" translatable="false">Taux à 25 ans</string>
+    <string name="preferenceSum_Taux25ans" translatable="false">Entrer le taux de credit à 25 ans</string>
+    <string name="preferenceTitle_Taux30ans" translatable="false">Taux à 30 ans</string>
+    <string name="preferenceSum_Taux30ans" translatable="false">Entrer le taux de credit à 30 ans</string>
+	<string name="preferenceTitle_TauxAssuranceCredit" translatable="false">Taux d\'assurance</string>
+    <string name="preferenceSum_TauxAssuranceCredit" translatable="false">Entrer le taux d\'assurance de credit</string>
+    <string name="preferenceTitle_PourcentageSequestre" translatable="false">Sequestre</string>
+    <string name="preferenceSum_PourcentageSequestre" translatable="false">Entrer le pourcentage du sequestre</string>
     <string name="help">Aide</string>
     <string name="about">A propos</string>
     <string name="license">Licence</string>
@@ -100,11 +80,7 @@ limitations under the License.
     <string name="about_version">Version</string>
     <string name="about_description">Cette application a pour but de simuler les différentes parties d\'un investissement immobilier.</string>
     <string name="about_termOfUse">Cette application est fournie a titre informatif uniquement. L\'auteur ne pourrait être tenu responsable de quelconques actions réalisées par l\'utilisateur suivant l\'utilisation de cette application.</string>
-    <string name="about_copyright">© 2013 Aurelien Ticot</string>
-    <string name="about_license">Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
-\n\nhttp://www.apache.org/licenses/LICENSE-2.0
-\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</string>
-     
+ 
     <!--Messages-->
     <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>
     

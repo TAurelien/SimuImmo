@@ -74,6 +74,7 @@ limitations under the License.
 	                android:gravity="right|center_vertical"
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:visibility="gone" />
 	
 	            <EditText
@@ -123,6 +124,7 @@ limitations under the License.
 	                android:hint="@string/defaultValueZeroEuro"
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical"
 	                android:visibility="visible" />
 	            
@@ -185,6 +187,7 @@ limitations under the License.
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:hint="@string/defaultValueZeroEuro"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
@@ -238,6 +241,7 @@ limitations under the License.
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:hint="@string/defaultValueZeroEuro"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
@@ -370,6 +374,7 @@ limitations under the License.
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:hint="@string/defaultValueZeroEuro"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
@@ -459,6 +464,7 @@ limitations under the License.
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
 	                android:gravity="right|center_vertical"
+	                android:textIsSelectable="true"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
 	            <View
@@ -530,6 +536,7 @@ limitations under the License.
 	                android:layout_weight="1"
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
@@ -579,6 +586,7 @@ limitations under the License.
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:hint="@string/defaultValueZeroEuro"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical" />
 	            
 	            <EditText
@@ -667,6 +675,7 @@ limitations under the License.
 	                android:layout_weight="1"
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZero" />
 	            
@@ -704,6 +713,7 @@ limitations under the License.
 	                android:layout_weight="1"
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroPer" />
 	            
@@ -757,6 +767,7 @@ limitations under the License.
 	                android:layout_weight="1"
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroPer" />
 	            
@@ -809,6 +820,7 @@ limitations under the License.
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro"
 	                android:paddingRight="@dimen/field_paddingRight"
+	                android:textIsSelectable="true"
 	                android:textSize="@dimen/medium_text_size" />
 	            
 	            <View
@@ -844,6 +856,7 @@ limitations under the License.
 	                android:layout_weight="1"
 	                android:paddingRight="@dimen/field_paddingRight"
 	                android:textSize="@dimen/medium_text_size"
+	                android:textIsSelectable="true"
 	                android:gravity="right|center_vertical"
 	                android:hint="@string/defaultValueZeroEuro" />
 	            
