@@ -43,6 +43,9 @@ limitations under the License.
     <string name="afficher_moins" translatable="false">Afficher moins</string>
     <string name="calculer" translatable="false">Calculer</string>
     
+    <!-- Texts UI gestion activity -->
+    
+    
     <!--Texts UI main activity > Menu -->
     <string name="menu_settings">Paramètres</string>
     <string name="menu_about">A propos</string>
