@@ -17,14 +17,20 @@ package com.ticot.simuimmo.activities;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -46,7 +52,7 @@ import com.ticot.simuimmo.model.gestion.Gestion;
  * @author Aurelien Ticot
  * @version 1.0
  */
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 	
 	
 	//==============================================================================
@@ -77,6 +83,123 @@ public class MainActivity extends Activity {
 	/** Creation of an instance of Bien, this object will get all values. */
 	public Bien bien = new Bien();
 	
+	//==================
+	//Tests
+	//==================	
+	
+	/**
+	 * This class represents a collection of objects representing all the pages. Each page
+	 * is an instance of FormPage.
+	 * 
+	 * @author Aurelien Ticot
+	 * @version 1.0
+	 * @see FormPage
+	 */
+	public class AllFormPages extends FragmentPagerAdapter {
+		
+		
+		/** Represents the total number of pages */
+		final static int PAGE_COUNT = 2;
+		
+		/**
+		 * Constructor of the class.
+		 * 
+		 * @param fm the FragmentManager
+		 */
+		public AllFormPages(FragmentManager fm) {
+		
+			super(fm);
+		}
+		
+		@Override
+		public Fragment getItem(int i) {
+		
+			final Fragment formPage = new FormPage();
+			final Bundle arguments = new Bundle();
+			arguments.putInt(FormPage.KEY_PAGE_ID, i + 1);
+			formPage.setArguments(arguments);
+			return formPage;
+		}
+		
+		@Override
+		public int getCount() {
+		
+			return PAGE_COUNT;
+		}
+		
+		@Override
+		public CharSequence getPageTitle(int position) {
+		
+			//TODO Modify according to the real ID and layout
+			switch (position + 1) {
+				case 1:
+					return "Imposition";
+				case 2:
+					return "Revente";
+				default:
+					return "Imposition";
+			}
+		}
+	}
+	
+	/**
+	 * Instances of this class are fragments representing a single object in our
+	 * collection.
+	 * 
+	 * @author Aurelien Ticot
+	 * @version 1.0
+	 * @see AllFormPages
+	 */
+	public static class FormPage extends Fragment {
+		
+		
+		/** Key use for the argument "page id". */
+		public static final String KEY_PAGE_ID = "PAGE";
+		
+		/**
+		 * Variable representing the ID of the page. The correspondance is the following:
+		 * <ul>
+		 * <li>1 = Acquisition</li>
+		 * <li>2 = Gestion</li>
+		 * <li>3 = Imposition</li>
+		 * <li>4 = CashFlow</li>
+		 * <li>5 = Revente</li>
+		 * <li>6 = Evolution</li>
+		 * </ul>
+		 * */
+		public static int PAGE_ID = 0;
+		
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+		
+			//Get the ID from the arguments, then choose the layout according to.
+			final Bundle arguments = getArguments();
+			PAGE_ID = arguments.getInt(KEY_PAGE_ID);
+			return inflater.inflate(getLayoutID(PAGE_ID), container, false);
+		}
+		
+		/**
+		 * Method to get the ID of the layout from the ID of the page
+		 * 
+		 * @param i the ID of the page.
+		 * @return the ID of the layout.
+		 */
+		private int getLayoutID(int id) {
+		
+			//TODO Modify according to the real ID and layout
+			switch (id) {
+				case 1:
+					return R.layout.fragment_imposition;
+				case 2:
+					return R.layout.fragment_revente;
+				default:
+					return R.layout.fragment_imposition;
+			}
+			
+		}
+	}
+	
 	//==============================================================================
 	//Methods
 	//==============================================================================
@@ -88,6 +211,15 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		//Build the UI
 		setContentView(R.layout.activity_main);
+		
+		/* */
+		final ViewPager pager = (ViewPager) findViewById(R.id.pager);
+		
+		final FragmentManager fm = getSupportFragmentManager();
+		
+		final AllFormPages myAllFormPages = new AllFormPages(fm);
+		
+		pager.setAdapter(myAllFormPages);
 		
 		PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preference, false);
 		
