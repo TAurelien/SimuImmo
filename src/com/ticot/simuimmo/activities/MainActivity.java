@@ -26,6 +26,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,6 +38,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.ticot.simuimmo.BuildConfig;
 import com.ticot.simuimmo.R;
 import com.ticot.simuimmo.calculs.CalculsAcquisition;
 import com.ticot.simuimmo.model.Backup;
@@ -85,7 +87,7 @@ public class MainActivity extends FragmentActivity {
 	
 	//==================
 	//Tests
-	//==================	
+	//==================
 	
 	/**
 	 * This class represents a collection of objects representing all the pages. Each page
@@ -99,7 +101,7 @@ public class MainActivity extends FragmentActivity {
 		
 		
 		/** Represents the total number of pages */
-		final static int PAGE_COUNT = 2;
+		final static int PAGE_COUNT = 3;
 		
 		/**
 		 * Constructor of the class.
@@ -131,13 +133,16 @@ public class MainActivity extends FragmentActivity {
 		public CharSequence getPageTitle(int position) {
 		
 			//TODO Modify according to the real ID and layout
+			//TODO Change hardcoded string to Ressources
 			switch (position + 1) {
 				case 1:
-					return "Imposition";
+					return "Acquisition";
 				case 2:
+					return "Imposition";
+				case 3:
 					return "Revente";
 				default:
-					return "Imposition";
+					return "Acquisition";
 			}
 		}
 	}
@@ -176,6 +181,9 @@ public class MainActivity extends FragmentActivity {
 			//Get the ID from the arguments, then choose the layout according to.
 			final Bundle arguments = getArguments();
 			PAGE_ID = arguments.getInt(KEY_PAGE_ID);
+			if (BuildConfig.DEBUG) { //DEBUG
+				Log.i("Testing", "FormPage onCreateView " + PAGE_ID);
+			}
 			return inflater.inflate(getLayoutID(PAGE_ID), container, false);
 		}
 		
@@ -190,8 +198,10 @@ public class MainActivity extends FragmentActivity {
 			//TODO Modify according to the real ID and layout
 			switch (id) {
 				case 1:
-					return R.layout.fragment_imposition;
+					return R.layout.fragment_acquisition;
 				case 2:
+					return R.layout.fragment_imposition;
+				case 3:
 					return R.layout.fragment_revente;
 				default:
 					return R.layout.fragment_imposition;
@@ -212,30 +222,37 @@ public class MainActivity extends FragmentActivity {
 		//Build the UI
 		setContentView(R.layout.activity_main);
 		
-		/* */
+		if (BuildConfig.DEBUG) { //DEBUG
+			Log.i("Testing", "onCreate after setContentView");
+		}
+		
 		final ViewPager pager = (ViewPager) findViewById(R.id.pager);
-		
 		final FragmentManager fm = getSupportFragmentManager();
-		
 		final AllFormPages myAllFormPages = new AllFormPages(fm);
-		
 		pager.setAdapter(myAllFormPages);
+		
+		if (BuildConfig.DEBUG) { //DEBUG
+			Log.i("Testing", "onCreate after pager");
+		}
 		
 		PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preference, false);
 		
 		//retreive the previous session
 		if (savedInstanceState != null) {
 			AcquisitionCollpased = !savedInstanceState.getBoolean(KEY_BACKUP_collapsed);
-			collapseUI(findViewById(R.id.btn_CollapseAcquisitionFields));
+			//collapseUI(findViewById(R.id.btn_CollapseAcquisitionFields));
 			backupCalcul = savedInstanceState.getBoolean(KEY_BACKUP_calcul);
 			if (savedInstanceState.getBoolean(KEY_BACKUP_calcul)) {
 				//If a calcul was performed, get the backed-up instance of Bien and display it in the UI.
 				bien = Backup.bienBackup;
-				fillComputedValues(bien.getAcquisition(), bien.getGestion());
+				//fillComputedValues(bien.getAcquisition(), bien.getGestion());
 			}
 			//restore also the state of the CheckBoxes for the real fields. 
-			restoreRealValueState(savedInstanceState
-					.getBooleanArray(KEY_BACKUP_realValueState));
+			//restoreRealValueState(savedInstanceState
+			//		.getBooleanArray(KEY_BACKUP_realValueState));
+		}
+		if (BuildConfig.DEBUG) { //DEBUG
+			Log.i("Testing", "onCreate after restoreBackup");
 		}
 	}
 	
@@ -608,6 +625,10 @@ public class MainActivity extends FragmentActivity {
 	
 		//Get the Form layout aggregating all fields
 		final LinearLayout ll = (LinearLayout) findViewById(R.id.layoutForm);
+		
+		if (ll == null) {
+			return;
+		}
 		
 		//Get all childs of the Form layout and check for each one if their tag is "Collapsable"
 		for (int i = 0; i < ll.getChildCount(); i++) {
