@@ -1,848 +1,485 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-   xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutScrollForm"
-    android:scrollbars="vertical|none"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    style="@style/Form.ScrollView" >
     
     <LinearLayout
         android:id="@+id/layoutForm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-       	android:layout_marginLeft="8dp"
-    	android:layout_marginRight="8dp" >
+        style="@style/Form.LinearLayoutForm" >
         
         <TextView
-            android:tag="AlwaysShown"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/category_label_paddingleft"
-            android:text="@string/frais_acquisition"
-            android:textAlignment="center"
-            android:textColor="@color/blue_light"
-            android:textSize="@dimen/large_text_size" />
-
+            style="@style/Form.CategoryLabel"
+            android:text="@string/frais_acquisition" />
+        
         <LinearLayout
             android:id="@+id/LayoutPrixFAI"
-            android:tag="AlwaysShown"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            style="@style/Form.FieldLayout"
+            android:tag="AlwaysShown" >
 
             <TextView
                 android:id="@+id/tvPrixFAI"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valuePrixFAI"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/prix_fai"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valuePrixFAI" />
             
             <TextView
                 android:id="@+id/valuePrixFAI"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
+                style="@style/Form.FieldValue.TextView"
                 android:text=""
                 android:hint="@string/defaultValueZeroEuro"
-                android:gravity="right|center_vertical"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
                 android:visibility="gone" />
 
             <EditText
                 android:id="@+id/valueReelPrixFAI"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal"
                 android:text="@string/default_value_prix_fai"
-                android:textSize="@dimen/medium_text_size"
                 android:visibility="visible" />
             
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
                 
         <LinearLayout
             android:id="@+id/layoutNetVendeur"
-            android:visibility="gone"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvNetVendeur"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueNetVendeur"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/net_vendeur"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueNetVendeur" />
 
             <TextView
                 android:id="@+id/valueNetVendeur"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
+                style="@style/Form.FieldValue.TextView"
                 android:hint="@string/defaultValueZeroEuro"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical"
                 android:visibility="visible" />
             
      		<EditText
      		    android:id="@+id/valueReelNetVendeur"
+     		    style="@style/Form.FieldValue.EditText"
      		    android:tag="Optional"
-     		    android:layout_width="0dp"
-     		    android:layout_height="wrap_content"
-     		    android:layout_gravity="center_vertical"
-     		    android:layout_weight="1"
-     		    android:inputType="numberDecimal"
      		    android:text=""
-     		    android:textSize="@dimen/medium_text_size"
-     		    android:gravity="right|center_vertical"
      		    android:visibility="gone" />
             
 	        <CheckBox
 	            android:id="@+id/ReelNetVendeur"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:checked="false"
-	            android:onClick="switchRealField" />
+	            style="@style/Form.FieldRealCheckBox" />
 
         </LinearLayout>
         
         <LinearLayout
             android:id="@+id/layoutFraisAgence"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvFraisAgence"
-                android:layout_width="@dimen/field_label_with_option_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueFraisAgence"
+                style="@style/Form.FieldLabelTextView.WithOption"
                 android:text="@string/frais_agence"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueFraisAgence" />
             
             <CheckBox
                 android:id="@+id/valueAgence"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                style="@style/Form.FieldCheckBox"
                 android:checked="true" />
 
             <TextView
                 android:id="@+id/valueFraisAgence"
-                android:visibility="visible"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:paddingRight="@dimen/field_paddingRight"
+                style="@style/Form.FieldValue.TextView"
                 android:hint="@string/defaultValueZeroEuro"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical" />
+                android:visibility="visible" />
             
             <EditText
                 android:id="@+id/valueReelFraisAgence"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:visibility="gone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
                 android:text=""
-                android:inputType="numberDecimal" />
+                android:visibility="gone" />
             
 	        <CheckBox
 	            android:id="@+id/ReelFraisAgence"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:checked="false"
-	            android:onClick="switchRealField" />
+	            style="@style/Form.FieldRealCheckBox" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layoutFraisNotaire"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvFraisNotaire"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueFraisNotaire"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/frais_notaire"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueFraisNotaire" />
 
             <TextView
                 android:id="@+id/valueFraisNotaire"
-                android:visibility="visible"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:paddingRight="@dimen/field_paddingRight"
+                style="@style/Form.FieldValue.TextView"
                 android:hint="@string/defaultValueZeroEuro"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical" />
+                android:visibility="visible" />
             
             <EditText
                 android:id="@+id/valueReelFraisNotaire"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:visibility="gone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
                 android:text=""
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:visibility="gone" />
             
 	        <CheckBox
 	            android:id="@+id/ReelFraisNotaire"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:checked="false"
-	            android:onClick="switchRealField" />
+	            style="@style/Form.FieldRealCheckBox" />
         </LinearLayout>
         
         <LinearLayout
             android:id="@+id/LayoutTravaux"
-           	android:tag="AlwaysShown"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            style="@style/Form.FieldLayout"
+           	android:tag="AlwaysShown" >
 
             <TextView
                 android:id="@+id/tvTravaux"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueTravaux"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/travaux"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueTravaux" />
 
             <EditText
                 android:id="@+id/valueTravaux"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"
-                android:text="@string/default_value_travaux"
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:text="@string/default_value_travaux" />
 
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layoutAmenagement"
-            android:tag="AlwaysShown"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            style="@style/Form.FieldLayout"
+            android:tag="AlwaysShown" >
 
             <TextView
                 android:id="@+id/tvAmenagement"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueAmenagement"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/amenagement"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueAmenagement" />
 
             <EditText
                 android:id="@+id/valueAmenagement"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="@string/default_value_amenagement"
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:text="@string/default_value_amenagement" />
 
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"/>
+                style="@style/Form.FieldSpace"/>
         </LinearLayout>
         
         <LinearLayout
             android:id="@+id/layoutHonoraireConseil"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvHonoraireConseil"
-                android:layout_width="@dimen/field_label_with_option_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueHonoraireConseil"
+                style="@style/Form.FieldLabelTextView.WithOption"
                 android:text="@string/conseil"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueHonoraireConseil" />
 
 	        <CheckBox
 	            android:id="@+id/valueConseil"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
+	            style="@style/Form.FieldCheckBox"
 	            android:checked="false" />
             
             <TextView
                 android:id="@+id/valueHonoraireConseil"
-                android:visibility="visible"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingRight="@dimen/field_paddingRight"
+                style="@style/Form.FieldValue.TextView"
                 android:hint="@string/defaultValueZeroEuro"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical" />
+                android:visibility="visible" />
             
             <EditText
                 android:id="@+id/valueReelHonoraireConseil"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:visibility="gone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
                 android:text=""
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:visibility="gone" />
             
 	        <CheckBox
 	            android:id="@+id/ReelHonoraireConseil"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:checked="false"
-	            android:onClick="switchRealField" />
+	            style="@style/Form.FieldRealCheckBox" />
         </LinearLayout>
         
         <LinearLayout
             android:id="@+id/layoutAutresFrais"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvAutresFrais"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueAutresFrais"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/autres_frais"
-                android:textSize="@dimen/medium_text_size" />
-
+                android:labelFor="@+id/valueAutresFrais" />
+            
             <EditText
                 android:id="@+id/valueAutresFrais"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="@string/default_value_autres_frais"
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:text="@string/default_value_autres_frais" />
             
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layoutCoutTotal"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvCoutTotal"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueCoutTotal"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/cout_total"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueCoutTotal" />
 
             <TextView
                 android:id="@+id/valueCoutTotal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:textIsSelectable="true"
-                android:hint="@string/defaultValueZeroEuro" />
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
             
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
         
         <LinearLayout
             android:id="@+id/layoutApport"
-            android:tag="AlwaysShown"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            style="@style/Form.FieldLayout"
+            android:tag="AlwaysShown" >
 
             <TextView
                 android:id="@+id/tvApport"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:labelFor="@+id/valueApport"
-                android:text="@string/apport"
-                android:textSize="@dimen/medium_text_size" />
+                android:text="@string/apport" />
 
             <EditText
                 android:id="@+id/valueApport"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="@string/default_value_apport"
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:text="@string/default_value_apport" />
 
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layoutSequestre"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvSequestre"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueSequestre"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/sequestre"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueSequestre" />
 
             <TextView
                 android:id="@+id/valueSequestre"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical"
-                android:hint="@string/defaultValueZeroEuro" />
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
             
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
         
        	<TextView
-       	    android:tag="AlwaysShown"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="@dimen/category_label_paddingleft"
-            android:text="@string/emprunt"
-            android:textSize="@dimen/large_text_size"
-            android:textAlignment="center"
-            android:textColor="@color/blue_light" />
+       	    style="@style/Form.CategoryLabel"
+            android:text="@string/emprunt" />
         
         <LinearLayout
             android:id="@+id/layoutCapitalEmprunte"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvCapitalEmprunte"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueCapitalEmprunte"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/capital_emprunte"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueCapitalEmprunte" />
 
             <TextView
                 android:id="@+id/valueCapitalEmprunte"
-                android:visibility="visible"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingRight="@dimen/field_paddingRight"
+                style="@style/Form.FieldValue.TextView"
                 android:hint="@string/defaultValueZeroEuro"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical" />
+                android:visibility="visible" />
             
             <EditText
                 android:id="@+id/valueReelCapitalEmprunte"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:visibility="gone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
                 android:text=""
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:visibility="gone" />
             
 	        <CheckBox
 	            android:id="@+id/ReelCapitalEmprunte"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:checked="false"
-	            android:onClick="switchRealField" />
+	            style="@style/Form.FieldRealCheckBox" />
         </LinearLayout>
        	
        	
         <LinearLayout
             android:id="@+id/layoutDureeCredit"
-            android:tag="AlwaysShown"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            style="@style/Form.FieldLayout"
+            android:tag="AlwaysShown" >
 
             <TextView
                 android:id="@+id/tvDureeCredit"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueDureeCredit"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/duree_du_credit"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueDureeCredit" />
 
             <EditText
                 android:id="@+id/valueDureeCredit"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="@string/default_value_duree_credit"
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:text="@string/default_value_duree_credit" />
 
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
          </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layoutNbMensualite"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvNbMensualite"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueNbMensualite"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/nombre_mensualite"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueNbMensualite" />
 
             <TextView
                 android:id="@+id/valueNbMensualite"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical"
-                android:hint="@string/defaultValueZero" />
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZero"
+                android:visibility="visible" />
             
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layoutTauxCredit"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvTauxCredit"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueTauxCredit"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/taux_de_credit"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueTauxCredit" />
 
             <TextView
                 android:id="@+id/valueTauxCredit"
-                android:visibility="visible"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical"
-                android:hint="@string/defaultValueZeroPer" />
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroPer"
+                android:visibility="visible" />
             
             <EditText
                 android:id="@+id/valueReelTauxCredit"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:visibility="gone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
                 android:text=""
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:visibility="gone" />
             
 	        <CheckBox
 	            android:id="@+id/ReelTauxCredit"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:checked="false"
-	            android:onClick="switchRealField" />
+	            style="@style/Form.FieldRealCheckBox" />
         </LinearLayout>
         
         <LinearLayout
             android:id="@+id/layoutTauxAssurance"
+            style="@style/Form.FieldLayout"
             android:tag="Collapsable"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvTauxAssurance"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueTauxAssurance"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/taux_assurance"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueTauxAssurance" />
 
             <TextView
                 android:id="@+id/valueTauxAssurance"
-                android:visibility="visible"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical"
-                android:hint="@string/defaultValueZeroPer" />
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroPer"
+                android:visibility="visible" />
             
             <EditText
                 android:id="@+id/valueReelTauxAssurance"
+                style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:visibility="gone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
                 android:text=""
-                android:textSize="@dimen/medium_text_size"
-                android:gravity="right|center_vertical"
-                android:inputType="numberDecimal" />
+                android:visibility="gone" />
             
 	        <CheckBox
 	            android:id="@+id/ReelTauxAssurance"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_gravity="center_vertical"
-	            android:checked="false"
-	            android:onClick="switchRealField" />
+	            style="@style/Form.FieldRealCheckBox" />
         </LinearLayout>
         
 	    <LinearLayout
             android:id="@+id/layoutMensualite"
-            android:tag="AlwaysShown"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            style="@style/Form.FieldLayout"
+            android:tag="AlwaysShown" >
 
             <TextView
                 android:id="@+id/tvMensualite"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueMensualite"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/mensualite"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueMensualite"/>
 
             <TextView
                 android:id="@+id/valueMensualite"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:gravity="right|center_vertical"
+                style="@style/Form.FieldValue.TextView"
                 android:hint="@string/defaultValueZeroEuro"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textIsSelectable="true"
-                android:textSize="@dimen/medium_text_size" />
+                android:visibility="visible" />
             
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
         
         <LinearLayout
             android:id="@+id/layoutTauxEndettement"
+            style="@style/Form.FieldLayout"
             android:tag="Gone"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/item_height"
-            android:layout_marginRight="@dimen/item_marginRight"
-            android:orientation="horizontal" >
+            android:visibility="gone" >
 
             <TextView
                 android:id="@+id/tvTauxEndettement"
-                android:layout_width="@dimen/field_label_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="@dimen/field_label_paddingleft"
-                android:labelFor="@+id/valueTauxEndettement"
+                style="@style/Form.FieldLabelTextView.NoOption"
                 android:text="@string/taux_endettement"
-                android:textSize="@dimen/medium_text_size" />
+                android:labelFor="@+id/valueTauxEndettement" />
 
             <TextView
                 android:id="@+id/valueTauxEndettement"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:paddingRight="@dimen/field_paddingRight"
-                android:textSize="@dimen/medium_text_size"
-                android:textIsSelectable="true"
-                android:gravity="right|center_vertical"
-                android:hint="@string/defaultValueZeroEuro" />
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
             
             <View
-                android:layout_width="@dimen/field_emptyView_width"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical" />
+                style="@style/Form.FieldSpace" />
         </LinearLayout>
         
     </LinearLayout>

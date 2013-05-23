@@ -13,7 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  -->
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -31,5 +31,91 @@ limitations under the License.
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-
+    
+    <style name="Form">
+    </style>
+    
+    <style name="Form.ScrollView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scrollbars">vertical|none</item>
+    </style>
+    
+    <style name="Form.LinearLayoutForm">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="Form.CategoryLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/category_label_paddingleft</item>
+        <item name="android:textColor">@color/blue_light</item>
+        <item name="android:textSize">@dimen/large_text_size</item>
+        <item name="android:tag">AlwaysShown</item>
+    </style>
+    
+    <style name="Form.FieldLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/item_height</item>
+        <item name="android:layout_marginRight">@dimen/item_marginRight</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <style name="Form.FieldLabelTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingLeft">@dimen/field_label_paddingleft</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+    
+    <style name="Form.FieldLabelTextView.NoOption">
+        <item name="android:layout_width">@dimen/field_label_width</item>
+    </style>
+    
+    <style name="Form.FieldLabelTextView.WithOption">
+        <item name="android:layout_width">@dimen/field_label_with_option_width</item>
+    </style>
+    
+    <style name="Form.FieldCheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    
+    <style name="Form.FieldValue">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+    
+    <style name="Form.FieldValue.TextView">
+        <item name="android:paddingRight">@dimen/field_paddingRight</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+    
+    <style name="Form.FieldValue.EditText">
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+    
+    <style name="Form.FieldRealCheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:checked">false</item>
+        <item name="android:onClick">switchRealField</item>
+    </style>
+    
+    <style name="Form.FieldSpace">
+        <item name="android:layout_width">@dimen/field_emptyView_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    
 </resources>
