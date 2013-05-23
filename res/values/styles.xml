@@ -66,11 +66,14 @@ limitations under the License.
     </style>
     
     <style name="Form.FieldLabelTextView">
-        <item name="android:layout_width">@dimen/field_label_width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/field_label_paddingleft</item>
         <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+    
+    <style name="Form.FieldLabelTextView.NoOption">
+        <item name="android:layout_width">@dimen/field_label_width</item>
     </style>
     
     <style name="Form.FieldLabelTextView.WithOption">
@@ -114,9 +117,5 @@ limitations under the License.
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_gravity">center_vertical</item>
     </style>
-    
-    
-    
-    
     
 </resources>
