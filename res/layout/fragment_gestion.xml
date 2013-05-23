@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Copyright (C) 2013 Aurelien Ticot
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutScrollForm"
+    style="@style/Form.ScrollView" >
+    
+    <LinearLayout
+        android:id="@+id/layoutForm"
+        style="@style/Form.LinearLayoutForm" >
+        
+        <TextView
+            style="@style/Form.CategoryLabel"
+            android:text="@string/type_de_gestion" />
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutTypeGestion"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvTypeGestion"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/type_de_gestion"
+                android:labelFor="@+id/valueTypeGestion" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueTypeGestion"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_type_gestion"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <TextView
+            style="@style/Form.CategoryLabel"
+            android:text="@string/recette_locative" />
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutLoyerNu"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvLoyerNu"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/loyer_location_nue"
+                android:labelFor="@+id/valueLoyerNu" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueLoyerNu"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_loyer_location_nue"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutLoyerMeuble"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvLoyerMeuble"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/loyer_location_meuble"
+                android:labelFor="@+id/valueLoyerMeuble" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueLoyerMeuble"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_loyer_location_meublee"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutVacanceLocAn"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvVacanceLocAn"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/vacance_locative_annuelle"
+                android:labelFor="@+id/valueVacanceLocAn" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueVacanceLocAn"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_vacance_locative_annuelle"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutLoyerNuit"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvLoyerNuit"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/loyer_nuite"
+                android:labelFor="@+id/valueLoyerNuit" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility -->
+            <EditText
+                android:id="@+id/valueLoyerNuit"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_loyer_nuitee"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutVacanceLocSais"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvVacanceLocSais"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/vacance_locative_saisonniere"
+                android:labelFor="@+id/valueVacanceLocSais" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueVacanceLocSais"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_vacance_locative_saisonniere"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutLoyerSais"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvLoyerSais"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/loyer_saisonnier"
+                android:labelFor="@+id/valueLoyerSais" />
+            
+            <!-- TODO update visibility-->
+            <TextView
+                android:id="@+id/valueLoyerSais"
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility -->
+        <LinearLayout
+            android:id="@+id/LayoutRevenuLoc"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvRevenuLoc"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/revenu_locatif"
+                android:labelFor="@+id/valueRevenuLoc" />
+            
+            <!-- TODO update visibility-->
+            <TextView
+                android:id="@+id/valueRevenuLoc"
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <TextView
+            style="@style/Form.CategoryLabel"
+            android:text="@string/frais_annuels" />
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutChargesFixe"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvChargesFixe"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/charges_fixe"
+                android:labelFor="@+id/valueChargesFixe" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility -->
+            <EditText
+                android:id="@+id/valueChargesFixe"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_charges_fixe"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutTaxeFonciere"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvTaxeFonciere"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/taxe_fonciere"
+                android:labelFor="@+id/valueTaxeFonciere" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueTaxeFonciere"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_taxe_fonciere"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutAssurance"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvAssurance"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/assurance"
+                android:labelFor="@+id/valueAssurance" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueAssurance"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_assurance"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutTravauxAnnuels"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvTravauxAnnuels"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/travaux_annuels"
+                android:labelFor="@+id/valueTravauxAnnuels" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueTravauxAnnuels"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_travaux_annuels"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutTaxeHabitation"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvTaxeHabitation"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/taxe_habitation"
+                android:labelFor="@+id/valueTaxeHabitation" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility -->
+            <EditText
+                android:id="@+id/valueTaxeHabitation"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text="@string/default_value_taxe_habitation"
+                android:visibility="visible" />
+            
+            <View
+                style="@style/Form.FieldSpace" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutChargesAnnuelles"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvChargesAnnuelles"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/charges_annuelles"
+                android:labelFor="@+id/valueChargesAnnuelles" />
+            
+            <!-- TODO update visibility-->
+            <TextView
+                android:id="@+id/valueChargesAnnuelles"
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+     		<EditText
+     		    android:id="@+id/valueReelChargesAnnuelles"
+     		    style="@style/Form.FieldValue.EditText"
+     		    android:tag="Mandatory"
+     		    android:text=""
+     		    android:visibility="gone" />
+            
+	        <CheckBox
+	            android:id="@+id/ReelChargesAnnuelles"
+	            style="@style/Form.FieldRealCheckBox" />
+        </LinearLayout>
+        
+        <TextView
+            style="@style/Form.CategoryLabel"
+            android:text="@string/frais_pour_location_annuelle" />
+        
+        
+        
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/layoutFraisGestion"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/tvFraisGestion"
+                style="@style/Form.FieldLabelTextView.WithOption"
+                android:text="@string/frais_de_gestion"
+                android:labelFor="@+id/valueFraisGestion" />
+            
+            <CheckBox
+                android:id="@+id/valueGestion"
+                style="@style/Form.FieldCheckBox"
+                android:checked="true" />
+            
+            <!-- TODO update visibility-->
+            <TextView
+                android:id="@+id/valueFraisGestion"
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+            <EditText
+                android:id="@+id/valueReelFraisGestion"
+                style="@style/Form.FieldValue.EditText"
+                android:tag="Mandatory"
+                android:text=""
+                android:visibility="gone" />
+            
+	        <CheckBox
+	            android:id="@+id/ReelFraisGestion"
+	            style="@style/Form.FieldRealCheckBox" />
+        </LinearLayout>
+        
+        <TextView
+            style="@style/Form.CategoryLabel"
+            android:text="@string/frais_pour_location_saisonniere" />
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutFraisAccueil"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvFraisAccueil"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/frais_accueil"
+                android:labelFor="@+id/valueFraisAccueil" />
+            
+            <!-- TODO update visibility-->
+            <TextView
+                android:id="@+id/valueFraisAccueil"
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+     		<EditText
+     		    android:id="@+id/valueReelFraisAccueil"
+     		    style="@style/Form.FieldValue.EditText"
+     		    android:tag="Mandatory"
+     		    android:text=""
+     		    android:visibility="gone" />
+            
+	        <CheckBox
+	            android:id="@+id/ReelFraisAccueil"
+	            style="@style/Form.FieldRealCheckBox" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutFraisMenage"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvFraisMenage"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/frais_menage"
+                android:labelFor="@+id/valueMenage" />
+            
+            <!-- TODO update visibility-->
+            <TextView
+                android:id="@+id/valueFraisMenage"
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+     		<EditText
+     		    android:id="@+id/valueReelFraisMenage"
+     		    style="@style/Form.FieldValue.EditText"
+     		    android:tag="Mandatory"
+     		    android:text=""
+     		    android:visibility="gone" />
+            
+	        <CheckBox
+	            android:id="@+id/ReelFraisMenage"
+	            style="@style/Form.FieldRealCheckBox" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+        <LinearLayout
+            android:id="@+id/LayoutFraisGestionSais"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvFraisGestionSais"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/frais_gestion_saisonniere"
+                android:labelFor="@+id/valueFraisAccueil" />
+            
+            <!-- TODO update visibility-->
+            <TextView
+                android:id="@+id/valueFraisGestionSais"
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility-->
+     		<EditText
+     		    android:id="@+id/valueReelFraisGestionSais"
+     		    style="@style/Form.FieldValue.EditText"
+     		    android:tag="Mandatory"
+     		    android:text=""
+     		    android:visibility="gone" />
+            
+	        <CheckBox
+	            android:id="@+id/ReelFraisGestionSais"
+	            style="@style/Form.FieldRealCheckBox" />
+        </LinearLayout>
+        
+        <!-- TODO update tag AlwaysShown or Collapsable and visibility -->
+        <LinearLayout
+            android:id="@+id/LayoutChargesLocSais"
+            style="@style/Form.FieldLayout"
+            android:tag=""
+            android:visibility="visible" >
+            
+            <TextView
+                android:id="@+id/tvChargesLocSais"
+                style="@style/Form.FieldLabelTextView.NoOption"
+                android:text="@string/charges_location_saisonniere"
+                android:labelFor="@+id/valueChargesLocSais" />
+            
+            <!-- TODO update visibility-->
+            <TextView
+                android:id="@+id/valueChargesLocSais"
+                style="@style/Form.FieldValue.TextView"
+                android:hint="@string/defaultValueZeroEuro"
+                android:visibility="visible" />
+            
+            <!-- TODO update tag Mandatory or Optional and visibility -->
+     		<EditText
+     		    android:id="@+id/valueReelChargesLocSais"
+     		    style="@style/Form.FieldValue.EditText"
+     		    android:tag="Mandatory"
+     		    android:text=""
+     		    android:visibility="gone" />
+            
+	        <CheckBox
+	            android:id="@+id/ReelChargesLocSais"
+	            style="@style/Form.FieldRealCheckBox" />
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+</ScrollView>
