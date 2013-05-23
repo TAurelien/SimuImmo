@@ -17,8 +17,15 @@ limitations under the License.
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="UnusedResources">
     
-    <!--Texts UI main activity-->
+    <!-- Texts UI main activity -->
     <string name="app_name" translatable="false">Simulateur Immobilier</string>
+    
+    <!-- Texts UI action bar -->
+    <string name="afficher_plus" translatable="false">Afficher plus</string>
+    <string name="afficher_moins" translatable="false">Afficher moins</string>
+    <string name="calculer" translatable="false">Calculer</string>
+    
+    <!-- Texts UI acquisition -->
     <string name="frais_acquisition" translatable="false">Frais d\'acquisition</string>
     <string name="prix_fai" translatable="false">Prix FAI</string>
     <string name="net_vendeur" translatable="false">Net vendeur</string>
@@ -39,18 +46,37 @@ limitations under the License.
     <string name="taux_assurance" translatable="false">Taux d\'assurance</string>
     <string name="mensualite" translatable="false">Mensualité</string>
     <string name="taux_endettement" translatable="false">Taux d\'endettement</string>
-    <string name="afficher_plus" translatable="false">Afficher plus</string>
-    <string name="afficher_moins" translatable="false">Afficher moins</string>
-    <string name="calculer" translatable="false">Calculer</string>
     
     <!-- Texts UI gestion activity -->
+    <string name="type_de_gestion" translatable="false">Type de gestion</string>
+    <string name="recette_locative" translatable="false">Recette locative</string>
+    <string name="loyer_location_nue" translatable="false">Loyer location nue</string>
+    <string name="loyer_location_meuble" translatable="false">Loyer location meublée</string>
+    <string name="vacance_locative_annuelle" translatable="false">Vacance locative annuelle</string>
+    <string name="loyer_nuite" translatable="false">Loyer nuitée</string>
+    <string name="vacance_locative_saisonniere" translatable="false">Vacance locative saisonnière</string>
+    <string name="loyer_saisonnier" translatable="false">Loyer saisonnier</string>
+    <string name="frais_annuels" translatable="false">Frais annuels</string>
+    <string name="charges_fixe" translatable="false">Charges Fixes</string>
+    <string name="revenu_locatif" translatable="false">Revenu locatif</string>
+    <string name="taxe_fonciere" translatable="false">Taxe foncière</string>
+    <string name="assurance" translatable="false">Assurance location</string>
+    <string name="travaux_annuels" translatable="false">Travaux annuels</string>
+    <string name="taxe_habitation" translatable="false">Taxe habitation</string>
+    <string name="charges_annuelles" translatable="false">Charges annuelles</string>
+    <string name="frais_pour_location_annuelle" translatable="false">Frais de location annuelle</string>
+    <string name="frais_de_gestion" translatable="false">Frais de gestion</string>
+    <string name="frais_pour_location_saisonniere" translatable="false">Frais de location saisonnière</string>
+    <string name="frais_accueil" translatable="false">Frais d\'accueil</string>
+    <string name="frais_menage" translatable="false">Frais de ménage</string>
+    <string name="frais_gestion_saisonniere" translatable="false">Frais de gestion saisonnière</string>
+    <string name="charges_location_saisonniere" translatable="false">Charges de location saisonnière</string>
     
-    
-    <!--Texts UI main activity > Menu -->
+    <!-- Texts UI main activity > Menu -->
     <string name="menu_settings">Paramètres</string>
     <string name="menu_about">A propos</string>
     
-    <!--Texts UI Preference activity-->
+    <!-- Texts UI Preference activity -->
     <string name="preferenceTitle_acquisition" translatable="false">Acquisition</string>
     <string name="preferenceSum_acquisition" translatable="false">Definir les variables pour la partie Acquisition</string>
     <string name="preferenceTitle_application_parameters" translatable="false">Paramètres d\'application</string>
@@ -84,8 +110,7 @@ limitations under the License.
     <string name="about_description">Cette application a pour but de simuler les différentes parties d\'un investissement immobilier.</string>
     <string name="about_termOfUse">Cette application est fournie a titre informatif uniquement. L\'auteur ne pourrait être tenu responsable de quelconques actions réalisées par l\'utilisateur suivant l\'utilisation de cette application.</string>
  
-    <!--Messages-->
+    <!-- Messages -->
     <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>
-    
-    
+
 </resources>

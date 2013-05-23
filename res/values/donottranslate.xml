@@ -17,10 +17,12 @@ limitations under the License.
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="UnusedResources">
     
-    <!--Default values-->
+    <!-- Default values Hint -->
     <string name="defaultValueZeroEuro">0,00 €</string>
     <string name="defaultValueZeroPer">0,00 %</string>
     <string name="defaultValueZero">0</string>
+    
+    <!-- Default values EditText Acquisition -->
     <string name="default_value_prix_fai">0,00 €</string>
     <string name="default_value_amenagement">0,00 €</string>
     <string name="default_value_travaux">0,00 €</string>
@@ -28,7 +30,20 @@ limitations under the License.
     <string name="default_value_apport">0,00 €</string>
     <string name="default_value_duree_credit">25</string>
     
-    <!--Default values for preferences-->
+    <!-- Default values EditText Gestion -->
+    <string name="default_value_type_gestion">0,00 €</string>
+    <string name="default_value_loyer_location_nue">0,00 €</string>
+    <string name="default_value_loyer_location_meublee">0,00 €</string>
+    <string name="default_value_vacance_locative_annuelle">0</string>
+    <string name="default_value_loyer_nuitee">0,00 €</string>
+    <string name="default_value_vacance_locative_saisonniere">0</string>
+    <string name="default_value_charges_fixe">0,00 €</string>
+    <string name="default_value_taxe_fonciere">0,00 €</string>
+    <string name="default_value_assurance">0,00 €</string>
+    <string name="default_value_travaux_annuels">0,00 €</string>
+    <string name="default_value_taxe_habitation">0,00 €</string>
+    
+    <!-- Default values for preferences -->
     <string name="defaultPreferencePourcentageFraisAgence">0.075</string>
     <string name="defaultPreferencePourcentageFraisNotaire">0.075</string>
     <string name="defaultPreferencePourcentageHonorairesConseil">0.08</string>

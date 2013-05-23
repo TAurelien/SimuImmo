@@ -33,7 +33,7 @@ limitations under the License.
 	        
 	        <TextView
 	            style="@style/Form.CategoryLabel"
-	            android:text="Type de gestion" />
+	            android:text="@string/type_de_gestion" />
 	        
 	        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
 	        <LinearLayout
@@ -45,7 +45,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvTypeGestion"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Type de gestion"
+	                android:text="@string/type_de_gestion"
 	                android:labelFor="@+id/valueTypeGestion" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -53,7 +53,7 @@ limitations under the License.
 	                android:id="@+id/valueTypeGestion"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Type de gestion"
+	                android:text="@string/default_value_type_gestion"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -62,7 +62,7 @@ limitations under the License.
 	        
 	        <TextView
 	            style="@style/Form.CategoryLabel"
-	            android:text="Recette locative" />
+	            android:text="@string/recette_locative" />
 	        
 	        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
 	        <LinearLayout
@@ -74,7 +74,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvLoyerNu"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Loyer location nue"
+	                android:text="@string/loyer_location_nue"
 	                android:labelFor="@+id/valueLoyerNu" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -82,7 +82,7 @@ limitations under the License.
 	                android:id="@+id/valueLoyerNu"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Loyer location nue"
+	                android:text="@string/default_value_loyer_location_nue"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -99,7 +99,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvLoyerMeuble"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Loyer location meublé"
+	                android:text="@string/loyer_location_meuble"
 	                android:labelFor="@+id/valueLoyerMeuble" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -107,7 +107,7 @@ limitations under the License.
 	                android:id="@+id/valueLoyerMeuble"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Loyer location meublé"
+	                android:text="@string/default_value_loyer_location_meublee"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -124,7 +124,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvVacanceLocAn"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Vacance locative annuelle"
+	                android:text="@string/vacance_locative_annuelle"
 	                android:labelFor="@+id/valueVacanceLocAn" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -132,7 +132,7 @@ limitations under the License.
 	                android:id="@+id/valueVacanceLocAn"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Vacance locative annuelle"
+	                android:text="@string/default_value_vacance_locative_annuelle"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -149,15 +149,15 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvLoyerNuit"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Loyer nuité"
+	                android:text="@string/loyer_nuite"
 	                android:labelFor="@+id/valueLoyerNuit" />
 	            
-	            <!-- TODO update tag Mandatory or Optional and visibility-->
+	            <!-- TODO update tag Mandatory or Optional and visibility -->
 	            <EditText
 	                android:id="@+id/valueLoyerNuit"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Loyer nuité"
+	                android:text="@string/default_value_loyer_nuitee"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -174,7 +174,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvVacanceLocSais"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Vacance locative saisonnière"
+	                android:text="@string/vacance_locative_saisonniere"
 	                android:labelFor="@+id/valueVacanceLocSais" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -182,7 +182,7 @@ limitations under the License.
 	                android:id="@+id/valueVacanceLocSais"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Vacance locative saisonnière"
+	                android:text="@string/default_value_vacance_locative_saisonniere"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -199,21 +199,21 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvLoyerSais"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Loyer saisonnier"
+	                android:text="@string/loyer_saisonnier"
 	                android:labelFor="@+id/valueLoyerSais" />
 	            
 	            <!-- TODO update visibility-->
 	            <TextView
 	                android:id="@+id/valueLoyerSais"
 	                style="@style/Form.FieldValue.TextView"
-	                android:hint="default hint Loyer saisonnier"
+	                android:hint="@string/defaultValueZeroEuro"
 	                android:visibility="visible" />
 	            
 	            <View
 	                style="@style/Form.FieldSpace" />
 	        </LinearLayout>
 	        
-	        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+	        <!-- TODO update tag AlwaysShown or Collapsable and visibility -->
 	        <LinearLayout
 	            android:id="@+id/LayoutRevenuLoc"
 	            style="@style/Form.FieldLayout"
@@ -223,14 +223,14 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvRevenuLoc"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Revenu locatif"
+	                android:text="@string/revenu_locatif"
 	                android:labelFor="@+id/valueRevenuLoc" />
 	            
 	            <!-- TODO update visibility-->
 	            <TextView
 	                android:id="@+id/valueRevenuLoc"
 	                style="@style/Form.FieldValue.TextView"
-	                android:hint="default hint Revenu locatif"
+	                android:hint="@string/defaultValueZeroEuro"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -239,7 +239,7 @@ limitations under the License.
 	        
 	        <TextView
 	            style="@style/Form.CategoryLabel"
-	            android:text="Frais annuels" />
+	            android:text="@string/frais_annuels" />
 	        
 	        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
 	        <LinearLayout
@@ -251,15 +251,15 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvChargesFixe"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Charges Fixe"
+	                android:text="@string/charges_fixe"
 	                android:labelFor="@+id/valueChargesFixe" />
 	            
-	            <!-- TODO update tag Mandatory or Optional and visibility-->
+	            <!-- TODO update tag Mandatory or Optional and visibility -->
 	            <EditText
 	                android:id="@+id/valueChargesFixe"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Charges Fixe"
+	                android:text="@string/default_value_charges_fixe"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -276,7 +276,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvTaxeFonciere"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Taxe foncière"
+	                android:text="@string/taxe_fonciere"
 	                android:labelFor="@+id/valueTaxeFonciere" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -284,7 +284,7 @@ limitations under the License.
 	                android:id="@+id/valueTaxeFonciere"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Taxe foncière"
+	                android:text="@string/default_value_taxe_fonciere"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -301,7 +301,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvAssurance"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Assurance"
+	                android:text="@string/assurance"
 	                android:labelFor="@+id/valueAssurance" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -309,7 +309,7 @@ limitations under the License.
 	                android:id="@+id/valueAssurance"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Assurance"
+	                android:text="@string/default_value_assurance"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -326,7 +326,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvTravauxAnnuels"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Travaux Annuels"
+	                android:text="@string/travaux_annuels"
 	                android:labelFor="@+id/valueTravauxAnnuels" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -334,7 +334,7 @@ limitations under the License.
 	                android:id="@+id/valueTravauxAnnuels"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value travaux annuels"
+	                android:text="@string/default_value_travaux_annuels"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -351,15 +351,15 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvTaxeHabitation"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Taxe habitation"
+	                android:text="@string/taxe_habitation"
 	                android:labelFor="@+id/valueTaxeHabitation" />
 	            
-	            <!-- TODO update tag Mandatory or Optional and visibility-->
+	            <!-- TODO update tag Mandatory or Optional and visibility -->
 	            <EditText
 	                android:id="@+id/valueTaxeHabitation"
 	                style="@style/Form.FieldValue.EditText"
 	                android:tag="Mandatory"
-	                android:text="default value Taxe habitation"
+	                android:text="@string/default_value_taxe_habitation"
 	                android:visibility="visible" />
 	            
 	            <View
@@ -376,14 +376,14 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvChargesAnnuelles"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Charges annuelles"
+	                android:text="@string/charges_annuelles"
 	                android:labelFor="@+id/valueChargesAnnuelles" />
 	            
 	            <!-- TODO update visibility-->
 	            <TextView
 	                android:id="@+id/valueChargesAnnuelles"
 	                style="@style/Form.FieldValue.TextView"
-	                android:hint="default hint Charges annuelles"
+	                android:hint="@string/defaultValueZeroEuro"
 	                android:visibility="visible" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -401,7 +401,7 @@ limitations under the License.
 	        
 	        <TextView
 	            style="@style/Form.CategoryLabel"
-	            android:text="Frais pour location annuelle" />
+	            android:text="@string/frais_pour_location_annuelle" />
 	        
 	        
 	        
@@ -416,7 +416,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvFraisGestion"
 	                style="@style/Form.FieldLabelTextView.WithOption"
-	                android:text="Frais de gestion"
+	                android:text="@string/frais_de_gestion"
 	                android:labelFor="@+id/valueFraisGestion" />
 	            
 	            <CheckBox
@@ -428,7 +428,7 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/valueFraisGestion"
 	                style="@style/Form.FieldValue.TextView"
-	                android:hint="default hint frais de gestion"
+	                android:hint="@string/defaultValueZeroEuro"
 	                android:visibility="visible" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -446,7 +446,7 @@ limitations under the License.
 	        
 	        <TextView
 	            style="@style/Form.CategoryLabel"
-	            android:text="Frais pour location saisonnière" />
+	            android:text="@string/frais_pour_location_saisonniere" />
 	        
 	        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
 	        <LinearLayout
@@ -458,14 +458,14 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvFraisAccueil"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Frais accueil"
+	                android:text="@string/frais_accueil"
 	                android:labelFor="@+id/valueFraisAccueil" />
 	            
 	            <!-- TODO update visibility-->
 	            <TextView
 	                android:id="@+id/valueFraisAccueil"
 	                style="@style/Form.FieldValue.TextView"
-	                android:hint="default hint Frais accueil"
+	                android:hint="@string/defaultValueZeroEuro"
 	                android:visibility="visible" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -491,14 +491,14 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvFraisMenage"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Frais menage"
+	                android:text="@string/frais_menage"
 	                android:labelFor="@+id/valueMenage" />
 	            
 	            <!-- TODO update visibility-->
 	            <TextView
 	                android:id="@+id/valueFraisMenage"
 	                style="@style/Form.FieldValue.TextView"
-	                android:hint="default hint Frais menage"
+	                android:hint="@string/defaultValueZeroEuro"
 	                android:visibility="visible" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -524,14 +524,14 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvFraisGestionSais"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Frais gestion saisonnière"
+	                android:text="@string/frais_gestion_saisonniere"
 	                android:labelFor="@+id/valueFraisAccueil" />
 	            
 	            <!-- TODO update visibility-->
 	            <TextView
 	                android:id="@+id/valueFraisGestionSais"
 	                style="@style/Form.FieldValue.TextView"
-	                android:hint="default hint Frais gestion saisonnière"
+	                android:hint="@string/defaultValueZeroEuro"
 	                android:visibility="visible" />
 	            
 	            <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -547,7 +547,7 @@ limitations under the License.
 		            style="@style/Form.FieldRealCheckBox" />
 	        </LinearLayout>
 	        
-	        <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
+	        <!-- TODO update tag AlwaysShown or Collapsable and visibility -->
 	        <LinearLayout
 	            android:id="@+id/LayoutChargesLocSais"
 	            style="@style/Form.FieldLayout"
@@ -557,17 +557,17 @@ limitations under the License.
 	            <TextView
 	                android:id="@+id/tvChargesLocSais"
 	                style="@style/Form.FieldLabelTextView.NoOption"
-	                android:text="Charges location saisonnière"
+	                android:text="@string/charges_location_saisonniere"
 	                android:labelFor="@+id/valueChargesLocSais" />
 	            
 	            <!-- TODO update visibility-->
 	            <TextView
 	                android:id="@+id/valueChargesLocSais"
 	                style="@style/Form.FieldValue.TextView"
-	                android:hint="default hint Charges location saisonnière"
+	                android:hint="@string/defaultValueZeroEuro"
 	                android:visibility="visible" />
 	            
-	            <!-- TODO update tag Mandatory or Optional and visibility-->
+	            <!-- TODO update tag Mandatory or Optional and visibility -->
 	     		<EditText
 	     		    android:id="@+id/valueReelChargesLocSais"
 	     		    style="@style/Form.FieldValue.EditText"
