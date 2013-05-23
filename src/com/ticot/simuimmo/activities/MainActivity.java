@@ -101,7 +101,7 @@ public class MainActivity extends FragmentActivity {
 		
 		
 		/** Represents the total number of pages */
-		final static int PAGE_COUNT = 3;
+		final static int PAGE_COUNT = 4;
 		
 		/**
 		 * Constructor of the class.
@@ -138,8 +138,10 @@ public class MainActivity extends FragmentActivity {
 				case 1:
 					return "Acquisition";
 				case 2:
-					return "Imposition";
+					return "Gestion";
 				case 3:
+					return "Imposition";
+				case 4:
 					return "Revente";
 				default:
 					return "Acquisition";
@@ -200,11 +202,13 @@ public class MainActivity extends FragmentActivity {
 				case 1:
 					return R.layout.fragment_acquisition;
 				case 2:
-					return R.layout.fragment_imposition;
+					return R.layout.fragment_gestion;
 				case 3:
+					return R.layout.fragment_imposition;
+				case 4:
 					return R.layout.fragment_revente;
 				default:
-					return R.layout.fragment_imposition;
+					return R.layout.fragment_acquisition;
 			}
 			
 		}
