@@ -27,11 +27,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -116,9 +114,9 @@ public class MainActivity extends FragmentActivity {
 		@Override
 		public Fragment getItem(int i) {
 		
-			final Fragment formPage = new FormPage();
+			final Fragment formPage = new FormPageFragment();
 			final Bundle arguments = new Bundle();
-			arguments.putInt(FormPage.KEY_PAGE_ID, i + 1);
+			arguments.putInt(FormPageFragment.KEY_PAGE_ID, i + 1);
 			formPage.setArguments(arguments);
 			return formPage;
 		}
@@ -149,71 +147,6 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 	
-	/**
-	 * Instances of this class are fragments representing a single object in our
-	 * collection.
-	 * 
-	 * @author Aurelien Ticot
-	 * @version 1.0
-	 * @see AllFormPages
-	 */
-	public static class FormPage extends Fragment {
-		
-		
-		/** Key use for the argument "page id". */
-		public static final String KEY_PAGE_ID = "PAGE";
-		
-		/**
-		 * Variable representing the ID of the page. The correspondance is the following:
-		 * <ul>
-		 * <li>1 = Acquisition</li>
-		 * <li>2 = Gestion</li>
-		 * <li>3 = Imposition</li>
-		 * <li>4 = CashFlow</li>
-		 * <li>5 = Revente</li>
-		 * <li>6 = Evolution</li>
-		 * </ul>
-		 * */
-		public static int PAGE_ID = 0;
-		
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-		
-			//Get the ID from the arguments, then choose the layout according to.
-			final Bundle arguments = getArguments();
-			PAGE_ID = arguments.getInt(KEY_PAGE_ID);
-			if (BuildConfig.DEBUG) { //DEBUG
-				Log.i("Testing", "FormPage onCreateView " + PAGE_ID);
-			}
-			return inflater.inflate(getLayoutID(PAGE_ID), container, false);
-		}
-		
-		/**
-		 * Method to get the ID of the layout from the ID of the page
-		 * 
-		 * @param i the ID of the page.
-		 * @return the ID of the layout.
-		 */
-		private int getLayoutID(int id) {
-		
-			//TODO Modify according to the real ID and layout
-			switch (id) {
-				case 1:
-					return R.layout.fragment_acquisition;
-				case 2:
-					return R.layout.fragment_gestion;
-				case 3:
-					return R.layout.fragment_imposition;
-				case 4:
-					return R.layout.fragment_revente;
-				default:
-					return R.layout.fragment_acquisition;
-			}
-			
-		}
-	}
-	
 	//==============================================================================
 	//Methods
 	//==============================================================================
@@ -227,7 +160,7 @@ public class MainActivity extends FragmentActivity {
 		setContentView(R.layout.activity_main);
 		
 		if (BuildConfig.DEBUG) { //DEBUG
-			Log.i("Testing", "onCreate after setContentView");
+			Log.d("Testing", "onCreate after setContentView");
 		}
 		
 		final ViewPager pager = (ViewPager) findViewById(R.id.pager);
@@ -236,7 +169,7 @@ public class MainActivity extends FragmentActivity {
 		pager.setAdapter(myAllFormPages);
 		
 		if (BuildConfig.DEBUG) { //DEBUG
-			Log.i("Testing", "onCreate after pager");
+			Log.d("Testing", "onCreate after pager");
 		}
 		
 		PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preference, false);
@@ -256,7 +189,7 @@ public class MainActivity extends FragmentActivity {
 			//		.getBooleanArray(KEY_BACKUP_realValueState));
 		}
 		if (BuildConfig.DEBUG) { //DEBUG
-			Log.i("Testing", "onCreate after restoreBackup");
+			Log.d("Testing", "onCreate after restoreBackup");
 		}
 	}
 	
