@@ -27,6 +27,12 @@ limitations under the License.
             style="@style/Form.CategoryLabel"
             android:text="Imposition" />
         
+        <include layout="@layout/component_form_field"
+            android:id="@+id/layoutTest"/>
+        
+        <include layout="@layout/component_form_field"
+            android:id="@+id/layoutTest2"/>
+        
 	</LinearLayout>
 
 </ScrollView>
