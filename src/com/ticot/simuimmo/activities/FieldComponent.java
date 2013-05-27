@@ -15,6 +15,7 @@
 package com.ticot.simuimmo.activities;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import com.ticot.simuimmo.BuildConfig;
 import com.ticot.simuimmo.R;
 
@@ -44,20 +46,34 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 		super(context, attrs);
 		final LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		
+		//Inflate the component layout
 		CONTAINER = inflater.inflate(R.layout.component_form_field, this);
 		
+		//Set up the listeners
 		((CheckBox) CONTAINER.findViewById(R.id.fieldReal))
 				.setOnCheckedChangeListener(this);
 		
+		//
+		final TypedArray arr = getContext().obtainStyledAttributes(attrs,
+				R.styleable.form_field);
+		final String xmlValue = arr.getString(R.styleable.form_field_test);
+		
+		if (BuildConfig.DEBUG) { //DEBUG
+			Log.d("Testing", "Affichage de TypedArray" + arr.toString());
+		}
+		
+		arr.recycle();
+		
+		setXMLValue(xmlValue);
 	}
 	
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 	
-		if (BuildConfig.DEBUG) { //DEBUG
-			Log.d("Testing", "in switch real field");
-		}
-		
+		//If it has been checked, turn TextView visibility to GONE, turn EditText
+		//visibility to VISIBLE, set focus to the EditText and Set the tag of the
+		//RealValue as mandatory
 		if (isChecked) {
 			CONTAINER.findViewById(R.id.fieldValue).setVisibility(8);
 			CONTAINER.findViewById(R.id.fieldRealValue).setVisibility(0);
@@ -70,6 +86,11 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 			CONTAINER.findViewById(R.id.fieldRealValue).setTag("Optional");
 		}
 		
+	}
+	
+	public void setXMLValue(String value) {
+	
+		((TextView) CONTAINER.findViewById(R.id.fieldName)).setText(value);
 	}
 	
 }

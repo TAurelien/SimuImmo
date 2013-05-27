@@ -14,11 +14,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fieldlayout"
-    style="@style/Form.FieldLayout"
-    android:tag="AlwaysShown"
-    android:visibility="visible" >
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fieldlayout" >
 
     <TextView
         android:id="@+id/fieldName"
@@ -52,4 +49,4 @@ limitations under the License.
         android:visibility="visible"
         android:onClick="switchRealField" />
     
-</LinearLayout>
+</merge>
