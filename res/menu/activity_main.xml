@@ -17,12 +17,12 @@ limitations under the License.
      <!-- TODO Rename as activity_main_menu.xml -->
      <item 
          android:id="@+id/menu_caluler"
-         android:orderInCategory="1"
+         android:orderInCategory="2"
          android:showAsAction="always|withText"
          android:title="@string/calculer" />
      <item 
          android:id="@+id/menu_collapse"
-         android:orderInCategory="2"
+         android:orderInCategory="1"
          android:showAsAction="always|withText"
          android:title="@string/expand"/>
      <item 
