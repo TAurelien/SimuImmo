@@ -17,21 +17,38 @@ limitations under the License.
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fieldlayout"
     style="@style/Form.FieldLayout"
-    android:tag="Collapsable"
+    android:tag="AlwaysShown"
     android:visibility="visible" >
 
     <TextView
         android:id="@+id/fieldName"
-        style="@style/Form.FieldLabelTextView.NoOption"
+        style="@style/Form.FieldLabelTextView.WithOption"
         android:text="Test"
         android:labelFor="@+id/fieldValue" />
+    
+    <CheckBox
+        android:id="@+id/fieldChoice"
+        style="@style/Form.FieldCheckBox"
+        android:checked="false" />
 
     <TextView
         android:id="@+id/fieldValue"
         style="@style/Form.FieldValue.TextView"
-        android:hint="@string/defaultValueZeroEuro"
+        android:hint="hint"
+        android:text=""
         android:visibility="visible" />
     
-    <View
-        style="@style/Form.FieldSpace" />
+    <EditText
+        android:id="@+id/fieldRealValue"
+        style="@style/Form.FieldValue.EditText"
+        android:tag="Optional"
+        android:text=""
+        android:hint="hint"
+        android:visibility="gone" />
+    
+    <CheckBox
+        android:id="@+id/fieldReal"
+        style="@style/Form.FieldRealCheckBox"
+        android:visibility="visible" />
+    
 </LinearLayout>
