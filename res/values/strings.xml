@@ -39,11 +39,11 @@ limitations under the License.
     <string name="taux_assurance" translatable="false">Taux d\'assurance</string>
     <string name="mensualite" translatable="false">Mensualité</string>
     <string name="taux_endettement" translatable="false">Taux d\'endettement</string>
-    <string name="afficher_plus" translatable="false">Afficher plus</string>
-    <string name="afficher_moins" translatable="false">Afficher moins</string>
-    <string name="calculer" translatable="false">Calculer</string>
     
     <!--Texts UI main activity > Menu -->
+    <string name="expand">Afficher plus</string>
+    <string name="collapse">Afficher moins</string>
+    <string name="calculer">Calculer</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_about">A propos</string>
     

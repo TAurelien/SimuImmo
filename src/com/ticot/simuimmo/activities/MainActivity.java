@@ -25,7 +25,6 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -94,7 +93,8 @@ public class MainActivity extends Activity {
 		//retreive the previous session
 		if (savedInstanceState != null) {
 			AcquisitionCollpased = !savedInstanceState.getBoolean(KEY_BACKUP_collapsed);
-			collapseUI(findViewById(R.id.btn_CollapseAcquisitionFields));
+			//TODO Remove reference to collapse button
+			//collapseUI(findViewById(R.id.btn_CollapseAcquisitionFields));
 			backupCalcul = savedInstanceState.getBoolean(KEY_BACKUP_calcul);
 			if (savedInstanceState.getBoolean(KEY_BACKUP_calcul)) {
 				//If a calcul was performed, get the backed-up instance of Bien and display it in the UI.
@@ -119,6 +119,18 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	
 		switch (item.getItemId()) {
+			case R.id.menu_caluler:
+				onClickCalcul();
+				return true;
+			case R.id.menu_collapse:
+				collapseUI();
+				if (AcquisitionCollpased) {
+					item.setTitle(R.string.expand);
+				}
+				else {
+					item.setTitle(R.string.collapse);
+				}
+				return true;
 			case R.id.menu_settings:
 				//Launch the activity "Preference"
 				startActivity(new Intent(".activities.AppPreferenceActivity"));
@@ -164,7 +176,7 @@ public class MainActivity extends Activity {
 	 * 
 	 * @since 1.0
 	 */
-	public void onClickCalcul(View view) {
+	public void onClickCalcul() {
 	
 		//Initialize the Mandatory variable
 		emptyMandatoryField = false;
@@ -472,7 +484,7 @@ public class MainActivity extends Activity {
 	 * 
 	 * @since 1.0
 	 */
-	public void collapseUI(View view) {
+	public void collapseUI() {
 	
 		//Get the Form layout aggregating all fields
 		final LinearLayout ll = (LinearLayout) findViewById(R.id.layoutForm);
@@ -497,11 +509,9 @@ public class MainActivity extends Activity {
 		//Finally update the global variable 
 		if (AcquisitionCollpased) {
 			AcquisitionCollpased = false;
-			((Button) view).setText(R.string.afficher_moins);
 		}
 		else {
 			AcquisitionCollpased = true;
-			((Button) view).setText(R.string.afficher_plus);
 		}
 	}
 	
