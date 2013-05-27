@@ -15,7 +15,17 @@ limitations under the License.
  -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
      <!-- TODO Rename as activity_main_menu.xml -->
-    <item 
+     <item 
+         android:id="@+id/menu_caluler"
+         android:orderInCategory="1"
+         android:showAsAction="always|withText"
+         android:title="@string/calculer" />
+     <item 
+         android:id="@+id/menu_collapse"
+         android:orderInCategory="2"
+         android:showAsAction="always|withText"
+         android:title="@string/expand"/>
+     <item 
         android:id="@+id/menu_settings" 
         android:orderInCategory="100" 
         android:showAsAction="never" 

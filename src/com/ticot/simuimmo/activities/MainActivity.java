@@ -94,7 +94,8 @@ public class MainActivity extends Activity {
 		//retreive the previous session
 		if (savedInstanceState != null) {
 			AcquisitionCollpased = !savedInstanceState.getBoolean(KEY_BACKUP_collapsed);
-			collapseUI(findViewById(R.id.btn_CollapseAcquisitionFields));
+			//TODO Remove reference to collapse button
+			//collapseUI(findViewById(R.id.btn_CollapseAcquisitionFields));
 			backupCalcul = savedInstanceState.getBoolean(KEY_BACKUP_calcul);
 			if (savedInstanceState.getBoolean(KEY_BACKUP_calcul)) {
 				//If a calcul was performed, get the backed-up instance of Bien and display it in the UI.
@@ -497,11 +498,11 @@ public class MainActivity extends Activity {
 		//Finally update the global variable 
 		if (AcquisitionCollpased) {
 			AcquisitionCollpased = false;
-			((Button) view).setText(R.string.afficher_moins);
+			((Button) view).setText(R.string.collapse);
 		}
 		else {
 			AcquisitionCollpased = true;
-			((Button) view).setText(R.string.afficher_plus);
+			((Button) view).setText(R.string.expand);
 		}
 	}
 	
