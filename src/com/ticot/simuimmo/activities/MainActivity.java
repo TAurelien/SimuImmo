@@ -98,9 +98,6 @@ public class MainActivity extends FragmentActivity {
 	public class AllFormPages extends FragmentPagerAdapter {
 		
 		
-		/** Represents the total number of pages */
-		final static int PAGE_COUNT = 4;
-		
 		/**
 		 * Constructor of the class.
 		 * 
@@ -124,26 +121,13 @@ public class MainActivity extends FragmentActivity {
 		@Override
 		public int getCount() {
 		
-			return PAGE_COUNT;
+			return FormPageFragment.PAGE_COUNT;
 		}
 		
 		@Override
 		public CharSequence getPageTitle(int position) {
 		
-			//TODO Modify according to the real ID and layout
-			//TODO Change hardcoded string to Ressources
-			switch (position + 1) {
-				case 1:
-					return "Acquisition";
-				case 2:
-					return "Gestion";
-				case 3:
-					return "Imposition";
-				case 4:
-					return "Revente";
-				default:
-					return "Acquisition";
-			}
+			return FormPageFragment.getPageTitle(position + 1);
 		}
 	}
 	
