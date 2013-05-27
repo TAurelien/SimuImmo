@@ -27,11 +27,15 @@ limitations under the License.
             style="@style/Form.CategoryLabel"
             android:text="Imposition" />
         
-        <include layout="@layout/component_form_field"
-            android:id="@+id/layoutTest"/>
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         
-        <include layout="@layout/component_form_field"
-            android:id="@+id/layoutTest2"/>
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/test2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         
 	</LinearLayout>
 

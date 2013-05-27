@@ -49,6 +49,7 @@ limitations under the License.
     <CheckBox
         android:id="@+id/fieldReal"
         style="@style/Form.FieldRealCheckBox"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:onClick="switchRealField" />
     
 </LinearLayout>
