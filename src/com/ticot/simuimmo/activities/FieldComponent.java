@@ -17,30 +17,48 @@ package com.ticot.simuimmo.activities;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.ticot.simuimmo.BuildConfig;
 import com.ticot.simuimmo.R;
 
+// TODO Write all javadoc
+/***/
 public class FieldComponent extends LinearLayout implements OnCheckedChangeListener {
 	
 	
-	/**
-	 * 
-	 */
+	//==============================================================================
+	//Variables declaration
+	//==============================================================================
+	
+	/***/
 	private final View CONTAINER;
 	
-	/**
-	 * 
-	 * @param context
-	 * @param attrs
-	 */
+	/***/
+	private Boolean collapsible = false;
+	
+	/***/
+	private Boolean mandatory = false;
+	
+	/***/
+	private Boolean mandatoryInitial = false;
+	
+	/***/
+	private Boolean choiceAvailable = false;
+	
+	/***/
+	private int fieldValueConfig = 1;
+	
+	//==============================================================================
+	//Methods
+	//==============================================================================
+	
+	/***/
 	public FieldComponent(Context context, AttributeSet attrs) {
 	
 		super(context, attrs);
@@ -51,46 +69,244 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 		CONTAINER = inflater.inflate(R.layout.component_form_field, this);
 		
 		//Set up the listeners
-		((CheckBox) CONTAINER.findViewById(R.id.fieldReal))
+		((CheckBox) CONTAINER.findViewById(R.id.fieldUserValueSwitch))
 				.setOnCheckedChangeListener(this);
 		
-		//
+		//Get the attributes defined in the XML layout
 		final TypedArray arr = getContext().obtainStyledAttributes(attrs,
 				R.styleable.form_field);
-		final String xmlValue = arr.getString(R.styleable.form_field_test);
 		
-		if (BuildConfig.DEBUG) { //DEBUG
-			Log.d("Testing", "Affichage de TypedArray" + arr.toString());
-		}
+		//Extract arguments
+		final Boolean mCollapsible = arr.getBoolean(R.styleable.form_field_collapsible,
+				false);
+		final Boolean mMandatoryInitial = arr.getBoolean(
+				R.styleable.form_field_mandatory, false);
+		final Boolean mChoiceAvailability = arr.getBoolean(
+				R.styleable.form_field_choiceAvailability, false);
+		final Boolean mChoiceChecked = arr.getBoolean(
+				R.styleable.form_field_choiceChecked, false);
+		final int mFieldValueConfig = arr.getInteger(
+				R.styleable.form_field_fieldValueConfig, 1);
+		final String mFieldName = arr.getString(R.styleable.form_field_fieldName);
+		final String mFieldValueHint = arr
+				.getString(R.styleable.form_field_fieldValueHint);
+		final String mFieldValueText = arr
+				.getString(R.styleable.form_field_fieldValueText);
+		final String mFieldUserValueHint = arr
+				.getString(R.styleable.form_field_fieldUserValueHint);
+		final String mFieldUserValueText = arr
+				.getString(R.styleable.form_field_fieldUserValueText);
 		
 		arr.recycle();
 		
-		setXMLValue(xmlValue);
+		setCollapsible(mCollapsible);
+		setMandatoryInitial(mMandatoryInitial);
+		setChoiceAvailability(mChoiceAvailability);
+		setChoiceChecked(mChoiceChecked);
+		setFieldValueConfig(mFieldValueConfig);
+		setFieldName(mFieldName);
+		setFieldValueHint(mFieldValueHint);
+		setFieldValueText(mFieldValueText);
+		setFieldUserValueHint(mFieldUserValueHint);
+		setFieldUserValueText(mFieldUserValueText);
+		
 	}
 	
+	/***/
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 	
 		//If it has been checked, turn TextView visibility to GONE, turn EditText
 		//visibility to VISIBLE, set focus to the EditText and Set the tag of the
 		//RealValue as mandatory
+		if (fieldValueConfig != 3) {
+			return;
+		}
+		
 		if (isChecked) {
-			CONTAINER.findViewById(R.id.fieldValue).setVisibility(8);
-			CONTAINER.findViewById(R.id.fieldRealValue).setVisibility(0);
-			CONTAINER.findViewById(R.id.fieldRealValue).requestFocus();
-			CONTAINER.findViewById(R.id.fieldRealValue).setTag("Mandatory");
+			CONTAINER.findViewById(R.id.fieldValue).setVisibility(View.GONE);
+			CONTAINER.findViewById(R.id.fieldUserValue).setVisibility(View.VISIBLE);
+			CONTAINER.findViewById(R.id.fieldUserValue).requestFocus();
+			if (mandatoryInitial) {
+				setMandatory(true);
+			}
 		}
 		else {
-			CONTAINER.findViewById(R.id.fieldValue).setVisibility(0);
-			CONTAINER.findViewById(R.id.fieldRealValue).setVisibility(8);
-			CONTAINER.findViewById(R.id.fieldRealValue).setTag("Optional");
+			CONTAINER.findViewById(R.id.fieldValue).setVisibility(View.VISIBLE);
+			CONTAINER.findViewById(R.id.fieldUserValue).setVisibility(View.GONE);
+			setMandatory(false);
 		}
 		
 	}
 	
-	public void setXMLValue(String value) {
+	//TODO Integrate the checkValue allowing to format
 	
-		((TextView) CONTAINER.findViewById(R.id.fieldName)).setText(value);
+	//==============================================================================
+	//Getters
+	//==============================================================================
+	
+	/***/
+	public Boolean isCollapsible() {
+	
+		return collapsible;
 	}
 	
+	/***/
+	public Boolean isMandatory() {
+	
+		return mandatory;
+	}
+	
+	/***/
+	public Boolean hasChoice() {
+	
+		return choiceAvailable;
+	}
+	
+	/***/
+	public Boolean isChoiceChecked() {
+	
+		return ((CheckBox) CONTAINER.findViewById(R.id.fieldChoice)).isChecked();
+	}
+	
+	/***/
+	public Boolean isUserValue() {
+	
+		//Check if the user value EditText is visible or not
+		//Visible means user's input is expected
+		final int visibility = ((EditText) CONTAINER.findViewById(R.id.fieldUserValue))
+				.getVisibility();
+		
+		if (visibility == View.VISIBLE) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	/***/
+	public String getUserValue() {
+	
+		return "";
+	}
+	
+	//==============================================================================
+	//Setters
+	//==============================================================================
+	
+	/***/
+	public void setCollapsible(Boolean collapsible) {
+	
+		this.collapsible = collapsible;
+	}
+	
+	/***/
+	public void setMandatory(Boolean mandatory) {
+	
+		this.mandatory = mandatory;
+	}
+	
+	/***/
+	private void setMandatoryInitial(Boolean mandatoryInitial) {
+	
+		this.mandatoryInitial = mandatoryInitial;
+	}
+	
+	/***/
+	private void setFieldValueConfig(int config) {
+	
+		switch (config) {
+			case 1: //Only the TextView
+				((EditText) CONTAINER.findViewById(R.id.fieldUserValue))
+						.setVisibility(View.GONE);
+				((TextView) CONTAINER.findViewById(R.id.fieldValue))
+						.setVisibility(View.VISIBLE);
+				((CheckBox) CONTAINER.findViewById(R.id.fieldUserValueSwitch))
+						.setVisibility(View.INVISIBLE);
+				fieldValueConfig = 1;
+				setMandatory(false);
+				break;
+			case 2: //Only the EditText
+				((EditText) CONTAINER.findViewById(R.id.fieldUserValue))
+						.setVisibility(View.VISIBLE);
+				((TextView) CONTAINER.findViewById(R.id.fieldValue))
+						.setVisibility(View.GONE);
+				((CheckBox) CONTAINER.findViewById(R.id.fieldUserValueSwitch))
+						.setVisibility(View.INVISIBLE);
+				fieldValueConfig = 2;
+				if (mandatoryInitial) {
+					setMandatory(true);
+				}
+				else {
+					setMandatory(false);
+				}
+				break;
+			case 3: //Both TextView and EditText
+				((EditText) CONTAINER.findViewById(R.id.fieldUserValue))
+						.setVisibility(View.GONE);
+				((TextView) CONTAINER.findViewById(R.id.fieldValue))
+						.setVisibility(View.VISIBLE);
+				((CheckBox) CONTAINER.findViewById(R.id.fieldUserValueSwitch))
+						.setVisibility(View.VISIBLE);
+				fieldValueConfig = 3;
+				setMandatory(false);
+				break;
+		}
+		
+	}
+	
+	/***/
+	private void setFieldValueHint(String hint) {
+	
+		((TextView) CONTAINER.findViewById(R.id.fieldValue)).setHint(hint);
+	}
+	
+	/***/
+	private void setFieldUserValueHint(String hint) {
+	
+		((EditText) CONTAINER.findViewById(R.id.fieldUserValue)).setHint(hint);
+	}
+	
+	/***/
+	private void setFieldName(String name) {
+	
+		((TextView) CONTAINER.findViewById(R.id.fieldName)).setText(name);
+	}
+	
+	/***/
+	private void setChoiceAvailability(Boolean choice) {
+	
+		if (choice) {
+			((CheckBox) CONTAINER.findViewById(R.id.fieldChoice))
+					.setVisibility(View.VISIBLE);
+			//TODO Turn style of the name to .WithOption
+		}
+		else {
+			((CheckBox) CONTAINER.findViewById(R.id.fieldChoice))
+					.setVisibility(View.GONE);
+			//TODO Turn style of the name to .NoOption
+		}
+		choiceAvailable = choice;
+	}
+	
+	/***/
+	private void setChoiceChecked(Boolean isChecked) {
+	
+		if (((CheckBox) CONTAINER.findViewById(R.id.fieldChoice)).isChecked() != isChecked) {
+			((CheckBox) CONTAINER.findViewById(R.id.fieldChoice)).toggle();
+		}
+	}
+	
+	/***/
+	public void setFieldValueText(String value) {
+	
+		((TextView) CONTAINER.findViewById(R.id.fieldValue)).setText(value);
+	}
+	
+	/***/
+	public void setFieldUserValueText(String value) {
+	
+		((EditText) CONTAINER.findViewById(R.id.fieldUserValue)).setText(value);
+	}
 }

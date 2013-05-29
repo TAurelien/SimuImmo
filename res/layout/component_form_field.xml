@@ -14,39 +14,28 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  -->
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fieldlayout" >
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <TextView
         android:id="@+id/fieldName"
-        style="@style/Form.FieldLabelTextView.WithOption"
-        android:text="Test"
+        style="@style/Form.FieldLabelTextView.NoOption"
         android:labelFor="@+id/fieldValue" />
     
     <CheckBox
         android:id="@+id/fieldChoice"
-        style="@style/Form.FieldCheckBox"
-        android:checked="false" />
+        style="@style/Form.FieldCheckBox" />
 
     <TextView
         android:id="@+id/fieldValue"
-        style="@style/Form.FieldValue.TextView"
-        android:hint="hint"
-        android:text=""
-        android:visibility="visible" />
+        style="@style/Form.FieldValue.TextView" />
     
     <EditText
-        android:id="@+id/fieldRealValue"
-        style="@style/Form.FieldValue.EditText"
-        android:tag="Optional"
-        android:text=""
-        android:hint="hint"
-        android:visibility="gone" />
+        android:id="@+id/fieldUserValue"
+        style="@style/Form.FieldValue.EditText" />
     
     <CheckBox
-        android:id="@+id/fieldReal"
-        style="@style/Form.FieldRealCheckBox"
-        android:visibility="visible"
+        android:id="@+id/fieldUserValueSwitch"
+        style="@style/Form.FieldUserValueSwitchCheckBox"
         android:onClick="switchRealField" />
     
 </merge>

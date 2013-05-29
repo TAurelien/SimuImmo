@@ -16,7 +16,7 @@ limitations under the License.
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:custo="http://schemas.android.com/apk/res/com.ticot.simuimmo"
+    xmlns:custom="http://schemas.android.com/apk/res/com.ticot.simuimmo"
     android:id="@+id/layoutScrollForm"
     style="@style/Form.ScrollView" >
     
@@ -26,21 +26,51 @@ limitations under the License.
         
         <TextView
             style="@style/Form.CategoryLabel"
-            android:text="Imposition" />
+            android:text="1ère année" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/test"
+            android:id="@+id/Taux_marginal"
             style="@style/Form.FieldLayout"
-    		android:tag="AlwaysShown"
-			android:visibility="visible"
-			custo:test="Essai"/>
+			custom:collapsible="false"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="EditText"
+			custom:fieldName="Taux marginal"
+			custom:fieldValueText="30%"
+			custom:fieldValueHint="@string/defaultValueZeroPer"
+			custom:fieldUserValueText="30%"
+			custom:fieldUserValueHint="@string/defaultValueZeroPer" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/test2"
+            android:id="@+id/Impots_microFoncier"
             style="@style/Form.FieldLayout"
-    		android:tag="AlwaysShown"
-			android:visibility="visible"
-			custo:test="Essai2"/>
+    		custom:collapsible="false"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="Impôts micro-foncier"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/defaultValueZeroEuro"
+			custom:fieldUserValueText=""
+			custom:fieldUserValueHint="@string/defaultValueZeroEuro"
+			 />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Impots_microBIC"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="false"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView_EditText"
+			custom:fieldName="Impôts micro-BIC"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/defaultValueZeroEuro"
+			custom:fieldUserValueText=""
+			custom:fieldUserValueHint="@string/defaultValueZeroEuro"
+			 />
         
 	</LinearLayout>
 

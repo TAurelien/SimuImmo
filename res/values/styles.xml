@@ -55,7 +55,7 @@ limitations under the License.
         <item name="android:paddingLeft">@dimen/category_label_paddingleft</item>
         <item name="android:textColor">@color/blue_light</item>
         <item name="android:textSize">@dimen/large_text_size</item>
-        <item name="android:tag">AlwaysShown</item>
+        <item name="android:tag">Label</item>
     </style>
     
     <style name="Form.FieldLayout">
@@ -70,6 +70,7 @@ limitations under the License.
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/field_label_paddingleft</item>
         <item name="android:textSize">@dimen/medium_text_size</item>
+        <item name="android:textIsSelectable">false</item>
     </style>
     
     <style name="Form.FieldLabelTextView.NoOption">
@@ -104,7 +105,7 @@ limitations under the License.
         <item name="android:inputType">numberDecimal</item>
     </style>
     
-    <style name="Form.FieldRealCheckBox">
+    <style name="Form.FieldUserValueSwitchCheckBox">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_vertical</item>

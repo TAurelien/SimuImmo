@@ -16,6 +16,19 @@ limitations under the License.
  -->
 <resources>
     <declare-styleable name="form_field">
-        <attr name="test" format="string" />
+        <attr name="collapsible" format="boolean" />
+        <attr name="mandatory" format="boolean" />
+        <attr name="choiceAvailability" format="boolean" />
+        <attr name="choiceChecked" format="boolean" />
+        <attr name="fieldValueConfig">
+            <enum name="TextView" value="1" />
+            <enum name="EditText" value="2" />
+            <enum name="TextView_EditText" value="3" />
+        </attr>
+        <attr name="fieldName" format="string" />
+        <attr name="fieldValueHint" format="string" />
+        <attr name="fieldValueText" format="string" />
+        <attr name="fieldUserValueHint" format="string" />
+        <attr name="fieldUserValueText" format="string" />
     </declare-styleable>
 </resources>
