@@ -33,24 +33,22 @@ limitations under the License.
             style="@style/Form.FieldLayout"
 			custom:collapsible="false"
 			custom:mandatory="false"
-			custom:choiceAvailability="false"
+			custom:choiceAvailability="true"
 			custom:choiceChecked="false"
 			custom:fieldValueConfig="EditText"
-			custom:fieldName="Taux marginal"
+			custom:fieldName="T a u x m a r g i n a l"
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_microFoncier"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+			custom:collapsible="false"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
-			custom:fieldValueConfig="TextView"
-			custom:fieldName="Impôts micro-foncier"
-			custom:fieldValueText=""
-			custom:fieldValueHint="@string/defaultValueZeroEuro"
-			custom:valueFormat="none" />
+			custom:fieldValueConfig="EditText"
+			custom:fieldName="T a u x m a r g i n a l"
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_microBIC"

@@ -356,12 +356,10 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 		if (choice) {
 			((CheckBox) CONTAINER.findViewById(R.id.fieldChoice))
 					.setVisibility(View.VISIBLE);
-			//TODO Turn style of the name to .WithOption
 		}
 		else {
 			((CheckBox) CONTAINER.findViewById(R.id.fieldChoice))
 					.setVisibility(View.GONE);
-			//TODO Turn style of the name to .NoOption
 		}
 		choiceAvailable = choice;
 	}

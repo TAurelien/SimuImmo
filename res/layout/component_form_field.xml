@@ -18,7 +18,7 @@ limitations under the License.
 
     <TextView
         android:id="@+id/fieldName"
-        style="@style/Form.FieldLabelTextView.NoOption"
+        style="@style/Form.FieldLabelTextView"
         android:labelFor="@+id/fieldValue" />
     
     <CheckBox
