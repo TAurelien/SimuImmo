@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Copyright (C) 2013 Aurelien Ticot
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ -->
+<resources>
+    <declare-styleable name="form_field">
+        <attr name="collapsible" format="boolean" />
+        <attr name="mandatory" format="boolean" />
+        <attr name="choiceAvailability" format="boolean" />
+        <attr name="choiceChecked" format="boolean" />
+        <attr name="fieldValueConfig" format="enum">
+            <enum name="TextView" value="1" />
+            <enum name="EditText" value="2" />
+            <enum name="TextView_EditText" value="3" />
+        </attr>
+        <attr name="fieldName" format="string" />
+        <attr name="fieldValueHint" format="string" />
+        <attr name="fieldValueText" format="string" />
+        <attr name="fieldUserValueHint" format="string" />
+        <attr name="fieldUserValueText" format="string" />
+        <attr name="valueFormat" format="enum">
+            <enum name="none" value="1" />
+            <enum name="euro" value="2" />
+            <enum name="percentage" value="3" />
+        </attr>
+    </declare-styleable>
+</resources>
