@@ -20,7 +20,7 @@ limitations under the License.
         <attr name="mandatory" format="boolean" />
         <attr name="choiceAvailability" format="boolean" />
         <attr name="choiceChecked" format="boolean" />
-        <attr name="fieldValueConfig">
+        <attr name="fieldValueConfig" format="enum">
             <enum name="TextView" value="1" />
             <enum name="EditText" value="2" />
             <enum name="TextView_EditText" value="3" />
@@ -30,5 +30,10 @@ limitations under the License.
         <attr name="fieldValueText" format="string" />
         <attr name="fieldUserValueHint" format="string" />
         <attr name="fieldUserValueText" format="string" />
+        <attr name="valueFormat" format="enum">
+            <enum name="none" value="1" />
+            <enum name="euro" value="2" />
+            <enum name="percentage" value="3" />
+        </attr>
     </declare-styleable>
 </resources>

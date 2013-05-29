@@ -37,10 +37,7 @@ limitations under the License.
 			custom:choiceChecked="false"
 			custom:fieldValueConfig="EditText"
 			custom:fieldName="Taux marginal"
-			custom:fieldValueText="30%"
-			custom:fieldValueHint="@string/defaultValueZeroPer"
-			custom:fieldUserValueText="30%"
-			custom:fieldUserValueHint="@string/defaultValueZeroPer" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_microFoncier"
@@ -53,9 +50,7 @@ limitations under the License.
 			custom:fieldName="Impôts micro-foncier"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/defaultValueZeroEuro"
-			custom:fieldUserValueText=""
-			custom:fieldUserValueHint="@string/defaultValueZeroEuro"
-			 />
+			custom:valueFormat="none" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_microBIC"
@@ -68,9 +63,7 @@ limitations under the License.
 			custom:fieldName="Impôts micro-BIC"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/defaultValueZeroEuro"
-			custom:fieldUserValueText=""
-			custom:fieldUserValueHint="@string/defaultValueZeroEuro"
-			 />
+			custom:valueFormat="percentage" />
         
 	</LinearLayout>
 

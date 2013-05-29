@@ -14,6 +14,9 @@
 
 package com.ticot.simuimmo.activities;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
@@ -53,6 +56,12 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 	
 	/***/
 	private int fieldValueConfig = 1;
+	
+	/***/
+	private final DecimalFormat format = new DecimalFormat();
+	
+	/***/
+	private Boolean valueOK = true;
 	
 	//==============================================================================
 	//Methods
@@ -96,9 +105,11 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 				.getString(R.styleable.form_field_fieldUserValueHint);
 		final String mFieldUserValueText = arr
 				.getString(R.styleable.form_field_fieldUserValueText);
+		final int mValueFormat = arr.getInteger(R.styleable.form_field_valueFormat, 1);
 		
 		arr.recycle();
 		
+		defineFormat(mValueFormat);
 		setCollapsible(mCollapsible);
 		setMandatoryInitial(mMandatoryInitial);
 		setChoiceAvailability(mChoiceAvailability);
@@ -139,7 +150,40 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 		
 	}
 	
-	//TODO Integrate the checkValue allowing to format
+	/***/
+	private String formatValue(Double value) {
+	
+		return String.valueOf(format.format(value));
+	}
+	
+	/***/
+	private String removeFormatValue(String value) {
+	
+		if (!value.isEmpty() || (value != "")) {
+			//TODO Take care of the localization with a different separator
+			value = value.replaceAll("[^0-9,.]", "");
+			value = value.replace(',', '.');
+		}
+		else {
+			value = "";
+		}
+		return value;
+	}
+	
+	/***/
+	private Boolean checkValue(String value) {
+	
+		CONTAINER.setBackgroundResource(0);
+		valueOK = true;
+		if ((value == "") || (value.replaceAll("[^1-9]", "").isEmpty())) {
+			if (mandatory) {
+				valueOK = false;
+				CONTAINER.setBackgroundResource(R.color.red_light);
+			}
+			return false;
+		}
+		return true;
+	}
 	
 	//==============================================================================
 	//Getters
@@ -186,23 +230,55 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 	}
 	
 	/***/
-	public String getUserValue() {
+	public String getUserValue(String defaultValue) {
 	
-		return "";
+		String value = "";
+		final EditText view = ((EditText) CONTAINER.findViewById(R.id.fieldUserValue));
+		if (!view.getText().toString().isEmpty()) {
+			value = view.getText().toString();
+		}
+		value = removeFormatValue(value);
+		if (checkValue(value)) {
+			return value;
+		}
+		else {
+			return defaultValue;
+		}
+	}
+	
+	public Boolean isValueOK() {
+	
+		return valueOK;
 	}
 	
 	//==============================================================================
 	//Setters
 	//==============================================================================
 	
+	private void defineFormat(int format) {
+	
+		switch (format) {
+			case 1:
+				break;
+			case 2:
+				this.format.applyPattern("###,##0.00 €");
+				break;
+			case 3:
+				this.format.applyPattern("#0.00 %");
+				break;
+		}
+		this.format.setDecimalFormatSymbols(DecimalFormatSymbols
+				.getInstance(Locale.FRANCE));
+	}
+	
 	/***/
-	public void setCollapsible(Boolean collapsible) {
+	private void setCollapsible(Boolean collapsible) {
 	
 		this.collapsible = collapsible;
 	}
 	
 	/***/
-	public void setMandatory(Boolean mandatory) {
+	private void setMandatory(Boolean mandatory) {
 	
 		this.mandatory = mandatory;
 	}
@@ -305,8 +381,34 @@ public class FieldComponent extends LinearLayout implements OnCheckedChangeListe
 	}
 	
 	/***/
+	public void setFieldValueText(int value) {
+	
+		((TextView) CONTAINER.findViewById(R.id.fieldValue)).setText(value);
+	}
+	
+	/***/
+	public void setFieldValueText(Double value) {
+	
+		final String valueTxt = formatValue(value);
+		((TextView) CONTAINER.findViewById(R.id.fieldValue)).setText(valueTxt);
+	}
+	
+	/***/
 	public void setFieldUserValueText(String value) {
 	
 		((EditText) CONTAINER.findViewById(R.id.fieldUserValue)).setText(value);
+	}
+	
+	/***/
+	public void setFieldUserValueText(int value) {
+	
+		((EditText) CONTAINER.findViewById(R.id.fieldUserValue)).setText(value);
+	}
+	
+	/***/
+	public void setFieldUserValueText(Double value) {
+	
+		final String valueTxt = formatValue(value);
+		((EditText) CONTAINER.findViewById(R.id.fieldUserValue)).setText(valueTxt);
 	}
 }
