@@ -20,11 +20,6 @@ limitations under the License.
     <!-- Texts UI main activity -->
     <string name="app_name" translatable="false">Simulateur Immobilier</string>
     
-    <!-- Texts UI action bar -->
-    <string name="afficher_plus" translatable="false">Afficher plus</string>
-    <string name="afficher_moins" translatable="false">Afficher moins</string>
-    <string name="calculer" translatable="false">Calculer</string>
-    
     <!-- Texts UI acquisition -->
     <string name="frais_acquisition" translatable="false">Frais d\'acquisition</string>
     <string name="prix_fai" translatable="false">Prix FAI</string>
@@ -72,7 +67,10 @@ limitations under the License.
     <string name="frais_gestion_saisonniere" translatable="false">Frais de gestion saisonnière</string>
     <string name="charges_location_saisonniere" translatable="false">Charges de location saisonnière</string>
     
-    <!-- Texts UI main activity > Menu -->
+    <!--Texts UI main activity > Menu -->
+    <string name="expand">Afficher plus</string>
+    <string name="collapse">Afficher moins</string>
+    <string name="calculer">Calculer</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_about">A propos</string>
     

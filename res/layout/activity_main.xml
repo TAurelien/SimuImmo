@@ -14,60 +14,21 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+   	xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pager"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.ticot.simuimmo.activities.MainActivity" >
-    
-	<android.support.v4.view.ViewPager
-	    android:id="@+id/pager"
-	    android:layout_width="match_parent"
-    	android:layout_height="wrap_content"
-    	android:layout_above="@+id/LayoutCalculer"
-    	android:layout_alignParentTop="true">
-	
-	    <android.support.v4.view.PagerTitleStrip
-	        android:id="@+id/pager_title_strip"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="top"
-	        android:background="#33b5e5"
-	        android:textColor="#fff"
-	        android:paddingTop="4dp"
-	        android:paddingBottom="4dp" />
-	
-	</android.support.v4.view.ViewPager>
-	 
-	<RelativeLayout
-	    android:id="@+id/LayoutCalculer"
-	    android:layout_width="match_parent"
-	    android:layout_height="@dimen/item_height"
-	    android:layout_alignParentBottom="true"
-	    android:orientation="vertical"
-	    android:padding="0dp" >
-	    
-	    <Button
-	    	android:id="@+id/btn_CollapseAcquisitionFields"
-	       	android:layout_width="160dp"
-	       	android:layout_height="wrap_content"
-	       	android:layout_gravity="center_horizontal"
-	       	android:onClick="collapseUI"
-	       	android:tag="AlwaysShown"
-	       	android:text="@string/afficher_plus"
-	       	android:textSize="@dimen/medium_text_size" />
-	    
-	    <Button
-	        android:id="@+id/btn_calcul"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_toRightOf="@+id/btn_CollapseAcquisitionFields"
-	        android:padding="0dp"
-	        android:onClick="onClickCalcul"
-	        android:text="@string/calculer"
-	        android:textSize="@dimen/medium_text_size" />
-	    
-	</RelativeLayout>
-	
-</RelativeLayout>
+   	android:layout_height="match_parent"
+   	tools:context="com.ticot.simuimmo.activities.MainActivity">
+
+    <android.support.v4.view.PagerTitleStrip
+        android:id="@+id/pager_title_strip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#33b5e5"
+        android:textColor="#fff"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" />
+
+</android.support.v4.view.ViewPager>

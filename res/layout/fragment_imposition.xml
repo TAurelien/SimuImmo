@@ -31,23 +31,27 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Taux_marginal"
             style="@style/Form.FieldLayout"
-			custom:collapsible="false"
+    		custom:collapsible="false"
 			custom:mandatory="false"
-			custom:choiceAvailability="true"
+			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
 			custom:fieldValueConfig="EditText"
-			custom:fieldName="T a u x m a r g i n a l"
+			custom:fieldName="Impôts micro-BIC"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/defaultValueZeroEuro"
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_microFoncier"
             style="@style/Form.FieldLayout"
-			custom:collapsible="false"
+    		custom:collapsible="false"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
-			custom:fieldValueConfig="EditText"
-			custom:fieldName="T a u x m a r g i n a l"
+			custom:fieldValueConfig="TextView_EditText"
+			custom:fieldName="Impôts micro-BIC"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/defaultValueZeroEuro"
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
@@ -61,7 +65,7 @@ limitations under the License.
 			custom:fieldName="Impôts micro-BIC"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/defaultValueZeroEuro"
-			custom:valueFormat="percentage" />
+			custom:valueFormat="euro" />
         
 	</LinearLayout>
 

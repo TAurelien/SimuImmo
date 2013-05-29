@@ -18,7 +18,10 @@ limitations under the License.
     tools:ignore="UnusedResources">
     
     <!--Texts UI main activity > Menu -->
-    <string name="menu_settings">Setings</string>
+    <string name="expand">Expand</string>
+    <string name="collapse">Collapse</string>
+    <string name="calculer">Compute</string>
+    <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
     
     <!--Texts UI Preference activity-->

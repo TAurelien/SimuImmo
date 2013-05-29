@@ -345,19 +345,17 @@ public class CalculsAcquisition {
 	 */
 	public static double calculTauxCredit(int dureeCredit) {
 	
-		//TODO Change the calculation by setting the more close value according to the duration
-		switch (dureeCredit) {
-		//According to the value of DureeCredit
-			case 15:
-				return Settings.taux15ans;
-			case 20:
-				return Settings.taux20ans;
-			case 25:
-				return Settings.taux25ans;
-			case 30:
-				return Settings.taux30ans;
-			default:
-				return Settings.taux25ans;
+		if (dureeCredit <= 17) {
+			return Settings.taux15ans;
+		}
+		else if (dureeCredit <= 22) {
+			return Settings.taux20ans;
+		}
+		else if (dureeCredit <= 27) {
+			return Settings.taux25ans;
+		}
+		else {
+			return Settings.taux30ans;
 		}
 	}
 	
