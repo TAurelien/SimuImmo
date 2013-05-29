@@ -36,7 +36,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvTypeGestion"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/type_de_gestion"
                 android:labelFor="@+id/valueTypeGestion" />
             
@@ -65,7 +65,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvLoyerNu"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/loyer_location_nue"
                 android:labelFor="@+id/valueLoyerNu" />
             
@@ -90,7 +90,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvLoyerMeuble"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/loyer_location_meuble"
                 android:labelFor="@+id/valueLoyerMeuble" />
             
@@ -115,7 +115,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvVacanceLocAn"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/vacance_locative_annuelle"
                 android:labelFor="@+id/valueVacanceLocAn" />
             
@@ -140,7 +140,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvLoyerNuit"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/loyer_nuite"
                 android:labelFor="@+id/valueLoyerNuit" />
             
@@ -165,7 +165,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvVacanceLocSais"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/vacance_locative_saisonniere"
                 android:labelFor="@+id/valueVacanceLocSais" />
             
@@ -190,7 +190,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvLoyerSais"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/loyer_saisonnier"
                 android:labelFor="@+id/valueLoyerSais" />
             
@@ -214,7 +214,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvRevenuLoc"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/revenu_locatif"
                 android:labelFor="@+id/valueRevenuLoc" />
             
@@ -242,7 +242,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvChargesFixe"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/charges_fixe"
                 android:labelFor="@+id/valueChargesFixe" />
             
@@ -267,7 +267,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvTaxeFonciere"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/taxe_fonciere"
                 android:labelFor="@+id/valueTaxeFonciere" />
             
@@ -292,7 +292,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvAssurance"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/assurance"
                 android:labelFor="@+id/valueAssurance" />
             
@@ -317,7 +317,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvTravauxAnnuels"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/travaux_annuels"
                 android:labelFor="@+id/valueTravauxAnnuels" />
             
@@ -342,7 +342,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvTaxeHabitation"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/taxe_habitation"
                 android:labelFor="@+id/valueTaxeHabitation" />
             
@@ -367,7 +367,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvChargesAnnuelles"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/charges_annuelles"
                 android:labelFor="@+id/valueChargesAnnuelles" />
             
@@ -388,7 +388,7 @@ limitations under the License.
             
 	        <CheckBox
 	            android:id="@+id/ReelChargesAnnuelles"
-	            style="@style/Form.FieldRealCheckBox" />
+	            style="@style/Form.FieldUserValueSwitchCheckBox" />
         </LinearLayout>
         
         <TextView
@@ -407,7 +407,7 @@ limitations under the License.
 
             <TextView
                 android:id="@+id/tvFraisGestion"
-                style="@style/Form.FieldLabelTextView.WithOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/frais_de_gestion"
                 android:labelFor="@+id/valueFraisGestion" />
             
@@ -433,7 +433,7 @@ limitations under the License.
             
 	        <CheckBox
 	            android:id="@+id/ReelFraisGestion"
-	            style="@style/Form.FieldRealCheckBox" />
+	            style="@style/Form.FieldUserValueSwitchCheckBox" />
         </LinearLayout>
         
         <TextView
@@ -449,7 +449,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvFraisAccueil"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/frais_accueil"
                 android:labelFor="@+id/valueFraisAccueil" />
             
@@ -470,7 +470,7 @@ limitations under the License.
             
 	        <CheckBox
 	            android:id="@+id/ReelFraisAccueil"
-	            style="@style/Form.FieldRealCheckBox" />
+	            style="@style/Form.FieldUserValueSwitchCheckBox" />
         </LinearLayout>
         
         <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
@@ -482,7 +482,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvFraisMenage"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/frais_menage"
                 android:labelFor="@+id/valueMenage" />
             
@@ -503,7 +503,7 @@ limitations under the License.
             
 	        <CheckBox
 	            android:id="@+id/ReelFraisMenage"
-	            style="@style/Form.FieldRealCheckBox" />
+	            style="@style/Form.FieldUserValueSwitchCheckBox" />
         </LinearLayout>
         
         <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
@@ -515,7 +515,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvFraisGestionSais"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/frais_gestion_saisonniere"
                 android:labelFor="@+id/valueFraisAccueil" />
             
@@ -536,7 +536,7 @@ limitations under the License.
             
 	        <CheckBox
 	            android:id="@+id/ReelFraisGestionSais"
-	            style="@style/Form.FieldRealCheckBox" />
+	            style="@style/Form.FieldUserValueSwitchCheckBox" />
         </LinearLayout>
         
         <!-- TODO update tag AlwaysShown or Collapsable and visibility -->
@@ -548,7 +548,7 @@ limitations under the License.
             
             <TextView
                 android:id="@+id/tvChargesLocSais"
-                style="@style/Form.FieldLabelTextView.NoOption"
+                style="@style/Form.FieldLabelTextView"
                 android:text="@string/charges_location_saisonniere"
                 android:labelFor="@+id/valueChargesLocSais" />
             
@@ -569,7 +569,7 @@ limitations under the License.
             
 	        <CheckBox
 	            android:id="@+id/ReelChargesLocSais"
-	            style="@style/Form.FieldRealCheckBox" />
+	            style="@style/Form.FieldUserValueSwitchCheckBox" />
         </LinearLayout>
         
     </LinearLayout>
