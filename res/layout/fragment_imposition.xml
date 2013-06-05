@@ -44,7 +44,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_microFoncier"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
@@ -57,7 +57,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_microBIC"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
@@ -70,7 +70,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_classe"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
@@ -83,7 +83,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_fraisReels"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
@@ -126,7 +126,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_amortissementBien"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
@@ -139,7 +139,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_amortissementMeubles"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
@@ -152,7 +152,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_totalCharges"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
@@ -165,7 +165,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_interetsEmprunt"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
@@ -178,7 +178,7 @@ limitations under the License.
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_comptable"
             style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"

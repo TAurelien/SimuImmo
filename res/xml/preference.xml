@@ -21,7 +21,7 @@ limitations under the License.
     -->
     <PreferenceCategory android:title="@string/preferenceTitle_default_values">
 	    <PreferenceScreen android:title="@string/preferenceTitle_acquisition" android:summary="@string/preferenceSum_acquisition">
-		    <PreferenceCategory android:title="@string/frais_acquisition">
+		    <PreferenceCategory android:title="@string/label_acquisition_frais_acquisition">
 		        <EditTextPreference
 		            android:key="PREF_KEY_pourcentageFraisAgence"
 		            android:title="@string/preferenceTitle_PourcentageFraisAgence"
@@ -43,7 +43,7 @@ limitations under the License.
 		            android:summary="@string/preferenceSum_PourcentageSequestre"
 		            android:defaultValue="@string/defaultPreferencePourcentageSequestre" />
 		    </PreferenceCategory>
-		    <PreferenceCategory android:title="@string/emprunt">
+		    <PreferenceCategory android:title="@string/label_acquisition_emprunt">
 		        <EditTextPreference
 		            android:key="PREF_KEY_taux15ans"
 		            android:summary="@string/preferenceSum_Taux15ans"

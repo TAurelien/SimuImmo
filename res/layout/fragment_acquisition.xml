@@ -25,7 +25,7 @@ limitations under the License.
         
         <TextView
             style="@style/Form.CategoryLabel"
-            android:text="@string/frais_acquisition" />
+            android:text="@string/label_acquisition_frais_acquisition" />
         
         <LinearLayout
             android:id="@+id/LayoutPrixFAI"
@@ -35,7 +35,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvPrixFAI"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/prix_fai"
+                android:text="@string/field_name_acquisition_prix_fai"
                 android:labelFor="@+id/valuePrixFAI" />
             
             <TextView
@@ -65,7 +65,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvNetVendeur"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/net_vendeur"
+                android:text="@string/field_name_acquisition_net_vendeur"
                 android:labelFor="@+id/valueNetVendeur" />
 
             <TextView
@@ -96,7 +96,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvFraisAgence"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/frais_agence"
+                android:text="@string/field_name_acquisition_frais_agence"
                 android:labelFor="@+id/valueFraisAgence" />
             
             <CheckBox
@@ -131,7 +131,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvFraisNotaire"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/frais_notaire"
+                android:text="@string/field_name_acquisition_frais_notaire"
                 android:labelFor="@+id/valueFraisNotaire" />
 
             <TextView
@@ -160,7 +160,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvTravaux"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/travaux"
+                android:text="@string/field_name_acquisition_travaux"
                 android:labelFor="@+id/valueTravaux" />
 
             <EditText
@@ -181,7 +181,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvAmenagement"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/amenagement"
+                android:text="@string/field_name_acquisition_amenagement"
                 android:labelFor="@+id/valueAmenagement" />
 
             <EditText
@@ -203,7 +203,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvHonoraireConseil"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/conseil"
+                android:text="@string/field_name_acquisition_conseil"
                 android:labelFor="@+id/valueHonoraireConseil" />
 
 	        <CheckBox
@@ -238,7 +238,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvAutresFrais"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/autres_frais"
+                android:text="@string/field_name_acquisition_autres_frais"
                 android:labelFor="@+id/valueAutresFrais" />
             
             <EditText
@@ -260,7 +260,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvCoutTotal"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/cout_total"
+                android:text="@string/field_name_acquisition_cout_total"
                 android:labelFor="@+id/valueCoutTotal" />
 
             <TextView
@@ -282,7 +282,7 @@ limitations under the License.
                 android:id="@+id/tvApport"
                 style="@style/Form.FieldLabelTextView"
                 android:labelFor="@+id/valueApport"
-                android:text="@string/apport" />
+                android:text="@string/field_name_acquisition_apport" />
 
             <EditText
                 android:id="@+id/valueApport"
@@ -303,7 +303,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvSequestre"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/sequestre"
+                android:text="@string/field_name_acquisition_sequestre"
                 android:labelFor="@+id/valueSequestre" />
 
             <TextView
@@ -318,7 +318,7 @@ limitations under the License.
         
        	<TextView
        	    style="@style/Form.CategoryLabel"
-            android:text="@string/emprunt" />
+            android:text="@string/label_acquisition_emprunt" />
         
         <LinearLayout
             android:id="@+id/layoutCapitalEmprunte"
@@ -329,7 +329,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvCapitalEmprunte"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/capital_emprunte"
+                android:text="@string/field_name_acquisition_capital_emprunte"
                 android:labelFor="@+id/valueCapitalEmprunte" />
 
             <TextView
@@ -359,7 +359,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvDureeCredit"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/duree_du_credit"
+                android:text="@string/field_name_acquisition_duree_du_credit"
                 android:labelFor="@+id/valueDureeCredit" />
 
             <EditText
@@ -381,7 +381,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvNbMensualite"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/nombre_mensualite"
+                android:text="@string/field_name_acquisition_nombre_mensualite"
                 android:labelFor="@+id/valueNbMensualite" />
 
             <TextView
@@ -403,7 +403,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvTauxCredit"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/taux_de_credit"
+                android:text="@string/field_name_acquisition_taux_de_credit"
                 android:labelFor="@+id/valueTauxCredit" />
 
             <TextView
@@ -433,7 +433,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvTauxAssurance"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/taux_assurance"
+                android:text="@string/field_name_acquisition_taux_assurance"
                 android:labelFor="@+id/valueTauxAssurance" />
 
             <TextView
@@ -462,7 +462,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvMensualite"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/mensualite"
+                android:text="@string/field_name_acquisition_mensualite"
                 android:labelFor="@+id/valueMensualite"/>
 
             <TextView
@@ -484,7 +484,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvTauxEndettement"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/taux_endettement"
+                android:text="@string/field_name_acquisition_taux_endettement"
                 android:labelFor="@+id/valueTauxEndettement" />
 
             <TextView

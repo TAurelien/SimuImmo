@@ -28,51 +28,55 @@ limitations under the License.
     <string name="menu_about">A propos</string>
     
     <!-- Texts UI acquisition -->
-    <string name="frais_acquisition" translatable="false">Frais d\'acquisition</string>
-    <string name="prix_fai" translatable="false">Prix FAI</string>
-    <string name="net_vendeur" translatable="false">Net vendeur</string>
-    <string name="frais_agence" translatable="false">Frais agence</string>
-    <string name="frais_notaire" translatable="false">Frais de notaire</string>
-    <string name="travaux" translatable="false">Travaux</string>
-    <string name="amenagement" translatable="false">Amenagement</string>
-    <string name="conseil" translatable="false">Conseil</string>
-    <string name="autres_frais" translatable="false">Autres frais</string>
-    <string name="cout_total" translatable="false">Cout total</string>
-    <string name="apport" translatable="false">Apport</string>
-    <string name="sequestre" translatable="false">Sequestre</string>
-    <string name="emprunt" translatable="false">Emprunt</string>
-    <string name="capital_emprunte" translatable="false">Capital emprunté</string>
-    <string name="duree_du_credit" translatable="false">Durée du credit</string>
-    <string name="nombre_mensualite" translatable="false">Nombre mensualité</string>
-    <string name="taux_de_credit" translatable="false">Taux de credit</string>
-    <string name="taux_assurance" translatable="false">Taux d\'assurance</string>
-    <string name="mensualite" translatable="false">Mensualité</string>
-    <string name="taux_endettement" translatable="false">Taux d\'endettement</string>
+    <string name="label_acquisition_frais_acquisition" translatable="false">Frais d\'acquisition</string>
+    <string name="label_acquisition_emprunt" translatable="false">Emprunt</string>
+    
+    <string name="field_name_acquisition_prix_fai" translatable="false">Prix FAI</string>
+    <string name="field_name_acquisition_net_vendeur" translatable="false">Net vendeur</string>
+    <string name="field_name_acquisition_frais_agence" translatable="false">Frais agence</string>
+    <string name="field_name_acquisition_frais_notaire" translatable="false">Frais de notaire</string>
+    <string name="field_name_acquisition_travaux" translatable="false">Travaux</string>
+    <string name="field_name_acquisition_amenagement" translatable="false">Amenagement</string>
+    <string name="field_name_acquisition_conseil" translatable="false">Conseil</string>
+    <string name="field_name_acquisition_autres_frais" translatable="false">Autres frais</string>
+    <string name="field_name_acquisition_cout_total" translatable="false">Cout total</string>
+    <string name="field_name_acquisition_apport" translatable="false">Apport</string>
+    <string name="field_name_acquisition_sequestre" translatable="false">Sequestre</string>
+    <string name="field_name_acquisition_capital_emprunte" translatable="false">Capital emprunté</string>
+    <string name="field_name_acquisition_duree_du_credit" translatable="false">Durée du credit</string>
+    <string name="field_name_acquisition_nombre_mensualite" translatable="false">Nombre mensualité</string>
+    <string name="field_name_acquisition_taux_de_credit" translatable="false">Taux de credit</string>
+    <string name="field_name_acquisition_taux_assurance" translatable="false">Taux d\'assurance</string>
+    <string name="field_name_acquisition_mensualite" translatable="false">Mensualité</string>
+    <string name="field_name_acquisition_taux_endettement" translatable="false">Taux d\'endettement</string>
     
     <!-- Texts UI gestion -->
-    <string name="type_de_gestion" translatable="false">Type de gestion</string>
-    <string name="recette_locative" translatable="false">Recette locative</string>
-    <string name="loyer_location_nue" translatable="false">Loyer location nue</string>
-    <string name="loyer_location_meuble" translatable="false">Loyer location meublée</string>
-    <string name="vacance_locative_annuelle" translatable="false">Vacance locative annuelle</string>
-    <string name="loyer_nuite" translatable="false">Loyer nuitée</string>
-    <string name="vacance_locative_saisonniere" translatable="false">Vacance locative saisonnière</string>
-    <string name="loyer_saisonnier" translatable="false">Loyer saisonnier</string>
-    <string name="frais_annuels" translatable="false">Frais annuels</string>
-    <string name="charges_fixe" translatable="false">Charges Fixes</string>
-    <string name="revenu_locatif" translatable="false">Revenu locatif</string>
-    <string name="taxe_fonciere" translatable="false">Taxe foncière</string>
-    <string name="assurance" translatable="false">Assurance location</string>
-    <string name="travaux_annuels" translatable="false">Travaux annuels</string>
-    <string name="taxe_habitation" translatable="false">Taxe habitation</string>
-    <string name="charges_annuelles" translatable="false">Charges annuelles</string>
-    <string name="frais_pour_location_annuelle" translatable="false">Frais de location annuelle</string>
-    <string name="frais_de_gestion" translatable="false">Frais de gestion</string>
-    <string name="frais_pour_location_saisonniere" translatable="false">Frais de location saisonnière</string>
-    <string name="frais_accueil" translatable="false">Frais d\'accueil</string>
-    <string name="frais_menage" translatable="false">Frais de ménage</string>
-    <string name="frais_gestion_saisonniere" translatable="false">Frais de gestion saisonnière</string>
-    <string name="charges_location_saisonniere" translatable="false">Charges de location saisonnière</string>
+    <string name="label_gestion_type_de_gestion" translatable="false">Type de gestion</string>
+    <string name="label_gestion_recette_locative" translatable="false">Recette locative</string>
+    <string name="label_gestion_frais_annuels" translatable="false">Frais annuels</string>
+    <string name="label_gestion_frais_pour_location_annuelle" translatable="false">Frais de location annuelle</string>
+    <string name="label_gestion_frais_pour_location_saisonniere" translatable="false">Frais de location saisonnière</string>
+    
+    
+    <string name="field_name_gestion_type_de_gestion" translatable="false">Type de gestion</string>
+    <string name="field_name_gestion_loyer_location_nue" translatable="false">Loyer location nue</string>
+    <string name="field_name_gestion_loyer_location_meuble" translatable="false">Loyer location meublée</string>
+    <string name="field_name_gestion_vacance_locative_annuelle" translatable="false">Vacance locative annuelle</string>
+    <string name="field_name_gestion_loyer_nuite" translatable="false">Loyer nuitée</string>
+    <string name="field_name_gestion_vacance_locative_saisonniere" translatable="false">Vacance locative saisonnière</string>
+    <string name="field_name_gestion_loyer_saisonnier" translatable="false">Loyer saisonnier</string>
+    <string name="field_name_gestion_charges_fixe" translatable="false">Charges Fixes</string>
+    <string name="field_name_gestion_revenu_locatif" translatable="false">Revenu locatif</string>
+    <string name="field_name_gestion_taxe_fonciere" translatable="false">Taxe foncière</string>
+    <string name="field_name_gestion_assurance" translatable="false">Assurance location</string>
+    <string name="field_name_gestion_travaux_annuels" translatable="false">Travaux annuels</string>
+    <string name="field_name_gestion_taxe_habitation" translatable="false">Taxe habitation</string>
+    <string name="field_name_gestion_charges_annuelles" translatable="false">Charges annuelles</string>
+    <string name="field_name_gestion_frais_de_gestion" translatable="false">Frais de gestion</string>
+    <string name="field_name_gestion_frais_accueil" translatable="false">Frais d\'accueil</string>
+    <string name="field_name_gestion_frais_menage" translatable="false">Frais de ménage</string>
+    <string name="field_name_gestion_frais_gestion_saisonniere" translatable="false">Frais de gestion saisonnière</string>
+    <string name="field_name_gestion_charges_location_saisonniere" translatable="false">Charges de location saisonnière</string>
     
     <!-- Texts UI imposition -->
     <string name="label_imposition_impots_1ere_annee" translatable="false">Impôts 1ère année</string>

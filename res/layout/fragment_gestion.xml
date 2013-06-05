@@ -25,7 +25,7 @@ limitations under the License.
         
         <TextView
             style="@style/Form.CategoryLabel"
-            android:text="@string/type_de_gestion" />
+            android:text="@string/label_gestion_type_de_gestion" />
         
         <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
         <LinearLayout
@@ -37,7 +37,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvTypeGestion"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/type_de_gestion"
+                android:text="@string/field_name_gestion_type_de_gestion"
                 android:labelFor="@+id/valueTypeGestion" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -54,7 +54,7 @@ limitations under the License.
         
         <TextView
             style="@style/Form.CategoryLabel"
-            android:text="@string/recette_locative" />
+            android:text="@string/label_gestion_recette_locative" />
         
         <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
         <LinearLayout
@@ -66,7 +66,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvLoyerNu"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/loyer_location_nue"
+                android:text="@string/field_name_gestion_loyer_location_nue"
                 android:labelFor="@+id/valueLoyerNu" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -91,7 +91,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvLoyerMeuble"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/loyer_location_meuble"
+                android:text="@string/field_name_gestion_loyer_location_meuble"
                 android:labelFor="@+id/valueLoyerMeuble" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -116,7 +116,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvVacanceLocAn"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/vacance_locative_annuelle"
+                android:text="@string/field_name_gestion_vacance_locative_annuelle"
                 android:labelFor="@+id/valueVacanceLocAn" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -141,7 +141,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvLoyerNuit"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/loyer_nuite"
+                android:text="@string/field_name_gestion_loyer_nuite"
                 android:labelFor="@+id/valueLoyerNuit" />
             
             <!-- TODO update tag Mandatory or Optional and visibility -->
@@ -166,7 +166,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvVacanceLocSais"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/vacance_locative_saisonniere"
+                android:text="@string/field_name_gestion_vacance_locative_saisonniere"
                 android:labelFor="@+id/valueVacanceLocSais" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -191,7 +191,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvLoyerSais"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/loyer_saisonnier"
+                android:text="@string/field_name_gestion_loyer_saisonnier"
                 android:labelFor="@+id/valueLoyerSais" />
             
             <!-- TODO update visibility-->
@@ -215,7 +215,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvRevenuLoc"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/revenu_locatif"
+                android:text="@string/field_name_gestion_revenu_locatif"
                 android:labelFor="@+id/valueRevenuLoc" />
             
             <!-- TODO update visibility-->
@@ -231,7 +231,7 @@ limitations under the License.
         
         <TextView
             style="@style/Form.CategoryLabel"
-            android:text="@string/frais_annuels" />
+            android:text="@string/label_gestion_frais_annuels" />
         
         <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
         <LinearLayout
@@ -243,7 +243,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvChargesFixe"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/charges_fixe"
+                android:text="@string/field_name_gestion_charges_fixe"
                 android:labelFor="@+id/valueChargesFixe" />
             
             <!-- TODO update tag Mandatory or Optional and visibility -->
@@ -268,7 +268,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvTaxeFonciere"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/taxe_fonciere"
+                android:text="@string/field_name_gestion_taxe_fonciere"
                 android:labelFor="@+id/valueTaxeFonciere" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -293,7 +293,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvAssurance"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/assurance"
+                android:text="@string/field_name_gestion_assurance"
                 android:labelFor="@+id/valueAssurance" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -318,7 +318,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvTravauxAnnuels"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/travaux_annuels"
+                android:text="@string/field_name_gestion_travaux_annuels"
                 android:labelFor="@+id/valueTravauxAnnuels" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -343,7 +343,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvTaxeHabitation"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/taxe_habitation"
+                android:text="@string/field_name_gestion_taxe_habitation"
                 android:labelFor="@+id/valueTaxeHabitation" />
             
             <!-- TODO update tag Mandatory or Optional and visibility -->
@@ -368,7 +368,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvChargesAnnuelles"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/charges_annuelles"
+                android:text="@string/field_name_gestion_charges_annuelles"
                 android:labelFor="@+id/valueChargesAnnuelles" />
             
             <!-- TODO update visibility-->
@@ -393,7 +393,7 @@ limitations under the License.
         
         <TextView
             style="@style/Form.CategoryLabel"
-            android:text="@string/frais_pour_location_annuelle" />
+            android:text="@string/label_gestion_frais_pour_location_annuelle" />
         
         
         
@@ -408,7 +408,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvFraisGestion"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/frais_de_gestion"
+                android:text="@string/field_name_gestion_frais_de_gestion"
                 android:labelFor="@+id/valueFraisGestion" />
             
             <CheckBox
@@ -438,7 +438,7 @@ limitations under the License.
         
         <TextView
             style="@style/Form.CategoryLabel"
-            android:text="@string/frais_pour_location_saisonniere" />
+            android:text="@string/label_gestion_frais_pour_location_saisonniere" />
         
         <!-- TODO update tag AlwaysShown or Collapsable and visibility-->
         <LinearLayout
@@ -450,7 +450,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvFraisAccueil"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/frais_accueil"
+                android:text="@string/field_name_gestion_frais_accueil"
                 android:labelFor="@+id/valueFraisAccueil" />
             
             <!-- TODO update visibility-->
@@ -483,7 +483,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvFraisMenage"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/frais_menage"
+                android:text="@string/field_name_gestion_frais_menage"
                 android:labelFor="@+id/valueMenage" />
             
             <!-- TODO update visibility-->
@@ -516,7 +516,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvFraisGestionSais"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/frais_gestion_saisonniere"
+                android:text="@string/field_name_gestion_frais_gestion_saisonniere"
                 android:labelFor="@+id/valueFraisAccueil" />
             
             <!-- TODO update visibility-->
@@ -549,7 +549,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/tvChargesLocSais"
                 style="@style/Form.FieldLabelTextView"
-                android:text="@string/charges_location_saisonniere"
+                android:text="@string/field_name_gestion_charges_location_saisonniere"
                 android:labelFor="@+id/valueChargesLocSais" />
             
             <!-- TODO update visibility-->
