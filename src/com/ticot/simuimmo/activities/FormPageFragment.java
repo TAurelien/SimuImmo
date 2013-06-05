@@ -28,6 +28,8 @@ public class FormPageFragment extends Fragment {
 	/** Key use for the argument "page id". */
 	public static final String KEY_PAGE_ID = "PAGE";
 	
+	public static final String KEY_FIELDS_COLLAPSED = "FIELDS_COLLAPSED";
+	
 	/** Represents the total number of pages */
 	public static final int PAGE_COUNT = 4;
 	
@@ -57,6 +59,9 @@ public class FormPageFragment extends Fragment {
 	 * */
 	public static CharSequence PAGE_TITLE = "";
 	
+	/***/
+	public static Boolean FIELDS_COLLAPSED = false;
+	
 	//==============================================================================
 	//Methods
 	//==============================================================================
@@ -70,13 +75,12 @@ public class FormPageFragment extends Fragment {
 		PAGE_ID = arguments.getInt(KEY_PAGE_ID);
 		setPageTitle(PAGE_ID);
 		
-		if (BuildConfig.DEBUG) { //DEBUG
-			Log.d("Testing", "FormPage onCreateView " + PAGE_ID + " " + PAGE_TITLE);
-		}
-		
 		final View layoutPage = inflater.inflate(getLayoutID(PAGE_ID), container, false);
 		
 		initPageFields(layoutPage, PAGE_ID);
+		
+		FIELDS_COLLAPSED = arguments.getBoolean(KEY_FIELDS_COLLAPSED, false);
+		collapseFields(FIELDS_COLLAPSED);
 		
 		return layoutPage;
 	}
@@ -144,17 +148,23 @@ public class FormPageFragment extends Fragment {
 	
 		if (pageID == 3) {
 			final LinearLayout ll = (LinearLayout) v.findViewById(R.id.layoutForm);
-			if (BuildConfig.DEBUG) { //DEBUG
-				Log.d("Testing", "Number of fields = " + ll.getChildCount());
-			}
-			
 			for (int i = 0; i < ll.getChildCount(); i++) {
 				final View field = ll.getChildAt(i);
 				if (BuildConfig.DEBUG) { //DEBUG
-					Log.d("Testing", "ID = " + field.getId());
+					//Log.d("Testing", "ID = " + field.getId());
 				}
 			}
 		}
 		
 	}
+	
+	public void collapseFields(Boolean collapse) {
+	
+		if (BuildConfig.DEBUG) { //DEBUG
+			Log.d("Testing",
+					"Collapsing the " + PAGE_TITLE + " is " + collapse.toString());
+		}
+		
+	}
+	
 }

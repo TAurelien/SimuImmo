@@ -67,8 +67,13 @@ public class MainActivity extends FragmentActivity {
 	/** Backup key to save the real value state. */
 	private static final String KEY_BACKUP_realValueState = "backupRealValueState";
 	
+	/***/
+	private static AllFormPages myAllFormPages;
+	
+	//TODO Maybe delete myAllFormPages
+	
 	/** Global variable to know the state of the UI, collapsed or expanded. */
-	public boolean AcquisitionCollpased = true;
+	public boolean collpasedFields = true;
 	
 	/**
 	 * State of the calcul for backup. This state indicates if a calcul has been performed
@@ -113,7 +118,12 @@ public class MainActivity extends FragmentActivity {
 			final Fragment formPage = new FormPageFragment();
 			final Bundle arguments = new Bundle();
 			arguments.putInt(FormPageFragment.KEY_PAGE_ID, i + 1);
+			arguments.putBoolean(FormPageFragment.KEY_FIELDS_COLLAPSED, collpasedFields);
 			formPage.setArguments(arguments);
+			if (BuildConfig.DEBUG) { //DEBUG
+				Log.d("Testing", "Tag of the created fragment " + formPage.getTag());
+			}
+			
 			return formPage;
 		}
 		
@@ -127,6 +137,20 @@ public class MainActivity extends FragmentActivity {
 		public CharSequence getPageTitle(int position) {
 		
 			return FormPageFragment.getPageTitle(position + 1);
+		}
+		
+		public String collapse() {
+		
+			if (BuildConfig.DEBUG) { //DEBUG
+				//Log.d("Testing", "number of Fragment = " + String.valueOf(getCount()));
+			}
+			
+			return "yes";
+		}
+		
+		public String getFragmentTag(int position) {
+		
+			return "android:switcher:" + R.id.pager + ":" + getItemId(position);
 		}
 	}
 	
@@ -142,24 +166,16 @@ public class MainActivity extends FragmentActivity {
 		//Build the UI
 		setContentView(R.layout.activity_main);
 		
-		if (BuildConfig.DEBUG) { //DEBUG
-			Log.d("Testing", "onCreate after setContentView");
-		}
-		
 		final ViewPager pager = (ViewPager) findViewById(R.id.pager);
 		final FragmentManager fm = getSupportFragmentManager();
-		final AllFormPages myAllFormPages = new AllFormPages(fm);
+		myAllFormPages = new AllFormPages(fm);
 		pager.setAdapter(myAllFormPages);
-		
-		if (BuildConfig.DEBUG) { //DEBUG
-			Log.d("Testing", "onCreate after pager");
-		}
 		
 		PreferenceManager.setDefaultValues(getBaseContext(), R.xml.preference, false);
 		
 		//retreive the previous session
 		if (savedInstanceState != null) {
-			AcquisitionCollpased = !savedInstanceState.getBoolean(KEY_BACKUP_collapsed);
+			collpasedFields = !savedInstanceState.getBoolean(KEY_BACKUP_collapsed);
 			//TODO Remove reference to collapse button
 			//collapseUI(findViewById(R.id.btn_CollapseAcquisitionFields));
 			backupCalcul = savedInstanceState.getBoolean(KEY_BACKUP_calcul);
@@ -171,9 +187,6 @@ public class MainActivity extends FragmentActivity {
 			//restore also the state of the CheckBoxes for the real fields. 
 			//restoreRealValueState(savedInstanceState
 			//		.getBooleanArray(KEY_BACKUP_realValueState));
-		}
-		if (BuildConfig.DEBUG) { //DEBUG
-			Log.d("Testing", "onCreate after restoreBackup");
 		}
 	}
 	
@@ -193,8 +206,9 @@ public class MainActivity extends FragmentActivity {
 				onClickCalcul();
 				return true;
 			case R.id.menu_collapse:
-				collapseUI();
-				if (AcquisitionCollpased) {
+				onClickCollapseTemps();
+				onClickCollapse();
+				if (collpasedFields) {
 					item.setTitle(R.string.expand);
 				}
 				else {
@@ -283,9 +297,10 @@ public class MainActivity extends FragmentActivity {
 	public void onSaveInstanceState(Bundle outState) {
 	
 		super.onSaveInstanceState(outState);
-		outState.putBoolean(KEY_BACKUP_collapsed, AcquisitionCollpased);
+		outState.putBoolean(KEY_BACKUP_collapsed, collpasedFields);
 		outState.putBoolean(KEY_BACKUP_calcul, backupCalcul);
-		outState.putBooleanArray(KEY_BACKUP_realValueState, backupRealValueState());
+		//TODO Care the onSaveInstanceState
+		//outState.putBooleanArray(KEY_BACKUP_realValueState, backupRealValueState());
 		if (backupCalcul) {
 			Backup.bienBackup = bien;
 		}
@@ -554,7 +569,7 @@ public class MainActivity extends FragmentActivity {
 	 * 
 	 * @since 1.0
 	 */
-	public void collapseUI() {
+	public void onClickCollapse() {
 	
 		//Get the Form layout aggregating all fields
 		final LinearLayout ll = (LinearLayout) findViewById(R.id.layoutForm);
@@ -569,7 +584,7 @@ public class MainActivity extends FragmentActivity {
 			if (v.getTag().toString().contains("Collapsable")) { //Condition doesn't work for view without tag, need to check if tag is empty
 				//If the item is "Collapsable"
 				//Checking if the UI is already collapsed or not
-				if (AcquisitionCollpased) {
+				if (collpasedFields) {
 					//If already collapsed, so set the visibility to visible (0) 
 					v.setVisibility(0);
 				}
@@ -581,12 +596,18 @@ public class MainActivity extends FragmentActivity {
 		}
 		
 		//Finally update the global variable 
-		if (AcquisitionCollpased) {
-			AcquisitionCollpased = false;
+		if (collpasedFields) {
+			collpasedFields = false;
 		}
 		else {
-			AcquisitionCollpased = true;
+			collpasedFields = true;
 		}
+	}
+	
+	private void onClickCollapseTemps() {
+	
+		final String temp = myAllFormPages.getFragmentTag(2);
+		//(FormPageFragment) getFragmentManager().findFragmentByTag(temp).PAGE_ID;
 	}
 	
 	/**
