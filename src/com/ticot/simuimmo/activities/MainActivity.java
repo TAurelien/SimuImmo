@@ -195,10 +195,10 @@ public class MainActivity extends FragmentActivity {
 			case R.id.menu_collapse:
 				collapseUI();
 				if (AcquisitionCollpased) {
-					item.setTitle(R.string.expand);
+					item.setTitle(R.string.menu_expand);
 				}
 				else {
-					item.setTitle(R.string.collapse);
+					item.setTitle(R.string.menu_collapse);
 				}
 				return true;
 			case R.id.menu_settings:

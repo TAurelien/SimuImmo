@@ -42,14 +42,14 @@ limitations under the License.
                 android:id="@+id/valuePrixFAI"
                 style="@style/Form.FieldValue.TextView"
                 android:text=""
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="gone" />
 
             <EditText
                 android:id="@+id/valueReelPrixFAI"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_prix_fai"
+                android:text="@string/default_value_acquisition_prix_fai"
                 android:visibility="visible" />
             
             <View
@@ -71,7 +71,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueNetVendeur"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
      		<EditText
@@ -107,7 +107,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueFraisAgence"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <EditText
@@ -137,7 +137,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueFraisNotaire"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <EditText
@@ -167,7 +167,7 @@ limitations under the License.
                 android:id="@+id/valueTravaux"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:text="@string/default_value_travaux" />
+                android:text="@string/default_value_acquisition_travaux" />
 
             <View
                 style="@style/Form.FieldSpace" />
@@ -188,7 +188,7 @@ limitations under the License.
                 android:id="@+id/valueAmenagement"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:text="@string/default_value_amenagement" />
+                android:text="@string/default_value_acquisition_amenagement" />
 
             <View
                 style="@style/Form.FieldSpace"/>
@@ -214,7 +214,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueHonoraireConseil"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <EditText
@@ -245,7 +245,7 @@ limitations under the License.
                 android:id="@+id/valueAutresFrais"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:text="@string/default_value_autres_frais" />
+                android:text="@string/default_value_acquisition_autres_frais" />
             
             <View
                 style="@style/Form.FieldSpace" />
@@ -266,7 +266,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueCoutTotal"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <View
@@ -288,7 +288,7 @@ limitations under the License.
                 android:id="@+id/valueApport"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Optional"
-                android:text="@string/default_value_apport" />
+                android:text="@string/default_value_acquisition_apport" />
 
             <View
                 style="@style/Form.FieldSpace" />
@@ -309,7 +309,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueSequestre"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <View
@@ -335,7 +335,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueCapitalEmprunte"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <EditText
@@ -366,7 +366,7 @@ limitations under the License.
                 android:id="@+id/valueDureeCredit"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_duree_credit" />
+                android:text="@string/default_value_acquisition_duree_credit" />
 
             <View
                 style="@style/Form.FieldSpace" />
@@ -387,7 +387,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueNbMensualite"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZero"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <View
@@ -409,7 +409,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueTauxCredit"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroPer"
+                android:hint="@string/default_value_zero_per"
                 android:visibility="visible" />
             
             <EditText
@@ -439,7 +439,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueTauxAssurance"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroPer"
+                android:hint="@string/default_value_zero_per"
                 android:visibility="visible" />
             
             <EditText
@@ -468,7 +468,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueMensualite"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <View
@@ -490,7 +490,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueTauxEndettement"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <View

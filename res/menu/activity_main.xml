@@ -19,12 +19,12 @@ limitations under the License.
          android:id="@+id/menu_caluler"
          android:orderInCategory="2"
          android:showAsAction="always|withText"
-         android:title="@string/calculer" />
+         android:title="@string/menu_calculer" />
      <item 
          android:id="@+id/menu_collapse"
          android:orderInCategory="1"
          android:showAsAction="always|withText"
-         android:title="@string/expand"/>
+         android:title="@string/menu_expand"/>
      <item 
         android:id="@+id/menu_settings" 
         android:orderInCategory="100" 

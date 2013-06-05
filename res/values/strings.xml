@@ -20,6 +20,13 @@ limitations under the License.
     <!-- Texts UI main activity -->
     <string name="app_name" translatable="false">Simulateur Immobilier</string>
     
+    <!--Texts UI main activity > Menu -->
+    <string name="menu_expand">Afficher plus</string>
+    <string name="menu_collapse">Afficher moins</string>
+    <string name="menu_calculer">Calculer</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_about">A propos</string>
+    
     <!-- Texts UI acquisition -->
     <string name="frais_acquisition" translatable="false">Frais d\'acquisition</string>
     <string name="prix_fai" translatable="false">Prix FAI</string>
@@ -42,7 +49,7 @@ limitations under the License.
     <string name="mensualite" translatable="false">Mensualité</string>
     <string name="taux_endettement" translatable="false">Taux d\'endettement</string>
     
-    <!-- Texts UI gestion activity -->
+    <!-- Texts UI gestion -->
     <string name="type_de_gestion" translatable="false">Type de gestion</string>
     <string name="recette_locative" translatable="false">Recette locative</string>
     <string name="loyer_location_nue" translatable="false">Loyer location nue</string>
@@ -67,14 +74,26 @@ limitations under the License.
     <string name="frais_gestion_saisonniere" translatable="false">Frais de gestion saisonnière</string>
     <string name="charges_location_saisonniere" translatable="false">Charges de location saisonnière</string>
     
-    <!--Texts UI main activity > Menu -->
-    <string name="expand">Afficher plus</string>
-    <string name="collapse">Afficher moins</string>
-    <string name="calculer">Calculer</string>
-    <string name="menu_settings">Paramètres</string>
-    <string name="menu_about">A propos</string>
+    <!-- Texts UI imposition -->
+    <string name="label_imposition_impots_1ere_annee" translatable="false">Impôts 1ère année</string>
+    <string name="label_imposition_detail_frais_reel" translatable="false">Détails frais réels 1ère année</string>
+    <string name="field_name_imposition_taux_marginal" translatable="false">Taux marginal</string>
+    <string name="field_name_imposition_micro_foncier" translatable="false">Micro-foncier</string>
+    <string name="field_name_imposition_micro_bic" translatable="false">Micro-BIC</string>
+    <string name="field_name_imposition_classe" translatable="false">Classé</string>
+    <string name="field_name_imposition_frais_reels" translatable="false">Frais réels</string>
+    <string name="field_name_imposition_regime_fiscal" translatable="false">Regime fiscal</string>
+    <string name="field_name_imposition_impots" translatable="false">Total impôts</string>
+    <string name="field_name_imposition_amortissement_bien" translatable="false">amortissement bien</string>
+    <string name="field_name_imposition_amortissement_meubles" translatable="false">amortissement meubles</string>
+    <string name="field_name_imposition_total_charges" translatable="false">Total charges</string>
+    <string name="field_name_imposition_interets_emprunt" translatable="false">Intêrets d\'emprunt</string>
+    <string name="field_name_imposition_comptable" translatable="false">Comptable</string>
     
-    <!-- Texts UI Preference activity -->
+    <!-- Texts UI revente -->
+    
+    
+    <!-- Texts UI Preference -->
     <string name="preferenceTitle_acquisition" translatable="false">Acquisition</string>
     <string name="preferenceSum_acquisition" translatable="false">Definir les variables pour la partie Acquisition</string>
     <string name="preferenceTitle_application_parameters" translatable="false">Paramètres d\'application</string>
@@ -102,13 +121,13 @@ limitations under the License.
     <string name="about">A propos</string>
     <string name="license">Licence</string>
     
-    <!-- Texts UI About activity -->
-    <string name="About_logo_contentDescription">"Logo de l'application"</string>
+    <!-- Texts UI About -->
+    <string name="about_logo_content_description">"Logo de l'application"</string>
     <string name="about_version">Version</string>
     <string name="about_description">Cette application a pour but de simuler les différentes parties d\'un investissement immobilier.</string>
-    <string name="about_termOfUse">Cette application est fournie a titre informatif uniquement. L\'auteur ne pourrait être tenu responsable de quelconques actions réalisées par l\'utilisateur suivant l\'utilisation de cette application.</string>
+    <string name="about_term_of_use">Cette application est fournie a titre informatif uniquement. L\'auteur ne pourrait être tenu responsable de quelconques actions réalisées par l\'utilisateur suivant l\'utilisation de cette application.</string>
  
     <!-- Messages -->
     <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>
-
+    
 </resources>

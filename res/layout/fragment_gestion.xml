@@ -45,7 +45,7 @@ limitations under the License.
                 android:id="@+id/valueTypeGestion"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_type_gestion"
+                android:text="@string/default_value_gestion_type_gestion"
                 android:visibility="visible" />
             
             <View
@@ -74,7 +74,7 @@ limitations under the License.
                 android:id="@+id/valueLoyerNu"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_loyer_location_nue"
+                android:text="@string/default_value_gestion_loyer_location_nue"
                 android:visibility="visible" />
             
             <View
@@ -99,7 +99,7 @@ limitations under the License.
                 android:id="@+id/valueLoyerMeuble"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_loyer_location_meublee"
+                android:text="@string/default_value_gestion_loyer_location_meublee"
                 android:visibility="visible" />
             
             <View
@@ -124,7 +124,7 @@ limitations under the License.
                 android:id="@+id/valueVacanceLocAn"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_vacance_locative_annuelle"
+                android:text="@string/default_value_gestion_vacance_locative_annuelle"
                 android:visibility="visible" />
             
             <View
@@ -149,7 +149,7 @@ limitations under the License.
                 android:id="@+id/valueLoyerNuit"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_loyer_nuitee"
+                android:text="@string/default_value_gestion_loyer_nuitee"
                 android:visibility="visible" />
             
             <View
@@ -174,7 +174,7 @@ limitations under the License.
                 android:id="@+id/valueVacanceLocSais"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_vacance_locative_saisonniere"
+                android:text="@string/default_value_gestion_vacance_locative_saisonniere"
                 android:visibility="visible" />
             
             <View
@@ -198,7 +198,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueLoyerSais"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <View
@@ -222,7 +222,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueRevenuLoc"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <View
@@ -251,7 +251,7 @@ limitations under the License.
                 android:id="@+id/valueChargesFixe"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_charges_fixe"
+                android:text="@string/default_value_gestion_charges_fixe"
                 android:visibility="visible" />
             
             <View
@@ -276,7 +276,7 @@ limitations under the License.
                 android:id="@+id/valueTaxeFonciere"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_taxe_fonciere"
+                android:text="@string/default_value_gestion_taxe_fonciere"
                 android:visibility="visible" />
             
             <View
@@ -301,7 +301,7 @@ limitations under the License.
                 android:id="@+id/valueAssurance"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_assurance"
+                android:text="@string/default_value_gestion_assurance"
                 android:visibility="visible" />
             
             <View
@@ -326,7 +326,7 @@ limitations under the License.
                 android:id="@+id/valueTravauxAnnuels"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_travaux_annuels"
+                android:text="@string/default_value_gestion_travaux_annuels"
                 android:visibility="visible" />
             
             <View
@@ -351,7 +351,7 @@ limitations under the License.
                 android:id="@+id/valueTaxeHabitation"
                 style="@style/Form.FieldValue.EditText"
                 android:tag="Mandatory"
-                android:text="@string/default_value_taxe_habitation"
+                android:text="@string/default_value_gestion_taxe_habitation"
                 android:visibility="visible" />
             
             <View
@@ -375,7 +375,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueChargesAnnuelles"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -420,7 +420,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueFraisGestion"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -457,7 +457,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueFraisAccueil"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -490,7 +490,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueFraisMenage"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -523,7 +523,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueFraisGestionSais"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <!-- TODO update tag Mandatory or Optional and visibility-->
@@ -556,7 +556,7 @@ limitations under the License.
             <TextView
                 android:id="@+id/valueChargesLocSais"
                 style="@style/Form.FieldValue.TextView"
-                android:hint="@string/defaultValueZeroEuro"
+                android:hint="@string/default_value_zero_euro"
                 android:visibility="visible" />
             
             <!-- TODO update tag Mandatory or Optional and visibility -->
