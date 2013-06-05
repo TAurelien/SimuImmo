@@ -30,7 +30,6 @@ limitations under the License.
     <!-- Texts UI acquisition -->
     <string name="label_acquisition_frais_acquisition" translatable="false">Frais d\'acquisition</string>
     <string name="label_acquisition_emprunt" translatable="false">Emprunt</string>
-    
     <string name="field_name_acquisition_prix_fai" translatable="false">Prix FAI</string>
     <string name="field_name_acquisition_net_vendeur" translatable="false">Net vendeur</string>
     <string name="field_name_acquisition_frais_agence" translatable="false">Frais agence</string>
@@ -56,14 +55,12 @@ limitations under the License.
     <string name="label_gestion_frais_annuels" translatable="false">Frais annuels</string>
     <string name="label_gestion_frais_pour_location_annuelle" translatable="false">Frais de location annuelle</string>
     <string name="label_gestion_frais_pour_location_saisonniere" translatable="false">Frais de location saisonnière</string>
-    
-    
     <string name="field_name_gestion_type_de_gestion" translatable="false">Type de gestion</string>
-    <string name="field_name_gestion_loyer_location_nue" translatable="false">Loyer location nue</string>
-    <string name="field_name_gestion_loyer_location_meuble" translatable="false">Loyer location meublée</string>
-    <string name="field_name_gestion_vacance_locative_annuelle" translatable="false">Vacance locative annuelle</string>
+    <string name="field_name_gestion_loyer_location_nue" translatable="false">Loyer loc. nue</string>
+    <string name="field_name_gestion_loyer_location_meuble" translatable="false">Loyer loc. meublée</string>
+    <string name="field_name_gestion_vacance_locative_annuelle" translatable="false">Vacance loc. annuelle</string>
     <string name="field_name_gestion_loyer_nuite" translatable="false">Loyer nuitée</string>
-    <string name="field_name_gestion_vacance_locative_saisonniere" translatable="false">Vacance locative saisonnière</string>
+    <string name="field_name_gestion_vacance_locative_saisonniere" translatable="false">Vacance loc. saisonnière</string>
     <string name="field_name_gestion_loyer_saisonnier" translatable="false">Loyer saisonnier</string>
     <string name="field_name_gestion_charges_fixe" translatable="false">Charges Fixes</string>
     <string name="field_name_gestion_revenu_locatif" translatable="false">Revenu locatif</string>
@@ -75,8 +72,8 @@ limitations under the License.
     <string name="field_name_gestion_frais_de_gestion" translatable="false">Frais de gestion</string>
     <string name="field_name_gestion_frais_accueil" translatable="false">Frais d\'accueil</string>
     <string name="field_name_gestion_frais_menage" translatable="false">Frais de ménage</string>
-    <string name="field_name_gestion_frais_gestion_saisonniere" translatable="false">Frais de gestion saisonnière</string>
-    <string name="field_name_gestion_charges_location_saisonniere" translatable="false">Charges de location saisonnière</string>
+    <string name="field_name_gestion_frais_gestion_saisonniere" translatable="false">Frais gestion saison.</string>
+    <string name="field_name_gestion_charges_location_saisonniere" translatable="false">Charges loc. saison.</string>
     
     <!-- Texts UI imposition -->
     <string name="label_imposition_impots_1ere_annee" translatable="false">Impôts 1ère année</string>
@@ -88,14 +85,34 @@ limitations under the License.
     <string name="field_name_imposition_frais_reels" translatable="false">Frais réels</string>
     <string name="field_name_imposition_regime_fiscal" translatable="false">Regime fiscal</string>
     <string name="field_name_imposition_impots" translatable="false">Total impôts</string>
-    <string name="field_name_imposition_amortissement_bien" translatable="false">amortissement bien</string>
-    <string name="field_name_imposition_amortissement_meubles" translatable="false">amortissement meubles</string>
+    <string name="field_name_imposition_amortissement_bien" translatable="false">amortiss. bien</string>
+    <string name="field_name_imposition_amortissement_meubles" translatable="false">amortiss. meubles</string>
     <string name="field_name_imposition_total_charges" translatable="false">Total charges</string>
     <string name="field_name_imposition_interets_emprunt" translatable="false">Intêrets d\'emprunt</string>
     <string name="field_name_imposition_comptable" translatable="false">Comptable</string>
     
     <!-- Texts UI revente -->
-    
+    <string name="label_revente_cout_acquisition" translatable="false">Couts d\'acquisition</string>
+    <string name="label_revente_ROI_apres_renovation" translatable="false">ROI après rénovation</string>
+    <string name="label_revente_revente" translatable="false">Revente</string>
+    <string name="field_name_revente_cout_total" translatable="false">Cout total</string>
+    <string name="field_name_revente_dont_valeur_bien" translatable="false">Dont valeur bien</string>
+    <string name="field_name_revente_dont_frais" translatable="false">Dont frais</string>
+    <string name="field_name_revente_apport_inclu" translatable="false">apport inclu</string>
+    <string name="field_name_revente_valeur_revente_estimee" translatable="false">Valeur de revente</string>
+    <string name="field_name_revente_plus_value_bien_an1" translatable="false">Plus-value du bien</string>
+    <string name="field_name_revente_plus_value_globale" translatable="false">Plus-value globale</string>
+    <string name="field_name_revente_roi_equilibre" translatable="false">ROI à l\'équilibre</string>
+    <string name="field_name_revente_revente_apres" translatable="false">Revente après</string>
+    <string name="field_name_revente_plus_value_bien_revente" translatable="false">Plus-value du bien</string>
+    <string name="field_name_revente_revenu_cumule" translatable="false">Revenu cumulé</string>
+    <string name="field_name_revente_imposition_plus_value" translatable="false">Imposition plus-value</string>
+    <string name="field_name_revente_gain_global" translatable="false">Gain global</string>
+    <string name="field_name_revente_roi" translatable="false">ROI</string>
+    <string name="field_name_revente_tri_location_nu" translatable="false">TRI loc. nu</string>
+    <string name="field_name_revente_tri_location_meuble" translatable="false">TRI loc. meublé</string>
+    <string name="field_name_revente_tri_location_saisonniere" translatable="false">TRI loc. saisonnière</string>
+    <string name="field_name_revente_tri_residence_principale" translatable="false">TRI rés. principale</string>
     
     <!-- Texts UI Preference -->
     <string name="preferenceTitle_acquisition" translatable="false">Acquisition</string>

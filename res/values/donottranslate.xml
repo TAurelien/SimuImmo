@@ -50,6 +50,9 @@ limitations under the License.
     <string name="default_value_imposition_taux_marginal">30 %</string>
     <string name="default_value_imposition_comptable">500,00 €</string>
     
+    <!-- Default values EditText Revente -->
+    <string name="default_value_revente_revente_apres">30</string>
+    
     <!-- Default values for preferences -->
     <string name="defaultPreferencePourcentageFraisAgence">0.075</string>
     <string name="defaultPreferencePourcentageFraisNotaire">0.075</string>

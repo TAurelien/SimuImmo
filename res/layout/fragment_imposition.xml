@@ -52,7 +52,8 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_micro_foncier"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_microBIC"
@@ -65,7 +66,8 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_micro_bic"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_classe"
@@ -78,7 +80,8 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_classe"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_fraisReels"
@@ -91,7 +94,8 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_frais_reels"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_regimeFiscal"
@@ -134,7 +138,8 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_amortissement_bien"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_amortissementMeubles"
@@ -147,7 +152,8 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_amortissement_meubles"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_totalCharges"
@@ -160,7 +166,8 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_total_charges"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_interetsEmprunt"
@@ -173,7 +180,8 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_interets_emprunt"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Impots_comptable"
@@ -184,9 +192,10 @@ limitations under the License.
 			custom:choiceChecked="false"
 			custom:fieldValueConfig="EditText"
 			custom:fieldName="@string/field_name_imposition_comptable"
-			custom:fieldValueText="@string/default_value_imposition_comptable"
-			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro" />
+			custom:fieldUserValueText="@string/default_value_imposition_comptable"
+			custom:fieldUserValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
 	</LinearLayout>
 
