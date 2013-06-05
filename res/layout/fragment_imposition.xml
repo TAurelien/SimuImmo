@@ -26,46 +26,176 @@ limitations under the License.
         
         <TextView
             style="@style/Form.CategoryLabel"
-            android:text="1ère année" />
+            android:text="@string/label_imposition_impots_1ere_annee" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Taux_marginal"
+            android:id="@+id/Imposition_Taux_marginal"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
+			custom:mandatory="true"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="EditText"
+			custom:fieldName="@string/field_name_imposition_taux_marginal"
+			custom:fieldUserValueText="@string/default_value_imposition_taux_marginal"
+			custom:fieldUserValueHint="@string/default_value_zero_per"
+			custom:valueFormat="percentage" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_microFoncier"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_micro_foncier"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_microBIC"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_micro_bic"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_classe"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_classe"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_fraisReels"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_frais_reels"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_regimeFiscal"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="false"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_regime_fiscal"
+			custom:fieldValueText=""
+			custom:fieldValueHint=""
+			custom:valueFormat="none" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_impots"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="false"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_impots"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro" />
+        
+        <TextView
+            style="@style/Form.CategoryLabel"
+            android:text="@string/label_imposition_detail_frais_reel" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_amortissementBien"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_amortissement_bien"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_amortissementMeubles"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_amortissement_meubles"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_totalCharges"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_total_charges"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_interetsEmprunt"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
+			custom:mandatory="false"
+			custom:choiceAvailability="false"
+			custom:choiceChecked="false"
+			custom:fieldValueConfig="TextView"
+			custom:fieldName="@string/field_name_imposition_interets_emprunt"
+			custom:fieldValueText=""
+			custom:fieldValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
+        
+        <com.ticot.simuimmo.activities.FieldComponent 
+            android:id="@+id/Imposition_comptable"
+            style="@style/Form.FieldLayout"
+    		custom:collapsible="true"
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
 			custom:fieldValueConfig="EditText"
-			custom:fieldName="Impôts micro-BIC"
-			custom:fieldValueText=""
-			custom:fieldValueHint="@string/defaultValueZeroEuro"
-			custom:valueFormat="euro" />
-        
-        <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_microFoncier"
-            style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
-			custom:mandatory="false"
-			custom:choiceAvailability="false"
-			custom:choiceChecked="false"
-			custom:fieldValueConfig="TextView_EditText"
-			custom:fieldName="Impôts micro-BIC"
-			custom:fieldValueText=""
-			custom:fieldValueHint="@string/defaultValueZeroEuro"
-			custom:valueFormat="euro" />
-        
-        <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_microBIC"
-            style="@style/Form.FieldLayout"
-    		custom:collapsible="false"
-			custom:mandatory="false"
-			custom:choiceAvailability="false"
-			custom:choiceChecked="false"
-			custom:fieldValueConfig="TextView_EditText"
-			custom:fieldName="Impôts micro-BIC"
-			custom:fieldValueText=""
-			custom:fieldValueHint="@string/defaultValueZeroEuro"
-			custom:valueFormat="euro" />
+			custom:fieldName="@string/field_name_imposition_comptable"
+			custom:fieldUserValueText="@string/default_value_imposition_comptable"
+			custom:fieldUserValueHint="@string/default_value_zero_euro"
+			custom:valueFormat="euro"
+			android:visibility="gone" />
         
 	</LinearLayout>
 

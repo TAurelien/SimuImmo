@@ -18,30 +18,43 @@ limitations under the License.
     tools:ignore="UnusedResources">
     
     <!-- Default values Hint -->
-    <string name="defaultValueZeroEuro">0,00 €</string>
-    <string name="defaultValueZeroPer">0,00 %</string>
-    <string name="defaultValueZero">0</string>
+    <string name="default_value_zero_euro">0,00 €</string>
+    <string name="default_value_zero_per">0,00 %</string>
+    <string name="default_value_zero">0</string>
+    
+    <!-- Common values -->
+    <string name="NA">-</string>
     
     <!-- Default values EditText Acquisition -->
-    <string name="default_value_prix_fai">0,00 €</string>
-    <string name="default_value_amenagement">0,00 €</string>
-    <string name="default_value_travaux">0,00 €</string>
-    <string name="default_value_autres_frais">2 000,00 €</string>
-    <string name="default_value_apport">0,00 €</string>
-    <string name="default_value_duree_credit">25</string>
+    <string name="default_value_acquisition_prix_fai">0,00 €</string>
+    <string name="default_value_acquisition_amenagement">0,00 €</string>
+    <string name="default_value_acquisition_travaux">0,00 €</string>
+    <string name="default_value_acquisition_autres_frais">2 000,00 €</string>
+    <string name="default_value_acquisition_apport">0,00 €</string>
+    <string name="default_value_acquisition_duree_credit">25</string>
     
     <!-- Default values EditText Gestion -->
-    <string name="default_value_type_gestion">0,00 €</string>
-    <string name="default_value_loyer_location_nue">0,00 €</string>
-    <string name="default_value_loyer_location_meublee">0,00 €</string>
-    <string name="default_value_vacance_locative_annuelle">0</string>
-    <string name="default_value_loyer_nuitee">0,00 €</string>
-    <string name="default_value_vacance_locative_saisonniere">0</string>
-    <string name="default_value_charges_fixe">0,00 €</string>
-    <string name="default_value_taxe_fonciere">0,00 €</string>
-    <string name="default_value_assurance">0,00 €</string>
-    <string name="default_value_travaux_annuels">0,00 €</string>
-    <string name="default_value_taxe_habitation">0,00 €</string>
+    <string name="default_value_gestion_type_gestion">1</string>
+    <string name="default_value_gestion_loyer_location_nue">800,00 €</string>
+    <string name="default_value_gestion_loyer_location_meublee">1 000,00 €</string>
+    <string name="default_value_gestion_vacance_locative_annuelle">0</string>
+    <string name="default_value_gestion_loyer_nuitee">110,00 €</string>
+    <string name="default_value_gestion_vacance_locative_saisonniere">10</string>
+    <string name="default_value_gestion_charges_fixe">1 100,00 €</string>
+    <string name="default_value_gestion_taxe_fonciere">300,00 €</string>
+    <string name="default_value_gestion_assurance">60,00 €</string>
+    <string name="default_value_gestion_travaux_annuels">0,00 €</string>
+    <string name="default_value_gestion_taxe_habitation">300,00 €</string>
+    
+    <!-- Default values EditText Imposition -->
+    <string name="default_value_imposition_taux_marginal">30 %</string>
+    <string name="default_value_imposition_comptable">500,00 €</string>
+    
+    <!-- Default values EditText CashFlow -->
+    <string name="default_value_cashflow_loyer_actuel">720,00 €</string>
+    
+    <!-- Default values EditText Revente -->
+    <string name="default_value_revente_revente_apres">30</string>
     
     <!-- Default values for preferences -->
     <string name="defaultPreferencePourcentageFraisAgence">0.075</string>
@@ -54,7 +67,7 @@ limitations under the License.
     <string name="defaultPreferenceTauxAssuranceCredit">0.0036</string>
     <string name="defaultPreferencePourcentageSequestre">0.1</string>
     
-    <!-- Texts UI About activity -->
+    <!-- Texts UI About -->
     <string name="about_copyright">© 2013 Aurelien Ticot</string>
     <string name="about_license">Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 \n\nhttp://www.apache.org/licenses/LICENSE-2.0

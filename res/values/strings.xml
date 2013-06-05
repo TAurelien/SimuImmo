@@ -20,95 +20,157 @@ limitations under the License.
     <!-- Texts UI main activity -->
     <string name="app_name" translatable="false">Simulateur Immobilier</string>
     
-    <!-- Texts UI acquisition -->
-    <string name="frais_acquisition" translatable="false">Frais d\'acquisition</string>
-    <string name="prix_fai" translatable="false">Prix FAI</string>
-    <string name="net_vendeur" translatable="false">Net vendeur</string>
-    <string name="frais_agence" translatable="false">Frais agence</string>
-    <string name="frais_notaire" translatable="false">Frais de notaire</string>
-    <string name="travaux" translatable="false">Travaux</string>
-    <string name="amenagement" translatable="false">Amenagement</string>
-    <string name="conseil" translatable="false">Conseil</string>
-    <string name="autres_frais" translatable="false">Autres frais</string>
-    <string name="cout_total" translatable="false">Cout total</string>
-    <string name="apport" translatable="false">Apport</string>
-    <string name="sequestre" translatable="false">Sequestre</string>
-    <string name="emprunt" translatable="false">Emprunt</string>
-    <string name="capital_emprunte" translatable="false">Capital emprunté</string>
-    <string name="duree_du_credit" translatable="false">Durée du credit</string>
-    <string name="nombre_mensualite" translatable="false">Nombre mensualité</string>
-    <string name="taux_de_credit" translatable="false">Taux de credit</string>
-    <string name="taux_assurance" translatable="false">Taux d\'assurance</string>
-    <string name="mensualite" translatable="false">Mensualité</string>
-    <string name="taux_endettement" translatable="false">Taux d\'endettement</string>
-    
-    <!-- Texts UI gestion activity -->
-    <string name="type_de_gestion" translatable="false">Type de gestion</string>
-    <string name="recette_locative" translatable="false">Recette locative</string>
-    <string name="loyer_location_nue" translatable="false">Loyer location nue</string>
-    <string name="loyer_location_meuble" translatable="false">Loyer location meublée</string>
-    <string name="vacance_locative_annuelle" translatable="false">Vacance locative annuelle</string>
-    <string name="loyer_nuite" translatable="false">Loyer nuitée</string>
-    <string name="vacance_locative_saisonniere" translatable="false">Vacance locative saisonnière</string>
-    <string name="loyer_saisonnier" translatable="false">Loyer saisonnier</string>
-    <string name="frais_annuels" translatable="false">Frais annuels</string>
-    <string name="charges_fixe" translatable="false">Charges Fixes</string>
-    <string name="revenu_locatif" translatable="false">Revenu locatif</string>
-    <string name="taxe_fonciere" translatable="false">Taxe foncière</string>
-    <string name="assurance" translatable="false">Assurance location</string>
-    <string name="travaux_annuels" translatable="false">Travaux annuels</string>
-    <string name="taxe_habitation" translatable="false">Taxe habitation</string>
-    <string name="charges_annuelles" translatable="false">Charges annuelles</string>
-    <string name="frais_pour_location_annuelle" translatable="false">Frais de location annuelle</string>
-    <string name="frais_de_gestion" translatable="false">Frais de gestion</string>
-    <string name="frais_pour_location_saisonniere" translatable="false">Frais de location saisonnière</string>
-    <string name="frais_accueil" translatable="false">Frais d\'accueil</string>
-    <string name="frais_menage" translatable="false">Frais de ménage</string>
-    <string name="frais_gestion_saisonniere" translatable="false">Frais de gestion saisonnière</string>
-    <string name="charges_location_saisonniere" translatable="false">Charges de location saisonnière</string>
-    
     <!--Texts UI main activity > Menu -->
-    <string name="expand">Afficher plus</string>
-    <string name="collapse">Afficher moins</string>
-    <string name="calculer">Calculer</string>
+    <string name="menu_expand">Afficher plus</string>
+    <string name="menu_collapse">Afficher moins</string>
+    <string name="menu_calculer">Calculer</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_about">A propos</string>
     
-    <!-- Texts UI Preference activity -->
-    <string name="preferenceTitle_acquisition" translatable="false">Acquisition</string>
-    <string name="preferenceSum_acquisition" translatable="false">Definir les variables pour la partie Acquisition</string>
-    <string name="preferenceTitle_application_parameters" translatable="false">Paramètres d\'application</string>
-    <string name="preferenceTitle_default_values" translatable="false">Valeurs par défaut</string>
-    <string name="preferenceTitle_information" translatable="false">informations</string>
-    <string name="preferenceTitle_PourcentageFraisAgence" translatable="false">Frais d\'agence</string>
-    <string name="preferenceSum_PourcentageFraisAgence" translatable="false">Entrer le pourcentage de frais d\'agence</string>
-    <string name="preferenceTitle_PourcentageFraisNotaire" translatable="false">Frais de notaire</string>
-    <string name="preferenceSum_PourcentageFraisNotaire" translatable="false">Entrer le pourcentage de frais de notaire</string>
-    <string name="preferenceTitle_PourcentageHonorairesConseil" translatable="false">Frais des honoraires de conseil</string>
-    <string name="preferenceSum_PourcentageHonorairesConseil" translatable="false">Entrer le pourcentage de frais des honoraires de conseil</string>
-    <string name="preferenceTitle_Taux15ans" translatable="false">Taux à 15 ans</string>
-    <string name="preferenceSum_Taux15ans" translatable="false">Entrer le taux de credit à 15 ans</string>
-    <string name="preferenceTitle_Taux20ans" translatable="false">Taux à 20 ans</string>
-    <string name="preferenceSum_Taux20ans" translatable="false">Entrer le taux de credit à 20 ans</string>
-    <string name="preferenceTitle_Taux25ans" translatable="false">Taux à 25 ans</string>
-    <string name="preferenceSum_Taux25ans" translatable="false">Entrer le taux de credit à 25 ans</string>
-    <string name="preferenceTitle_Taux30ans" translatable="false">Taux à 30 ans</string>
-    <string name="preferenceSum_Taux30ans" translatable="false">Entrer le taux de credit à 30 ans</string>
-	<string name="preferenceTitle_TauxAssuranceCredit" translatable="false">Taux d\'assurance</string>
-    <string name="preferenceSum_TauxAssuranceCredit" translatable="false">Entrer le taux d\'assurance de credit</string>
-    <string name="preferenceTitle_PourcentageSequestre" translatable="false">Sequestre</string>
-    <string name="preferenceSum_PourcentageSequestre" translatable="false">Entrer le pourcentage du sequestre</string>
-    <string name="help">Aide</string>
-    <string name="about">A propos</string>
-    <string name="license">Licence</string>
+    <!-- Texts UI acquisition -->
+    <string name="label_acquisition_frais_acquisition" translatable="false">Frais d\'acquisition</string>
+    <string name="label_acquisition_emprunt" translatable="false">Emprunt</string>
+    <string name="field_name_acquisition_prix_fai" translatable="false">Prix FAI</string>
+    <string name="field_name_acquisition_net_vendeur" translatable="false">Net vendeur</string>
+    <string name="field_name_acquisition_frais_agence" translatable="false">Frais agence</string>
+    <string name="field_name_acquisition_frais_notaire" translatable="false">Frais de notaire</string>
+    <string name="field_name_acquisition_travaux" translatable="false">Travaux</string>
+    <string name="field_name_acquisition_amenagement" translatable="false">Amenagement</string>
+    <string name="field_name_acquisition_conseil" translatable="false">Conseil</string>
+    <string name="field_name_acquisition_autres_frais" translatable="false">Autres frais</string>
+    <string name="field_name_acquisition_cout_total" translatable="false">Cout total</string>
+    <string name="field_name_acquisition_apport" translatable="false">Apport</string>
+    <string name="field_name_acquisition_sequestre" translatable="false">Sequestre</string>
+    <string name="field_name_acquisition_capital_emprunte" translatable="false">Capital emprunté</string>
+    <string name="field_name_acquisition_duree_du_credit" translatable="false">Durée du credit</string>
+    <string name="field_name_acquisition_nombre_mensualite" translatable="false">Nombre mensualité</string>
+    <string name="field_name_acquisition_taux_de_credit" translatable="false">Taux de credit</string>
+    <string name="field_name_acquisition_taux_assurance" translatable="false">Taux d\'assurance</string>
+    <string name="field_name_acquisition_mensualite" translatable="false">Mensualité</string>
+    <string name="field_name_acquisition_taux_endettement" translatable="false">Taux d\'endettement</string>
     
-    <!-- Texts UI About activity -->
-    <string name="About_logo_contentDescription">"Logo de l'application"</string>
+    <!-- Texts UI gestion -->
+    <string name="label_gestion_type_de_gestion" translatable="false">Type de gestion</string>
+    <string name="label_gestion_recette_locative" translatable="false">Recette locative</string>
+    <string name="label_gestion_frais_annuels" translatable="false">Frais annuels</string>
+    <string name="label_gestion_frais_pour_location_annuelle" translatable="false">Frais de location annuelle</string>
+    <string name="label_gestion_frais_pour_location_saisonniere" translatable="false">Frais de location saisonnière</string>
+    <string name="field_name_gestion_type_de_gestion" translatable="false">Type de gestion</string>
+    <string name="field_name_gestion_loyer_location_nue" translatable="false">Loyer loc. nue</string>
+    <string name="field_name_gestion_loyer_location_meuble" translatable="false">Loyer loc. meublée</string>
+    <string name="field_name_gestion_vacance_locative_annuelle" translatable="false">Vacance loc. annuelle</string>
+    <string name="field_name_gestion_loyer_nuite" translatable="false">Loyer nuitée</string>
+    <string name="field_name_gestion_vacance_locative_saisonniere" translatable="false">Vacance loc. saisonnière</string>
+    <string name="field_name_gestion_loyer_saisonnier" translatable="false">Loyer saisonnier</string>
+    <string name="field_name_gestion_charges_fixe" translatable="false">Charges Fixes</string>
+    <string name="field_name_gestion_revenu_locatif" translatable="false">Revenu locatif</string>
+    <string name="field_name_gestion_taxe_fonciere" translatable="false">Taxe foncière</string>
+    <string name="field_name_gestion_assurance" translatable="false">Assurance location</string>
+    <string name="field_name_gestion_travaux_annuels" translatable="false">Travaux annuels</string>
+    <string name="field_name_gestion_taxe_habitation" translatable="false">Taxe habitation</string>
+    <string name="field_name_gestion_charges_annuelles" translatable="false">Charges annuelles</string>
+    <string name="field_name_gestion_frais_de_gestion" translatable="false">Frais de gestion</string>
+    <string name="field_name_gestion_frais_accueil" translatable="false">Frais d\'accueil</string>
+    <string name="field_name_gestion_frais_menage" translatable="false">Frais de ménage</string>
+    <string name="field_name_gestion_frais_gestion_saisonniere" translatable="false">Frais gestion saison.</string>
+    <string name="field_name_gestion_charges_location_saisonniere" translatable="false">Charges loc. saison.</string>
+    
+    <!-- Texts UI imposition -->
+    <string name="label_imposition_impots_1ere_annee" translatable="false">Impôts 1ère année</string>
+    <string name="label_imposition_detail_frais_reel" translatable="false">Détails frais réels 1ère année</string>
+    <string name="field_name_imposition_taux_marginal" translatable="false">Taux marginal</string>
+    <string name="field_name_imposition_micro_foncier" translatable="false">Micro-foncier</string>
+    <string name="field_name_imposition_micro_bic" translatable="false">Micro-BIC</string>
+    <string name="field_name_imposition_classe" translatable="false">Classé</string>
+    <string name="field_name_imposition_frais_reels" translatable="false">Frais réels</string>
+    <string name="field_name_imposition_regime_fiscal" translatable="false">Regime fiscal</string>
+    <string name="field_name_imposition_impots" translatable="false">Total impôts</string>
+    <string name="field_name_imposition_amortissement_bien" translatable="false">amortiss. bien</string>
+    <string name="field_name_imposition_amortissement_meubles" translatable="false">amortiss. meubles</string>
+    <string name="field_name_imposition_total_charges" translatable="false">Total charges</string>
+    <string name="field_name_imposition_interets_emprunt" translatable="false">Intêrets d\'emprunt</string>
+    <string name="field_name_imposition_comptable" translatable="false">Comptable</string>
+    
+    <!-- Texts UI CashFlow -->
+    <string name="label_cashflow_input_data" translatable="false">Données d\'entrée</string>
+    <string name="label_cashflow_rendements" translatable="false">Rendements</string>
+    <string name="label_cashflow_cashflow_an1" translatable="false">Cash flow 1ère année</string>
+    <string name="label_cashflow_patrimoine_an1" translatable="false">Patrimoine 1ère année</string>
+    <string name="field_name_cashflow_revenus" translatable="false">Revenus</string>
+    <string name="field_name_cashflow_couts" translatable="false">Couts</string>
+    <string name="field_name_cashflow_impots" translatable="false">Impôts</string>
+    <string name="field_name_cashflow_loyer_actuel" translatable="false">Loyer actuel</string>
+    <string name="field_name_cashflow_rendement_brut" translatable="false">Rendement brut</string>
+    <string name="field_name_cashflow_rendement_brut_vac_loc" translatable="false">Rendement brut avec vac. loc.</string>
+    <string name="field_name_cashflow_rendement_net" translatable="false">Rendement net</string>
+    <string name="field_name_cashflow_rendement_net_net" translatable="false">Rendement net net</string>
+    <string name="field_name_cashflow_rendement_apport" translatable="false">rendement / apport</string>
+    <string name="field_name_cashflow_balance_avant_impots" translatable="false">balance avant impôts</string>
+    <string name="field_name_cashflow_balance_mensuel_avant_impots" translatable="false">Balance mens. avant impôts</string>
+    <string name="field_name_cashflow_balance_apres_impots" translatable="false">Balance après impôts</string>
+    <string name="field_name_cashflow_balance_mensuel_apres_impots" translatable="false">Balance mens. avant impôts</string>
+    <string name="field_name_cashflow_remboursement_capital" translatable="false">remboursement capital</string>
+    <string name="field_name_cashflow_evolution_patrimoine" translatable="false">Evolution patrimoine</string>
+    <string name="field_name_cashflow_evolution_revalorisation" translatable="false">Evolution avec revalorisation</string>
+    
+    <!-- Texts UI revente -->
+    <string name="label_revente_cout_acquisition" translatable="false">Couts d\'acquisition</string>
+    <string name="label_revente_ROI_apres_renovation" translatable="false">ROI après rénovation</string>
+    <string name="label_revente_revente" translatable="false">Revente</string>
+    <string name="field_name_revente_cout_total" translatable="false">Cout total</string>
+    <string name="field_name_revente_dont_valeur_bien" translatable="false">Dont valeur bien</string>
+    <string name="field_name_revente_dont_frais" translatable="false">Dont frais</string>
+    <string name="field_name_revente_apport_inclu" translatable="false">apport inclu</string>
+    <string name="field_name_revente_valeur_revente_estimee" translatable="false">Valeur de revente</string>
+    <string name="field_name_revente_plus_value_bien_an1" translatable="false">Plus-value du bien</string>
+    <string name="field_name_revente_plus_value_globale" translatable="false">Plus-value globale</string>
+    <string name="field_name_revente_roi_equilibre" translatable="false">ROI à l\'équilibre</string>
+    <string name="field_name_revente_revente_apres" translatable="false">Revente après</string>
+    <string name="field_name_revente_plus_value_bien_revente" translatable="false">Plus-value du bien</string>
+    <string name="field_name_revente_revenu_cumule" translatable="false">Revenu cumulé</string>
+    <string name="field_name_revente_imposition_plus_value" translatable="false">Imposition plus-value</string>
+    <string name="field_name_revente_gain_global" translatable="false">Gain global</string>
+    <string name="field_name_revente_roi" translatable="false">ROI</string>
+    <string name="field_name_revente_tri_location_nu" translatable="false">TRI loc. nu</string>
+    <string name="field_name_revente_tri_location_meuble" translatable="false">TRI loc. meublé</string>
+    <string name="field_name_revente_tri_location_saisonniere" translatable="false">TRI loc. saisonnière</string>
+    <string name="field_name_revente_tri_residence_principale" translatable="false">TRI rés. principale</string>
+    
+    <!-- Texts UI Preference -->
+    <string name="preference_title_acquisition" translatable="false">Acquisition</string>
+    <string name="preference_sum_acquisition" translatable="false">Definir les variables pour la partie Acquisition</string>
+    <string name="preference_title_application_parameters" translatable="false">Paramètres d\'application</string>
+    <string name="preference_title_default_values" translatable="false">Valeurs par défaut</string>
+    <string name="preference_title_information" translatable="false">informations</string>
+    <string name="preference_title_PourcentageFraisAgence" translatable="false">Frais d\'agence</string>
+    <string name="preference_sum_PourcentageFraisAgence" translatable="false">Entrer le pourcentage de frais d\'agence</string>
+    <string name="preference_title_PourcentageFraisNotaire" translatable="false">Frais de notaire</string>
+    <string name="preference_sum_PourcentageFraisNotaire" translatable="false">Entrer le pourcentage de frais de notaire</string>
+    <string name="preference_title_PourcentageHonorairesConseil" translatable="false">Frais des honoraires de conseil</string>
+    <string name="preference_sum_PourcentageHonorairesConseil" translatable="false">Entrer le pourcentage de frais des honoraires de conseil</string>
+    <string name="preference_title_Taux15ans" translatable="false">Taux à 15 ans</string>
+    <string name="preference_sum_Taux15ans" translatable="false">Entrer le taux de credit à 15 ans</string>
+    <string name="preference_title_Taux20ans" translatable="false">Taux à 20 ans</string>
+    <string name="preference_sum_Taux20ans" translatable="false">Entrer le taux de credit à 20 ans</string>
+    <string name="preference_title_Taux25ans" translatable="false">Taux à 25 ans</string>
+    <string name="preference_sum_Taux25ans" translatable="false">Entrer le taux de credit à 25 ans</string>
+    <string name="preference_title_Taux30ans" translatable="false">Taux à 30 ans</string>
+    <string name="preference_sum_Taux30ans" translatable="false">Entrer le taux de credit à 30 ans</string>
+	<string name="preference_title_TauxAssuranceCredit" translatable="false">Taux d\'assurance</string>
+    <string name="preference_sum_TauxAssuranceCredit" translatable="false">Entrer le taux d\'assurance de credit</string>
+    <string name="preference_title_PourcentageSequestre" translatable="false">Sequestre</string>
+    <string name="preference_sum_PourcentageSequestre" translatable="false">Entrer le pourcentage du sequestre</string>
+    <string name="preference_help">Aide</string>
+    <string name="preference_about">A propos</string>
+    <string name="preference_license">Licence</string>
+    
+    <!-- Texts UI About -->
+    <string name="about_logo_content_description">"Logo de l'application"</string>
     <string name="about_version">Version</string>
     <string name="about_description">Cette application a pour but de simuler les différentes parties d\'un investissement immobilier.</string>
-    <string name="about_termOfUse">Cette application est fournie a titre informatif uniquement. L\'auteur ne pourrait être tenu responsable de quelconques actions réalisées par l\'utilisateur suivant l\'utilisation de cette application.</string>
+    <string name="about_term_of_use">Cette application est fournie a titre informatif uniquement. L\'auteur ne pourrait être tenu responsable de quelconques actions réalisées par l\'utilisateur suivant l\'utilisation de cette application.</string>
  
     <!-- Messages -->
     <string name="message_champs_obligatoires">Certains champs sont obligatoires</string>
-
+    
 </resources>
