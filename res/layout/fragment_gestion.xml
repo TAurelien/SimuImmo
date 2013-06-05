@@ -29,7 +29,7 @@ limitations under the License.
             android:text="@string/label_gestion_type_de_gestion" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_typeGestion"
+            android:id="@+id/Gestion_typeGestion"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="true"
@@ -46,7 +46,7 @@ limitations under the License.
             android:text="@string/label_gestion_recette_locative" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_loyerNu"
+            android:id="@+id/Gestion_loyerNu"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="true"
@@ -59,7 +59,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_loyerMeuble"
+            android:id="@+id/Gestion_loyerMeuble"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="true"
@@ -72,7 +72,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_vacanceLocAn"
+            android:id="@+id/Gestion_vacanceLocAn"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="true"
@@ -85,7 +85,7 @@ limitations under the License.
 			custom:valueFormat="none" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_loyerNuit"
+            android:id="@+id/Gestion_loyerNuit"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="true"
@@ -98,7 +98,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_vacanceLocSais"
+            android:id="@+id/Gestion_vacanceLocSais"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="true"
@@ -111,7 +111,7 @@ limitations under the License.
 			custom:valueFormat="none" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_loyerSais"
+            android:id="@+id/Gestion_loyerSais"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -124,7 +124,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_RevenuLoc"
+            android:id="@+id/Gestion_RevenuLoc"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="false"
@@ -141,7 +141,7 @@ limitations under the License.
             android:text="@string/label_gestion_frais_annuels" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_chargesFixes"
+            android:id="@+id/Gestion_chargesFixes"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -154,7 +154,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
        
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_taxeFonciere"
+            android:id="@+id/Gestion_taxeFonciere"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -167,7 +167,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_assurance"
+            android:id="@+id/Gestion_assurance"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -180,7 +180,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_travauxAnnuels"
+            android:id="@+id/Gestion_travauxAnnuels"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -193,7 +193,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_taxeHabitation"
+            android:id="@+id/Gestion_taxeHabitation"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -206,7 +206,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_chargesAnnuelles"
+            android:id="@+id/Gestion_chargesAnnuelles"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="true"
@@ -223,7 +223,7 @@ limitations under the License.
             android:text="@string/label_gestion_frais_pour_location_annuelle" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_fraisGestion"
+            android:id="@+id/Gestion_fraisGestion"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -240,7 +240,7 @@ limitations under the License.
             android:text="@string/label_gestion_frais_pour_location_saisonniere" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_fraiAccueil"
+            android:id="@+id/Gestion_fraiAccueil"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -253,7 +253,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_fraisMenage"
+            android:id="@+id/Gestion_fraisMenage"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -266,7 +266,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_fraisGestionSais"
+            android:id="@+id/Gestion_fraisGestionSais"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -279,7 +279,7 @@ limitations under the License.
 			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Acquisition_chargeLocSais"
+            android:id="@+id/Gestion_chargeLocSais"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="false"

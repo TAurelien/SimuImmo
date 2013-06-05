@@ -431,19 +431,19 @@ public class MainActivity extends FragmentActivity {
 			value = value.replaceAll("[^0-9,.]", "");
 			//TODO Take care of the localization with a different separator
 			value = value.replace(',', '.');
-			//			switch (view.getId()) {
-			//			//TODO instead of using hardcoded id, use the tag with a vlue to check view requiring this check
-			//				case R.id.valueReelTauxCredit:
-			//					if (!value.startsWith("0.0")) {
-			//						value = String.valueOf(Double.valueOf(value) / 100);
-			//					}
-			//					break;
-			//				case R.id.valueReelTauxAssurance:
-			//					if (!value.startsWith("0.00")) {
-			//						value = String.valueOf(Double.valueOf(value) / 100);
-			//					}
-			//					break;
-			//			}
+//			switch (view.getId()) {
+//			//TODO instead of using hardcoded id, use the tag with a vlue to check view requiring this check
+//				case R.id.valueReelTauxCredit:
+//					if (!value.startsWith("0.0")) {
+//						value = String.valueOf(Double.valueOf(value) / 100);
+//					}
+//					break;
+//				case R.id.valueReelTauxAssurance:
+//					if (!value.startsWith("0.00")) {
+//						value = String.valueOf(Double.valueOf(value) / 100);
+//					}
+//					break;
+//			}
 		}
 		
 		//If the user field is empty or the result of the previous replacement is empty

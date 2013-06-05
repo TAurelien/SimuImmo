@@ -91,6 +91,28 @@ limitations under the License.
     <string name="field_name_imposition_interets_emprunt" translatable="false">Intêrets d\'emprunt</string>
     <string name="field_name_imposition_comptable" translatable="false">Comptable</string>
     
+    <!-- Texts UI CashFlow -->
+    <string name="label_cashflow_input_data" translatable="false">Données d\'entrée</string>
+    <string name="label_cashflow_rendements" translatable="false">Rendements</string>
+    <string name="label_cashflow_cashflow_an1" translatable="false">Cash flow 1ère année</string>
+    <string name="label_cashflow_patrimoine_an1" translatable="false">Patrimoine 1ère année</string>
+    <string name="field_name_cashflow_revenus" translatable="false">Revenus</string>
+    <string name="field_name_cashflow_couts" translatable="false">Couts</string>
+    <string name="field_name_cashflow_impots" translatable="false">Impôts</string>
+    <string name="field_name_cashflow_loyer_actuel" translatable="false">Loyer actuel</string>
+    <string name="field_name_cashflow_rendement_brut" translatable="false">Rendement brut</string>
+    <string name="field_name_cashflow_rendement_brut_vac_loc" translatable="false">Rendement brut avec vac. loc.</string>
+    <string name="field_name_cashflow_rendement_net" translatable="false">Rendement net</string>
+    <string name="field_name_cashflow_rendement_net_net" translatable="false">Rendement net net</string>
+    <string name="field_name_cashflow_rendement_apport" translatable="false">rendement / apport</string>
+    <string name="field_name_cashflow_balance_avant_impots" translatable="false">balance avant impôts</string>
+    <string name="field_name_cashflow_balance_mensuel_avant_impots" translatable="false">Balance mens. avant impôts</string>
+    <string name="field_name_cashflow_balance_apres_impots" translatable="false">Balance après impôts</string>
+    <string name="field_name_cashflow_balance_mensuel_apres_impots" translatable="false">Balance mens. avant impôts</string>
+    <string name="field_name_cashflow_remboursement_capital" translatable="false">remboursement capital</string>
+    <string name="field_name_cashflow_evolution_patrimoine" translatable="false">Evolution patrimoine</string>
+    <string name="field_name_cashflow_evolution_revalorisation" translatable="false">Evolution avec revalorisation</string>
+    
     <!-- Texts UI revente -->
     <string name="label_revente_cout_acquisition" translatable="false">Couts d\'acquisition</string>
     <string name="label_revente_ROI_apres_renovation" translatable="false">ROI après rénovation</string>

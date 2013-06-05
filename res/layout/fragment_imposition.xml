@@ -29,7 +29,7 @@ limitations under the License.
             android:text="@string/label_imposition_impots_1ere_annee" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Taux_marginal"
+            android:id="@+id/Imposition_Taux_marginal"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="true"
@@ -42,7 +42,7 @@ limitations under the License.
 			custom:valueFormat="percentage" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_microFoncier"
+            android:id="@+id/Imposition_microFoncier"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -56,7 +56,7 @@ limitations under the License.
 			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_microBIC"
+            android:id="@+id/Imposition_microBIC"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -70,7 +70,7 @@ limitations under the License.
 			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_classe"
+            android:id="@+id/Imposition_classe"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -84,7 +84,7 @@ limitations under the License.
 			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_fraisReels"
+            android:id="@+id/Imposition_fraisReels"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -98,7 +98,7 @@ limitations under the License.
 			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_regimeFiscal"
+            android:id="@+id/Imposition_regimeFiscal"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="false"
@@ -111,7 +111,7 @@ limitations under the License.
 			custom:valueFormat="none" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_impots"
+            android:id="@+id/Imposition_impots"
             style="@style/Form.FieldLayout"
     		custom:collapsible="false"
 			custom:mandatory="false"
@@ -128,7 +128,7 @@ limitations under the License.
             android:text="@string/label_imposition_detail_frais_reel" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_amortissementBien"
+            android:id="@+id/Imposition_amortissementBien"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -142,7 +142,7 @@ limitations under the License.
 			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_amortissementMeubles"
+            android:id="@+id/Imposition_amortissementMeubles"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -156,7 +156,7 @@ limitations under the License.
 			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_totalCharges"
+            android:id="@+id/Imposition_totalCharges"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -170,7 +170,7 @@ limitations under the License.
 			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_interetsEmprunt"
+            android:id="@+id/Imposition_interetsEmprunt"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"
@@ -184,7 +184,7 @@ limitations under the License.
 			android:visibility="gone" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
-            android:id="@+id/Impots_comptable"
+            android:id="@+id/Imposition_comptable"
             style="@style/Form.FieldLayout"
     		custom:collapsible="true"
 			custom:mandatory="false"

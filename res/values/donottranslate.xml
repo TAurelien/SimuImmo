@@ -34,21 +34,24 @@ limitations under the License.
     <string name="default_value_acquisition_duree_credit">25</string>
     
     <!-- Default values EditText Gestion -->
-    <string name="default_value_gestion_type_gestion">0,00 €</string>
-    <string name="default_value_gestion_loyer_location_nue">0,00 €</string>
-    <string name="default_value_gestion_loyer_location_meublee">0,00 €</string>
+    <string name="default_value_gestion_type_gestion">1</string>
+    <string name="default_value_gestion_loyer_location_nue">800,00 €</string>
+    <string name="default_value_gestion_loyer_location_meublee">1 000,00 €</string>
     <string name="default_value_gestion_vacance_locative_annuelle">0</string>
-    <string name="default_value_gestion_loyer_nuitee">0,00 €</string>
-    <string name="default_value_gestion_vacance_locative_saisonniere">0</string>
-    <string name="default_value_gestion_charges_fixe">0,00 €</string>
-    <string name="default_value_gestion_taxe_fonciere">0,00 €</string>
-    <string name="default_value_gestion_assurance">0,00 €</string>
+    <string name="default_value_gestion_loyer_nuitee">110,00 €</string>
+    <string name="default_value_gestion_vacance_locative_saisonniere">10</string>
+    <string name="default_value_gestion_charges_fixe">1 100,00 €</string>
+    <string name="default_value_gestion_taxe_fonciere">300,00 €</string>
+    <string name="default_value_gestion_assurance">60,00 €</string>
     <string name="default_value_gestion_travaux_annuels">0,00 €</string>
-    <string name="default_value_gestion_taxe_habitation">0,00 €</string>
+    <string name="default_value_gestion_taxe_habitation">300,00 €</string>
     
     <!-- Default values EditText Imposition -->
     <string name="default_value_imposition_taux_marginal">30 %</string>
     <string name="default_value_imposition_comptable">500,00 €</string>
+    
+    <!-- Default values EditText CashFlow -->
+    <string name="default_value_cashflow_loyer_actuel">720,00 €</string>
     
     <!-- Default values EditText Revente -->
     <string name="default_value_revente_revente_apres">30</string>
