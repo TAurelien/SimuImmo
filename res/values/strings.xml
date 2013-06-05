@@ -115,32 +115,32 @@ limitations under the License.
     <string name="field_name_revente_tri_residence_principale" translatable="false">TRI rés. principale</string>
     
     <!-- Texts UI Preference -->
-    <string name="preferenceTitle_acquisition" translatable="false">Acquisition</string>
-    <string name="preferenceSum_acquisition" translatable="false">Definir les variables pour la partie Acquisition</string>
-    <string name="preferenceTitle_application_parameters" translatable="false">Paramètres d\'application</string>
-    <string name="preferenceTitle_default_values" translatable="false">Valeurs par défaut</string>
-    <string name="preferenceTitle_information" translatable="false">informations</string>
-    <string name="preferenceTitle_PourcentageFraisAgence" translatable="false">Frais d\'agence</string>
-    <string name="preferenceSum_PourcentageFraisAgence" translatable="false">Entrer le pourcentage de frais d\'agence</string>
-    <string name="preferenceTitle_PourcentageFraisNotaire" translatable="false">Frais de notaire</string>
-    <string name="preferenceSum_PourcentageFraisNotaire" translatable="false">Entrer le pourcentage de frais de notaire</string>
-    <string name="preferenceTitle_PourcentageHonorairesConseil" translatable="false">Frais des honoraires de conseil</string>
-    <string name="preferenceSum_PourcentageHonorairesConseil" translatable="false">Entrer le pourcentage de frais des honoraires de conseil</string>
-    <string name="preferenceTitle_Taux15ans" translatable="false">Taux à 15 ans</string>
-    <string name="preferenceSum_Taux15ans" translatable="false">Entrer le taux de credit à 15 ans</string>
-    <string name="preferenceTitle_Taux20ans" translatable="false">Taux à 20 ans</string>
-    <string name="preferenceSum_Taux20ans" translatable="false">Entrer le taux de credit à 20 ans</string>
-    <string name="preferenceTitle_Taux25ans" translatable="false">Taux à 25 ans</string>
-    <string name="preferenceSum_Taux25ans" translatable="false">Entrer le taux de credit à 25 ans</string>
-    <string name="preferenceTitle_Taux30ans" translatable="false">Taux à 30 ans</string>
-    <string name="preferenceSum_Taux30ans" translatable="false">Entrer le taux de credit à 30 ans</string>
-	<string name="preferenceTitle_TauxAssuranceCredit" translatable="false">Taux d\'assurance</string>
-    <string name="preferenceSum_TauxAssuranceCredit" translatable="false">Entrer le taux d\'assurance de credit</string>
-    <string name="preferenceTitle_PourcentageSequestre" translatable="false">Sequestre</string>
-    <string name="preferenceSum_PourcentageSequestre" translatable="false">Entrer le pourcentage du sequestre</string>
-    <string name="help">Aide</string>
-    <string name="about">A propos</string>
-    <string name="license">Licence</string>
+    <string name="preference_title_acquisition" translatable="false">Acquisition</string>
+    <string name="preference_sum_acquisition" translatable="false">Definir les variables pour la partie Acquisition</string>
+    <string name="preference_title_application_parameters" translatable="false">Paramètres d\'application</string>
+    <string name="preference_title_default_values" translatable="false">Valeurs par défaut</string>
+    <string name="preference_title_information" translatable="false">informations</string>
+    <string name="preference_title_PourcentageFraisAgence" translatable="false">Frais d\'agence</string>
+    <string name="preference_sum_PourcentageFraisAgence" translatable="false">Entrer le pourcentage de frais d\'agence</string>
+    <string name="preference_title_PourcentageFraisNotaire" translatable="false">Frais de notaire</string>
+    <string name="preference_sum_PourcentageFraisNotaire" translatable="false">Entrer le pourcentage de frais de notaire</string>
+    <string name="preference_title_PourcentageHonorairesConseil" translatable="false">Frais des honoraires de conseil</string>
+    <string name="preference_sum_PourcentageHonorairesConseil" translatable="false">Entrer le pourcentage de frais des honoraires de conseil</string>
+    <string name="preference_title_Taux15ans" translatable="false">Taux à 15 ans</string>
+    <string name="preference_sum_Taux15ans" translatable="false">Entrer le taux de credit à 15 ans</string>
+    <string name="preference_title_Taux20ans" translatable="false">Taux à 20 ans</string>
+    <string name="preference_sum_Taux20ans" translatable="false">Entrer le taux de credit à 20 ans</string>
+    <string name="preference_title_Taux25ans" translatable="false">Taux à 25 ans</string>
+    <string name="preference_sum_Taux25ans" translatable="false">Entrer le taux de credit à 25 ans</string>
+    <string name="preference_title_Taux30ans" translatable="false">Taux à 30 ans</string>
+    <string name="preference_sum_Taux30ans" translatable="false">Entrer le taux de credit à 30 ans</string>
+	<string name="preference_title_TauxAssuranceCredit" translatable="false">Taux d\'assurance</string>
+    <string name="preference_sum_TauxAssuranceCredit" translatable="false">Entrer le taux d\'assurance de credit</string>
+    <string name="preference_title_PourcentageSequestre" translatable="false">Sequestre</string>
+    <string name="preference_sum_PourcentageSequestre" translatable="false">Entrer le pourcentage du sequestre</string>
+    <string name="preference_help">Aide</string>
+    <string name="preference_about">A propos</string>
+    <string name="preference_license">Licence</string>
     
     <!-- Texts UI About -->
     <string name="about_logo_content_description">"Logo de l'application"</string>
