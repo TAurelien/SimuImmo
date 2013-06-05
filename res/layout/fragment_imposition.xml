@@ -52,8 +52,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_micro_foncier"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_microBIC"
@@ -66,8 +65,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_micro_bic"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_classe"
@@ -80,8 +78,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_classe"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_fraisReels"
@@ -94,8 +91,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_frais_reels"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_regimeFiscal"
@@ -107,8 +103,7 @@ limitations under the License.
 			custom:fieldValueConfig="TextView"
 			custom:fieldName="@string/field_name_imposition_regime_fiscal"
 			custom:fieldValueText=""
-			custom:fieldValueHint=""
-			custom:valueFormat="none" />
+			custom:fieldValueHint="" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_impots"
@@ -138,8 +133,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_amortissement_bien"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_amortissementMeubles"
@@ -152,8 +146,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_amortissement_meubles"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_totalCharges"
@@ -166,8 +159,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_total_charges"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_interetsEmprunt"
@@ -180,8 +172,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_interets_emprunt"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Imposition_comptable"
@@ -194,8 +185,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_imposition_comptable"
 			custom:fieldUserValueText="@string/default_value_imposition_comptable"
 			custom:fieldUserValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
 	</LinearLayout>
 

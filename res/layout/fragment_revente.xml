@@ -39,8 +39,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_cout_total"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_dont_valeur_bien"
@@ -53,8 +52,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_dont_valeur_bien"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_dont_frais"
@@ -67,8 +65,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_dont_frais"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_apport_inclu"
@@ -81,8 +78,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_apport_inclu"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <TextView
             style="@style/Form.CategoryLabel"
@@ -112,8 +108,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_plus_value_bien_an1"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_plus_value_global"
@@ -126,8 +121,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_plus_value_globale"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_roi_equilibre"
@@ -157,8 +151,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_revente_apres"
 			custom:fieldUserValueText="@string/default_value_revente_revente_apres"
 			custom:fieldUserValueHint=""
-			custom:valueFormat="none"
-			android:visibility="gone" />
+			custom:valueFormat="none" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_plus_value_bien_revente"
@@ -171,8 +164,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_plus_value_bien_revente"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_revenu_cumule"
@@ -185,8 +177,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_revenu_cumule"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_imposition_plus_value"
@@ -199,8 +190,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_imposition_plus_value"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_euro"
-			custom:valueFormat="euro"
-			android:visibility="gone" />
+			custom:valueFormat="euro" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_gain_global"
@@ -226,8 +216,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_roi"
 			custom:fieldValueText=""
 			custom:fieldValueHint=""
-			custom:valueFormat="none"
-			android:visibility="gone" />
+			custom:valueFormat="none" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_tri_location_nu"
@@ -240,8 +229,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_tri_location_nu"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_per"
-			custom:valueFormat="percentage"
-			android:visibility="gone" />
+			custom:valueFormat="percentage" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_tri_location_meuble"
@@ -254,8 +242,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_tri_location_meuble"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_per"
-			custom:valueFormat="percentage"
-			android:visibility="gone" />
+			custom:valueFormat="percentage" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_tri_location_saisonniere"
@@ -268,8 +255,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_tri_location_saisonniere"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_per"
-			custom:valueFormat="percentage"
-			android:visibility="gone" />
+			custom:valueFormat="percentage" />
         
         <com.ticot.simuimmo.activities.FieldComponent 
             android:id="@+id/Field_Revente_tri_residence_principale"
@@ -282,8 +268,7 @@ limitations under the License.
 			custom:fieldName="@string/field_name_revente_tri_residence_principale"
 			custom:fieldValueText=""
 			custom:fieldValueHint="@string/default_value_zero_per"
-			custom:valueFormat="percentage"
-			android:visibility="gone" />
+			custom:valueFormat="percentage" />
         
 	</LinearLayout>
 

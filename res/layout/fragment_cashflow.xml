@@ -74,7 +74,7 @@ limitations under the License.
 			custom:mandatory="false"
 			custom:choiceAvailability="false"
 			custom:choiceChecked="false"
-			custom:fieldValueConfig="TextView_EditText"
+			custom:fieldValueConfig="EditText"
 			custom:fieldName="@string/field_name_cashflow_loyer_actuel"
 			custom:fieldUserValueText="@string/default_value_cashflow_loyer_actuel"
 			custom:fieldValueHint=""
