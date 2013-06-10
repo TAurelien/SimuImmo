@@ -283,12 +283,12 @@ public class MainActivity extends FragmentActivity {
 	public void onSaveInstanceState(Bundle outState) {
 	
 		super.onSaveInstanceState(outState);
-		outState.putBoolean(KEY_BACKUP_collapsed, AcquisitionCollpased);
-		outState.putBoolean(KEY_BACKUP_calcul, backupCalcul);
-		outState.putBooleanArray(KEY_BACKUP_realValueState, backupRealValueState());
-		if (backupCalcul) {
-			Backup.bienBackup = bien;
-		}
+		//outState.putBoolean(KEY_BACKUP_collapsed, AcquisitionCollpased);
+		//outState.putBoolean(KEY_BACKUP_calcul, backupCalcul);
+		//outState.putBooleanArray(KEY_BACKUP_realValueState, backupRealValueState());
+		//if (backupCalcul) {
+		//	Backup.bienBackup = bien;
+		//}
 	}
 	
 	/**

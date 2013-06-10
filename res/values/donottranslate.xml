@@ -17,6 +17,10 @@ limitations under the License.
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="UnusedResources">
     
+    <!-- Internal use -->
+    <string name="KEY_label">label</string>
+    <string name="KEY_field">field</string>
+    
     <!-- Default values Hint -->
     <string name="defaultValueZeroEuro">0,00 €</string>
     <string name="defaultValueZeroPer">0,00 %</string>

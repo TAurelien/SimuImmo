@@ -42,7 +42,7 @@ public class FormPageFragment extends Fragment {
 	 * <li>6 = Evolution</li>
 	 * </ul>
 	 * */
-	public static int PAGE_ID = 1;
+	public int PAGE_ID = 1;
 	
 	/**
 	 * Variable representing the title of the page, here is the list:
@@ -76,9 +76,71 @@ public class FormPageFragment extends Fragment {
 		
 		final View layoutPage = inflater.inflate(getLayoutID(PAGE_ID), container, false);
 		
-		initPageFields(layoutPage, PAGE_ID);
+		//initPageFields(layoutPage, PAGE_ID);
 		
 		return layoutPage;
+	}
+	
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+	
+		super.onSaveInstanceState(outState);
+		//outState.putBoolean(KEY_BACKUP_collapsed, AcquisitionCollpased);
+		//outState.putBoolean(KEY_BACKUP_calcul, backupCalcul);
+		//outState.putBooleanArray(KEY_BACKUP_realValueState, backupRealValueState());
+		//if (backupCalcul) {
+		//	Backup.bienBackup = bien;
+		//}
+		getData(PAGE_ID);
+		
+	}
+	
+	private Object[][] getData(int pageID) {
+	
+		final int j = 0;
+		final Object formData[][] = null;
+		if (pageID == 3) {
+			final LinearLayout ll = (LinearLayout) getView()
+					.findViewById(R.id.layoutForm);
+			
+			if (BuildConfig.DEBUG) { //DEBUG
+				Log.d("Testing", "Number of child = " + ll.getChildCount());
+			}
+			
+			for (int i = 0; i < ll.getChildCount(); i++) {
+				final View child = ll.getChildAt(i);
+				
+				if (BuildConfig.DEBUG) { //DEBUG
+					Log.d("Testing", "Tag of the child " + i + " = " + child.getTag());
+				}
+				
+				if (child.getTag() == getResources().getString(R.string.KEY_label)) {
+					
+					if (BuildConfig.DEBUG) { //DEBUG
+						Log.d("Testing", "in the condition Tag == Label for " + i);
+					}
+					
+				}
+				else if (child.getTag() == getResources().getString(R.string.KEY_field)) {
+					
+					if (BuildConfig.DEBUG) { //DEBUG
+						Log.d("Testing", "in the condition Tag = field for " + i);
+					}
+					
+					//					final FieldComponent field = (FieldComponent) child;
+					//					formData[j][0] = field.getId();
+					//					formData[j][1] = field.isChoiceChecked();
+					//					formData[j][2] = field.getUserValue("");
+					//					if (BuildConfig.DEBUG) { //DEBUG
+					//						Log.d("Testing", "formData = " + formData[j][0] + " "
+					//								+ formData[j][0] + " " + formData[j][0]);
+					//					}
+					//					j++;
+				}
+				
+			}
+		}
+		return formData;
 	}
 	
 	/**

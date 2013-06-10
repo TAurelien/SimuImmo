@@ -55,7 +55,7 @@ limitations under the License.
         <item name="android:paddingLeft">@dimen/category_label_paddingleft</item>
         <item name="android:textColor">@color/blue_light</item>
         <item name="android:textSize">@dimen/large_text_size</item>
-        <item name="android:tag">Label</item>
+        <item name="android:tag">@string/KEY_label</item>
     </style>
     
     <style name="Form.FieldLayout">
@@ -63,6 +63,7 @@ limitations under the License.
         <item name="android:layout_height">@dimen/item_height</item>
         <item name="android:layout_marginRight">@dimen/item_marginRight</item>
         <item name="android:orientation">horizontal</item>
+        <item name="android:tag">@string/KEY_field</item>
     </style>
     
     <style name="Form.FieldLabelTextView">
