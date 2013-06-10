@@ -16,7 +16,7 @@ limitations under the License.
  -->
 <resources xmlns:tools="http://schemas.android.com/tools">
     
-    <dimen name="field_label_width">165dp</dimen>
+    <dimen name="field_label_width">190dp</dimen>
     <dimen name="field_label_with_option_width">133dp</dimen>
     <dimen name="field_label_paddingleft">8dp</dimen>
     <dimen name="field_paddingRight">12dp</dimen>

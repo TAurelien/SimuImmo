@@ -29,7 +29,7 @@ public class FormPageFragment extends Fragment {
 	public static final String KEY_PAGE_ID = "PAGE";
 	
 	/** Represents the total number of pages */
-	public static final int PAGE_COUNT = 4;
+	public static final int PAGE_COUNT = 5;
 	
 	/**
 	 * Variable representing the ID of the page. The correspondance is the following:
@@ -168,6 +168,8 @@ public class FormPageFragment extends Fragment {
 			case 3:
 				return "Imposition";
 			case 4:
+				return "Cashflow";
+			case 5:
 				return "Revente";
 			default:
 				return "Acquisition";
@@ -190,6 +192,8 @@ public class FormPageFragment extends Fragment {
 			case 3:
 				return R.layout.fragment_imposition;
 			case 4:
+				return R.layout.fragment_cashflow;
+			case 5:
 				return R.layout.fragment_revente;
 			default:
 				return R.layout.fragment_acquisition;
